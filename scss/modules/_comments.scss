@@ -1,0 +1,32 @@
+.site-wrapper{
+	.chat-comments{
+		padding: 0.5rem;
+		width: 100%;
+		max-height: 500px;
+		overflow-y: scroll;
+		.comment-body{
+			.user-acronym{
+				text-align: center;
+				span{
+					font-weight: 400;
+					line-height: 36.15385px;
+					color: $white;
+				}
+			}
+			hr{
+				margin: 0.5rem 0px 1rem;
+			}
+			p{
+				font-size: 0.8rem;
+			}
+			.container-replies{
+				a{
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+	.comment{
+		margin-top: 1rem;
+	}
+}

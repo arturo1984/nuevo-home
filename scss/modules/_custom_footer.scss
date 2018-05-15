@@ -1,0 +1,50 @@
+.site-wrapper{
+	footer{
+		a{
+			color: $grey-darken-2;
+			font-size: 70%;
+			font-weight: 300;
+		}
+		.footer-title{
+			font-weight: bold;
+			color: $light-blue-darken-4;
+		}
+		.contact-info{
+			.tel{
+				font-weight: 500;
+				color: $grey-darken-2;
+				small{
+					font-weight: 300;
+					font-size: 70%;
+				}
+			}
+		}
+		.footer-copyright{
+			.copyright-content{
+				background-image: url('../images/footer/arcos_footer.svg');
+				background-repeat: no-repeat;
+				background-position: right bottom;
+				background-size: 200px;
+				.copyright-cite{
+					padding: 1em 0;
+					font-weight: 100;
+					font-size: 70%;
+					color: $white;
+					a{
+						font-weight: 100;
+						color: $white;
+						font-size: 100%;
+					}
+				}	
+			}
+		}
+		.legals-container{
+			justify-content: center;
+			margin-right: 0;
+			@include md{
+				justify-content: flex-end;
+				margin-right: 6rem;
+			}
+		}
+	}
+}

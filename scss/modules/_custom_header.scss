@@ -1,0 +1,34 @@
+.site-wrapper{
+	header{
+		.top-header-bar{
+			height: 10px;
+			width: 100%;
+			position: fixed;
+			top: 0;
+			z-index: 1031;
+		}
+		>nav{
+			margin-top: 10px;
+			&.navbar.navbar-light{
+				.navbar-nav{
+					.nav-item{
+						.nav-link{
+							color: $grey-darken-2;
+						}
+					}
+				}
+				form{
+					.md-form{
+						.form-control{
+							border-bottom-color: $grey-darken-2;
+							color: $grey-darken-2;
+						}
+					}
+				}
+			}
+			.button-collapse{
+				color: $grey-darken-2;
+			}
+		}
+	}
+}

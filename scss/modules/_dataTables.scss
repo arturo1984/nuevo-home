@@ -1,0 +1,30 @@
+.site-wrapper{
+	.dataTables_wrapper{
+		padding: 0px;
+		table.dataTable{
+			>tbody{
+				>tr.child{ 
+					ul.dtr-details{
+						>li{
+							border: none;
+						}
+					}
+				}
+			}
+		}
+		.dataTables_info{
+			float: none;
+			white-space: normal;
+			@include sm{
+				float: left;
+			}
+		}
+		.pagination{
+			.page-item{
+				.page-link:focus{
+					background-color: $primary-color;
+				}
+			}
+		}
+	}
+}
