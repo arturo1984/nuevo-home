@@ -17,76 +17,7 @@
     <body>
         <section class="site-wrapper">
             <header>
-                <div class="top-header-bar blue-gradient"></div>
-                <nav class="mb-1 navbar navbar-expand-lg navbar-light bg-white fixed-top">
-                    <a class="navbar-brand" href="#">
-                        <img src="images/logo/main_logo.png" height="40" alt="">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-sections" aria-controls="navbar-sections" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbar-sections">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link waves-effect waves-light" id="dropdown-institucional" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Institucional</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown-institucional">
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">A cerca de Tokio Marine</a>
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Historia del Grupo</a>
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Empresas</a>
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Colaboradores</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link waves-effect waves-light" id="dropdown-negocio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nuestro negocio</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown-negocio">
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Giro de Negocio</a>
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Calidad de Servicios</a>
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Prevención de Riesgos</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link waves-effect waves-light" id="dropdown-productos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown-productos">
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Vida</a>
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Daños</a>
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Seguros básicos estandarizados</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link waves-effect waves-light" id="dropdown-comunicacion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comunicación</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown-comunicacion">
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Comunicados</a>
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Campañas y Eventos</a>
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Contacto</a>
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Quejas y Sugerencias</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link waves-effect waves-light" id="dropdown-aplicaciones" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aplicaciones</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown-aplicaciones">
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Portal Agentes</a>
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">DECO</a>
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Correo</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link waves-effect waves-light" id="dropdown-usuarios" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuarios</a>
-                                <div class="dropdown-menu dropdown-purple" aria-labelledby="dropdown-usuarios">
-                                    <a class="dropdown-item waves-effect waves-light" href="javascript:;;">Cambio de contraseña</a>
-                                </div>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav ml-auto nav-flex-icons">
-                            <li class="nav-item">
-                                <form class="form-inline">
-                                    <div class="md-form mt-0">
-                                        <div class="waves-input-wrapper waves-effect waves-light"><input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Buscar"></div>
-                                    </div>
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+               
             </header>
             <section>
                 <div class="section-heading">
@@ -438,6 +369,9 @@
             </footer>
         </section>
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+		$.ajax({url: "header-publico.html", context: document.body,success: function(response) {$("header").html(response);}});
+		</script>	
         <script type="text/javascript" src="js/datatables.min.js"></script>
         <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
         <script type="text/javascript" src="js/dataTables.responsive.min.js"></script>
