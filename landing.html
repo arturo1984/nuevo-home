@@ -468,6 +468,11 @@
 		$.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
 		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
         new WOW().init();
+            
+        $('.carousel').carousel({
+            interval: 1000000,
+            pause:"true",
+        });
   
 		</script>
     </body>
