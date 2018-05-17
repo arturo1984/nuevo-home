@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="css/material-design/mdb.css" rel="stylesheet">
-        <link href="css/main.css" rel="stylesheet">        
+        <link href="css/main.css" rel="stylesheet">
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
     
     
@@ -155,6 +156,9 @@
                     </div>
                 </div>
             </section>
+			
+			<section id="box-form-login"></section>		
+			<section id="box-form-passw"></section>
             
             <!--comienza footer -->
             <footer class="text-center text-md-left pt-4 mt-4 border-top border-info"></footer>
@@ -168,16 +172,12 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/mdb.min.js"></script>
         <script type="text/javascript" src="js/custom.js"></script>
-        
-        
-        <script type="text/javascript">
-		$.ajax({url: "header-publico.html", context: document.body,success: function(response) {$("header").html(response);}});
-		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
-        new WOW().init();
-  
+        <script>
+				    $("header").load("header-publico.html");	
+					$("#box-form-login").load("form-login.html");
+					$("#box-form-passw").load("form-rec-pass.html");					
 		</script>
-        
-        
+               
     </body>
 
 </html>

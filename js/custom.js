@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$("footer").load("footer.html");
     /*Initialize all select components*/
     $('.mdb-select').material_select();
     /*Initialize all datepicker components*/
@@ -72,9 +73,31 @@ $(document).ready(function(){
   /*SideNav*/
   $(".button-collapse").sideNav();
   var sideNavScrollbar = document.querySelector('.custom-scrollbar');
-  Ps.initialize(sideNavScrollbar);
-  
-  
+  //Ps.initialize(sideNavScrollbar);
+	/* Wow Animation */
+	new WOW().init();
+	/* Login Form */
+	$("#user-login").click(function (e) {
+		$("#form-login").slideToggle("slow");
+		e.stopPropagation();
+		$("#form-login-pass").hide();
+	});	
+	$("#form-login").click(function(e){
+		e.stopPropagation();
+	});	
+    /* Recovery Pass Form */	
+	$("#user-login-pass").click(function (e) {
+		$("#form-login-pass").slideToggle("slow");
+		e.stopPropagation();
+		$("#form-login").hide();
+	});
+	$("#form-login-pass").click(function(e){
+		e.stopPropagation();
+	});
+	$(document).click(function(){
+		$("#form-login").hide();
+		$("#form-login-pass").hide();
+	});	
   
 });
 
