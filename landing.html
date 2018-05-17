@@ -20,25 +20,92 @@
 	#landing-agentes img,section.agentes img{
 		width:100%;
 	}
+    .flecha-left{
+        position: absolute;
+        left: 0px;
+        top: 50%;
+    }
+    .flecha-right{
+        position: absolute;
+        right: 0px;
+        top: 50%;
+    }
+    
+    
+@media only screen and (min-width: 1100px) {
+    
+    .carousel-multi-item .col-md-3 {
+          float: left;
+          width: 25%;
+          max-width: 100%;
+        }
+    
+    .btn.btn-agentes{
+            position:absolute;
+            top: 65%;
+            right: .56rem;
+            padding: 25px 5px 5px;
+            min-width:220px;
+            opacity:.8;
+            font-size: 1.29rem;
+            text-transform:none;
+            text-align:right;
+            max-height: 60px;
+        }
+    
+    }
+	
+@media only screen and (min-width: 761px) and (max-width: 1090px) {
+	.btn.btn-agentes{
+            position: absolute;
+            top: 50%;
+            right: .56rem;
+            padding: 10px 5px 5px;
+            min-width: 150px;
+            opacity: .8;
+            font-size: 1.1rem;
+            text-transform: none;
+            text-align: right;
+            max-height: 60px;
+        }
+        
+        .carousel-multi-item .col-md-3 {
+          float: left;
+          width: 25%;
+          max-width: 100%;
+        }
+}
+
+@media only screen and (max-width: 760px) {
 
 	.btn.btn-agentes{
-		position:absolute;
-		top: 65%;
-		right: .56rem;
-		padding: 25px 5px 5px;
-		min-width:220px;
-		opacity:.8;
-		font-size: 1.29rem;
-		text-transform:none;
-		text-align:right;
-		max-height: 60px;
-	}
-
-	@media (max-width: 1200px) {
-		.btn.btn-agentes{
+            position:absolute;
+            top: 50%;
+            right: .56rem;
+            padding: 25px 5px 5px;
+            min-width:150px;
+            opacity:.8;
+            font-size: 1.29rem;
+            text-transform:none;
+            text-align:right;
+            max-height: 60px;
+        }
+    
+    .btn.btn-agentes{
 			padding: .6rem 1.14rem;
 		}
-	}
+    
+    .carousel-multi-item .col-md-3 {
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+}	
+    
+ 
 </style>
     <body>
         <section class="site-wrapper">
@@ -50,66 +117,136 @@
                         <h4 class="title text-left">Modulos</h4>
                     </div>				
                 </div>
-				<div class="row container-fluid wow fadeIn" data-wow-delay="0.2s">
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos1.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-orange btn-agentes">Cotizaciones</a>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos2.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-orange btn-agentes">Polizas</a>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos3.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-orange btn-agentes">Cobranzas</a>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos4.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-orange btn-agentes">Cotizaciones</a>
-								</div>
-							</div>
-				</div>                
+                
+                
+                
+                <div id="multi-item-example" class="carousel slide carousel-multi-item wow fadeIn" data-ride="carousel" data-wow-delay="0.2s">
+                    
+                    <div class="controls-top">
+                        <a class="btn-floating flecha-left" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+                        <a class="btn-floating flecha-right" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+                    </div>
+                    
+                    <div class="carousel-inner row container-fluid wow fadeIn" role="listbox">
+                        
+                        <div class="carousel-item active">
+
+                            <div class="col-md-3">
+                                <div class="avatar mb-2 view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_03.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-orange btn-agentes">Cotizaciones</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 clearfix d-none d-md-block">
+                                <div class="avatar mb-2 view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_05.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-orange btn-agentes">Polizas</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 clearfix d-none d-md-block">
+                                <div class="avatar mb-2 view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_07.png" class="z-depth-1" alt="Sample avatar" /><a class="btn btn-orange btn-agentes">Cobranzas</a>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 clearfix d-none d-md-block">
+                                <div class="avatar mb-2 view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_09.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-orange btn-agentes">Cotizaciones</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <div class="carousel-item">
+                            
+                            <div class="col-md-3">
+                                <div class="avatar mb-2 view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_09.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-orange btn-agentes">Cotizaciones</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                </div>
             </section>
 						
-			<section class="agentes">
+			
+            
+            
+            
+            <section class="agentes">
                 <div class="section-heading">
                     <div class="container-fluid">
                         <h4 class="title text-left">Cotizadores</h4>
                     </div>				
                 </div>
-				<div class="row container-fluid wow fadeIn" data-wow-delay="0.2s">
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos1.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-green btn-agentes"><span>Comisiones y Bonos</span></a>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos2.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-green btn-agentes">Siniestros</a>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos3.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-green btn-agentes">Art. 492</a>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos4.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-green btn-agentes">Comisiones y Bonos</a>
-								</div>
-							</div>
-				</div>            
+                
+                <div id="multi-item-example2" class="carousel slide carousel-multi-item wow fadeIn" data-ride="carousel" data-wow-delay="0.2s">
+                    
+                    <div class="controls-top">
+                        <a class="btn-floating flecha-left" href="#multi-item-example2" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+                        <a class="btn-floating flecha-right" href="#multi-item-example2" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+                    </div>
+                    
+                    <div class="carousel-inner row container-fluid wow fadeIn" role="listbox">
+                        
+                        <div class="carousel-item active">
+
+                            <div class="col-md-3">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_15.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-green btn-agentes"><span>Comisiones y Bonos</span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 clearfix d-none d-md-block">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_17.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-green btn-agentes">Siniestros</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 clearfix d-none d-md-block">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_19.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-green btn-agentes">Art. 492</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 clearfix d-none d-md-block">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_20.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-green btn-agentes">Comisiones y Bonos</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <div class="carousel-item">
+                            
+                            <div class="col-md-3">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_20.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-green btn-agentes">Comisiones y Bonos</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                </div>				
             </section>
 			
 			<section class="agentes">
@@ -118,32 +255,65 @@
                         <h4 class="title text-left">Productos</h4>
                     </div>				
                 </div>
-				<div class="row container-fluid wow fadeIn" data-wow-delay="0.2s">
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos1.jpg" class="z-depth-1" alt="Sample avatar"/>
-									<a class="btn btn-blue btn-agentes"><span>Por Giro</span></a>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos2.jpg" class="z-depth-1" alt="Sample avatar"/>
-									<a class="btn btn-blue btn-agentes"><span>Daños</span></a>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos3.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-blue btn-agentes"><span>Vida</span></a>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos4.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-blue btn-agentes"><span>Básicos Estandarizados</span></a>
-								</div>
-							</div>
-				</div>             
+                
+                <div id="multi-item-example3" class="carousel slide carousel-multi-item wow fadeIn" data-ride="carousel" data-wow-delay="0.2s">
+                    
+                    <div class="controls-top">
+                        <a class="btn-floating flecha-left" href="#multi-item-example3" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+                        <a class="btn-floating flecha-right" href="#multi-item-example3" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+                    </div>
+                    
+                    <div class="carousel-inner row container-fluid wow fadeIn" role="listbox">
+                        
+                        <div class="carousel-item active">
+
+                            <div class="col-md-3">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_25.png" class="z-depth-1" alt="Sample avatar"/><span class="btn btn-blue btn-agentes"><span>Por Giro</span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 clearfix d-none d-md-block">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_26.png" class="z-depth-1" alt="Sample avatar"/><span class="btn btn-blue btn-agentes"><span>Daños</span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 clearfix d-none d-md-block">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_28.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-blue btn-agentes"><span>Vida</span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 clearfix d-none d-md-block">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_30.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-blue btn-agentes"><span>Básicos Estandarizados</span></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <div class="carousel-item">
+                            
+                            <div class="col-md-3">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_30.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-blue btn-agentes"><span>Básicos Estandarizados</span></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                </div>
+                
             </section>
 			
 			<section class="agentes">
@@ -152,32 +322,65 @@
                         <h4 class="title text-left">Noticias</h4>
                     </div>				
                 </div>
-				<div class="row container-fluid wow fadeIn" data-wow-delay="0.2s">
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos1.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-purple btn-agentes"><span>Noticia</span></a>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos2.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-purple btn-agentes"><span>Noticia</span></a>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos3.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-purple btn-agentes"><span>Noticia</span></a>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos4.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-purple btn-agentes"><span>Noticia</span></a>
-								</div>
-							</div>
-				</div>           
+                
+                <div id="multi-item-example4" class="carousel slide carousel-multi-item wow fadeIn" data-ride="carousel" data-wow-delay="0.2s">
+                    
+                    <div class="controls-top">
+                        <a class="btn-floating flecha-left" href="#multi-item-example4" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+                        <a class="btn-floating flecha-right" href="#multi-item-example4" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+                    </div>
+                    
+                    <div class="carousel-inner row container-fluid wow fadeIn" role="listbox">
+                        
+                        <div class="carousel-item active">
+
+                            <div class="col-md-3">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_35.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-purple btn-agentes"><span>Noticia</span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 clearfix d-none d-md-block">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_37.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-purple btn-agentes"><span>Noticia</span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 clearfix d-none d-md-block">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_39.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-purple btn-agentes"><span>Noticia</span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 clearfix d-none d-md-block">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_41.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-purple btn-agentes"><span>Noticia</span></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <div class="carousel-item">
+                            
+                            <div class="col-md-3">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_41.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-purple btn-agentes"><span>Noticia</span></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                </div>
+                
             </section>
 
 			
@@ -187,32 +390,65 @@
                         <h4 class="title text-left">Indicadores</h4>
                     </div>				
                 </div>
-				<div class="row wow fadeIn container-fluid" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos1.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-grey btn-agentes"><span>Cotizaciones Solicitadas</span></a>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos2.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-grey btn-agentes"><span>Prima Emitida</span></a>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos3.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-grey btn-agentes"><span>Prima Pagada</span></a>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="avatar mx-auto">
-									<img src="images/agentes/modulos4.jpg" class="z-depth-1" alt="Sample avatar" />
-									<a class="btn btn-grey btn-agentes"><span>Cotizaciones Solicitadas</span></a>
-								</div>
-							</div>
-				</div>             
+                
+                <div id="multi-item-example5" class="carousel slide carousel-multi-item wow fadeIn" data-ride="carousel" data-wow-delay="0.2s">
+                    
+                    <div class="controls-top">
+                        <a class="btn-floating flecha-left" href="#multi-item-example5" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+                        <a class="btn-floating flecha-right" href="#multi-item-example5" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+                    </div>
+                    
+                    <div class="carousel-inner row container-fluid wow fadeIn" role="listbox">
+                        
+                        <div class="carousel-item active">
+
+                            <div class="col-md-3">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_47.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-grey btn-agentes"><span>Cotizaciones Solicitadas</span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 clearfix d-none d-md-block">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_49.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-grey btn-agentes"><span>Prima Emitida</span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 clearfix d-none d-md-block">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_52.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-grey btn-agentes"><span>Prima Pagada</span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 clearfix d-none d-md-block">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_55.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-grey btn-agentes"><span>Cotizaciones Solicitadas</span></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <div class="carousel-item">
+                            
+                            <div class="col-md-3">
+                                <div class="avatar mx-auto view zoom">
+                                    <a href="#">
+                                        <img src="images/agentes/landing_agentes_55.png" class="z-depth-1" alt="Sample avatar" /><span class="btn btn-grey btn-agentes"><span>Cotizaciones Solicitadas</span></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                </div>
+                
             </section>
                         
 			<footer class="text-center text-md-left pt-4 mt-4 border-top border-info"></footer>
@@ -235,3 +471,27 @@
 		</script>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
