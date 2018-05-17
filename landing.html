@@ -12,7 +12,9 @@
         <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
         <link href="css/main.css" rel="stylesheet">
     </head>
-<style>
+
+    
+    <style>
 	.site-wrapper section.agentes {
 		margin-top: 30px;
 	}
@@ -31,82 +33,61 @@
         top: 50%;
     }
     
+    .btn-agentes{
+        position: absolute;
+        top: 65%;
+        right: 0px;
+        padding: 25px 5px 5px;
+        width: 100%;
+        opacity: .8;
+        font-size: 1.29rem;
+        text-transform: none;
+        text-align: right;
+        max-height: 60px;
+        box-sizing: border-box;
+        font-weight: 400;
+        }
     
 @media only screen and (min-width: 1100px) {
     
     .carousel-multi-item .col-md-3 {
-          float: left;
-          width: 25%;
-          max-width: 100%;
-        }
+        float: left;
+        width: 25%;
+        max-width: 100%;
+    } 
     
-    .btn.btn-agentes{
-            position:absolute;
-            top: 65%;
-            right: .56rem;
-            padding: 25px 5px 5px;
-            min-width:220px;
-            opacity:.8;
-            font-size: 1.29rem;
-            text-transform:none;
-            text-align:right;
-            max-height: 60px;
-        }
     
-    }
+}
 	
-@media only screen and (min-width: 761px) and (max-width: 1090px) {
-	.btn.btn-agentes{
-            position: absolute;
-            top: 50%;
-            right: .56rem;
-            padding: 10px 5px 5px;
-            min-width: 150px;
-            opacity: .8;
-            font-size: 1.1rem;
-            text-transform: none;
-            text-align: right;
-            max-height: 60px;
-        }
+@media only screen and (min-width: 761px) and (max-width: 1090px) {	
         
-        .carousel-multi-item .col-md-3 {
-          float: left;
-          width: 25%;
-          max-width: 100%;
-        }
+    .carousel-multi-item .col-md-3 {
+      float: left;
+      width: 25%;
+      max-width: 100%;
+    }
 }
 
 @media only screen and (max-width: 760px) {
-
-	.btn.btn-agentes{
-            position:absolute;
-            top: 50%;
-            right: .56rem;
-            padding: 25px 5px 5px;
-            min-width:150px;
-            opacity:.8;
-            font-size: 1.29rem;
-            text-transform:none;
-            text-align:right;
-            max-height: 60px;
-        }
     
-    .btn.btn-agentes{
-			padding: .6rem 1.14rem;
-		}
+    .btn-agentes{
+        padding: .6rem 1.14rem;
+    }
     
     .carousel-multi-item .col-md-3 {
-            position: relative;
-            width: 100%;
-            min-height: 1px;
-            padding-right: 15px;
-            padding-left: 15px;
-        }
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
 
-}	
-    
- 
+}
 </style>
+    
+    
+    
+    
     <body>
         <section class="site-wrapper">
             <header></header>
@@ -134,28 +115,28 @@
                             <div class="col-md-3">
                                 <div class="avatar mb-2 view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_03.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-orange btn-agentes">Cotizaciones</div>
+                                        <img src="images/agentes/landing_agentes_03.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-orange btn-agentes">Cotizaciones</div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 clearfix d-none d-md-block">
                                 <div class="avatar mb-2 view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_05.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-orange btn-agentes">Polizas</div>
+                                        <img src="images/agentes/landing_agentes_05.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-orange btn-agentes">Polizas</div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 clearfix d-none d-md-block">
                                 <div class="avatar mb-2 view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_07.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-orange btn-agentes">Cobranzas</div>
+                                        <img src="images/agentes/landing_agentes_07.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-orange btn-agentes">Cobranzas</div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 clearfix d-none d-md-block">
                                 <div class="avatar mb-2 view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_09.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-orange btn-agentes">Cotizaciones</div>
+                                        <img src="images/agentes/landing_agentes_09.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-orange btn-agentes">Cotizaciones</div>
                                     </a>
                                 </div>
                             </div>
@@ -167,7 +148,7 @@
                             <div class="col-md-3">
                                 <div class="avatar mb-2 view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_09.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-orange btn-agentes">Cotizaciones</div>
+                                        <img src="images/agentes/landing_agentes_09.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-orange btn-agentes">Cotizaciones</div>
                                     </a>
                                 </div>
                             </div>
@@ -205,28 +186,28 @@
                             <div class="col-md-3">
                                 <div class="avatar view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_15.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-green btn-agentes"><span>Comisiones y Bonos</span></div>
+                                        <img src="images/agentes/landing_agentes_15.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-green btn-agentes"><span>Comisiones y Bonos</span></div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 clearfix d-none d-md-block">
                                 <div class="avatar view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_17.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-green btn-agentes">Siniestros</div>
+                                        <img src="images/agentes/landing_agentes_17.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-green btn-agentes">Siniestros</div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 clearfix d-none d-md-block">
                                 <div class="avatar view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_19.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-green btn-agentes">Art. 492</div>
+                                        <img src="images/agentes/landing_agentes_19.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-green btn-agentes">Art. 492</div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 clearfix d-none d-md-block">
                                 <div class="avatar view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_20.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-green btn-agentes">Comisiones y Bonos</div>
+                                        <img src="images/agentes/landing_agentes_20.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-green btn-agentes">Comisiones y Bonos</div>
                                     </a>
                                 </div>
                             </div>
@@ -238,7 +219,7 @@
                             <div class="col-md-3">
                                 <div class="avatar view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_20.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-green btn-agentes">Comisiones y Bonos</div>
+                                        <img src="images/agentes/landing_agentes_20.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-green btn-agentes">Comisiones y Bonos</div>
                                     </a>
                                 </div>
                             </div>
@@ -271,28 +252,28 @@
                             <div class="col-md-3">
                                 <div class="avatar mx-auto view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_25.png" class="z-depth-1" alt="Sample avatar"/><div class="btn btn-blue btn-agentes">Por Giro</div>
+                                        <img src="images/agentes/landing_agentes_25.png" class="z-depth-1" alt="Sample avatar"/><div class="btn-blue btn-agentes">Por Giro</div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 clearfix d-none d-md-block">
                                 <div class="avatar mx-auto view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_26.png" class="z-depth-1" alt="Sample avatar"/><div class="btn btn-blue btn-agentes">Daños</div>
+                                        <img src="images/agentes/landing_agentes_26.png" class="z-depth-1" alt="Sample avatar"/><div class="btn-blue btn-agentes">Daños</div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 clearfix d-none d-md-block">
                                 <div class="avatar mx-auto view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_28.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-blue btn-agentes">Vida</div>
+                                        <img src="images/agentes/landing_agentes_28.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-blue btn-agentes">Vida</div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 clearfix d-none d-md-block">
                                 <div class="avatar mx-auto view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_30.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-blue btn-agentes">Básicos Estandarizados</div>
+                                        <img src="images/agentes/landing_agentes_30.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-blue btn-agentes">Básicos Estandarizados</div>
                                     </a>
                                 </div>
                             </div>
@@ -304,7 +285,7 @@
                             <div class="col-md-3">
                                 <div class="avatar mx-auto view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_30.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-blue btn-agentes">Básicos Estandarizados</div>
+                                        <img src="images/agentes/landing_agentes_30.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-blue btn-agentes">Básicos Estandarizados</div>
                                     </a>
                                 </div>
                             </div>
@@ -338,28 +319,28 @@
                             <div class="col-md-3">
                                 <div class="avatar view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_35.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-purple btn-agentes">Noticia</div>
+                                        <img src="images/agentes/landing_agentes_35.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-purple btn-agentes">Noticia</div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 clearfix d-none d-md-block">
                                 <div class="avatar view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_37.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-purple btn-agentes">Noticia</div>
+                                        <img src="images/agentes/landing_agentes_37.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-purple btn-agentes">Noticia</div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 clearfix d-none d-md-block">
                                 <div class="avatar view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_39.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-purple btn-agentes">Noticia</div>
+                                        <img src="images/agentes/landing_agentes_39.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-purple btn-agentes">Noticia</div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 clearfix d-none d-md-block">
                                 <div class="avatar view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_41.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-purple btn-agentes">Noticia</div>
+                                        <img src="images/agentes/landing_agentes_41.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-purple btn-agentes">Noticia</div>
                                     </a>
                                 </div>
                             </div>
@@ -371,7 +352,7 @@
                             <div class="col-md-3">
                                 <div class="avatar view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_41.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-purple btn-agentes">Noticia</div>
+                                        <img src="images/agentes/landing_agentes_41.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-purple btn-agentes">Noticia</div>
                                     </a>
                                 </div>
                             </div>
@@ -406,28 +387,28 @@
                             <div class="col-md-3">
                                 <div class="avatar view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_47.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-grey btn-agentes">Cotizaciones Solicitadas</div>
+                                        <img src="images/agentes/landing_agentes_47.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-grey btn-agentes">Cotizaciones Solicitadas</div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 clearfix d-none d-md-block">
                                 <div class="avatar view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_49.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-grey btn-agentes">Prima Emitida</div>
+                                        <img src="images/agentes/landing_agentes_49.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-grey btn-agentes">Prima Emitida</div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 clearfix d-none d-md-block">
                                 <div class="avatar view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_52.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-grey btn-agentes">Prima Pagada</div>
+                                        <img src="images/agentes/landing_agentes_52.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-grey btn-agentes">Prima Pagada</div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 clearfix d-none d-md-block">
                                 <div class="avatar view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_55.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-grey btn-agentes">Cotizaciones Solicitadas</div>
+                                        <img src="images/agentes/landing_agentes_55.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-grey btn-agentes">Cotizaciones Solicitadas</div>
                                     </a>
                                 </div>
                             </div>
@@ -439,7 +420,7 @@
                             <div class="col-md-3">
                                 <div class="avatar view zoom">
                                     <a href="#">
-                                        <img src="images/agentes/landing_agentes_55.png" class="z-depth-1" alt="Sample avatar" /><div class="btn btn-grey btn-agentes">Cotizaciones Solicitadas</div>
+                                        <img src="images/agentes/landing_agentes_55.png" class="z-depth-1" alt="Sample avatar" /><div class="btn-grey btn-agentes">Cotizaciones Solicitadas</div>
                                     </a>
                                 </div>
                             </div>
