@@ -1157,6 +1157,13 @@
   .site-wrapper header > nav .button-collapse {
     color: #616161; }
 
+.site-wrapper .nav-tabs .nav-item a {
+  font-size: 1.2rem; }
+
+.site-wrapper .section-heading .title {
+  margin-bottom: 1rem;
+  color: #01579b; }
+
 .site-wrapper .md-form input[type] {
   height: 40px;
   padding: 0px; }
@@ -1165,6 +1172,22 @@
   padding: 0px; }
   .site-wrapper .dataTables_wrapper table.dataTable > tbody > tr.child ul.dtr-details > li {
     border: none; }
+  .site-wrapper .dataTables_wrapper .dt-buttons {
+    float: right; }
+  .site-wrapper .dataTables_wrapper .dataTables_filter {
+    float: none;
+    text-align: center; }
+    @media only screen and (min-width: 768px) {
+      .site-wrapper .dataTables_wrapper .dataTables_filter {
+        float: right; } }
+  .site-wrapper .dataTables_wrapper .dataTables_length {
+    float: none;
+    text-align: center; }
+    @media only screen and (min-width: 768px) {
+      .site-wrapper .dataTables_wrapper .dataTables_length {
+        float: left; } }
+    .site-wrapper .dataTables_wrapper .dataTables_length select {
+      display: inline-block !important; }
   .site-wrapper .dataTables_wrapper .dataTables_info {
     float: none;
     white-space: normal; }
