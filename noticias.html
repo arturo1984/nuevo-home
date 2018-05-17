@@ -10,80 +10,18 @@
         <link href="css/material-design/mdb.css" rel="stylesheet">
         <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
         <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/owl/owl.carousel.min.css" rel="stylesheet">
         <link href="css/main.css" rel="stylesheet">
     </head>
 
     
     <style>
-	.site-wrapper section.agentes {
-		margin-top: 30px;
-	}
-
-	#landing-agentes img,section.agentes img{
-		width:100%;
-	}
-    .flecha-left{
-        position: absolute;
-        left: 0px;
-        top: 50%;
-    }
-    .flecha-right{
-        position: absolute;
-        right: 0px;
-        top: 50%;
-    }
-    
-    .btn-agentes{
-        position: absolute;
-        top: 65%;
-        right: 0px;
-        padding: 25px 5px 5px;
-        width: 100%;
-        opacity: .8;
-        font-size: 1.29rem;
-        text-transform: none;
-        text-align: right;
-        max-height: 60px;
-        box-sizing: border-box;
-        font-weight: 400;
+        .icono-sec-not{
+            max-width: 40px;
+            margin-right: 10px;
         }
-    
-@media only screen and (min-width: 1100px) {
-    
-    .carousel-multi-item .col-md-3 {
-        float: left;
-        width: 25%;
-        max-width: 100%;
-    } 
-    
-    
-}
 	
-@media only screen and (min-width: 761px) and (max-width: 1090px) {	
-        
-    .carousel-multi-item .col-md-3 {
-      float: left;
-      width: 25%;
-      max-width: 100%;
-    }
-}
-
-@media only screen and (max-width: 760px) {
-    
-    .btn-agentes{
-        padding: .6rem 1.14rem;
-    }
-    
-    .carousel-multi-item .col-md-3 {
-        position: relative;
-        width: 100%;
-        min-height: 1px;
-        padding-right: 15px;
-        padding-left: 15px;
-    }
-
-}
-</style>
+    </style>
     
     
     
@@ -92,6 +30,21 @@
         <section class="site-wrapper">
             <header></header>
 			
+    
+    <section id="banner">        
+        <div class="owl-carousel owl-theme row">
+            <div class="item col-md-12">
+                <div class="view">
+                    <img src="images/noticias/slider/noticias_03.png">
+                </div>
+                <div class="carousel-caption">
+                    <h3 class="h3-responsive text-right">Inundaciones en su hogar o negocio?<br>Aquí hay algunos consejos para protegerse de daños adicionales</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+            
+            
     <section id="noticias">         
                 
                 
@@ -100,98 +53,237 @@
                 
                 
                 <div class="col-lg-4 col-md-6 masonry-item wow fadeInUp animation-delay-2">
-                    <article class="card card-info mb-4 wow materialUp animation-delay-5">
-                        <figure class="ms-thumbnail ms-thumbnail-left"><img src="images/noticias/noticias_01.png" alt="" class="img-fluid"></figure>
-                        <div class="card-body">
-                            <h2><a href=javascript:void(0)>Inundaciones en su hogar o negocio?</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
+                    <article class="card-info mb-4 wow materialUp animation-delay-5">                        
+                        <div class="single-news mb-lg-0 mb-4">                            
+                            <div class="view overlay rounded z-depth-1-half mb-4"> <img class="img-fluid" src="images/noticias/noticias_01.png" alt="Sample image">
+                                <a><div class="mask rgba-white-slight"></div></a>
+                            </div>
+                            <div class="news-data d-flex justify-content-between"> <a href="#!" class="deep-orange-text"><h6 class="font-weight-bold"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Noticias</h6></a>
+                                <p class="font-weight-bold dark-grey-text"><i class="fa fa-clock-o pr-2"></i>27/02/2018</p>
+                            </div>
+                            <h3 class="font-weight-bold dark-grey-text mb-3"><a>Inundaciones en su hogar o negocio?</a></h3>
+                            <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">Inundaciones en su hogar o negocio? Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
                             <div class="row">
-                                <div class="col-lg-6 col-md-8"><a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto"><a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
                             </div>
                         </div>
                     </article>
                 </div>
                 
                 <div class="col-lg-4 col-md-6 masonry-item wow fadeInUp animation-delay-2">
-                    <article class="card card-success mb-4 wow materialUp animation-delay-5">
-                        <figure class="ms-thumbnail ms-thumbnail-left"> <img src="images/noticias/noticias_02.png" alt="" class="img-fluid"></figure>
-                        <div class="card-body">
-                            <h2><a href=javascript:void(0)>Presentación del Nuevo Portal</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
-                            <div class="row">                                
-                                <div class="col-lg-6 col-md-8"> <a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
+                    <article class="card-info mb-4 wow materialUp animation-delay-5">                        
+                        <div class="single-news mb-lg-0 mb-4">                            
+                            <div class="view overlay rounded z-depth-1-half mb-4"> <img class="img-fluid" src="images/noticias/noticias_02.png" alt="Sample image">
+                                <a><div class="mask rgba-white-slight"></div></a>
                             </div>
-                        </div>
-                    </article>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 masonry-item wow fadeInUp animation-delay-2">
-                    <article class="card card-danger mb-4 wow materialUp animation-delay-5">
-                        <figure class="ms-thumbnail ms-thumbnail-left"> <img src="images/noticias/noticias_03.png" alt="" class="img-fluid"></figure>
-                        <div class="card-body">
-                            <h2><a href=javascript:void(0)>Expo Aseguradoras Centro Banamex</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
-                            <div class="row">                                
-                                <div class="col-lg-6 col-md-8"> <a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
+                            <div class="news-data d-flex justify-content-between"> <a href="#!" class="deep-orange-text"><h6 class="font-weight-bold"><i class="fa fa-file-text-o" aria-hidden="true"></i> Comunicados</h6></a>
+                                <p class="font-weight-bold dark-grey-text"><i class="fa fa-clock-o pr-2"></i>27/02/2018</p>
                             </div>
-                        </div>
-                    </article>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 masonry-item wow fadeInUp animation-delay-2">
-                    <article class="card card-info mb-4 wow materialUp animation-delay-5">
-                        <figure class="ms-thumbnail ms-thumbnail-left"><img src="images/noticias/noticias_01.png" alt="" class="img-fluid"></figure>
-                        <div class="card-body">
-                            <h2><a href=javascript:void(0)>Inundaciones en su hogar o negocio?</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
+                            <h3 class="font-weight-bold dark-grey-text mb-3"><a>Presentación del Nuevo Portal</a></h3>
+                            <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">Inundaciones en su hogar o negocio? Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
                             <div class="row">
-                                <div class="col-lg-6 col-md-8"><a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto"><a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
                             </div>
                         </div>
                     </article>
                 </div>
                 
                 <div class="col-lg-4 col-md-6 masonry-item wow fadeInUp animation-delay-2">
-                    <article class="card card-success mb-4 wow materialUp animation-delay-5">
-                        <figure class="ms-thumbnail ms-thumbnail-left"> <img src="images/noticias/noticias_02.png" alt="" class="img-fluid"></figure>
-                        <div class="card-body">
-                            <h2><a href=javascript:void(0)>Presentación del Nuevo Portal</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
-                            <div class="row">                                
-                                <div class="col-lg-6 col-md-8"> <a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
+                    <article class="card-info mb-4 wow materialUp animation-delay-5">                        
+                        <div class="single-news mb-lg-0 mb-4">                            
+                            <div class="view overlay rounded z-depth-1-half mb-4"> <img class="img-fluid" src="images/noticias/noticias_03.png" alt="Sample image">
+                                <a><div class="mask rgba-white-slight"></div></a>
+                            </div>
+                            <div class="news-data d-flex justify-content-between"><a href="#!" class="deep-orange-text"><h6 class="font-weight-bold"><i class="fa fa-calendar" aria-hidden="true"></i> Eventos</h6></a>
+                                <p class="font-weight-bold dark-grey-text"><i class="fa fa-clock-o pr-2"></i>27/02/2018</p>
+                            </div>
+                            <h3 class="font-weight-bold dark-grey-text mb-3"><a>Expo Aseguradoras Centro Banamex</a></h3>
+                            <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">Inundaciones en su hogar o negocio? Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
+                            <div class="row">
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto"><a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
                             </div>
                         </div>
                     </article>
                 </div>
                 
                 <div class="col-lg-4 col-md-6 masonry-item wow fadeInUp animation-delay-2">
-                    <article class="card card-danger mb-4 wow materialUp animation-delay-5">
-                        <figure class="ms-thumbnail ms-thumbnail-left"> <img src="images/noticias/noticias_03.png" alt="" class="img-fluid"></figure>
-                        <div class="card-body">
-                            <h2><a href=javascript:void(0)>Expo Aseguradoras Centro Banamex</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
-                            <div class="row">                                
-                                <div class="col-lg-6 col-md-8"> <a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
+                    <article class="card-info mb-4 wow materialUp animation-delay-5">                        
+                        <div class="single-news mb-lg-0 mb-4">                            
+                            <div class="view overlay rounded z-depth-1-half mb-4"> <img class="img-fluid" src="images/noticias/noticias_01.png" alt="Sample image">
+                                <a><div class="mask rgba-white-slight"></div></a>
+                            </div>
+                            <div class="news-data d-flex justify-content-between"> <a href="#!" class="deep-orange-text"><h6 class="font-weight-bold"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Noticias</h6></a>
+                                <p class="font-weight-bold dark-grey-text"><i class="fa fa-clock-o pr-2"></i>27/02/2018</p>
+                            </div>
+                            <h3 class="font-weight-bold dark-grey-text mb-3"><a>Inundaciones en su hogar o negocio?</a></h3>
+                            <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">Inundaciones en su hogar o negocio? Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
+                            <div class="row">
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto"><a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
                             </div>
                         </div>
                     </article>
-                </div>                
+                </div>
                 
+                <div class="col-lg-4 col-md-6 masonry-item wow fadeInUp animation-delay-2">
+                    <article class="card-info mb-4 wow materialUp animation-delay-5">                        
+                        <div class="single-news mb-lg-0 mb-4">                            
+                            <div class="view overlay rounded z-depth-1-half mb-4"> <img class="img-fluid" src="images/noticias/noticias_02.png" alt="Sample image">
+                                <a><div class="mask rgba-white-slight"></div></a>
+                            </div>
+                            <div class="news-data d-flex justify-content-between"> <a href="#!" class="deep-orange-text"><h6 class="font-weight-bold"><i class="fa fa-file-text-o" aria-hidden="true"></i> Comunicados</h6></a>
+                                <p class="font-weight-bold dark-grey-text"><i class="fa fa-clock-o pr-2"></i>27/02/2018</p>
+                            </div>
+                            <h3 class="font-weight-bold dark-grey-text mb-3"><a>Presentación del Nuevo Portal</a></h3>
+                            <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">Inundaciones en su hogar o negocio? Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
+                            <div class="row">
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto"><a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 masonry-item wow fadeInUp animation-delay-2">
+                    <article class="card-info mb-4 wow materialUp animation-delay-5">                        
+                        <div class="single-news mb-lg-0 mb-4">                            
+                            <div class="view overlay rounded z-depth-1-half mb-4"> <img class="img-fluid" src="images/noticias/noticias_03.png" alt="Sample image">
+                                <a><div class="mask rgba-white-slight"></div></a>
+                            </div>
+                            <div class="news-data d-flex justify-content-between"><a href="#!" class="deep-orange-text"><h6 class="font-weight-bold"><i class="fa fa-calendar" aria-hidden="true"></i> Eventos</h6></a>
+                                <p class="font-weight-bold dark-grey-text"><i class="fa fa-clock-o pr-2"></i>27/02/2018</p>
+                            </div>
+                            <h3 class="font-weight-bold dark-grey-text mb-3"><a>Expo Aseguradoras Centro Banamex</a></h3>
+                            <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">Inundaciones en su hogar o negocio? Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
+                            <div class="row">
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto"><a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 masonry-item wow fadeInUp animation-delay-2">
+                    <article class="card-info mb-4 wow materialUp animation-delay-5">                        
+                        <div class="single-news mb-lg-0 mb-4">                            
+                            <div class="view overlay rounded z-depth-1-half mb-4"> <img class="img-fluid" src="images/noticias/noticias_01.png" alt="Sample image">
+                                <a><div class="mask rgba-white-slight"></div></a>
+                            </div>
+                            <div class="news-data d-flex justify-content-between"> <a href="#!" class="deep-orange-text"><h6 class="font-weight-bold"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Noticias</h6></a>
+                                <p class="font-weight-bold dark-grey-text"><i class="fa fa-clock-o pr-2"></i>27/02/2018</p>
+                            </div>
+                            <h3 class="font-weight-bold dark-grey-text mb-3"><a>Inundaciones en su hogar o negocio?</a></h3>
+                            <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">Inundaciones en su hogar o negocio? Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
+                            <div class="row">
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto"><a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 masonry-item wow fadeInUp animation-delay-2">
+                    <article class="card-info mb-4 wow materialUp animation-delay-5">                        
+                        <div class="single-news mb-lg-0 mb-4">                            
+                            <div class="view overlay rounded z-depth-1-half mb-4"> <img class="img-fluid" src="images/noticias/noticias_02.png" alt="Sample image">
+                                <a><div class="mask rgba-white-slight"></div></a>
+                            </div>
+                            <div class="news-data d-flex justify-content-between"> <a href="#!" class="deep-orange-text"><h6 class="font-weight-bold"><i class="fa fa-file-text-o" aria-hidden="true"></i> Comunicados</h6></a>
+                                <p class="font-weight-bold dark-grey-text"><i class="fa fa-clock-o pr-2"></i>27/02/2018</p>
+                            </div>
+                            <h3 class="font-weight-bold dark-grey-text mb-3"><a>Presentación del Nuevo Portal</a></h3>
+                            <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">Inundaciones en su hogar o negocio? Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
+                            <div class="row">
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto"><a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 masonry-item wow fadeInUp animation-delay-2">
+                    <article class="card-info mb-4 wow materialUp animation-delay-5">                        
+                        <div class="single-news mb-lg-0 mb-4">                            
+                            <div class="view overlay rounded z-depth-1-half mb-4"> <img class="img-fluid" src="images/noticias/noticias_03.png" alt="Sample image">
+                                <a><div class="mask rgba-white-slight"></div></a>
+                            </div>
+                            <div class="news-data d-flex justify-content-between"><a href="#!" class="deep-orange-text"><h6 class="font-weight-bold"><i class="fa fa-calendar" aria-hidden="true"></i> Eventos</h6></a>
+                                <p class="font-weight-bold dark-grey-text"><i class="fa fa-clock-o pr-2"></i>27/02/2018</p>
+                            </div>
+                            <h3 class="font-weight-bold dark-grey-text mb-3"><a>Expo Aseguradoras Centro Banamex</a></h3>
+                            <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">Inundaciones en su hogar o negocio? Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
+                            <div class="row">
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto"><a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 masonry-item wow fadeInUp animation-delay-2">
+                    <article class="card-info mb-4 wow materialUp animation-delay-5">                        
+                        <div class="single-news mb-lg-0 mb-4">                            
+                            <div class="view overlay rounded z-depth-1-half mb-4"> <img class="img-fluid" src="images/noticias/noticias_01.png" alt="Sample image">
+                                <a><div class="mask rgba-white-slight"></div></a>
+                            </div>
+                            <div class="news-data d-flex justify-content-between"> <a href="#!" class="deep-orange-text"><h6 class="font-weight-bold"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Noticias</h6></a>
+                                <p class="font-weight-bold dark-grey-text"><i class="fa fa-clock-o pr-2"></i>27/02/2018</p>
+                            </div>
+                            <h3 class="font-weight-bold dark-grey-text mb-3"><a>Inundaciones en su hogar o negocio?</a></h3>
+                            <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">Inundaciones en su hogar o negocio? Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
+                            <div class="row">
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto"><a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 masonry-item wow fadeInUp animation-delay-2">
+                    <article class="card-info mb-4 wow materialUp animation-delay-5">                        
+                        <div class="single-news mb-lg-0 mb-4">                            
+                            <div class="view overlay rounded z-depth-1-half mb-4"> <img class="img-fluid" src="images/noticias/noticias_02.png" alt="Sample image">
+                                <a><div class="mask rgba-white-slight"></div></a>
+                            </div>
+                            <div class="news-data d-flex justify-content-between"> <a href="#!" class="deep-orange-text"><h6 class="font-weight-bold"><i class="fa fa-file-text-o" aria-hidden="true"></i> Comunicados</h6></a>
+                                <p class="font-weight-bold dark-grey-text"><i class="fa fa-clock-o pr-2"></i>27/02/2018</p>
+                            </div>
+                            <h3 class="font-weight-bold dark-grey-text mb-3"><a>Presentación del Nuevo Portal</a></h3>
+                            <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">Inundaciones en su hogar o negocio? Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
+                            <div class="row">
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto"><a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 masonry-item wow fadeInUp animation-delay-2">
+                    <article class="card-info mb-4 wow materialUp animation-delay-5">                        
+                        <div class="single-news mb-lg-0 mb-4">                            
+                            <div class="view overlay rounded z-depth-1-half mb-4"> <img class="img-fluid" src="images/noticias/noticias_03.png" alt="Sample image">
+                                <a><div class="mask rgba-white-slight"></div></a>
+                            </div>
+                            <div class="news-data d-flex justify-content-between"><a href="#!" class="deep-orange-text"><h6 class="font-weight-bold"><i class="fa fa-calendar" aria-hidden="true"></i> Eventos</h6></a>
+                                <p class="font-weight-bold dark-grey-text"><i class="fa fa-clock-o pr-2"></i>27/02/2018</p>
+                            </div>
+                            <h3 class="font-weight-bold dark-grey-text mb-3"><a>Expo Aseguradoras Centro Banamex</a></h3>
+                            <p class="dark-grey-text mb-lg-0 mb-md-5 mb-4">Inundaciones en su hogar o negocio? Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tatio</p>
+                            <div class="row">
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto"><a href="javascript:void(0)" class="btn btn-primary btn-sm btn-block animate-icon">Ver más</a></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
                 
             </div>
         </div>
                 
     </section>
-						
-			
-            
-            
-            
-            
-			
-			
-			
-			
 
 			
 			
@@ -207,7 +299,8 @@
         <script type="text/javascript" src="js/popper.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/custom.js"></script>
-        <script type="text/javascript" src="js/mdb.min.js"></script>	
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <script type="text/javascript" src="js/owl.carousel.js"></script>
 		<script type="text/javascript">
 		$.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
 		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
@@ -217,6 +310,15 @@
             interval: 1000000,
             pause:"true",
         });
+            
+            
+        $('.owl-carousel').owlCarousel({
+            loop:false,
+            center: true,
+            margin:10,
+            nav:true,
+            autoWidth:true,            
+        })
   
 		</script>
     </body>
