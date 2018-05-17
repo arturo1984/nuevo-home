@@ -12,6 +12,26 @@
 				}
 			}
 		}
+		.dt-buttons{
+			float: right;
+		}
+		.dataTables_filter{
+			float: none;
+			text-align: center;
+			@include sm{
+				float: right;
+			}
+		}
+		.dataTables_length{
+			float: none;
+			text-align: center;
+			@include sm{
+				float: left;
+			}
+			select{
+				display: inline-block!important;
+			}
+		}
 		.dataTables_info{
 			float: none;
 			white-space: normal;
