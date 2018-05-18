@@ -1,0 +1,51 @@
+<style>
+#form-login{
+	  position:absolute; 
+	  background:white; 
+	  width: 100%; 
+	  margin: 0 auto; 
+	  padding:  7px 15px; 
+	  text-align: left; 
+	  top: 75px;
+	  z-index: 10000;
+	}
+#form-login form{width: 300px;margin: 0 auto;padding:15px 0px;}
+.btn.login-btn-blue{background-color:#01579b; width:300px;text-transform: none;}
+#form-login form .mb-4, .my-4 { margin-bottom: 0.5rem !important;}
+#form-login form .mt-4, .my-4 {margin-top: 0.7rem !important;}
+#form-login form .blue-text{color:#01579b!important;}
+#form-login p.h6{ margin-top: 20px;margin-bottom: 0px!important;}
+</style>
+			
+			
+<div id="form-login" style="display:none">
+	<p class="h6 text-center mb-4">Iniciar Sesión</p>
+	<form>
+	<!-- Material input text -->
+		<div class="md-form">			
+			<input type="text" id="materialFormSubscriptionNameEx" class="form-control">
+			<label for="materialFormSubscriptionNameEx">Usuario</label>
+		</div>
+
+		<!-- Material input email -->
+		 <div class="md-form">
+			<input type="password" id="materialFormRegisterPasswordEx" class="form-control">
+			<label for="materialFormRegisterPasswordEx">Contraseña</label>
+		</div>
+		
+		<div class="g-recaptcha" data-sitekey="your_site_key"></div>
+		
+		<div class="form-check my-4">
+			  <input class="form-check-input" type="checkbox" id="defaultCheck12">
+			  <label for="defaultCheck12" class="grey-text">Recordar Usuario</label>
+		</div>
+		
+		<div class="text-center mt-4">
+			<button class="btn login-btn-blue" type="submit">Iniciar Sesión</button>
+		</div>
+		
+		 <div class="modal-footer">
+			<p class="font-small grey-text d-flex justify-content-end"><a href="#" class="blue-text ml-1"> Olvidaste Contraseña?</a></p>
+		</div>
+	</form>
+</div>
