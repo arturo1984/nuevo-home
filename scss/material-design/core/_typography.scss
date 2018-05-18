@@ -54,12 +54,16 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  .site-wrapper{
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
+.site-wrapper{
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+  } 
 }
 
 // Responsive headings
@@ -76,44 +80,48 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Divider
-.divider-new {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  margin-top: $divider-margin-y;
-  margin-bottom: $divider-margin-y;
-  > h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 0;
-  }
-  &:before,
-  &:after {
-    content: "";
-    height: 1.5px;
-    flex: 1;
-    height: $divider-height;
-    background: #c6c6c6;
-  }
-  &:before {
-    margin: 0 $divider-margin-x 0 0;
-  }
-  &:after {
-    margin: 0 0 0 $divider-margin-x;
+.site-wrapper{
+  .divider-new {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: $divider-margin-y;
+    margin-bottom: $divider-margin-y;
+    > h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 0;
+    }
+    &:before,
+    &:after {
+      content: "";
+      height: 1.5px;
+      flex: 1;
+      height: $divider-height;
+      background: #c6c6c6;
+    }
+    &:before {
+      margin: 0 $divider-margin-x 0 0;
+    }
+    &:after {
+      margin: 0 0 0 $divider-margin-x;
+    }
   }
 }
 
 // Blockquote
-.blockquote {
-  padding: $blockquote-padding-y $blockquote-padding-x;
-  border-left: .25rem solid #eceeef;
-  .bq-title {
-    margin-bottom: 0;
-    font-size: $font-size-large;
-    font-weight: 400;
-  }
-  p {
-    padding: $blockquote-p-padding-t 0 $blockquote-p-padding-b $blockquote-p-padding-l;
-    font-size: $blockquote-p-font-size;
+.site-wrapper{
+  .blockquote {
+    padding: $blockquote-padding-y $blockquote-padding-x;
+    border-left: .25rem solid #eceeef;
+    .bq-title {
+      margin-bottom: 0;
+      font-size: $font-size-large;
+      font-weight: 400;
+    }
+    p {
+      padding: $blockquote-p-padding-t 0 $blockquote-p-padding-b $blockquote-p-padding-l;
+      font-size: $blockquote-p-font-size;
+    }
   }
 }
 
@@ -132,6 +140,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.font-small {
-  font-size: $font-small;
+.site-wrapper{
+  .font-small {
+    font-size: $font-small;
+  }
 }
