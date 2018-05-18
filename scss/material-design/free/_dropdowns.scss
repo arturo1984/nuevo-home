@@ -1,10 +1,12 @@
 // Dropdowns
-.dropdown {
-  .dropdown-menu {
-    .dropdown-item {
-      &:active {
-        background-color: map-get($grey, darken-1);
-      }
-    }
-  }
+.site-wrapper{
+	.dropdown {
+	  .dropdown-menu {
+	    .dropdown-item {
+	      &:active {
+	        background-color: map-get($grey, darken-1);
+	      }
+	    }
+	  }
+	}
 }

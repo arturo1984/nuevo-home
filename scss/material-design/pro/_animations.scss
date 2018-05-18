@@ -1,7 +1,9 @@
 // Animations pro
-.collapsible .active {
-  .rotate-icon {
-    transform: $animations-pro-transform;
-    transition: $animations-pro-transition;
-  }
+.site-wrapper{
+	.collapsible .active {
+	  .rotate-icon {
+	    transform: $animations-pro-transform;
+	    transition: $animations-pro-transition;
+	  }
+	}
 }
