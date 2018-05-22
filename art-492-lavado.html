@@ -44,6 +44,19 @@
             font-weight: bold;
             color: #01579b;
         }
+        #pdf-files{ margin-top:40px;}
+
+		.fa{font-size: 4rem; cursor:pointer;
+		}
+		.pdf-icon{text-align: center;}
+
+		.pdf-name{
+			margin-top:10px;
+			color: #616161;
+			font-size: 70%;
+			font-weight: 300;
+		}
+		.modal-content{width:540px;}
 	
     </style>
     
@@ -58,15 +71,14 @@
 <div class="container">    
     <div class="row justify-content-md-center">
         
-        <div class="col-12">
-            <div class="view overlay">
+        <div class="col-12 mt-5">
+            <div class="view overlay mt-4">
                 <img class="card-img-top" src="images/art-142-lavado/prevencion-de-lavado-de-dinero-c.jpg" alt="Sample image">
                 <div class="carousel-caption">
                     <h3 class="h3-responsive text-left"><strong>Artículo 492.</strong></h3>
                 </div>
                 <div class="col-12 gradiente_negro"></div>
-            </div>
-            
+            </div>            
         </div>
         
         <div class="col-md-10 mt-5">
@@ -85,13 +97,72 @@ antes de celebrar cualquier contrato a más tardar antes de que cumplan los supu
 
             <p>Por lo anterior, estas Disposiciones son de observancia obligatoria para clientes, agentes de seguros y en general para todos los colaboradores de Tokio Marine Compañía
 de Seguros.</p>
-
-           
             
-        </div>  
+        </div>
+        
+        <div class="row justify-content-md-center wow fadeIn" data-wow-delay="0.3s">
+            <div class="col-md-1"></div>
+            <div class="col-md-2 pdf-icon"> <i class="fa fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i>
+                <p class="pdf-name">Políticas para la Identificaciónación y Conocimiento del cliente.
+                    <br/>(PDF - 1.4 MB)</p>
+            </div>
+            <div class="col-md-2 pdf-icon"> <i class="fa fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i>
+                <p class="pdf-name">Formato de Identificaciónación del cliente.
+                    <br/>(PDF - 1.4 MB)</p>
+            </div>
+            <div class="col-md-2 pdf-icon"> <i class="fa fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i>
+                <p class="pdf-name">Declaración del cliente y conformación del cotejo.
+                    <br/>(PDF - 1 MB)</p>
+            </div>
+            <div class="col-md-2 pdf-icon"> <i class="fa fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i>
+                <p class="pdf-name">Perfil del cliente.
+                    <br/>(PDF - 1. MB)</p>
+            </div>
+            <div class="col-md-2 pdf-icon"> <i class="fa fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i>
+                <p class="pdf-name">Formato de Identificaciónación del cliente.
+                    <br/>(PDF - 1.4 MB)</p>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+		
+		
+		<div class="modal fade" id="centralModalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-notify modal-info" role="document">
+					  <!--Content-->
+					  <div class="modal-content">
+						  <!--Header-->
+						  <div class="modal-header">
+							  <p class="heading lead">Document Info</p>
+				  
+							  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								  <span aria-hidden="true" class="white-text">&times;</span>
+							  </button>
+						  </div>
+				  
+						  <!--Body-->
+						  <div class="modal-body">
+							  <div class="text-center">
+								 <object data="files/cfd.pdf" type="application/pdf" width="500px" height="300px" internalinstanceid="43">
+									If you are unable to view file, you can download from
+									<a href="files/cfd.pdf">here</a> or download <a target="_blank" href="http://get.adobe.com/reader/">Adobe PDF Reader</a> to view the file.
+								 </object>
+							  </div>
+						  </div>
+				  
+						  <!--Footer-->
+						  <div class="modal-footer justify-content-center">
+							  <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cerrar</a>
+						  </div>
+					  </div>
+					  <!--/.Content-->
+				  </div>
+		</div>
+		
+		
+        
+        
     </div>          
-</div>            
-            
+</div>
 
             
             
@@ -112,6 +183,7 @@ de Seguros.</p>
 		<script type="text/javascript" src="js/custom.js"></script>
         <script type="text/javascript" src="js/mdb.min.js"></script>
         <script type="text/javascript" src="js/owl.carousel.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 		<script type="text/javascript">
 		$.ajax({url: "header-publico.html", context: document.body,success: function(response) {$("header").html(response);}});
 		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
@@ -121,8 +193,7 @@ de Seguros.</p>
             interval: 1000000,
             pause:"true",
         });
-            
-            
+                        
         $('.owl-carousel').owlCarousel({
             loop:false,
             center: true,
@@ -136,25 +207,3 @@ de Seguros.</p>
 </html>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        
