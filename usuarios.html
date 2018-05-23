@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Material Design Bootstrap</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="css/material-design/mdb.css" rel="stylesheet">
+        <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+	<style>
+	.dataTables_filter{display:none;}
+	.asociar-usuario{font-weight: 500; color: #616161;}
+	label.modulos{font-size:.8rem;}
+	#modal-asociar-users .list-group{border: 1px solid grey;padding: 10px;}
+	#modal-asociar-users .list-group-item {padding: 0.3rem 0.4rem;}
+	#modal-asociar-users .list-group-item-info { background-color: lightgrey;color#000;}
+	</style>
+
+    <body>
+        <section class="site-wrapper">
+            <header> </header>
+            <section>
+                <div class="section-heading">
+                    <div class="container-fluid">
+                        <h1 class="title text-left">Consulta Usuarios</h1>
+                    </div>
+                </div>
+
+				   <div class="row container-fluid">
+						<div class="col-md-12">	                             
+							<div class="form-wrapper">
+								<form id="search-form" class="mb-4">
+									<div class="row">
+									   <div class="col-sm-4 col-lg-3">
+											<div class="md-form form-group">
+												<select name="estatus" class="mdb-select">
+													<option value="1">Todos</option>
+													<option value="2">Revisión</option>
+													<option value="3">En cotización</option>
+													<option value="4">ART. 492</option>
+													<option value="5">En emisión</option>
+												</select>
+												<label for="estatus" >Filtrar por pefil</label>
+											</div>
+										</div>
+										<div class="col-sm-4 col-lg-3">
+											<div class="md-form form-group">
+												<select name="modoCotizacion" class="mdb-select">
+													<option value="1">Todos</option>
+													<option value="2">Manual</option>
+													<option value="3">Web</option>
+												</select>
+												<label for="modoCotizacion" >Filtrar por estatus</label>
+											</div>
+										</div>
+										
+										<div class="col-sm-4 col-lg-6">
+											<div class="md-form form-group">
+											   <a class="btn btn-outline-info waves-effect" data-toggle="modal" href="#modal-add-user">Agregar usuario</a>	
+											</div>
+										</div>
+									</div>
+															   
+									<div class="row">
+										<div class="col-md-12">
+											<a class="btn btn-pink pull-left" id="form_search" >BUSCAR</a>
+										</div>
+									</div>
+								</form>
+                        </div>
+						
+					</div>
+				</div>	
+
+					<div class="row container-fluid">
+						<div class="col-md-12">						
+							<div class="progress primary-color-dark" id="progress-search" style="display:none">
+								<div class="indeterminate"></div>
+							</div>
+						</div>
+					</div>			
+					
+					<div class="row container-fluid" >
+						<div class="col-md-12">	
+					
+							<div class="table-wrapper " style="display:none">
+								<table class="table data-table table-striped table-bordered" style="width:100%;">
+									<thead>
+										<tr>
+											<th>Username</i></th>
+											<th>Nombre</i></th>
+											<th>Correo</i></th>
+											<th>Perfil</i></th>
+											<th>Estatus</i></th>
+											<th class="all" data-orderable="false">Acciones</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>jortiz</td>
+											<td>Manuel Ortiz</td>
+											<td>manuel@tokio.com</td>
+											<td>Agente</td>
+											<td>Activo</td>
+											<td>
+												<div class="actions-container dropleft">
+													<button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+														<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+													</button>
+													<div class="dropdown-menu animated fadeIn">
+														<a class="dropdown-item" data-toggle="modal" href="#modal-messages"><i class="fa fa-lock mr-2"></i><span>Desactivar</span></a>
+														<a class="dropdown-item" data-toggle="modal" href="#modal-asociar-users"><i class="fa fa-external-link mr-2"></i><span>Asociar</span></a>
+													</div>
+												</div>
+											</td>
+										</tr>
+									    <tr>
+											<td>jortiz</td>
+											<td>Manuel Ortiz</td>
+											<td>manuel@tokio.com</td>
+											<td>Agente</td>
+											<td>Activo</td>
+											<td>
+												<div class="actions-container dropleft">
+													<button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+														<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+													</button>
+													<div class="dropdown-menu animated fadeIn">
+														<a class="dropdown-item" data-toggle="modal" href="#modal-messages"><i class="fa fa-comment-o mr-2"></i><span>Desactivar</span></a>
+														<a class="dropdown-item" data-toggle="modal" href="#modal-asociar-users"><i class="fa fa-file-text-o mr-2"></i><span>Asociar</span></a>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>jortiz</td>
+											<td>Manuel Ortiz</td>
+											<td>manuel@tokio.com</td>
+											<td>Agente</td>
+											<td>Activo</td>
+											<td>
+												<div class="actions-container dropleft">
+													<button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+														<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+													</button>
+													<div class="dropdown-menu animated fadeIn">
+														<a class="dropdown-item" data-toggle="modal" href="#modal-messages"><i class="fa fa-comment-o mr-2"></i><span>Desactivar</span></a>
+														<a class="dropdown-item" data-toggle="modal" href="#modal-asociar-users"><i class="fa fa-file-text-o mr-2"></i><span>Asociar</span></a>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>jortiz</td>
+											<td>Manuel Ortiz</td>
+											<td>manuel@tokio.com</td>
+											<td>Agente</td>
+											<td>Activo</td>
+											<td>
+												<div class="actions-container dropleft">
+													<button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+														<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+													</button>
+													<div class="dropdown-menu animated fadeIn">
+														<a class="dropdown-item" data-toggle="modal" href="#modal-messages"><i class="fa fa-comment-o mr-2"></i><span>Desactivar</span></a>
+														<a class="dropdown-item" data-toggle="modal" href="#modal-asociar-users"><i class="fa fa-file-text-o mr-2"></i><span>Asociar</span></a>
+													</div>
+												</div>
+											</td>
+										</tr>
+										                              
+									</tbody>
+								</table>
+							</div>
+					</div>
+				</div>             
+            </section>            
+            
+			
+			
+			
+			<footer class="text-center text-md-left pt-4 mt-4 border-top border-info">
+            </footer>
+            
+		   <!-- Modal Rechazo propuesta -->
+            <div class="modal fade" id="modal-add-user" tabindex="-1" role="dialog" aria-labelledby="rechazoLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+						    <p class="h4 text-center">Datos generales del usuario</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+						    <form id="form-add-user">
+							<div class="row">
+									<div class="col-sm-6">
+										<!-- Material input text -->
+										<div class="md-form">
+											<input type="text" id="Apaterno" class="form-control">
+											<label for="Apaterno" class="font-weight-light">Apellido Paterno</label>
+										</div>
+										<div class="md-form">
+											<input type="email" id="Amaterno" class="form-control">
+											<label for="Amaterno" class="font-weight-light">Apellido Materno</label>
+										</div>
+										<div class="md-form">
+											<input type="email" id="Nombre" class="form-control">
+											<label for="Nombre" class="font-weight-light">Nombre(s)</label>
+										</div>
+
+										<div class="md-form form-group font-weight-light">
+											<select name="gEjecutivo" class="mdb-select">
+														<option value="2" >Seleccionar grupo</option>
+														<option value="2" >Manual</option>
+														<option value="3" >Web</option>
+											</select>
+											<label for="gEjecutivo" >Grupo Ejecutivo</label>
+										</div>
+									</div>
+									
+									<div class="col-sm-6">
+										<div class="md-form">
+											<input type="text" id="userId" class="form-control">
+											<label for="userId" class="font-weight-light">User ID</label>
+										</div>
+										<div class="md-form">
+											<input type="email" id="email1" class="form-control">
+											<label for="email1" class="font-weight-light">Correo electrónico</label>
+										</div>
+										<div class="md-form">
+											<input type="email" id="email2" class="form-control">
+											<label for="email2" class="font-weight-light">Confirmar correo</label>
+										</div>
+										<div class="md-form form-group font-weight-light">
+											<select name="perfil" class="mdb-select">
+														<option value="0" >Seleccionar perfil</option>
+														<option value="2" >Administrador</option>
+														<option value="3" >Asistente</option>
+											</select>
+											<label for="gEjecutivo" >perfil</label>
+										</div>
+									</div>
+								</div>		
+									
+							<div class="row text-center">		
+								<div class="col-sm-12">
+									<button type="button" class="btn btn-blue btn-sm waves-effect float-right" id="add-user">Guardar</button>
+								</div>			
+							</div>	
+							</form> <!-- Material form register -->
+							
+							
+						<div class="alert alert-success" role="alert" style="display:none" id="user_add_success">
+						  El alta se realizó correctamente
+						</div>
+						
+						<div class="alert alert-danger" role="alert" style="display:none" id="user_add_error">
+						  El usuario que proporcionó ya existe
+						</div>
+											
+							
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Modal Rechazo propuesta -->
+            <!-- Modal Ver archivos -->
+            <div class="modal fade" id="modal-asociar-users" tabindex="-1" role="dialog" aria-labelledby="archivesLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="archivesLabel">Archivos</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+								<div class="row container-fluid">
+									<div class="col-sm-5">
+									    <p class="asociar-usuario">Agente disponible por ejecutivo</p>
+										<ul class="list-group list-group-sortable-connected" id="old-list">
+											<li class="list-group-item list-group-item-info">01 - Marsh</li>
+											<li class="list-group-item list-group-item-info">02 - Chacon</li>
+											<li class="list-group-item list-group-item-info">03 - Agente Seguros</li>
+											<li class="list-group-item list-group-item-info">04 - Agente Polizas</li>
+											<li class="list-group-item list-group-item-info">05 - Agente 1</li>
+										</ul>
+									</div>
+									<div class="col-sm-2" style="margin-top: 70px;">
+										<button type="button" class="btn grey btn-sm" onclick="addAllItems()"> >> </button><br/>
+										<button type="button" class="btn grey btn-sm" onclick="removeAllItems()"> << </button>
+									</div>
+									<div class="col-sm-5">
+										<p class="asociar-usuario">Agente/broker que puede ver</p>
+										<ul class="list-group list-group-sortable-connected" id="nuevo-list">
+											<li class="list-group-item list-group-item-success">06 - Willis</li>
+											<li class="list-group-item list-group-item-success">07 - Agente 2</li>
+											<li class="list-group-item list-group-item-success">08 - Agente 3</li>
+										</ul>
+									</div>
+								</div>
+								<div class="row container-fluid">
+									<div class="col-sm-12">
+										<br/><p class="asociar-usuario">Acceso a Módulos</p>
+									</div>
+								</div>
+								<div class="row container-fluid">									
+										<div class="form-check col-sm-4">
+											<input class="form-check-input" type="checkbox" id="inlineFormCheckbox1" >
+											<label class="form-check-label modulos" for="inlineFormCheckbox1">Seguimiento a cotizaciones</label>
+										</div>
+										<div class="form-check col-sm-4">
+											<input class="form-check-input" type="checkbox" id="inlineFormCheckbox2">
+											<label class="form-check-label modulos" for="inlineFormCheckbox2">Cotizador Paquete Empresarial</label>
+										</div>
+										<div class="form-check col-sm-4">
+											<input class="form-check-input" type="checkbox" id="inlineFormCheckbox3">
+											<label class="form-check-label modulos" for="inlineFormCheckbox3">Siniestros</label>
+										</div>
+								</div>	
+								<div class="row container-fluid">									
+										<div class="form-check col-sm-4">
+											<input class="form-check-input" type="checkbox" id="inlineFormCheckbox4" >
+											<label class="form-check-label modulos" for="inlineFormCheckbox4">Pólizas</label>
+										</div>
+										<div class="form-check col-sm-4">
+											<input class="form-check-input" type="checkbox" id="inlineFormCheckbox5">
+											<label class="form-check-label modulos" for="inlineFormCheckbox5">Cotizador casa/habitación</label>
+										</div>
+										<div class="form-check col-sm-4">
+											<input class="form-check-input" type="checkbox" id="inlineFormCheckbox6">
+											<label class="form-check-label modulos" for="inlineFormCheckbox6">Bonos</label>
+										</div>
+								</div>	
+								<div class="row container-fluid">									
+										<div class="form-check col-sm-4">
+											<input class="form-check-input" type="checkbox" id="inlineFormCheckbox7" >
+											<label class="form-check-label modulos" for="inlineFormCheckbox7">Cobranza</label>
+										</div>
+										<div class="form-check col-sm-4">
+											<input class="form-check-input" type="checkbox" id="inlineFormCheckbox8">
+											<label class="form-check-label modulos" for="inlineFormCheckbox8">Cotizaciones Manuales</label>
+										</div>
+										<div class="form-check col-sm-4">
+											<input class="form-check-input" type="checkbox" id="inlineFormCheckbox9">
+											<label class="form-check-label modulos" for="inlineFormCheckbox9">Comisiones</label>
+										</div>
+								</div>									
+                           
+                            <button type="button" class="btn btn-blue btn-sm waves-effect float-right">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/datatables.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="js/responsive.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+		<script type="text/javascript" src="js/jquery.sortable.min.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+		<script>
+		$.ajax({url: "header-publico.html", context: document.body,success: function(response) {$("header").html(response);}});
+		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});			
+		
+		$( "#form_search").click(function() {
+			  $('#progress-search').show();
+			  $('.table-wrapper').hide();
+			  progress_search = setTimeout(function(){ 
+				$('#progress-search').hide();
+				$('.table-wrapper').show();
+				}, 3000);
+		});
+		
+		$("#add-user").click(function(){
+		   $("#form-add-user").hide();
+		   $("#user_add_success").show();
+		   $("#form-add-user")[0].reset();
+		});
+		
+		$('#modal-add-user').on('hidden.bs.modal', function () {
+			$("#user_add_success").hide();
+			$("#form-add-user").show();
+		});
+		
+		$('.list-group-sortable-connected').sortable({
+                placeholderClass: 'list-group-item',
+                connectWith: '.connected'
+        });
+		
+		function addAllItems(){		
+			$('.list-group-item-info').each(function(){
+				$(this).removeClass('list-group-item-info');
+				$("#nuevo-list").append(this);
+				$(this).addClass('list-group-item-success');
+			});
+		}
+		
+		function removeAllItems(){		
+			$('.list-group-item-success').each(function(){
+				$(this).removeClass('list-group-item-success');
+				$("#old-list").append(this);
+				$(this).addClass('list-group-item-info');
+			});
+		}
+			
+		</script>
+    </body>
+</html>
