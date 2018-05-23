@@ -292,6 +292,8 @@
 				</div>					
 		</section>
 		
+		<section id="box-form-login"></section>		
+	    <section id="box-form-passw"></section>
 			
                        
 		<footer class="text-center text-md-left pt-4 mt-4 border-top border-info"></footer>
@@ -313,6 +315,7 @@
 	<script type="text/javascript">
 		$.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
 		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
+		$("#box-form-passw").load("form-rec-pass.html");	
 		new WOW().init();
 		$(document).ready(function() {
               $('.owl-carousel').owlCarousel({
