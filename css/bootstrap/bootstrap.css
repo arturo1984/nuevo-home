@@ -3538,8 +3538,9 @@ template {
   border: 0;
   -webkit-appearance: none; }
 
-.site-wrapper .modal-open {
+.modal-open {
   overflow: hidden; }
+
 .site-wrapper .modal {
   position: fixed;
   top: 0;
@@ -3581,7 +3582,8 @@ template {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
   outline: 0; }
-.site-wrapper .modal-backdrop {
+
+.modal-backdrop {
   position: fixed;
   top: 0;
   right: 0;
@@ -3589,10 +3591,11 @@ template {
   left: 0;
   z-index: 1040;
   background-color: #000; }
-  .site-wrapper .modal-backdrop.fade {
+  .modal-backdrop.fade {
     opacity: 0; }
-  .site-wrapper .modal-backdrop.show {
+  .modal-backdrop.show {
     opacity: 0.5; }
+
 .site-wrapper .modal-header {
   display: flex;
   align-items: flex-start;

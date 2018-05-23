@@ -4,11 +4,10 @@
 // .modal-content   - actual modal w/ bg and corners and stuff
 
 // Kill the scroll on the body
-.site-wrapper{
   .modal-open {
     overflow: hidden;
   }
-
+.site-wrapper{
   // Container that the modal scrolls within
   .modal {
     position: fixed;
@@ -72,7 +71,7 @@
     // Remove focus outline from opened modal
     outline: 0;
   }
-
+}
   // Modal background
   .modal-backdrop {
     position: fixed;
@@ -87,7 +86,7 @@
     &.fade { opacity: 0; }
     &.show { opacity: $modal-backdrop-opacity; }
   }
-
+.site-wrapper{
   // Modal header
   // Top section of the modal w/ title and dismiss
   .modal-header {
