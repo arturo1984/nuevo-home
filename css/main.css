@@ -1157,12 +1157,12 @@
   .site-wrapper header > nav .button-collapse {
     color: #616161; }
 
-.site-wrapper .nav-tabs .nav-item a {
-  font-size: 1.2rem; }
-
 .site-wrapper .section-heading .title {
   margin-bottom: 1rem;
   color: #01579b; }
+
+.site-wrapper .nav-tabs .nav-item a {
+  font-size: 1.2rem; }
 
 .site-wrapper .md-form input[type] {
   height: 40px;
@@ -1196,6 +1196,16 @@
         float: left; } }
   .site-wrapper .dataTables_wrapper .pagination .page-item .page-link:focus {
     background-color: #4285f4; }
+  .site-wrapper .dataTables_wrapper table.table .dropdown-menu {
+    width: 220px; }
+    @media only screen and (min-width: 480px) {
+      .site-wrapper .dataTables_wrapper table.table .dropdown-menu {
+        width: auto; } }
+    .site-wrapper .dataTables_wrapper table.table .dropdown-menu a {
+      white-space: normal; }
+      @media only screen and (min-width: 480px) {
+        .site-wrapper .dataTables_wrapper table.table .dropdown-menu a {
+          white-space: nowrap; } }
 
 .site-wrapper .chat-comments {
   padding: 0.5rem;
