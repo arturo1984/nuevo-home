@@ -1161,6 +1161,17 @@
   margin-bottom: 1rem;
   color: #01579b; }
 
+.site-wrapper button.btn-unstyled {
+  -webkit-appearance: none;
+  color: #fff;
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  margin-bottom: 1rem;
+  margin-top: -5px; }
+  .site-wrapper button.btn-unstyled .btn-floating {
+    font-size: 0.8rem; }
+
 .site-wrapper .nav-tabs .nav-item a {
   font-size: 1.2rem; }
 
