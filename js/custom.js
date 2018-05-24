@@ -10,7 +10,7 @@ $(document).ready(function(){
       dom: 'fBrltip',
 		buttons: [{
                 extend:    'excelHtml5',
-                text:      '<i class="fa fa-file-excel-o"></i>',
+                text:      '<i class="far fa-file-excel"></i>',
                 titleAttr: 'Exportar a excel',
                 className:"btn light-blue darken-4 px-2 py-1 my-0"
             }],
@@ -100,5 +100,3 @@ $(document).ready(function(){
 	});	
   
 });
-
-
