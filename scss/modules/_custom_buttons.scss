@@ -1,0 +1,14 @@
+.site-wrapper{
+	button.btn-unstyled{
+		-webkit-appearance: none;
+		color: $white;
+		background-color: transparent;
+	    padding: 0;
+	    border: 0;
+	    margin-bottom: 1rem;
+	    margin-top: -5px;
+	    .btn-floating{
+	    	font-size: 0.8rem;
+	    }
+	}
+}

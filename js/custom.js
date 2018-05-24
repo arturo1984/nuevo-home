@@ -10,9 +10,9 @@ $(document).ready(function(){
       dom: 'fBrltip',
 		buttons: [{
                 extend:    'excelHtml5',
-                text:      '<i class="far fa-file-excel"></i>',
-                titleAttr: 'Exportar a excel',
-                className:"btn light-blue darken-4 px-2 py-1 my-0"
+                text:      '<a class="btn-floating btn-sm teal waves-effect waves-light py-2 my-0">XLS</a>',
+                titleAttr: 'Exportar XLS',
+                className:"btn-unstyled"
             }],
       columnDefs: [
           {targets: '_all', className: "py-2" }
