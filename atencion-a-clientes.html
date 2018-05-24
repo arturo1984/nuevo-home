@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Material Design Bootstrap</title>
-        <link href="css/fontawesome/fontawesome-all.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="css/material-design/mdb.css" rel="stylesheet">
         <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -46,7 +46,7 @@
         }
         #pdf-files{ margin-top:40px;}
 
-		.fa{font-size: 4rem; cursor:pointer;
+		.ico-pdf.fa-lightbulb-o, .ico-pdf.fa-smile-o, .ico-pdf.fa-question, .ico-pdf.fa-frown-o{font-size: 4rem !important; cursor:pointer !important;
 		}
 		.pdf-icon{text-align: center;}
 
@@ -57,6 +57,10 @@
 			font-weight: 300;
 		}
 		.modal-content{width:540px;}
+        
+        .banner-atencion{
+            max-height: 350px;
+        }
 	
     </style>
     
@@ -69,6 +73,104 @@
 			
   
 
+            <div class="container">    
+                <div class="row justify-content-md-center">
+                    <div class="col-12 mt-5">
+                        <div class="view overlay mt-4 banner-atencion"> <img class="card-img-top" src="images/atencion-clientes/atencion.jpg" alt="Sample image">
+                            <div class="carousel-caption">
+                                <h3 class="h3-responsive text-left"><strong></strong></h3> </div>
+                            <div class="col-12 gradiente_negro"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 mt-5 text-center">
+                        <h2 class="h1-responsive font-weight-bold my-5">Atencion a Clientes</h2>        
+                        <p class="dark-grey-text w-responsive mx-auto mb-5">Para nosotros es importante que su seguridad y brindarle un mejor servicio con las mejores herramientas a su disposicion. </p>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-md-10 mt-5">
+                                                
+                        
+                        <div class="btn-group col-md-12" data-toggle="buttons">
+
+                            <label class="btn btn-default active form-check-label col-md-3 col-sm-12">
+                                <input class="form-check-input" type="radio" checked autocomplete="off"> <i class="fa ico-pdf fa-lightbulb-o" aria-hidden="true"></i><br>Sugerencia
+                            </label>
+
+                            <label class="btn btn-default form-check-label col-md-3 col-sm-12">
+                                <input class="form-check-input" type="radio" autocomplete="off"> <i class="fa ico-pdf fa-smile-o" aria-hidden="true"></i><br>Felicitacion
+                            </label>
+
+                            <label class="btn btn-default form-check-label col-md-3 col-sm-12">
+                                <input class="form-check-input" type="radio" autocomplete="off"> <i class="fa ico-pdf fa-question" aria-hidden="true"></i><br>Consulta
+                            </label>
+                            
+                            <label class="btn btn-default form-check-label col-md-3 col-sm-12">
+                                <input class="form-check-input" type="radio" autocomplete="off"> <i class="fa ico-pdf fa-frown-o" aria-hidden="true"></i><br>Quejas
+                            </label>
+
+                        </div>
+                
+                        
+                        
+                        
+                        <div class="tab-content">
+                    
+                            
+                            <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
+
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <div class="md-form form-group">
+                                            <input type="text" name="poliza" class="form-control">
+                                            <label for="poliza" >Póliza</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-3">
+                                        <div class="md-form form-group">
+                                            <select name="estatus" class="mdb-select">
+                                                <option value="1">Todos</option>
+                                                <option value="2">Revisión</option>
+                                                <option value="3">En cotización</option>
+                                                <option value="4">ART. 492</option>
+                                                <option value="5">En emisión</option>
+                                            </select>
+                                            <label for="estatus" >Estatus</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="md-form">
+                                    <input type="text" id="inputMDEx" class="form-control">
+                                    <label for="inputMDEx">Cliente</label>
+                                </div>
+
+                                <div class="md-form">
+                                    <textarea type="text" id="" class="form-control md-textarea" rows="3"></textarea>
+                                    <label for="materialFormContactMessageEx">Mensaje</label>
+                                </div>
+
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-primary btn-md">Enviar</button>
+                                </div>
+                            </div>                        
+
+
+                        </div>
+                        
+                    </div>
+                    
+                    
+                </div>         
+            </div>
+            
+            
+            
+            
+            
+            
             
                         
 			<footer class="text-center text-md-left pt-4 mt-4 border-top border-info"></footer>
@@ -106,3 +208,27 @@
 		</script>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
