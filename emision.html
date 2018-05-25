@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Emision</title>
+        <link href="css/fontawesome/fontawesome-all.css" rel="stylesheet">
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="css/material-design/mdb.css" rel="stylesheet">
+        <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="site-wrapper">
+            <header></header>
+            <section>
+                <div class="container-fluid">
+                    <div class="section-heading">
+                        <h1 class="title text-left">Consulta Pólizas</h1>
+                    </div>
+                    <div class="form-wrapper">
+                        <form id="search-form" class="mb-4">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <input type="text" name="poliza" class="form-control">
+                                        <label for="poliza" >Póliza</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <input type="text" name="endoso" class="form-control">
+                                        <label for="endoso" >Endoso</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <select name="estatus" class="mdb-select">
+                                            <option value="1">Todos</option>
+                                            <option value="2">Por Emitir</option>
+                                            <option value="3">Pendiente de Pago</option>
+                                            <option value="4">Emitida</option>
+                                            <option value="5">Al Corriente</option>
+                                        </select>
+                                        <label for="estatus" >Estatus</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <select name="tipopago" class="mdb-select">
+                                            <option value="1">Todos</option>
+                                            <option value="2">Contado</option>
+                                            <option value="3">Mensual</option>
+                                            <option value="4">Trimestral</option>
+                                            <option value="5">Anual</option>
+                                        </select>
+                                        <label for="tipopago" >Tipo Pago</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-lg-6">
+                                    <div class="md-form form-group">
+                                        <div class="row">
+                                            <label for="inicio" class="active">Periodo - Fecha inicio y Fin de vigencia de la Póliza</label>
+                                            <div class="col">
+                                                <input name="inicio" placeholder="Desde" type="text" id="creationDate" class="form-control datepicker">
+                                            </div>
+                                            <div class="col">
+                                                <input name="fin" placeholder="Hasta" type="text" id="creationDate" class="form-control datepicker">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <select name="agente" class="mdb-select">
+                                            <option value="1">Todos</option>
+                                            <option value="2">Marsh</option>
+                                            <option value="3">Kataoka</option>
+                                        </select>
+                                        <label for="agente" >Agente</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <input type="text" name="asegurado" class="form-control">
+                                        <label for="asegurado" >Asegurado</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">   
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <select name="tipoPoliza" class="mdb-select">
+                                            <option value="1">Todos</option>
+                                            <option value="2">Nuevo</option>
+                                            <option value="3">Endoso</option>
+                                            <option value="4">Renovación</option>
+                                        </select>
+                                        <label for="tipoPoliza" >Tipo de póliza</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <select name="moneda" class="mdb-select">
+                                            <option value="1">Todas</option>
+                                            <option value="2">USD</option>
+                                            <option value="3">MXN</option>
+                                        </select>
+                                        <label for="moneda" >Moneda</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <select name="producto" class="mdb-select">
+                                            <option value="1">Todos</option>
+                                            <option value="2">Accidentes personales</option>
+                                            <option value="3">Vida grupo</option>
+                                            <option value="4">Paquete empresarial</option>
+                                            <option value="5">Paquete familiar</option>
+                                        </select>
+                                        <label for="producto" >Producto</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <select name="ramo" class="mdb-select">
+                                            <option value="1">Todos</option>
+                                            <option value="1">Daños</option>
+                                            <option value="1">Vida</option>
+                                        </select>
+                                        <label for="ramo" >Ramo</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a class="btn btn-pink float-right" onclick="document.getElementById('search-form').submit();">BUSCAR</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="table data-table table-striped table-bordered" style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th>Póliza</i></th>
+                                    <th>Fecha emisión</i></th>
+                                    <th>Estatus</i></th>
+                                    <th>Producto</i></th>
+                                    <th>Asegurado</i></th>
+                                    <th>Agente</i></th>                                       
+                                    <th>Moneda</i></th>
+                                    <th>Ramo</i></th>
+                                    <th>Tipo póliza</i></th>                                
+                                    <th>Endoso</i></th>
+                                    <th>Inicio Vigencia</i></th>
+                                    <th>Fin Vigencia</i></th>
+                                    <th>Forma Pago</i></th>
+                                    <th>Prima neta</i></th>
+                                    <th>Derechos</i></th>
+                                    <th>Recargos</i></th>
+                                    <th>IVA</i></th>
+                                    <th>Prima total</i></th>
+                                    <th>Fecha Cancelacion</i></th>
+                                    <th>Motivo Cancelacion</i></th>
+                                    <th class="all" data-orderable="false"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>54654</td>
+                                    <td>01/01/2017 12:20</td>
+                                    <td>Por Emitir</td>
+                                    <td>Paquete empresarial</td>
+                                    <td>Juan Canales</td>
+                                    <td>Manuel Ortiz</td>
+                                    <td>MXN</td>
+                                    <td>Daños</td>
+                                    <td>Nueva</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>$0.0</td>
+                                    <td>$0.0</td>
+                                    <td>$0.00</td>
+                                    <td>$0.00</td>
+                                    <td>$0.00</td>
+                                    <td>00/00/0000</td>
+                                    <td></td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                                <a class="dropdown-item" data-toggle="modal" href="#modal-messages"><i class="far fa-comment mr-2"></i><span>Ver mensajes</span></a>
+                                                <a class="dropdown-item" data-toggle="modal" href="#modal-archives"><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                <a class="dropdown-item" data-toggle="modal" href="#modal-short-help"><i class="far fa-question-circle mr-2"></i><span>Ayuda</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>54654</td>
+                                    <td>01/01/2017 12:20</td>
+                                    <td>Pendiente de Pago</td>
+                                    <td>Paquete familiar</td>
+                                    <td>Juan Canales</td>
+                                    <td>Manuel Ortiz</td>
+                                    <td>MXN</td>
+                                    <td>Daños</td>
+                                    <td>Nueva</td>
+                                    <td>DP54654</td>
+                                    <td>01/02/2017 12:20</td>
+                                    <td>01/01/2018 12:20</td>
+                                    <td>Mensual</td>
+                                    <td>$15,000.00</td>
+                                    <td>$0.0</td>
+                                    <td>$0.00</td>
+                                    <td>$2,400.00</td>
+                                    <td>$17,400.00</td>
+                                    <td>00/00/0000</td>
+                                    <td></td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                                <a class="dropdown-item" data-toggle="modal" href="#modal-messages"><i class="far fa-comment mr-2"></i><span>Ver mensajes</span></a>
+                                                <a class="dropdown-item" data-toggle="modal" href="#modal-archives"><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                <a class="dropdown-item" data-toggle="modal" href="#modal-short-help"><i class="far fa-question-circle mr-2"></i><span>Ayuda</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>54654</td>
+                                    <td>01/01/2017 12:20</td>
+                                    <td>Al corriente</td>
+                                    <td>Paquete empresarial</td>
+                                    <td>Juan Canales</td>
+                                    <td>Manuel Ortiz</td>
+                                    <td>MXN</td>
+                                    <td>Daños</td>
+                                    <td>Nueva</td>
+                                    <td>DP54654</td>
+                                    <td>01/02/2017 12:20</td>
+                                    <td>01/01/2018 12:20</td>
+                                    <td>Mensual</td>
+                                    <td>$15,000.00</td>
+                                    <td>$0.0</td>
+                                    <td>$0.00</td>
+                                    <td>$2,400.00</td>
+                                    <td>$17,400.00</td>
+                                    <td>00/00/0000</td>
+                                    <td></td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                                <a class="dropdown-item" data-toggle="modal" href="#modal-messages"><i class="far fa-comment mr-2"></i><span>Ver mensajes</span></a>
+                                                <a class="dropdown-item" data-toggle="modal" href="#modal-archives"><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                <a class="dropdown-item" data-toggle="modal" href="#modal-short-help"><i class="far fa-question-circle mr-2"></i><span>Ayuda</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>54654</td>
+                                    <td>01/01/2017 12:20</td>
+                                    <td>Por Emitir</td>
+                                    <td>Paquete empresarial</td>
+                                    <td>Juan Canales</td>
+                                    <td>Manuel Ortiz</td>
+                                    <td>MXN</td>
+                                    <td>Daños</td>
+                                    <td>Nueva</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>$0.0</td>
+                                    <td>$0.0</td>
+                                    <td>$0.00</td>
+                                    <td>$0.00</td>
+                                    <td>$0.00</td>
+                                    <td>00/00/0000</td>
+                                    <td></td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                                <a class="dropdown-item" data-toggle="modal" href="#modal-messages"><i class="far fa-comment mr-2"></i><span>Ver mensajes</span></a>
+                                                <a class="dropdown-item" data-toggle="modal" href="#modal-archives"><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                <a class="dropdown-item" data-toggle="modal" href="#modal-short-help"><i class="far fa-question-circle mr-2"></i><span>Ayuda</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>                                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>               
+            </section>            
+            <footer class="text-center text-md-left pt-4 mt-4 border-top border-info"></footer>
+            <!-- Modal Ver archivos -->
+            <div class="modal fade" id="modal-archives" tabindex="-1" role="dialog" aria-labelledby="archivesLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="archivesLabel">Archivos</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table simple-data-table table-striped table-bordered" style="width:100%;">
+                                <thead>
+                                    <tr>
+                                        <th>Archivo</th>
+                                        <th>Usuario de creación</th>
+                                        <th>Fecha de creación</th>
+                                        <th>Tipo</th>
+                                        <th class="all" data-orderable="false"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Slip.pdf</td>
+                                        <td>aluna</td>
+                                        <td>09-abr-18</td>
+                                        <td>PDF</td>
+                                        <td class="text-center"><i class="fa fa-close"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lista de datos.xlsx</td>
+                                        <td>yhernandez</td>
+                                        <td>14-abr-18</td>
+                                        <td>Lista de datos</td>
+                                        <td class="text-center"><i class="fa fa-close"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Acta Constitutiva.pdf</td>
+                                        <td>yhernandez</td>
+                                        <td>16-abr-18</td>
+                                        <td>CURP</td>
+                                        <td class="text-center"><i class="fa fa-close"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>INE.jpg</td>
+                                        <td>yhernandez</td>
+                                        <td>16-abr-18</td>
+                                        <td>INE</td>
+                                        <td class="text-center"><i class="fa fa-close"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button type="button" class="btn btn-pink btn-rounded btn-sm waves-effect waves-light float-right">Agregar Archivo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Modal Ver archivos -->
+            <!-- Modal Ver mensajes -->
+            <div class="modal fade" id="modal-messages" tabindex="-1" role="dialog" aria-labelledby="messagesLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="messagesLabel">Mensajes del folio 999</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="comments-wrapper">
+                                <div class="row px-lg-2 px-2">
+                                    <div class="col-md-12 px-lg-auto px-0">
+                                        <div class="chat-comments">
+                                            <ul class="list-unstyled">
+                                                <li class="justify-content-between mb-3">
+                                                    <div class="comment-body white p-3 z-depth-1">
+                                                        <div class="header">
+                                                            <div class="user-acronym btn-floating btn-sm light-blue darken-4 waves-effect waves-light">
+                                                                <span>CS</span>
+                                                            </div>
+                                                            <strong class="primary-font">Carlos Soto</strong>
+                                                            <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
+                                                        </div>
+                                                        <hr class="w-100">
+                                                        <h6 class="font-weight-bold mb-2"><strong>Francis Butthurst Pope</strong></h6>
+                                                        <p class="mb-0">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                        </p>
+                                                        <div class="container-replies">
+                                                            <a class="pink-text" data-toggle="collapse" href="#comentario-1" aria-expanded="false" aria-controls="comentario-1">28 Respuestas</a>
+                                                            <div class="collapse" id="comentario-1">
+                                                                <div class="replies">
+                                                                    <div class="mt-3 ml-4 reply-comment">
+                                                                        <blockquote class="blockquote">
+                                                                            <h6 class="font-weight-bold mb-2">OZerino <small class="text-muted pl-2"><i class="fa fa-clock-o"></i> 12 mins ago</small></h6>
+                                                                            <p class="grey-text darken-1 p-0 m-0">
+                                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                                            </p>
+                                                                        </blockquote>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group basic-textarea text-right">
+                                                                    <textarea class="form-control pl-2 my-0" id="exampleFormControlTextarea2" rows="3" placeholder="Escribe tu respuesta..."></textarea>
+                                                                    <a class="btn-floating btn-pink btn-sm waves-effect waves-light"><i class="fa fa-send" aria-hidden="true"></i></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="justify-content-between mb-3">
+                                                    <div class="comment-body white p-3 z-depth-1">
+                                                        <div class="header">
+                                                            <div class="user-acronym btn-floating btn-sm light-blue darken-4 waves-effect waves-light">
+                                                                <span>EM</span>
+                                                            </div>
+                                                            <strong class="primary-font">Erick Márquez</strong>
+                                                            <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
+                                                        </div>
+                                                        <hr class="w-100">
+                                                        <h6 class="font-weight-bold mb-2"><strong>Comix 'R' us is an awesome</strong></h6>
+                                                        <p class="mb-0">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                        </p>
+                                                        <div class="container-replies">
+                                                            <a class="pink-text" data-toggle="collapse" href="#comentario-2" aria-expanded="false" aria-controls="comentario-2">3 Respuestas</a>
+                                                            <div class="collapse" id="comentario-2">
+                                                                <div class="replies">
+                                                                    <div class="mt-3 ml-4 reply-comment">
+                                                                        <blockquote class="blockquote">
+                                                                            <h6 class="font-weight-bold mb-2">OZerino <small class="text-muted pl-2"><i class="fa fa-clock-o"></i> 12 mins ago</small></h6>
+                                                                            <p class="grey-text darken-1 p-0 m-0">
+                                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                                            </p>
+                                                                        </blockquote>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group basic-textarea text-right">
+                                                                    <textarea class="form-control pl-2 my-0" id="exampleFormControlTextarea2" rows="3" placeholder="Escribe tu respuesta..."></textarea>
+                                                                    <a class="btn-floating btn-pink btn-sm waves-effect waves-light"><i class="fa fa-send" aria-hidden="true"></i></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="justify-content-between mb-3">
+                                                    <div class="comment-body white p-3 z-depth-1">
+                                                        <div class="header">
+                                                            <div class="user-acronym btn-floating btn-sm light-blue darken-4 waves-effect waves-light">
+                                                                <span>GN</span>
+                                                            </div>
+                                                            <strong class="primary-font">German Nava</strong>
+                                                            <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
+                                                        </div>
+                                                        <hr class="w-100">
+                                                        <h6 class="font-weight-bold mb-2"><strong>175</strong></h6>
+                                                        <p class="mb-0">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                        </p>
+                                                        <div class="container-replies">
+                                                            <a class="pink-text" data-toggle="collapse" href="#comentario-3" aria-expanded="false" aria-controls="comentario-3">Responder</a>
+                                                            <div class="collapse" id="comentario-3">
+                                                                <div class="replies">
+                                                                    <div class="mt-3 ml-4 reply-comment">
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group basic-textarea text-right">
+                                                                    <textarea class="form-control pl-2 my-0" id="exampleFormControlTextarea2" rows="3" placeholder="Escribe tu respuesta..."></textarea>
+                                                                    <a class="btn-floating btn-pink btn-sm waves-effect waves-light"><i class="fa fa-send" aria-hidden="true"></i></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="justify-content-between mb-3">
+                                                    <div class="comment-body white p-3 z-depth-1">
+                                                        <div class="header">
+                                                            <div class="user-acronym btn-floating btn-sm light-blue darken-4 waves-effect waves-light">
+                                                                <span>MA</span>
+                                                            </div>
+                                                            <strong class="primary-font">Mauricio Alvarez</strong>
+                                                            <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
+                                                        </div>
+                                                        <hr class="w-100">
+                                                        <h6 class="font-weight-bold mb-2"><strong>Bignatefan</strong></h6>
+                                                        <p class="mb-0">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                        </p>
+                                                        <div class="container-replies">
+                                                            <a class="pink-text" data-toggle="collapse" href="#comentario-4" aria-expanded="false" aria-controls="comentario-4">4 Respuestas</a>
+                                                            <div class="collapse" id="comentario-4">
+                                                                <div class="replies">
+                                                                    <div class="mt-3 ml-4 reply-comment">
+                                                                        <blockquote class="blockquote">
+                                                                            <h6 class="font-weight-bold mb-2">OZerino <small class="text-muted pl-2"><i class="fa fa-clock-o"></i> 12 mins ago</small></h6>
+                                                                            <p class="grey-text darken-1 p-0 m-0">
+                                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                                            </p>
+                                                                        </blockquote>
+                                                                    </div>
+                                                                    <div class="mt-3 ml-4 reply-comment">
+                                                                        <blockquote class="blockquote">
+                                                                            <h6 class="font-weight-bold mb-2">OZerino <small class="text-muted pl-2"><i class="fa fa-clock-o"></i> 12 mins ago</small></h6>
+                                                                            <p class="grey-text darken-1 p-0 m-0">
+                                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                                            </p>
+                                                                        </blockquote>
+                                                                    </div>
+                                                                    <div class="mt-3 ml-4 reply-comment">
+                                                                        <blockquote class="blockquote">
+                                                                            <h6 class="font-weight-bold mb-2">OZerino <small class="text-muted pl-2"><i class="fa fa-clock-o"></i> 12 mins ago</small></h6>
+                                                                            <p class="grey-text darken-1 p-0 m-0">
+                                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                                            </p>
+                                                                        </blockquote>
+                                                                    </div>
+                                                                    <div class="mt-3 ml-4 reply-comment">
+                                                                        <blockquote class="blockquote">
+                                                                            <h6 class="font-weight-bold mb-2">OZerino <small class="text-muted pl-2"><i class="fa fa-clock-o"></i> 12 mins ago</small></h6>
+                                                                            <p class="grey-text darken-1 p-0 m-0">
+                                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                                            </p>
+                                                                        </blockquote>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group basic-textarea text-right">
+                                                                    <textarea class="form-control pl-2 my-0" id="exampleFormControlTextarea2" rows="3" placeholder="Escribe tu respuesta..."></textarea>
+                                                                    <a class="btn-floating btn-pink btn-sm waves-effect waves-light"><i class="fa fa-send" aria-hidden="true"></i></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="justify-content-between mb-3">
+                                                    <div class="comment-body white p-3 z-depth-1">
+                                                        <div class="header">
+                                                            <div class="user-acronym btn-floating btn-sm light-blue darken-4 waves-effect waves-light">
+                                                                <span>LV</span>
+                                                            </div>
+                                                            <strong class="primary-font">Leobardo Vargas</strong>
+                                                            <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
+                                                        </div>
+                                                        <hr class="w-100">
+                                                        <h6 class="font-weight-bold mb-2"><strong>Francis Butthurst Pope</strong></h6>
+                                                        <p class="mb-0">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                        </p>
+                                                        <div class="container-replies">
+                                                            <a class="pink-text" data-toggle="collapse" href="#comentario-5" aria-expanded="false" aria-controls="comentario-5">Responder</a>
+                                                            <div class="collapse" id="comentario-5">
+                                                                <div class="replies">
+                                                                    <div class="mt-3 ml-4 reply-comment">
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group basic-textarea text-right">
+                                                                    <textarea class="form-control pl-2 my-0" id="exampleFormControlTextarea2" rows="3" placeholder="Escribe tu respuesta..."></textarea>
+                                                                    <a class="btn-floating btn-pink btn-sm waves-effect waves-light"><i class="fa fa-send" aria-hidden="true"></i></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="comment">
+                                            <div class="form-group basic-textarea">
+                                                <textarea class="form-control pl-2 my-0" id="exampleFormControlTextarea2" rows="3" placeholder="Escribe tu comentario..."></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-pink btn-rounded btn-sm waves-effect waves-light float-right">Agregar Comentario</button>
+                                        </div>
+                                    </div>                                
+                                </div>           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Modal Ver mensajes -->
+            <!-- Modal Short Help -->
+            <div class="modal fade" id="modal-short-help" tabindex="-1" role="dialog" aria-labelledby="helpLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="helpLabel">Ayuda</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="instruction">
+                                            <h6 class="title font-weight-bold mb-3"><i class="far fa-comment pr-2"></i>Ver mensajes</h6>
+                                            <p>Disponible en todos los estados de esta pantalla para lectura de mensajes. La funcionalidad para crear nuevos mensajes esta disponible en los estados: "POR EMITIR"</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="instruction">
+                                            <h6 class="title font-weight-bold mb-3"><i class="far fa-file-alt pr-2"></i>Ver archivos</h6>
+                                            <p>Disponible en todos los estados de esta pantalla respetando las reglas de negocio siguientes: Los Agentes/Brokers sólo pueden eliminar archivos cargados por otro perfil de agente o por sí mismos y que el estado de la poliza sea “EMITIDA”</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Modal Short Help -->
+        </section>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/datatables.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="js/responsive.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/jszip.min.js"></script>
+        <script type="text/javascript" src="js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="js/buttons.print.min.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+        <script type="text/javascript">
+            $.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
+            $.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}}); 
+        </script>
+    </body>
+</html>
