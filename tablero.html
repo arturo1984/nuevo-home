@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Material Design Bootstrap</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="css/material-design/mdb.css" rel="stylesheet">
+        <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="site-wrapper">
+            <header></header>
+            <section>
+                <div class="section-heading">
+                    <div class="container-fluid">
+                        <h1 class="title text-left">Tablero de Control de Entregables</h1>
+                    </div>
+                </div>
+                <div class="section-nav-wrapper">
+                    <ul class="nav nav-tabs nav-justified light-blue darken-4" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#visuales" role="tab">Visuales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#maquetado" role="tab">Maquetado</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <!--Panel 1-->
+                    <div class="tab-pane fade in show active" id="visuales" role="tabpanel">
+                        <div class="table-wrapper">
+                            <table class="table data-table table-striped table-bordered" style="width:100%;">
+                                <thead>
+                                    <tr>
+                                        <th>Prioridad</i></th>
+                                        <th>Módulo</i></th>
+                                        <th>Archivo</i></th>
+                                        <th>Avance</i></th>
+                                        <th>Observaciones</i></th>
+                                        <th>Firmado</i></th>
+                                        <th class="all" data-orderable="false"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td>Home Tokio Marine</td>
+                                        <td>home.pdf</td>
+                                        <td>100%</td>
+                                        <td>Concluidas</td>
+                                        <td>Si</td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="home.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>02</td>
+                                        <td>Landing Portal de Agentes</td>
+                                        <td>landing_agentes.pdf</td>
+                                        <td>100%</td>
+                                        <td>Concluidas</td>
+                                        <td>Si</td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="landing_agentes.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td>Comunes</td>
+                                        <td>cambiar-contrasena.pdf</td>
+                                        <td>100%</td>
+                                        <td>Concluidas</td>
+                                        <td>Si</td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="cambiar-contrasena.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>04</td>
+                                        <td>Noticias</td>
+                                        <td>noticias.pdf</td>
+                                        <td>100%</td>
+                                        <td>Concluidas</td>
+                                        <td>Si</td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="noticias.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>05</td>
+                                        <td>Productos</td>
+                                        <td>productos.pdf</td>
+                                        <td>100%</td>
+                                        <td>Concluidas</td>
+                                        <td>No</td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="productos.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>06</td>
+                                        <td>Articulo 492</td>
+                                        <td>art_492_lavado.pdf</td>
+                                        <td>100%</td>
+                                        <td>Concluidas</td>
+                                        <td>No</td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="art_492_lavado.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>07</td>
+                                        <td>Cotizaciones</td>
+                                        <td>cotizacion.pdf</td>
+                                        <td>100%</td>
+                                        <td>En proceso</td>
+                                        <td>No</td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="cotizacion.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>08</td>
+                                        <td>Cotizador Empresarial</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="noticias.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>09</td>
+                                        <td>Cotizador Familiar</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="noticias.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Comisiones y Pagos</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="noticias.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td>11</td>
+                                        <td>Cotizador Manual</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="noticias.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td>12</td>
+                                        <td>Atención a Clientes</td>
+                                        <td>atencion-clientes.pdf</td>
+                                        <td>100%</td>
+                                        <td>Pendientes</td>
+                                        <td>No</td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="atencion-clientes.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td>13</td>
+                                        <td>Usuarios</td>
+                                        <td>usuarios.pdf</td>
+                                        <td>100%</td>
+                                        <td>Pendientes</td>
+                                        <td>No</td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="usuarios.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td>14</td>
+                                        <td>Analitica</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="noticias.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td>15</td>
+                                        <td>Siniestros</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="noticias.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td>16</td>
+                                        <td>Cobranza</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="actions-container dropleft">
+                                                <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="dropdown-menu animated fadeIn">
+                                                    <a class="dropdown-item" data-id="noticias.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver archivos</span></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr> 
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--Panel 2-->
+                    <div class="tab-pane fade" id="maquetado" role="tabpanel">
+                        <div class="table-wrapper">
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>            
+            <footer class="text-center text-md-left pt-4 mt-4 border-top border-info"></footer>
+            <!-- Modal Ver Home -->
+            <div class="modal fade" id="modal-archives" tabindex="-1" role="dialog" aria-labelledby="archivesLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="#archivesLabel">Archivos</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe src="http://globalquark.com.mx/proyectos/mockup-tokio-marine/images/logo/main_logo.png" style="width:100%; height:446px;" frameborder="0" id="#frameContent"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Modal Ver archivos -->
+        </section>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/datatables.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="js/responsive.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/jszip.min.js"></script>
+        <script type="text/javascript" src="js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="js/buttons.print.min.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+        <script type="text/javascript">
+            $.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
+            $.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}}); 
+        </script>
+        <script type="text/javascript">
+
+            $(document).on("click", ".dropdown-item", function () {
+                var pdfArchive = $(this).data('id');
+                var url = 'http://docs.google.com/gview?url=http://globalquark.com.mx/proyectos/mockup-tokio-marine/pdf/'+pdfArchive+'&embedded=true';
+                var titulo = $('.modal-header h5').text();
+                var frame = $('.modal-body iframe');
+                var location = frame.attr('src');
+                frame.attr('src', url);
+                //frame.parentNode.replaceChild(frame.cloneNode(), frame);
+                $('.modal-header h5').text(pdfArchive);
+
+                //$(".modal-body #frameContent").src('http://docs.google.com/gview?url=https://globalquark.com.mx/proyectos/mockup-tokio-marine/pdf/'+pdfArchive+'&embedded=true');
+                // As pointed out in comments, 
+                // it is superfluous to have to manually call the modal.
+            });
+        </script>
+    </body>
+</html>
