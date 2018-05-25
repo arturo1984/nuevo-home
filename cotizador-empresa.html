@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Cotizador Empresarial</title>
+        <link href="css/fontawesome/fontawesome-all.css" rel="stylesheet">
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="css/material-design/mdb.css" rel="stylesheet">
+        <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+		<link href="css/owl/owl.carousel.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">		
+    </head>
+<style>
+
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+	#tab-list .close {
+	    margin-left: 7px;
+	}
+	
+	#tab-list li{    border: 1px solid #ddd;
+    border-radius: 4px;}
+
+	.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border-bottom-color: transparent;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+.site-wrapper .nav-tabs {
+    border: 0;
+    padding: 0.7rem;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: -20px;
+    background-color: transparent;
+    z-index: 2;
+    position: relative;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.nav>li>a.active { text-decoration:underline;}
+
+.site-wrapper .tab-content {
+    border: 1px solid #ddd;
+    margin: -15px 12px;
+}
+
+.pull-right{ text-align:right}
+.pull-left{ text-align:left}
+
+.site-wrapper .accordion .card .card-header{width:1150px; background-color: lightgray;};
+.site-wrapper .accordion .card .card-body {width: 1150px;border: 1px solid #ddd};
+
+</style>
+
+<body>
+<section class="site-wrapper">
+        <header></header>
+			
+        <section id="landing-agentes">
+			<div class="section-heading">
+                    <div class="container-fluid">
+                        <h4 class="title text-left">Cotizador empresarial</h4>
+                    </div>				
+                </div>
+								
+				<div class="container-fluid">					
+					<div class="row">
+						<div class="col-md-12">
+
+							<!-- Stepers Wrapper -->
+							<ul class="stepper stepper-horizontal">
+
+								<!-- First Step -->
+								<li class="active">
+									<a href="#!" id="nx_paso1">
+										<span class="circle">1</span>
+										<span class="label">Paso Uno</span>
+									</a>
+								</li>
+
+								<!-- Second Step -->
+								<li class="warning">
+									<a href="#!" id="nx_paso2">
+										<span class="circle">2</span>
+										<span class="label">Paso Dos</span>
+									</a>
+								</li>
+
+								<!-- Third Step -->
+								<li class="warning">
+									<a href="#!" id="nx_paso3">
+										<span class="circle">3</span>
+										<span class="label">Paso tres</span>
+									</a>
+								</li>
+
+							</ul>
+							<!-- /.Stepers Wrapper -->
+
+						</div>
+					</div>					 	  
+				</div>	
+
+				<div class="container-fluid" id="paso1" style="padding:0 70px">
+					<form>
+						<h5>Datos del Contratante</h5><br/>
+						<div class="row">
+							<div class="col-md-12">					
+								<div class="form-inline">
+									<div class="form-check">
+										<input class="form-check-input" name="group20" type="radio" id="radio1_ce" checked="checked">
+										<label class="form-check-label" for="radio1_ce">Cliente Existente</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" name="group20" type="radio" id="radio2_cn">
+										<label class="form-check-label" for="radio2_cn">Cliente Nuevo</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						
+							
+						
+						<div class="row" id="data_cteext">
+								<div class="col-sm-3">
+									<div class="md-form form-group">
+										<input type="text" name="folioTMX" class="form-control">
+										<label for="folioTMX" >RFC del Contratante:</label>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="md-form form-group">
+										<input type="text" name="poliza" class="form-control">
+										<label for="poliza" >Nombre Completo:</label>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="md-form form-group">
+										<input type="text" name="folioTMX" class="form-control">
+										<label for="folioTMX" >Código Cliente:</label>
+									</div>
+								</div>							   
+						</div>
+						
+						<div class="row" id="data_ctenvo" style="display:none">
+						    <div class="col-sm-12">
+								<div class="row">
+									<div class="col-sm-8">
+										<div class="md-form form-group">
+											<input type="text" name="folioTMX" class="form-control">
+											<label for="folioTMX" >Nombre Complero:</label>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="md-form form-group">
+												<select name="estatus" class="mdb-select">
+													<option value="1">Moral</option>
+													<option value="2">Fisica</option>
+												</select>
+												<label for="estatus" >Tipo de perosna</label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+										<div class="md-form form-group">
+											<input type="text" name="folioTMX" class="form-control">
+											<label for="folioTMX" >RFC del Contratante:</label>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="md-form form-group">
+											<input type="text" name="folioTMX" class="form-control">
+											<label for="folioTMX" >Nombre del Contratante:</label>
+										</div>
+									</div>									
+									<div class="col-sm-3">
+										<div class="md-form form-group">
+												<select name="estatus" class="mdb-select">
+													<option value="1">S.A. de C.V.</option>
+													<option value="2">Otra</option>
+												</select>
+												<label for="estatus" >Denominacion</label>
+										</div>
+									</div>
+								</div>
+							</div>   
+						</div>
+						
+						
+						<br/><h5>Datos de la Cotización</h5><br/>
+						<div class="row">
+							<div class="col-md-12">					
+								<div class="form-inline right-side">
+									<div class="form-check">
+										<input class="form-check-input" name="group21" type="radio" id="radio3_cv" checked="checked">
+										<label class="form-check-label" for="radio3_cv">Cotizar con Vigencia</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" name="group21" type="radio" id="radio4_cv">
+										<label class="form-check-label" for="radio4_cv">Vigencia Anual a Partir de la Soliciutd de Emisión</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+								<div class="col-sm-3">
+									<div class="md-form form-group">
+                                            <select name="estatus" class="mdb-select">
+                                                <option value="1">Todos</option>
+                                                <option value="2">Nueva</option>
+                                                <option value="3">Existente</option>
+                                            </select>
+                                            <label for="estatus" >Tipo de Movimiento</label>
+                                    </div>
+								</div>
+								<div class="col-sm-3">
+									<div class="md-form form-group">
+                                            <select name="estatus" class="mdb-select">
+                                                <option value="1">USD</option>
+                                                <option value="2">MXN</option>
+                                                <option value="3">EUR</option>
+                                            </select>
+                                            <label for="estatus" >Moneda</label>
+                                    </div>
+								</div>
+								<div class="col-sm-6">
+									<div class="md-form form-group">
+                                            <label for="modoCotizacion" class="active">Desde</label>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input placeholder="Desde" type="text" id="creationDate" class="form-control datepicker">
+                                                </div>
+                                                <div class="col">
+                                                    <input placeholder="Hasta" type="text" id="creationDate" class="form-control datepicker">
+                                                </div>
+                                            </div>
+                                        </div>
+								</div>							   
+						</div>
+						
+						<div class="row">
+								<div class="col-sm-3">
+									<div class="md-form form-group">
+                                            <select name="estatus" class="mdb-select">
+                                                <option value="1">01 MARSH</option>
+                                                <option value="2">02 MARSH</option>
+                                                <option value="3">03 MARSH</option>
+                                            </select>
+                                            <label for="estatus" >Agentes</label>
+                                    </div>
+								</div>
+								
+								<div class="col-sm-3">
+									<div class="md-form form-group">
+                                            <select name="estatus" class="mdb-select">
+                                                <option value="1">Mensual</option>
+                                                <option value="2">Anual</option>
+                                                <option value="3">Semestral</option>
+                                            </select>
+                                            <label for="estatus" >Forma de Pago</label>
+                                    </div>
+								</div>
+								<div class="col-sm-3">
+									<div class="md-form form-group">
+                                            <select name="estatus" class="mdb-select">
+                                                <option value="1">Escuela</option>
+                                                <option value="2">Hospiatal</option>
+                                                <option value="3">Empresa</option>
+                                            </select>
+                                            <label for="estatus" >Giro</label>
+                                    </div>
+								</div>
+								<div class="col-sm-3">
+									<div class="md-form form-group">
+                                            <select name="estatus" class="mdb-select">
+                                                <option value="1">Pre-Escolar</option>
+                                                <option value="2">Primaria</option>
+                                                <option value="3">Secundaria</option>
+                                            </select>
+                                            <label for="estatus" >Sub Giro</label>
+                                    </div>
+								</div>
+						</div>
+						
+						<div class="row">
+						    <div class="col-sm-12" style="text-align:right">
+								<a class="btn btn-blue">Guardar</a>					
+								<a class="btn btn-pink" id="paso1_next">Continuar</a>
+							</div>
+                        </div>
+
+						
+					</form>					
+				</div>	<!-- paso 1-->
+				
+				
+				<!-- paso 2 -->
+				
+				<div class="container-fluid" id="paso2" style="display:none; padding:0 70px">					
+					<div class="row">
+						<div class="col-md-12">
+							<p style="float:right">
+								<button id="btn-add-tab" type="button" class="btn btn-primary pull-right">Agregar Ubicación</button>
+							</p>
+							<!-- Nav tabs -->
+							<ul id="tab-list" class="nav nav-tabs" role="tablist">
+								<li class="active"><a href="#tab1" role="tab" data-toggle="tab">Ubicación 1</a></li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-12">
+							<div id="tab-content" class="tab-content">
+								<div class="tab-pane fade in active" id="tab1">
+									<h6>Datos del Riesgo:</h6>
+									<div class="row">
+											<div class="col-sm-2">
+												<div class="md-form form-group">
+													<input type="text" name="folioTMX" class="form-control">
+													<label for="folioTMX" >Código Postal</label>
+												</div>
+											</div>
+											<div class="col-sm-4">
+												<div class="md-form form-group">
+													<input type="text" name="poliza" class="form-control">
+													<label for="poliza" >Calle</label>
+												</div>
+											</div>
+											<div class="col-sm-2">
+												<div class="md-form form-group">
+													<input type="text" name="folioTMX" class="form-control">
+													<label for="folioTMX" >Número</label>
+												</div>
+											</div>
+											<div class="col-sm-2">
+												<div class="md-form form-group">
+														<select name="estatus" class="mdb-select">
+															<option value="1">Colonia 1</option>
+															<option value="2">Colonia 2</option>
+															<option value="3">Colonia 3</option>
+														</select>
+														<label for="estatus" >Colonia</label>
+												</div>
+											</div>
+											<div class="col-sm-2">
+												<div class="md-form form-group">
+													<input type="text" name="folioTMX" class="form-control">
+													<label for="folioTMX" >Delagación/municipio:</label>
+												</div>
+											</div>										   
+									</div>
+									
+									<div class="row">
+											<div class="col-sm-2">
+												<div class="md-form form-group">
+													<input type="text" name="folioTMX" class="form-control">
+													<label for="folioTMX" >Estado:</label>
+												</div>
+											</div>
+											<div class="col-sm-2">
+												<div class="md-form form-group">
+														<select name="estatus" class="mdb-select">
+															<option value="1">Nivel 1</option>
+															<option value="2">Nivel 2</option>
+															<option value="3">Nivel 3</option>
+														</select>
+														<label for="estatus" >Niveles</label>
+												</div>
+											</div>
+											<div class="col-sm-2">
+												<div class="md-form form-group">
+													<input type="text" name="folioTMX" class="form-control">
+													<label for="folioTMX" >Valor del Inmueble</label>
+												</div>
+											</div>	
+
+											<div class="col-sm-6 pull-right">
+												<a class="btn btn-blue btn-sm" style="margin-top:30px">Generar propuesta autoatica</a>
+											</div>
+									</div>
+									
+									<br/><h6>Suma Asegurada por Cobertura:</h6>
+									<div class="row">
+										<div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+											<!-- Accordion card -->
+											<div class="card">
+
+												<!-- Card header -->
+												<div class="card-header" role="tab" id="headingOne">
+													<a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+														<h6 class="mb-0">
+															Sección del Incendio <i class="fa fa-angle-down rotate-icon"></i>
+														</h6>
+													</a>
+												</div>
+
+												<!-- Card body -->
+												<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordionEx">
+													<div class="card-body">
+														<div class="row">
+																<div class="col-sm-4">
+																	<p>Coberturas básicas:</p>
+																	<div class="md-form form-group">
+																		<input type="text" name="folioTMX" class="form-control">
+																		<label for="folioTMX" >S.A. Edificio</label>
+																	</div>
+																	<div class="md-form form-group">
+																		<input type="text" name="folioTMX" class="form-control">
+																		<label for="folioTMX" >S.A. Contenidos</label>
+																	</div>
+																</div>
+																<div class="col-sm-8">
+																<p>Coberturas Adicionales:</p>
+																	<div class="row">
+																		<div class="col-sm-6">
+
+																			<div class="form-check">
+																				<input type="checkbox" class="form-check-input" id="checkbox102" >
+																				<label for="checkbox102" class="form-check-label">¿Ampara Fenómenos hidrometereológicos?</label>
+																			</div>
+
+																			<div class="form-check">
+																				<input type="checkbox" class="form-check-input" id="checkbox103"  >
+																				<label for="checkbox103" class="form-check-label">¿Ampara Terremoto?</label>
+																			</div>
+
+																			<div class="form-check">
+																				<input type="checkbox" class="form-check-input" id="checkbox104"  >
+																				<label for="checkbox104" class="form-check-label">¿Bienes en Incubadora?</label>
+																			</div>
+																			
+																			<div class="md-form form-group">
+																				<input type="text" name="SaBienInc" class="form-control">
+																				<label for="SaBienInc" >S.A. Bienes en Incubadora</label>
+																			</div>
+																		</div>
+																		<div class="col-sm-6">
+																			<div class="form-check">
+																				<input type="checkbox" class="form-check-input" id="checkbox105" >
+																				<label for="checkbox105" class="form-check-label">¿Bienes en refrigeración?</label>
+																			</div>
+																			<div class="md-form form-group">
+																				<input type="text" name="SaBienref" class="form-control">
+																				<label for="SaBienref" >S.A. Bienes en Refrigeración</label>
+																			</div>
+																		
+																		</div>
+																	</div>	
+																</div>
+																
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- Accordion card -->
+
+											<!-- Accordion card -->
+											<div class="card">
+
+												<!-- Card header -->
+												<div class="card-header" role="tab" id="headingTwo">
+													<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+														<h6 class="mb-0">
+															Perdidad Consecuenciales <i class="fa fa-angle-down rotate-icon"></i>
+														</h6>
+													</a>
+												</div>
+
+												<!-- Card body -->
+												<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordionEx">
+													<div class="card-body">
+														Perdidad Consecuenciales
+													</div>
+												</div>
+											</div>
+											<!-- Accordion card -->
+											
+											<!-- Accordion card -->
+											<div class="card">
+
+												<!-- Card header -->
+												<div class="card-header" role="tab" id="headingThree">
+													<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+														<h6 class="mb-0">
+															Responsabilidad Civil <i class="fa fa-angle-down rotate-icon"></i>
+														</h6>
+													</a>
+												</div>
+
+												<!-- Card body -->
+												<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordionEx">
+													<div class="card-body">
+														Responsabilidad Civil
+													</div>
+												</div>
+											</div>
+											<!-- Accordion card -->
+											
+											
+											<!-- Accordion card -->
+											<div class="card">
+
+												<!-- Card header -->
+												<div class="card-header" role="tab" id="headingFour">
+													<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+														<h6 class="mb-0">
+															Diversos Micelaneos <i class="fa fa-angle-down rotate-icon"></i>
+														</h6>
+													</a>
+												</div>
+
+												<!-- Card body -->
+												<div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordionEx">
+													<div class="card-body">
+														Diversos Micelaneos
+													</div>
+												</div>
+											</div>
+											<!-- Accordion card -->
+											
+											<!-- Accordion card -->
+											<div class="card">
+
+												<!-- Card header -->
+												<div class="card-header" role="tab" id="headingFive">
+													<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
+														<h6 class="mb-0">
+															Diversos Técnicos <i class="fa fa-angle-down rotate-icon"></i>
+														</h6>
+													</a>
+												</div>
+
+												<!-- Card body -->
+												<div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#accordionEx">
+													<div class="card-body">
+														Diversos Técnicos
+													</div>
+												</div>
+											</div>
+											<!-- Accordion card -->
+											
+										</div>												
+									</div>
+		
+								</div>
+							</div> <!-- End Tab Content -->
+
+
+
+							
+						</div>
+					</div>
+								
+				</div>	
+				
+								
+				
+				<!-- paos 3 -->
+				
+				<div class="container-fluid" id="paso3" style="display:none">					
+					<div class="row">
+						<div class="col-md-12">
+						Paso 3
+						</div>
+					</div>
+				</div>	
+                
+		</section>
+		
+		
+		<section id="box-form-login"></section>		
+	    <section id="box-form-passw"></section>
+			
+                       
+		<footer class="text-center text-md-left pt-4 mt-4 border-top border-info"></footer>
+                                         
+</section>
+
+
+		 
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>				
+<script type="text/javascript" src="js/datatables.min.js"></script>
+<script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="js/responsive.bootstrap4.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="js/mdb.min.js"></script>	
+<script type="text/javascript" src="js/owl.carousel.js"></script>
+	<script type="text/javascript">
+		$.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
+		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
+		$("#box-form-passw").load("form-rec-pass.html");	
+		new WOW().init();
+		
+		$("#nx_paso1").click(function(){
+		   $("#paso2,#paso3").hide();
+		   $("#paso1").show();
+		});
+		 $("#nx_paso2,#paso1_next").click(function(){
+		   $("#paso1,#paso3").hide();
+		   $( this ).parent().removeClass("warning");
+		   $( this ).parent().addClass("active");
+		   $("#paso2").show();
+		});
+		 $("#nx_paso3").click(function(){
+		   $("#paso1,#paso2").hide();
+		   $("#paso3").show();
+		});
+
+		//$("#radio2_cn").onch
+		
+		$('input[type="radio"]').click(function(){
+			if ($(this).is(':checked') && $(this).attr('id')=="radio2_cn")
+			{
+				$("#data_ctenvo").show();
+				$("#data_cteext").hide();
+				
+			}
+		 });
+		 
+		 $('input[type="radio"]').click(function(){
+			if ($(this).is(':checked') && $(this).attr('id')=="radio1_ce")
+			{
+				$("#data_ctenvo").hide();
+				$("#data_cteext").show();
+				
+			}
+		 });
+		
+		
+		var button='<button class="close" type="button" title="Remove this page">×</button>';
+		var tabID = 1;
+			function resetTab(){
+			var tabs=$("#tab-list li:not(:first)");
+			var len=1
+			$(tabs).each(function(k,v){
+				len++;
+				$(this).find('a').html('Ubicacion ' + len + button);
+			})
+			tabID--;
+		}
+
+		$(document).ready(function() {
+		    $("#tab1").addClass("show");
+			$('#btn-add-tab').click(function() {
+				tabID++;
+				if(tabID < 6){
+				
+					$('#tab-list').append($('<li><a href="#tab' + tabID + '" role="tab" data-toggle="tab">Ubicacion ' + tabID + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
+					$('#tab-content').append($('<div class="tab-pane fade" id="tab' + tabID + '">Ubicación ' + tabID + ' content</div>'));
+				}
+				else
+				{alert("No se pudeden agragar más ubicaciones")}
+			});
+			$('#tab-list').on('click', '.close', function() {
+				var tabID = $(this).parents('a').attr('href');
+				$(this).parents('li').remove();
+				$(tabID).remove();
+
+				//display first tab
+				var tabFirst = $('#tab-list a:first');
+				resetTab();
+				tabFirst.tab('show');
+			});
+
+			var list = document.getElementById("tab-list");
+		});
+		
+	</script>	
+    </body>
+</html>
