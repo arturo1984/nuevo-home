@@ -59,7 +59,7 @@ $(document).ready(function(){
           },
       },
       "lengthMenu": [[5,10,15], [5,10,15]],
-      "order": [[ 1, "asc" ]],
+      "order": [[ 0, "asc" ]],
     "pageLength": 10,
       searching: false,
       paging: false
