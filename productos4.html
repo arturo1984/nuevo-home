@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Material Design Bootstrap</title>
-        <link href="css/fontawesome/fontawesome-all.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/fontawesome/fontawesome-all.css">
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="css/material-design/mdb.css" rel="stylesheet">
         <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -31,10 +31,10 @@
             font-weight: bold;
             color: #01579b;
         }
-        #pdf-files{ margin-top:40px;}
-
-		.fa{font-size: 4rem; cursor:pointer;
-		}
+        #pdf-files{ margin-top:40px;}	
+        
+        .fa.sidebar-icon{font-size: 2rem; cursor:pointer;}
+        
 		.pdf-icon{text-align: center;}
 
 		.pdf-name{
@@ -62,6 +62,17 @@
         }
         .bt_azul{
             background-color: #008ad3;
+        }
+        
+        .tope-text{            
+            display: block;
+            display: -webkit-box;
+            font-size: 20px;
+            line-height: 1.4;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 	
     </style>
@@ -153,7 +164,45 @@
         </div>
         
         
+        
+        
+        <div class="col-12 col-sm-6 col-md-3 card mt-5">
+            
+            <div class="row mt-3">
+                <h3 class="h3-responsive text-right ml-3">Formatos:</h3>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-2 mt-2"><i class="fa sidebar-icon fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i></div>
+                <div class="col-10">Formato de Ventas <br> (PDF - 1.4 MB)</div>            
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-2 mt-2"><i class="fa sidebar-icon fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i></div>
+                <div class="col-10">Formato 2 <br> (PDF - 1.4 MB)</div>            
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-2 mt-2"><i class="fa sidebar-icon fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i></div>
+                <div class="col-10">Formato de Solicitud <br> (PDF - 1.4 MB)</div>            
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-2 mt-2"><i class="fa sidebar-icon fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i></div>
+                <div class="col-10">Descargar archivo <br> (PDF - 1.4 MB)</div>            
+            </div>
+
+        </div>
+            
+        
+        
+        
+        
+        
+        
         <div class="col-12 col-sm-6 col-md-3">
+            
+            
 
             <p>Tokio Marine, cuenta con corredores de seguros especialista para cubrir sus necesidad.</p>            
             <p>Obtener un a Cotización 01-800-2286-546</p>            
@@ -207,7 +256,7 @@
                   </div>
                   <div class="card-body">                            
                     <h4 class="card-title">Gastos Médicos</h4>
-                    <p class="card-text">Los inmuebles comerciales u ocinas, son una de las formas más eciente de reunir infra-estructura, servicios, seguridad, comodidad y calidad en una sola ubicación, beneciando a más de una empresa simultáneamente. Con la concentración de estos, la exposiciones a riegos frecuentes y catastrócos es mayor, por lo que nuestra experiencia en este tipo de circunstancias esta consolidada desde de nuestra casa Matriz – Tokio Marine & Nichido Fire.</p>                            
+                    <p class="card-text tope-text">Los inmuebles comerciales u ocinas, son una de las formas más eciente de reunir infra-estructura, servicios, seguridad, comodidad y calidad en una sola ubicación, beneciando a más de una empresa simultáneamente. Con la concentración de estos, la exposiciones a riegos frecuentes y catastrócos es mayor, por lo que nuestra experiencia en este tipo de circunstancias esta consolidada desde de nuestra casa Matriz – Tokio Marine & Nichido Fire.</p>                            
                     <div class="row">
                         <div class="col-md-12 mb-1"><a href="" class="btn bt_azul btn-sm btn-block animate-icon">Ver productos Personales</a></div>
                     </div>                            
@@ -224,7 +273,7 @@
                   </div>
                   <div class="card-body">                            
                     <h4 class="card-title">Accidentes Personales</h4>
-                    <p class="card-text">Cuando se trata de salud, no se limitan los esfuerzos para mantenerse en forma y saludable. Las personas dedican horas de sus días para practicar actividades físicas en diversas modalidades, como natación, tenis, golf, yoga e inúmeras actividades son realizadas en Centros Deportivos, Gimnasios y otros. Con una visión mas allá del tema Seguros, TMX ofrece una protección que contempla riesgos Materiales y de Responsabilidad que amparan a sus clientes en diversos riegos inherente a sus actividades.</p>                            
+                    <p class="card-text tope-text">Cuando se trata de salud, no se limitan los esfuerzos para mantenerse en forma y saludable. Las personas dedican horas de sus días para practicar actividades físicas en diversas modalidades, como natación, tenis, golf, yoga e inúmeras actividades son realizadas en Centros Deportivos, Gimnasios y otros. Con una visión mas allá del tema Seguros, TMX ofrece una protección que contempla riesgos Materiales y de Responsabilidad que amparan a sus clientes en diversos riegos inherente a sus actividades.</p>                            
                     <div class="row">
                         <div class="col-md-12 mb-1"><a href="" class="btn bt_azul btn-sm btn-block animate-icon">Ver productos Personales</a></div>
                     </div>                            
@@ -241,7 +290,7 @@
                   </div>
                   <div class="card-body">                            
                     <h4 class="card-title">Autos</h4>
-                    <p class="card-text">No existe momento más agradable en la vida que disfrutar a la familia o amigos durante una comida, o muchas veces unir lo útil con lo agradable, como cerrar un negocio durante un rico desayuno, y no olvidemos de las cenas, que son muchas veces verdaderas estas para la celebración de diversos tipos eventos sociales. Con esta visión de negocio, TMX ofrece para los Restaurantes o Cadenas de franquicias, productos y servicios que protegen a sus clientes y hacen viable la seguridad para la continuidad de sus actividades diarias.</p>                            
+                    <p class="card-text tope-text">No existe momento más agradable en la vida que disfrutar a la familia o amigos durante una comida, o muchas veces unir lo útil con lo agradable, como cerrar un negocio durante un rico desayuno, y no olvidemos de las cenas, que son muchas veces verdaderas estas para la celebración de diversos tipos eventos sociales. Con esta visión de negocio, TMX ofrece para los Restaurantes o Cadenas de franquicias, productos y servicios que protegen a sus clientes y hacen viable la seguridad para la continuidad de sus actividades diarias.</p>                            
                     <div class="row">
                         <div class="col-md-12 mb-1"><a href="" class="btn bt_azul btn-sm btn-block animate-icon">Ver productos Personales</a></div>
                     </div>                            

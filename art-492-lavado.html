@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Material Design Bootstrap</title>
-        <link href="css/fontawesome/fontawesome-all.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/fontawesome/fontawesome-all.css">
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="css/material-design/mdb.css" rel="stylesheet">
         <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -46,7 +46,7 @@
         }
         #pdf-files{ margin-top:40px;}
 
-		.fa{font-size: 4rem; cursor:pointer;
+		.fa.sidebar-icon{font-size: 2rem; cursor:pointer;
 		}
 		.pdf-icon{text-align: center;}
 
@@ -57,6 +57,9 @@
 			font-weight: 300;
 		}
 		.modal-content{width:540px;}
+        .banner-header{
+            max-height: 300px;
+        }
 	
     </style>
     
@@ -72,7 +75,7 @@
     <div class="row justify-content-md-center">
         
         <div class="col-12 mt-5">
-            <div class="view overlay mt-4">
+            <div class="banner-header view overlay mt-4">
                 <img class="card-img-top" src="images/art-142-lavado/prevencion-de-lavado-de-dinero-c.jpg" alt="Sample image">
                 <div class="carousel-caption">
                     <h3 class="h3-responsive text-left"><strong>Artículo 492.</strong></h3>
@@ -80,82 +83,81 @@
                 <div class="col-12 gradiente_negro"></div>
             </div>            
         </div>
-        
-        <div class="col-md-10 mt-5">
             
+        <div class="col-12 col-sm-6 col-md-9 mt-5">
             <h3 class="footer-title">Prevención de lavado de dinero.</h3>
 
             <p>El pasado 19 de julio de 2012 fueron expedidas las disposiciones de carácter general a que se refiere el Artículo 140 de la Ley General de Instituciones y Sociedades Mitualistas
-de Seguros, actualmente artículo 492 de la Ley de Instituciones de Seguros y de Fianzas (seguirían aplicándose las disposiciones de carácter general a que se
-refiere el artículo 140 de la Ley General de Instituciones y Sociedades Mitualistas de Seguros, hasta en tanto la autoridad emita las nuevas disposiciones relativas al
-artículo 492 de la nueva Ley.), con el propósito de establecer medidas y procedimientos para prevenir y detectar actos, omisiones u operaciones que pudieran favorecer,
-prestar ayuda, auxilio o cooperación de cualquier especie a los delitos u operaciones que pudiesen ubicarse en alguno de los supuestos previstos en los artículos 139,
-148 Bis del Código Penal Federal (Lavad de Dinero y Financiamiento al Terrorismo).</p>
+de Seguros, actualmente artículo 492 de la Ley de Instituciones de Seguros y de Fianzas (seguirían aplicándose las disposiciones de carácter general a que se refiere el artículo 140 de la Ley General de Instituciones y Sociedades Mitualistas de Seguros, hasta en tanto la autoridad emita las nuevas disposiciones relativas al artículo 492 de la nueva Ley.), con el propósito de establecer medidas y procedimientos para prevenir y detectar actos, omisiones u operaciones que pudieran favorecer, prestar ayuda, auxilio o cooperación de cualquier especie a los delitos u operaciones que pudiesen ubicarse en alguno de los supuestos previstos en los artículos 139, 148 Bis del Código Penal Federal (Lavad de Dinero y Financiamiento al Terrorismo).</p>
 
             <p>Entre las principales oblogaciones de TMX previstas en las Disposiciones, se encuentra identificar a los clientes, recabando datos y documentos completos y legibles
 antes de celebrar cualquier contrato a más tardar antes de que cumplan los supuestos previstos por la ley.</p>
 
             <p>Por lo anterior, estas Disposiciones son de observancia obligatoria para clientes, agentes de seguros y en general para todos los colaboradores de Tokio Marine Compañía
-de Seguros.</p>
+de Seguros.</p>            
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3 card mt-5">
             
-        </div>
+            <div class="row mt-3">
+                <h3 class="h3-responsive text-right ml-3">Formatos:</h3>
+            </div>
+            
+            <div class="row mt-3">
+                <div class="col-2 mt-2"><i class="fa sidebar-icon fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i></div>
+                <div class="col-10">Formato de Ventas <br> (PDF - 1.4 MB)</div>            
+            </div>
+            
+            <div class="row mt-3">
+                <div class="col-2 mt-2"><i class="fa sidebar-icon fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i></div>
+                <div class="col-10">Formato 2 <br> (PDF - 1.4 MB)</div>            
+            </div>
+            
+            <div class="row mt-3">
+                <div class="col-2 mt-2"><i class="fa sidebar-icon fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i></div>
+                <div class="col-10">Formato de Solicitud <br> (PDF - 1.4 MB)</div>            
+            </div>
+            
+            <div class="row mt-3">
+                <div class="col-2 mt-2"><i class="fa sidebar-icon fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i></div>
+                <div class="col-10">Descargar archivo <br> (PDF - 1.4 MB)</div>            
+            </div>
+            
+        </div>        
         
-        <div class="row justify-content-md-center wow fadeIn" data-wow-delay="0.3s">
-            <div class="col-md-1"></div>
-            <div class="col-md-2 pdf-icon"> <i class="fa fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i>
-                <p class="pdf-name">Políticas para la Identificaciónación y Conocimiento del cliente.
-                    <br/>(PDF - 1.4 MB)</p>
-            </div>
-            <div class="col-md-2 pdf-icon"> <i class="fa fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i>
-                <p class="pdf-name">Formato de Identificaciónación del cliente.
-                    <br/>(PDF - 1.4 MB)</p>
-            </div>
-            <div class="col-md-2 pdf-icon"> <i class="fa fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i>
-                <p class="pdf-name">Declaración del cliente y conformación del cotejo.
-                    <br/>(PDF - 1 MB)</p>
-            </div>
-            <div class="col-md-2 pdf-icon"> <i class="fa fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i>
-                <p class="pdf-name">Perfil del cliente.
-                    <br/>(PDF - 1. MB)</p>
-            </div>
-            <div class="col-md-2 pdf-icon"> <i class="fa fa-file-pdf-o" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i>
-                <p class="pdf-name">Formato de Identificaciónación del cliente.
-                    <br/>(PDF - 1.4 MB)</p>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
-		
+        
+        
 		
 		<div class="modal fade" id="centralModalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				  <div class="modal-dialog modal-notify modal-info" role="document">
-					  <!--Content-->
-					  <div class="modal-content">
-						  <!--Header-->
-						  <div class="modal-header">
-							  <p class="heading lead">Document Info</p>
-				  
-							  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								  <span aria-hidden="true" class="white-text">&times;</span>
-							  </button>
-						  </div>
-				  
-						  <!--Body-->
-						  <div class="modal-body">
-							  <div class="text-center">
-								 <object data="files/cfd.pdf" type="application/pdf" width="500px" height="300px" internalinstanceid="43">
-									If you are unable to view file, you can download from
-									<a href="files/cfd.pdf">here</a> or download <a target="_blank" href="http://get.adobe.com/reader/">Adobe PDF Reader</a> to view the file.
-								 </object>
-							  </div>
-						  </div>
-				  
-						  <!--Footer-->
-						  <div class="modal-footer justify-content-center">
-							  <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cerrar</a>
-						  </div>
-					  </div>
-					  <!--/.Content-->
-				  </div>
+            <div class="modal-dialog modal-notify modal-info" role="document">
+              <!--Content-->
+              <div class="modal-content">
+                  <!--Header-->
+                  <div class="modal-header">
+                      <p class="heading lead">Document Info</p>
+
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true" class="white-text">&times;</span>
+                      </button>
+                  </div>
+
+                  <!--Body-->
+                  <div class="modal-body">
+                      <div class="text-center">
+                         <object data="files/cfd.pdf" type="application/pdf" width="500px" height="300px" internalinstanceid="43">
+                            If you are unable to view file, you can download from
+                            <a href="files/cfd.pdf">here</a> or download <a target="_blank" href="http://get.adobe.com/reader/">Adobe PDF Reader</a> to view the file.
+                         </object>
+                      </div>
+                  </div>
+
+                  <!--Footer-->
+                  <div class="modal-footer justify-content-center">
+                      <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cerrar</a>
+                  </div>
+              </div>
+              <!--/.Content-->
+            </div>
 		</div>
 		
 		
@@ -205,3 +207,5 @@ de Seguros.</p>
 		</script>
     </body>
 </html>
+
+

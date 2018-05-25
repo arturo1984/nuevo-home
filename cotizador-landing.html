@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Material Design Bootstrap</title>
+        <link rel="stylesheet" href="css/fontawesome/fontawesome-all.css">
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="css/material-design/mdb.css" rel="stylesheet">
+        <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/owl/owl.carousel.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+
+    
+    <style>
+        .icono-sec-not{
+            max-width: 40px;
+            margin-right: 10px;
+        }
+        
+        .site-wrapper .footer-title{
+            color: #01579b;
+        }
+        
+        .ident_verde{
+            color: #459929 !important;
+        }
+        .ident_naranja{
+            color: #cc7219 !important;
+        }
+        .ident_ambar{
+            color: #cfa116 !important;
+        }
+        
+        @media only screen and (max-width: 760px) {
+            .site-wrapper .carousel-caption{
+                    position: absolute;
+                    top: 20%;
+                    right: 0;
+                    padding: 30px 5px 5px;
+                    min-width: 230px;
+                    opacity: .8;
+                }
+            .site-wrapper .carousel-caption h3{
+                    font-size: .8rem;
+                } 
+        }
+	
+    </style>
+    
+    <body>
+        <section class="site-wrapper">
+            <header></header>			
+    
+    <section id="">        
+        <div class="container">            
+            <div class="row masonry-container"> 
+                
+                <div class="col-12 masonry-item wow fadeInUp animation-delay-2 text-center mb-4">
+                    <h1 class="font-weight-bold center-block mt-4 mb-4 animated zoomInDown animation-delay-5 footer-title">Solicita una cotización</h1>
+                    <p class="text-center center-block mt-2 animated fadeInUp animation-delay-7">Para nosotros es importante que su seguridad y brindarle un mejor servicio con las mejores herramientas a su disposicion.</p>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 masonry-item">
+                    
+                    <div class="card card-image mb-3" style="background-image: url(images/cotizadores/landing-familiar.jpg);">                        
+                        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                            <div>
+                                
+                                <h3 class="card-title pt-2"><strong>Cotizar Paquete Familiar</strong></h3>
+                                <p>Breve descripcion de los servicios del paquete familiar</p>
+                                <a class="btn btn-pink waves-light"><i class="fa fa-clone left"></i> Entrar al cotizador</a>
+                            </div>
+                        </div>                       
+                    </div>
+                    
+                </div>
+                
+                
+                <div class="col-lg-4 col-md-6 masonry-item">
+                    
+                    <div class="card card-image mb-3" style="background-image: url(images/cotizadores/landing-empresarial.jpg);">
+                        <div class="text-white text-center d-flex align-items-center rgba-indigo-strong py-5 px-4">
+                            <div>
+                                
+                                <h3 class="card-title pt-2"><strong>Paquete Empresarial<br><br></strong></h3>
+                                <p>Breve descripcion de los servicios del Paquete Empresarial</p>
+                                <a class="btn btn-deep-orange waves-light"><i class="fa fa-clone left"></i> Entrar al cotizador</a>
+                            </div>
+                        </div>                       
+                    </div>
+                 
+                </div>
+                
+                
+                <div class="col-lg-4 col-md-6 masonry-item">
+                    
+                    <div class="card card-image mb-3" style="background-image: url(images/cotizadores/landing-tmx.jpg);">                        
+                        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                            <div>
+                                
+                                <h3 class="card-title pt-2"><strong>Pedir Cotización a TMX <br><br></strong></h3>
+                                <p>Breve descripcion de los servicios del Pedir Cotización a TMX</p>
+                                <a class="btn btn-pink waves-light"><i class="fa fa-clone left"></i> Entrar al cotizador</a>
+                            </div>
+                        </div>                       
+                    </div>
+                    
+                </div>
+                
+            </div>            
+        </div>                
+    </section>
+            
+                        
+			<footer class="text-center text-md-left pt-4 mt-4 border-top border-info"></footer>
+                                         
+        </section>		 
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>				
+        <script type="text/javascript" src="js/datatables.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="js/responsive.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/custom.js"></script>
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <script type="text/javascript" src="js/owl.carousel.js"></script>
+		<script type="text/javascript">
+		$.ajax({url: "header-publico.html", context: document.body,success: function(response) {$("header").html(response);}});
+		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
+        new WOW().init();
+            
+        $('.carousel').carousel({
+            interval: 1000000,
+            pause:"true",
+        });
+            
+            
+        $('.owl-carousel').owlCarousel({
+            loop:false,
+            center: true,
+            margin:0,
+            nav:true,
+            autoWidth:true,            
+        })
+  
+		</script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
