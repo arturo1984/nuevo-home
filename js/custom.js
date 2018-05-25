@@ -34,7 +34,7 @@ $(document).ready(function(){
           },
       },
       lengthMenu: [[5,10,15], [5,10,15]],
-      order: [[ 1, "asc" ]],
+      order: [[ 0, "asc" ]],
     pageLength: 10,
   });
   modalTable = $('.simple-data-table').DataTable({
@@ -59,7 +59,7 @@ $(document).ready(function(){
           },
       },
       "lengthMenu": [[5,10,15], [5,10,15]],
-      "order": [[ 0, "asc" ]],
+      "order": [[ 1, "asc" ]],
     "pageLength": 10,
       searching: false,
       paging: false
