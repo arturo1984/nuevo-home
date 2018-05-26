@@ -54,7 +54,7 @@
     padding: 0.7rem;
     margin-left: 0px;
     margin-right: 0px;
-    margin-bottom: -20px;
+    margin-bottom: 5px;
     background-color: transparent;
     z-index: 2;
     position: relative;
@@ -329,7 +329,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<p style="float:right">
-								<button id="btn-add-tab" type="button" class="btn btn-primary pull-right">Agregar Ubicación</button>
+								<button id="btn-add-tab" type="button" class="btn btn-sm btn-primary pull-right">Agregar Ubicación</button>
 							</p>
 							<!-- Nav tabs -->
 							<ul id="tab-list" class="nav nav-tabs" role="tablist">
@@ -966,28 +966,48 @@
 					$("#tol_table").html("56000")
 					break;
 				case "save_tot_2":
-					$("#tot_headingOne_2").html("Prima Neta Calculada: $1000");
-					$("#tabla_total>thead>tr").append("<th>"+tabID+"</th>");
-					$("#tabla_total>tbody>tr").append("<td>100000</td>");
-					$("#tol_table").html("860003");
+					if( $('#index_2').length ){
+						$("#tol_table").html("860003");// Calcula UB 2
+					}
+					else{ 
+						$("#tot_headingOne_2").html("Prima Neta Calculada: $1000");
+						$("#tol_table").html("860003");// Re-Calcula UB 2
+						$("#tabla_total>thead>tr").append("<th id='index_2'>"+tabID+"</th>");
+						$("#tabla_total>tbody>tr").append("<td>100000</td>");
+					}					
 					break;
 				case "save_tot_3":
-					$("#tot_headingOne_3").html("Prima Neta Calculada: $2000");
-					$("#tabla_total>thead>tr").append("<th>"+tabID+"</th>");
-					$("#tabla_total>tbody>tr").append("<td>100000</td>");
-					$("#tol_table").html("860003");
+					if( $('#index_3').length ){
+						$("#tol_table").html("960003");// Calcula UB 3
+					}
+					else{ 
+						$("#tot_headingOne_3").html("Prima Neta Calculada: $3000");
+						$("#tol_table").html("960003");// Re-Calcula UB 3
+						$("#tabla_total>thead>tr").append("<th id='index_3'>"+tabID+"</th>");
+						$("#tabla_total>tbody>tr").append("<td>100000</td>");
+					}					
 					break;
 				case "save_tot_4":
-					$("#tot_headingOne_4").html("Prima Neta Calculada: $3000");
-					$("#tabla_total>thead>tr").append("<th>"+tabID+"</th>");
-					$("#tabla_total>tbody>tr").append("<td>100000</td>");
-					$("#tol_table").html("860003");
+					if( $('#index_4').length ){
+						$("#tol_table").html("1060003");// Calcula UB 3
+					}
+					else{ 
+						$("#tot_headingOne_4").html("Prima Neta Calculada: $2000");
+						$("#tol_table").html("1060003");// Re-Calcula UB 3
+						$("#tabla_total>thead>tr").append("<th id='index_4'>"+tabID+"</th>");
+						$("#tabla_total>tbody>tr").append("<td>100000</td>");
+					}		
 					break;
 				case "save_tot_5":
-					$("#tot_headingOne_5").html("Prima Neta Calculada: $4000");
-					$("#tabla_total>thead>tr").append("<th>"+tabID+"</th>");
-					$("#tabla_total>tbody>tr").append("<td>100000</td>");
-					$("#tol_table").html("860003");
+					if( $('#index_5').length ){
+						$("#tol_table").html("1160003");// Calcula UB 3
+					}
+					else{ 
+						$("#tot_headingOne_5").html("Prima Neta Calculada: $12000");
+						$("#tol_table").html("1160003");// Re-Calcula UB 3
+						$("#tabla_total>thead>tr").append("<th id='index_5'>"+tabID+"</th>");
+						$("#tabla_total>tbody>tr").append("<td>100000</td>");
+					}	
 					break;
 				default:
 					console.log("Nan")
