@@ -1,0 +1,113 @@
+	<h6 id="tit_tab">Datos del Riesgo:</h6>
+	<div class="row">
+			<div class="col-sm-2">
+				<div class="md-form form-group">
+					<input type="text" name="folioTMX" class="form-control">
+					<label for="folioTMX" >Código Postal</label>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="md-form form-group">
+					<input type="text" name="poliza" class="form-control">
+					<label for="poliza" >Calle</label>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="md-form form-group">
+					<input type="text" name="folioTMX" class="form-control">
+					<label for="folioTMX" >Número</label>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="md-form form-group">
+						<select name="estatus" class="mdb-select">
+							<option value="1">Colonia 1</option>
+							<option value="2">Colonia 2</option>
+							<option value="3">Colonia 3</option>
+						</select>
+						<label for="estatus" >Colonia</label>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="md-form form-group">
+					<input type="text" name="folioTMX" class="form-control">
+					<label for="folioTMX" >Delagación/municipio:</label>
+				</div>
+			</div>										   
+	</div>
+	
+	<div class="row">
+			<div class="col-sm-2">
+				<div class="md-form form-group">
+					<input type="text" name="folioTMX" class="form-control">
+					<label for="folioTMX" >Estado:</label>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="md-form form-group">
+						<select name="estatus" class="mdb-select">
+							<option value="1">Nivel 1</option>
+							<option value="2">Nivel 2</option>
+							<option value="3">Nivel 3</option>
+						</select>
+						<label for="estatus" >Niveles</label>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="md-form form-group">
+					<input type="text" name="folioTMX" class="form-control">
+					<label for="folioTMX" >Valor del Inmueble</label>
+				</div>
+			</div>	
+
+			<div class="col-sm-6 pull-right">
+				<a class="btn btn-blue btn-sm" style="margin-top:30px">Generar propuesta autoatica</a>
+			</div>
+	</div>
+	
+	<br/><h6>Suma Asegurada por Cobertura:</h6>
+	<div class="row">
+		<div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+			<!-- Accordion card -->
+			<div class="card">
+
+				<!-- Card header -->
+				<div class="card-header" role="tab" id="headingOne">
+					<a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne" aria-expanded="true" id="anc_accord">
+						<h6 class="mb-0">
+							Sección del Incendio <span id="tot_headingOne" class="tot_heading"> </span><i class="fa fa-angle-down rotate-icon"></i>
+						</h6>
+					</a>
+				</div>
+
+				<!-- Card body -->
+				<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordionEx">
+					<div class="card-body">
+						<div class="row">
+								<div class="col-sm-4">
+									<p>Coberturas básicas:</p>
+									<div class="md-form form-group">
+										<input type="text" name="folioTMX" class="form-control">
+										<label for="folioTMX" >S.A. Edificio</label>
+									</div>
+									<div class="md-form form-group">
+										<input type="text" name="folioTMX" class="form-control">
+										<label for="folioTMX" >S.A. Contenidos</label>
+									</div>
+								</div>
+								<div class="col-sm-8">									
+								</div>								
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Accordion card -->			
+		</div>												
+	</div>	
+	<div class="row">
+		<div class="col-sm-10"></div>
+		<div class="col-sm-2">
+			<a class="btn btn-sm btn-outline-info" href="#" onclick="sum_pol(this.id)" id="save_tot">Guardar</a>	
+		</div>
+	</div>

@@ -72,9 +72,10 @@
 .pull-right{ text-align:right}
 .pull-left{ text-align:left}
 
-.site-wrapper .accordion .card .card-header{width:1150px; background-color: lightgray;};
-.site-wrapper .accordion .card .card-body {width: 1150px;border: 1px solid #ddd};
-
+.site-wrapper .accordion .card .card-header{width:1150px; background-color: lightgray; border: 1px solid grey;}
+.site-wrapper .accordion .card .card-body {width: 1150px;border: 1px solid #ddd;}
+.tot_heading{float: right; margin-left: 20px;}
+.calc_fin{margin:25px 0;}
 </style>
 
 <body>
@@ -341,7 +342,7 @@
 						<div class="col-md-12">
 							<div id="tab-content" class="tab-content">
 								<div class="tab-pane fade in active" id="tab1">
-									<h6>Datos del Riesgo:</h6>
+									<h6 id="tit_tab_1">Datos del Riesgo:</h6>
 									<div class="row">
 											<div class="col-sm-2">
 												<div class="md-form form-group">
@@ -410,22 +411,22 @@
 									
 									<br/><h6>Suma Asegurada por Cobertura:</h6>
 									<div class="row">
-										<div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+										<div class="accordion" id="accordionEx_1" role="tablist" aria-multiselectable="true">
 
 											<!-- Accordion card -->
 											<div class="card">
 
 												<!-- Card header -->
-												<div class="card-header" role="tab" id="headingOne">
-													<a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+												<div class="card-header" role="tab" id="headingOne_1">
+													<a data-toggle="collapse" data-parent="#accordionEx_1" href="#collapseOne_1" aria-expanded="true" aria-controls="collapseOne_1">
 														<h6 class="mb-0">
-															Sección del Incendio <i class="fa fa-angle-down rotate-icon"></i>
+															Sección del Incendio <span id="tot_headingOne_1" class="tot_heading"> </span><i class="fa fa-angle-down rotate-icon"></i>
 														</h6>
 													</a>
 												</div>
 
 												<!-- Card body -->
-												<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordionEx">
+												<div id="collapseOne_1" class="collapse show" role="tabpanel" aria-labelledby="headingOne_1" data-parent="#accordionEx_1">
 													<div class="card-body">
 														<div class="row">
 																<div class="col-sm-4">
@@ -446,7 +447,7 @@
 
 																			<div class="form-check">
 																				<input type="checkbox" class="form-check-input" id="checkbox102" >
-																				<label for="checkbox102" class="form-check-label">¿Ampara Fenómenos hidrometereológicos?</label>
+																				<label for="checkbox102" class="form-check-label">¿Ampara Fenómenos metereológicos?</label>
 																			</div>
 
 																			<div class="form-check">
@@ -488,18 +489,50 @@
 											<div class="card">
 
 												<!-- Card header -->
-												<div class="card-header" role="tab" id="headingTwo">
-													<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+												<div class="card-header" role="tab" id="headingTwo_1">
+													<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx_1" href="#collapseTwo_1" aria-expanded="false" aria-controls="collapseTwo">
 														<h6 class="mb-0">
-															Perdidad Consecuenciales <i class="fa fa-angle-down rotate-icon"></i>
+															Perdidad Consecuenciales  <span id="tot_headingTwo_1" class="tot_heading"> </span><i class="fa fa-angle-down rotate-icon"></i>
 														</h6>
 													</a>
 												</div>
 
 												<!-- Card body -->
-												<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordionEx">
+												<div id="collapseTwo_1" class="collapse" role="tabpanel" aria-labelledby="headingTwo_1" data-parent="#accordionEx_1">
 													<div class="card-body">
-														Perdidad Consecuenciales
+													<p>Coberturas básicas:</p>
+														<div class="row">														
+																<div class="col-sm-4">
+																	<div class="md-form form-group">
+																		<input type="text" name="SaBienref" class="form-control">
+																		<label for="SaBienref" >S.A. Gastos Extraordinarios</label>
+																	</div>
+																	<div class="md-form form-group">
+																		<input type="text" name="SaBienref" class="form-control">
+																		<label for="SaBienref" >S.A. Perdida de Utilidades</label>
+																	</div>
+																	<div class="md-form form-group">
+																		<input type="text" name="SaBienref" class="form-control">
+																		<label for="SaBienref" >S.A. Salarios y Gastos Fijos</label>
+																	</div>
+																</div>
+																<div class="col-sm-4">
+																	<div class="md-form form-group">
+																		<input type="text" name="SaBienref" class="form-control">
+																		<label for="SaBienref" >S.A. Perdida de Rentas</label>
+																	</div>
+																	<div class="md-form form-group">
+																		<input type="text" name="SaBienref" class="form-control">
+																		<label for="SaBienref" >S.A. Reducción de Ingresos</label>
+																	</div>
+																	<div class="md-form form-group">
+																		<input type="text" name="SaBienref" class="form-control">
+																		<label for="SaBienref" >S.A. Ganancias Brutas</label>
+																	</div>
+																</div>
+																<div class="col-sm-4">
+																</div>
+														</div>		
 													</div>
 												</div>
 											</div>
@@ -509,18 +542,115 @@
 											<div class="card">
 
 												<!-- Card header -->
-												<div class="card-header" role="tab" id="headingThree">
-													<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+												<div class="card-header" role="tab" id="headingThree_1">
+													<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx_1" href="#collapseThree_1" aria-expanded="false" aria-controls="collapseTwo_1">
 														<h6 class="mb-0">
-															Responsabilidad Civil <i class="fa fa-angle-down rotate-icon"></i>
+															Responsabilidad Civil  <span id="tot_headingThree_1" class="tot_heading"> </span><i class="fa fa-angle-down rotate-icon"></i>
 														</h6>
 													</a>
 												</div>
 
 												<!-- Card body -->
-												<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordionEx">
-													<div class="card-body">
-														Responsabilidad Civil
+												<div id="collapseThree_1" class="collapse" role="tabpanel" aria-labelledby="headingThree_1" data-parent="#accordionEx_1">
+													<div class="card-body">														
+														<div class="row">														
+																<div class="col-sm-4">
+																	<p>Coberturas básicas:</p>
+																	<div class="md-form form-group">
+																		<input type="text" name="SaBienref" class="form-control">
+																		<label for="SaBienref" >S.A. Responsabilidad Civil</label>
+																	</div>
+																</div>
+																
+																<div class="col-sm-8">
+																
+																	<p>Coberturas Adicionales:</p>
+																	<div class="row">
+																		<div class="form-check">
+																			<input type="checkbox" class="form-check-input" id="checkbox110" >
+																			<label for="checkbox110" class="form-check-label">¿R.C. Estacionamiento?</label>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="md-form form-group col-sm-4">
+																			<select name="estatus" class="mdb-select">
+																				<option value="1">Sin Acomomodadores</option>
+																				<option value="2">Con Acomomodadores</option>
+																			</select>
+																			<label for="estatus" >Tipo</label>
+																		</div>
+																		<div class="md-form form-group col-sm-4">
+																			<input type="text" name="SaBienref" class="form-control">
+																			<label for="SaBienref" >Sublimite por Vehículo</label>
+																		</div>
+																		<div class="md-form form-group col-sm-4">
+																			<input type="text" name="SaBienref" class="form-control">
+																			<label for="SaBienref" >No. de Vehículos</label>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="form-check col-sm-4">
+																			<input type="checkbox" class="form-check-input" id="checkbox111" >
+																			<label for="checkbox111" class="form-check-label">¿R.C. Estacionamiento?</label>
+																		</div>
+																		<div class="form-check col-sm-4">
+																			<input type="checkbox" class="form-check-input" id="checkbox112" >
+																			<label for="checkbox112" class="form-check-label">¿R.C. Cruzada?</label>
+																		</div>
+																		<div class="form-check col-sm-4">
+																			<input type="checkbox" class="form-check-input" id="checkbox113" >
+																			<label for="checkbox113" class="form-check-label">¿R.C. Arrendatario?</label>
+																		</div>
+																	</div>
+																	<div class="row">
+																		<div class="form-check col-sm-4">
+																			<input type="checkbox" class="form-check-input" id="checkbox114" >
+																			<label for="checkbox114" class="form-check-label">¿R.C. Contaminacion al medio Ambiente?</label>
+																		</div>
+																		<div class="form-check col-sm-4">
+																			<input type="checkbox" class="form-check-input" id="checkbox115" >
+																			<label for="checkbox115" class="form-check-label">¿R.C. Asuminda?</label>
+																		</div>
+																		
+																	</div>
+																	<div class="row">
+																		<div class="form-check col-sm-12">
+																			<input type="checkbox" class="form-check-input" id="checkbox116" >
+																			<label for="checkbox116" class="form-check-label">¿R.C. Instituciones Educativas?</label>
+																		</div>
+																	</div>
+																	
+																	<div class="row">
+																		<div class="md-form form-group col-sm-4">
+																			<input type="text" name="SaBienref" class="form-control">
+																			<label for="SaBienref" >No. de Instituciones</label>
+																		</div>
+																		<div class="md-form form-group col-sm-4">
+																			<select name="estatus" class="mdb-select">
+																				<option value="1">Preescolar</option>
+																				<option value="2">primaria</option>
+																			</select>
+																			<label for="estatus" >Tipo de Institucion</label>
+																		</div>
+																		<div class="md-form form-group col-sm-4">
+																			<input type="text" name="SaBienref" class="form-control">
+																			<label for="SaBienref" >No. de Educadores</label>
+																		</div>
+																	</div>
+																	
+																	<div class="row">
+																		<div class="md-form form-group col-sm-4">
+																			<input type="text" name="SaBienref" class="form-control">
+																			<label for="SaBienref" >R.C. Profesional</label>
+																		</div>
+																		<div class="md-form form-group col-sm-8">
+																			<input type="text" name="SaBienref" class="form-control">
+																			<label for="SaBienref" >Gastos de Defensa por Presunto Abuso Sexual</label>
+																		</div>
+																	</div>
+																	
+																</div>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -531,18 +661,45 @@
 											<div class="card">
 
 												<!-- Card header -->
-												<div class="card-header" role="tab" id="headingFour">
-													<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
-														<h6 class="mb-0">
-															Diversos Micelaneos <i class="fa fa-angle-down rotate-icon"></i>
-														</h6>
+												<div class="card-header" role="tab" id="headingFour_1">
+													<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx_1" href="#collapseFour_1" aria-expanded="false" aria-controls="collapseFour_1">
+														<h6 class="mb-0">Diversos Micelaneos  <span id="tot_headingFour_1" class="tot_heading"> </span><i class="fa fa-angle-down rotate-icon"></i></h6>
 													</a>
 												</div>
 
 												<!-- Card body -->
-												<div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordionEx">
+												<div id="collapseFour_1" class="collapse" role="tabpanel" aria-labelledby="headingFour_1" data-parent="#accordionEx_1">
 													<div class="card-body">
-														Diversos Micelaneos
+														<div class="row">														
+															<div class="col-sm-4">
+																<p>Coberturas básicas:</p>
+																<div class="row">
+																	<div class="md-form form-group col-sm-12">
+																		<input type="text" name="SaBienref" class="form-control">
+																		<label for="SaBienref" >S.A. Rotura de Cristales</label>
+																	</div>
+																	<div class="md-form form-group col-sm-12">
+																		<input type="text" name="SaBienref" class="form-control">
+																		<label for="SaBienref" >S.A. Dinero y Valores</label>
+																	</div>
+																	<div class="md-form form-group col-sm-12">
+																		<input type="text" name="SaBienref" class="form-control">
+																		<label for="SaBienref" >S.A. Anuncios Luminosos</label>
+																	</div>
+																	<div class="md-form form-group col-sm-12">
+																		<input type="text" name="SaBienref" class="form-control">
+																		<label for="SaBienref" >S.A. Robo de Mercancias</label>
+																	</div>
+																</div>
+															</div>
+															<div class="col-sm-8">
+																<p>Coberturas Adicionales:</p>
+																<div class="md-form form-group col-sm-12">
+																	<input type="text" name="SaBienref" class="form-control">
+																	<label for="SaBienref" >Adicionales</label>
+																</div>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -553,17 +710,63 @@
 
 												<!-- Card header -->
 												<div class="card-header" role="tab" id="headingFive">
-													<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
+													<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx_1" href="#collapseFive_1" aria-expanded="false" aria-controls="collapseFive_1">
 														<h6 class="mb-0">
-															Diversos Técnicos <i class="fa fa-angle-down rotate-icon"></i>
+															Diversos Técnicos  <span id="tot_headingFive_1" class="tot_heading"> </span><i class="fa fa-angle-down rotate-icon"></i>
 														</h6>
 													</a>
 												</div>
 
 												<!-- Card body -->
-												<div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#accordionEx">
+												<div id="collapseFive_1" class="collapse" role="tabpanel" aria-labelledby="headingFive_1" data-parent="#accordionEx_1">
 													<div class="card-body">
-														Diversos Técnicos
+														<div class="row">														
+															<div class="col-sm-4">
+																<p>Coberturas básicas:</p>
+																<div class="row">
+																	<div class="md-form form-group col-sm-12">
+																		<input type="text" name="SaBienref" class="form-control">
+																		<label for="SaBienref" >S.A. Equipo Electrónico</label>
+																	</div>
+																	<div class="md-form form-group col-sm-12">
+																		<input type="text" name="SaBienref" class="form-control">
+																		<label for="SaBienref" >S.A. Equipo Electrónico Móvil</label>
+																	</div>
+																	<div class="md-form form-group col-sm-12">
+																		<input type="text" name="SaBienref" class="form-control">
+																		<label for="SaBienref" >S.A. Rotura de Maquinaria</label>
+																	</div>
+																	<div class="md-form form-group col-sm-12">
+																		<input type="text" name="SaBienref" class="form-control">
+																		<label for="SaBienref" >S.A. Calderas</label>
+																	</div>
+																</div>
+															</div>
+															<div class="col-sm-8">
+																<p>Coberturas Adicionales:</p>
+																<p class="small">Equipo Electrónico</p>
+																<div class="form-check col-sm-12">
+																	<input type="checkbox" class="form-check-input" id="checkbox117" >
+																	<label for="checkbox117" class="form-check-label">¿Robo sin Violencia?</label>
+																</div>
+																<div class="form-check col-sm-12">
+																	<input type="checkbox" class="form-check-input" id="checkbox118" >
+																	<label for="checkbox118" class="form-check-label">¿Huelgas?</label>
+																</div>
+																<div class="form-check col-sm-12">
+																	<input type="checkbox" class="form-check-input" id="checkbox119" >
+																	<label for="checkbox119" class="form-check-label">¿Huracán, Granizo e Inundación?</label>
+																</div>
+																<div class="form-check col-sm-12">
+																	<input type="checkbox" class="form-check-input" id="checkbox120" >
+																	<label for="checkbox120" class="form-check-label">¿Terremoto y Erupción Volcánica?</label>
+																</div>
+																<div class="form-check col-sm-12">
+																	<input type="checkbox" class="form-check-input" id="checkbox121" >
+																	<label for="checkbox121" class="form-check-label">¿Cobertura de Equipo Móvil?</label>
+																</div>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
@@ -571,16 +774,56 @@
 											
 										</div>												
 									</div>
+									<div class="row">
+										<div class="col-sm-10"></div>
+										<div class="col-sm-2">
+											<a class="btn btn-sm btn-outline-info" onclick="sum_pol(this.id)" href="#" id="save_tot_1">Guardar</a>	
+										</div>
+									</div>
 		
 								</div>
-							</div> <!-- End Tab Content -->
-
-
-
-							
+							</div> <!-- End Tab Content -->		
 						</div>
 					</div>
-								
+					
+
+					<div class="row">
+						<div class="col-md-8 calc_fin">
+							<div class="row">
+								<table class="table col-md-8" id="tabla_total" >
+									<thead class="blue-grey lighten-4">
+										<tr>
+											<th>Ubicación</th>
+											<th>1</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td scope="row">Prima Neta</td>
+											<td id="pol_init">0</td>
+										</tr>									
+									</tbody>
+									<!--Table body-->
+								</table>
+								<table class="table col-md-4" id="tabla_total_2" >
+									<thead class="blue-grey lighten-4">
+										<tr>
+											<th id="tit_table">TOTAL</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td id="tol_table">0</td>
+										</tr>									
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="col-md-4 calc_fin">
+							<a class="btn btn-outline-info" href="#" id="save_tot_1">Regresar</a>	
+							<a class="btn btn-outline-info" href="#" id="save_tot_1">Continuar</a>	
+						</div>
+					</div>
 				</div>	
 				
 								
@@ -592,6 +835,7 @@
 						<div class="col-md-12">
 						Paso 3
 						</div>
+						
 					</div>
 				</div>	
                 
@@ -605,8 +849,6 @@
 		<footer class="text-center text-md-left pt-4 mt-4 border-top border-info"></footer>
                                          
 </section>
-
-
 		 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>				
 <script type="text/javascript" src="js/datatables.min.js"></script>
@@ -638,15 +880,12 @@
 		   $("#paso1,#paso2").hide();
 		   $("#paso3").show();
 		});
-
-		//$("#radio2_cn").onch
 		
 		$('input[type="radio"]').click(function(){
 			if ($(this).is(':checked') && $(this).attr('id')=="radio2_cn")
 			{
 				$("#data_ctenvo").show();
-				$("#data_cteext").hide();
-				
+				$("#data_cteext").hide();		
 			}
 		 });
 		 
@@ -655,11 +894,9 @@
 			{
 				$("#data_ctenvo").hide();
 				$("#data_cteext").show();
-				
 			}
 		 });
-		
-		
+				
 		var button='<button class="close" type="button" title="Remove this page">×</button>';
 		var tabID = 1;
 			function resetTab(){
@@ -678,8 +915,26 @@
 				tabID++;
 				if(tabID < 6){
 				
-					$('#tab-list').append($('<li><a href="#tab' + tabID + '" role="tab" data-toggle="tab">Ubicacion ' + tabID + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));
-					$('#tab-content').append($('<div class="tab-pane fade" id="tab' + tabID + '">Ubicación ' + tabID + ' content</div>'));
+					$('#tab-list').append($('<li><a href="#tab' + tabID + '" role="tab" data-toggle="tab">Ubicacion ' + tabID + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));					
+					$('#tab-content').append($('<div class="tab-pane fade" id="tab' + tabID + '"> 1 </div>'));
+					$("#tab"+ tabID).load("tab_ad.html");
+					
+					 time_tabs = setTimeout(function(){ 
+					 var tab_id = $("#tit_tab").parent().attr('id');
+						$("#tit_tab").attr("id","tit_tab_"+tab_id);
+						$("#tit_tab_"+tab_id).html("Datos del riesgo: "+ tabID);	
+						$("#anc_accord").attr("href","#collapseOne_"+ tabID);
+						$("#anc_accord").attr("data-parent","#accordionEx_" + tabID);
+						$("#collapseOne").attr("data-parent","#accordionEx_"+ tabID);
+						$("#collapseOne").attr("id","collapseOne_"+ tabID);
+						$("#accordionEx").attr("id","accordionEx_"+ tabID)
+						$("#anc_accord").attr("id","anc_accord_"  + tabID);
+						$("#tot_headingOne").attr("id","tot_headingOne_"+ tabID);
+						
+						$("#save_tot").attr("id","save_tot_"+ tabID);
+						
+				
+					}, 800);					
 				}
 				else
 				{alert("No se pudeden agragar más ubicaciones")}
@@ -697,6 +952,49 @@
 
 			var list = document.getElementById("tab-list");
 		});
+	
+		
+		function sum_pol(id_btn){
+			switch(id_btn) {
+				case "save_tot_1":
+					$("#tot_headingOne_1").html("Prima Neta Calculada: $1000");
+					$("#tot_headingTwo_1").html("Prima Neta Calculada: $1500");
+					$("#tot_headingThree_1").html("Prima Neta Calculada: $3000");
+					$("#tot_headingFour_1").html("Prima Neta Calculada: $3000");
+					$("#tot_headingFive_1").html("Prima Neta Calculada: $4000");
+					$("#pol_init").html("56000");
+					$("#tol_table").html("56000")
+					break;
+				case "save_tot_2":
+					$("#tot_headingOne_2").html("Prima Neta Calculada: $1000");
+					$("#tabla_total>thead>tr").append("<th>"+tabID+"</th>");
+					$("#tabla_total>tbody>tr").append("<td>100000</td>");
+					$("#tol_table").html("860003");
+					break;
+				case "save_tot_3":
+					$("#tot_headingOne_3").html("Prima Neta Calculada: $2000");
+					$("#tabla_total>thead>tr").append("<th>"+tabID+"</th>");
+					$("#tabla_total>tbody>tr").append("<td>100000</td>");
+					$("#tol_table").html("860003");
+					break;
+				case "save_tot_4":
+					$("#tot_headingOne_4").html("Prima Neta Calculada: $3000");
+					$("#tabla_total>thead>tr").append("<th>"+tabID+"</th>");
+					$("#tabla_total>tbody>tr").append("<td>100000</td>");
+					$("#tol_table").html("860003");
+					break;
+				case "save_tot_5":
+					$("#tot_headingOne_5").html("Prima Neta Calculada: $4000");
+					$("#tabla_total>thead>tr").append("<th>"+tabID+"</th>");
+					$("#tabla_total>tbody>tr").append("<td>100000</td>");
+					$("#tol_table").html("860003");
+					break;
+				default:
+					console.log("Nan")
+			}
+			
+			
+		}
 		
 	</script>	
     </body>
