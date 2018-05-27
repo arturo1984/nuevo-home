@@ -75,7 +75,7 @@
 .site-wrapper .accordion .card .card-header{width:1150px; background-color: lightgray; border: 1px solid grey;}
 .site-wrapper .accordion .card .card-body {width: 1150px;border: 1px solid #ddd;}
 .tot_heading{float: right; margin-left: 20px;}
-.calc_fin{margin:25px 0;}
+.calc_fin{margin:25px 0; text-align: right;}
 </style>
 
 <body>
@@ -97,7 +97,7 @@
 							<ul class="stepper stepper-horizontal">
 
 								<!-- First Step -->
-								<li class="active">
+								<li class="active" id="step1">
 									<a href="#!" id="nx_paso1">
 										<span class="circle">1</span>
 										<span class="label">Paso Uno</span>
@@ -105,7 +105,7 @@
 								</li>
 
 								<!-- Second Step -->
-								<li class="warning">
+								<li class="warning" id="step2">
 									<a href="#!" id="nx_paso2">
 										<span class="circle">2</span>
 										<span class="label">Paso Dos</span>
@@ -113,7 +113,7 @@
 								</li>
 
 								<!-- Third Step -->
-								<li class="warning">
+								<li class="warning" id="step3">
 									<a href="#!" id="nx_paso3">
 										<span class="circle">3</span>
 										<span class="label">Paso tres</span>
@@ -144,10 +144,7 @@
 								</div>
 							</div>
 						</div>
-
-						
-							
-						
+													
 						<div class="row" id="data_cteext">
 								<div class="col-sm-3">
 									<div class="md-form form-group">
@@ -184,7 +181,7 @@
 													<option value="1">Moral</option>
 													<option value="2">Fisica</option>
 												</select>
-												<label for="estatus" >Tipo de perosna</label>
+												<label for="estatus" >Tipo de persona</label>
 										</div>
 									</div>
 								</div>
@@ -328,9 +325,7 @@
 				<div class="container-fluid" id="paso2" style="display:none; padding:0 70px">					
 					<div class="row">
 						<div class="col-md-12">
-							<p style="float:right">
-								<button id="btn-add-tab" type="button" class="btn btn-sm btn-primary pull-right">Agregar Ubicación</button>
-							</p>
+							<p><button id="btn-add-tab" type="button" class="btn btn-blue btn-sm waves-effect waves-light float-right">Agregar Ubicación</button></p>
 							<!-- Nav tabs -->
 							<ul id="tab-list" class="nav nav-tabs" role="tablist">
 								<li class="active"><a href="#tab1" role="tab" data-toggle="tab">Ubicación 1</a></li>
@@ -432,12 +427,12 @@
 																<div class="col-sm-4">
 																	<p>Coberturas básicas:</p>
 																	<div class="md-form form-group">
-																		<input type="text" name="folioTMX" class="form-control">
-																		<label for="folioTMX" >S.A. Edificio</label>
+																		<input type="number" name="SA_Edificio" class="form-control">
+																		<label for="SA_Edificio" >S.A. Edificio</label>
 																	</div>
 																	<div class="md-form form-group">
-																		<input type="text" name="folioTMX" class="form-control">
-																		<label for="folioTMX" >S.A. Contenidos</label>
+																		<input type="number" name="SA_Contenido" class="form-control">
+																		<label for="SA_Contenido" >S.A. Contenidos</label>
 																	</div>
 																</div>
 																<div class="col-sm-8">
@@ -477,8 +472,7 @@
 																		
 																		</div>
 																	</div>	
-																</div>
-																
+																</div>																
 														</div>
 													</div>
 												</div>
@@ -655,9 +649,6 @@
 												</div>
 											</div>
 											<!-- Accordion card -->
-											
-											
-											<!-- Accordion card -->
 											<div class="card">
 
 												<!-- Card header -->
@@ -777,10 +768,9 @@
 									<div class="row">
 										<div class="col-sm-10"></div>
 										<div class="col-sm-2">
-											<a class="btn btn-sm btn-outline-info" onclick="sum_pol(this.id)" href="#" id="save_tot_1">Guardar</a>	
+											<a class="btn btn-blue btn-sm waves-effect waves-light" onclick="sum_ubicacion(1);" href="javascript:void(0)" id="save_tot_1">Guardar Ubicación</a>	
 										</div>
 									</div>
-		
 								</div>
 							</div> <!-- End Tab Content -->		
 						</div>
@@ -794,13 +784,13 @@
 									<thead class="blue-grey lighten-4">
 										<tr>
 											<th>Ubicación</th>
-											<th>1</th>
+											<th id="i_tab1">1</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td scope="row">Prima Neta</td>
-											<td id="pol_init">0</td>
+											<td id="s_tab1" class="tot_parc">0</td>
 										</tr>									
 									</tbody>
 									<!--Table body-->
@@ -820,8 +810,8 @@
 							</div>
 						</div>
 						<div class="col-md-4 calc_fin">
-							<a class="btn btn-outline-info" href="#" id="save_tot_1">Regresar</a>	
-							<a class="btn btn-outline-info" href="#" id="save_tot_1">Continuar</a>	
+							<a class="btn btn-blue waves-effect waves-light" href="#" id="paso1_back">Regresar</a>	
+							<a class="btn btn-pink waves-effect waves-light" href="#" id="paso2_next">Continuar</a>	
 						</div>
 					</div>
 				</div>	
@@ -831,21 +821,60 @@
 				<!-- paos 3 -->
 				
 				<div class="container-fluid" id="paso3" style="display:none">					
-					<div class="row">
+					<div class="row" style="padding:0 70px">
 						<div class="col-md-12">
-						Paso 3
-						</div>
-						
+                            <table class="table simple-data-table table-striped table-bordered" style="width:100%;">
+                                <thead>
+                                    <tr>
+                                        <th>Edificio</th>
+                                        <th>Suma Asegurada</th>
+                                        <th>Prima</th>
+                                        <th>Deducible</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Edificio</td>
+                                        <td>$1,384,434</td>
+                                        <td>$495,000</td>
+                                        <td>Sin Deducible</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contenidos</td>
+                                        <td>$384,434</td>
+                                        <td>$45,000</td>
+                                        <td>Sin Deducible</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bienes Bajos</td>
+                                        <td>$1,234,434</td>
+                                        <td>$395,000</td>
+                                        <td>5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perdidas</td>
+                                        <td>$344,434</td>
+                                        <td>$1,618</td>
+                                        <td>1%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+						</div>						
 					</div>
-				</div>	
+					<div class="row" style="padding:0 70px">
+						<div class="col-sm-12">
+							<button type="button" class="btn btn-pink waves-effect waves-light float-right">Regresar</button>						
+							<button type="button" class="btn btn-pink waves-effect waves-light float-right">Generar Slip</button>
+							<button type="button" class="btn btn-pink waves-effect waves-light float-right">Solicitar Emisión</button>
+						</div>
+					</div>
+					
+				</div>		
                 
 		</section>
 		
-		
 		<section id="box-form-login"></section>		
-	    <section id="box-form-passw"></section>
-			
-                       
+	    <section id="box-form-passw"></section>               
 		<footer class="text-center text-md-left pt-4 mt-4 border-top border-info"></footer>
                                          
 </section>
@@ -867,18 +896,27 @@
 		new WOW().init();
 		
 		$("#nx_paso1").click(function(){
-		   $("#paso2,#paso3").hide();
-		   $("#paso1").show();
+			$("#paso2,#paso3").hide();
+			$(".stepper li").removeClass("active").addClass("warning");
+			$("#step1").removeClass("warning").addClass("active");
+			$("#paso1").show();
 		});
 		 $("#nx_paso2,#paso1_next").click(function(){
-		   $("#paso1,#paso3").hide();
-		   $( this ).parent().removeClass("warning");
-		   $( this ).parent().addClass("active");
-		   $("#paso2").show();
+			$("#paso1,#paso3").hide();
+			$(".stepper li").removeClass("active").addClass("warning");
+			$("#step2").removeClass("warning").addClass("active");
+			$("#paso2").show();
 		});
-		 $("#nx_paso3").click(function(){
-		   $("#paso1,#paso2").hide();
-		   $("#paso3").show();
+		 $("#nx_paso3,#paso2_next").click(function(){			
+			$("#paso1,#paso2").hide();
+			$(".stepper li").removeClass("active").addClass("warning");
+			$("#step3").removeClass("warning").addClass("active");
+			$("#paso3").show();
+		});
+		
+		$("#paso1_back").click(function(){
+			$("#paso3,#paso2").hide();
+			$("#paso1").show();
 		});
 		
 		$('input[type="radio"]').click(function(){
@@ -899,7 +937,7 @@
 				
 		var button='<button class="close" type="button" title="Remove this page">×</button>';
 		var tabID = 1;
-			function resetTab(){
+		function resetTab(){
 			var tabs=$("#tab-list li:not(:first)");
 			var len=1
 			$(tabs).each(function(k,v){
@@ -915,7 +953,7 @@
 				tabID++;
 				if(tabID < 6){
 				
-					$('#tab-list').append($('<li><a href="#tab' + tabID + '" role="tab" data-toggle="tab">Ubicacion ' + tabID + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));					
+					$('#tab-list').append($('<li><a id="in_tab'+tabID+'" href="#tab' + tabID + '" role="tab" data-toggle="tab">Ubicacion ' + tabID + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));					
 					$('#tab-content').append($('<div class="tab-pane fade" id="tab' + tabID + '"> 1 </div>'));
 					$("#tab"+ tabID).load("tab_ad.html");
 					
@@ -929,12 +967,13 @@
 						$("#collapseOne").attr("id","collapseOne_"+ tabID);
 						$("#accordionEx").attr("id","accordionEx_"+ tabID)
 						$("#anc_accord").attr("id","anc_accord_"  + tabID);
-						$("#tot_headingOne").attr("id","tot_headingOne_"+ tabID);
-						
+						$("#tot_headingOne").attr("id","tot_headingOne_"+ tabID);					
 						$("#save_tot").attr("id","save_tot_"+ tabID);
-						
-				
-					}, 800);					
+						$('#tab'+tabID+' .mdb-select').material_select();
+					}, 500);
+					var tabShow = $('#tab-list a#in_tab'+tabID);
+					tabShow.tab('show');
+					sum_ubicacion(0);
 				}
 				else
 				{alert("No se pudeden agragar más ubicaciones")}
@@ -943,16 +982,53 @@
 				var tabID = $(this).parents('a').attr('href');
 				$(this).parents('li').remove();
 				$(tabID).remove();
-
+				var id_tbl = tabID.substring(1);
+				$("#i_"+id_tbl).remove();
+				$("#s_"+id_tbl).remove();
 				//display first tab
 				var tabFirst = $('#tab-list a:first');
 				resetTab();
+				sum_ubicacion(1);
 				tabFirst.tab('show');
 			});
 
 			var list = document.getElementById("tab-list");
 		});
 	
+		function sum_ubicacion(sum){		
+			if( tabID > 1 ){
+				if(sum == 0)
+				{	
+					costo = 0; 
+					sumTot = parseInt($("#tol_table").html());
+					$('#tabla_total>thead>tr').append('<th id="i_tab'+tabID+'">'+tabID+'</th>');
+					$('#tabla_total>tbody>tr').append('<td id="s_tab'+tabID+'" class="tot_parc">'+costo+'</td>');
+					$('#tol_table').html(sumTot+costo);
+				}
+				else{
+					sumParc = 0;
+					$("#tot_headingOne_"+tabID).html("Prima Neta Calculada: $1000");
+					costo = Math.floor(Math.random() * 101); //calculo por cada ubicacion n > 1
+					$('#s_tab'+tabID).html(costo);
+					$('.tot_parc').each(function(){
+						sumParc = parseInt($(this).html())+sumParc;
+					})
+					$('#tol_table').html(sumParc);// Calcula total		
+				}				
+			}
+			else{
+				$("#tot_headingOne_1").html("Prima Neta Calculada: $1000");
+				$("#tot_headingTwo_1").html("Prima Neta Calculada: $1500");
+				$("#tot_headingThree_1").html("Prima Neta Calculada: $3000");
+				$("#tot_headingFour_1").html("Prima Neta Calculada: $3000");
+				$("#tot_headingFive_1").html("Prima Neta Calculada: $4000");
+				costo = 10; //calculo ubicacion 1
+				$("#s_tab1").html(costo);
+				$("#tol_table").html(costo);
+			}
+		}	
+		
+		
 		
 		function sum_pol(id_btn){
 			switch(id_btn) {
@@ -962,58 +1038,56 @@
 					$("#tot_headingThree_1").html("Prima Neta Calculada: $3000");
 					$("#tot_headingFour_1").html("Prima Neta Calculada: $3000");
 					$("#tot_headingFive_1").html("Prima Neta Calculada: $4000");
-					$("#pol_init").html("56000");
+					$("#s_tab1").html("56000");
 					$("#tol_table").html("56000")
 					break;
 				case "save_tot_2":
-					if( $('#index_2').length ){
+					if( $('#i_tab2').length ){
 						$("#tol_table").html("860003");// Calcula UB 2
 					}
 					else{ 
 						$("#tot_headingOne_2").html("Prima Neta Calculada: $1000");
 						$("#tol_table").html("860003");// Re-Calcula UB 2
-						$("#tabla_total>thead>tr").append("<th id='index_2'>"+tabID+"</th>");
-						$("#tabla_total>tbody>tr").append("<td>100000</td>");
+						$("#tabla_total>thead>tr").append("<th id='i_tab2'>"+tabID+"</th>");
+						$("#tabla_total>tbody>tr").append("<td id='s_tab2'>100000</td>");
 					}					
 					break;
 				case "save_tot_3":
-					if( $('#index_3').length ){
+					if( $('#i_tab3').length ){
 						$("#tol_table").html("960003");// Calcula UB 3
 					}
 					else{ 
 						$("#tot_headingOne_3").html("Prima Neta Calculada: $3000");
 						$("#tol_table").html("960003");// Re-Calcula UB 3
-						$("#tabla_total>thead>tr").append("<th id='index_3'>"+tabID+"</th>");
-						$("#tabla_total>tbody>tr").append("<td>100000</td>");
+						$("#tabla_total>thead>tr").append("<th id='i_tab3'>"+tabID+"</th>");
+						$("#tabla_total>tbody>tr").append("<td id='s_tab3'>100000</td>");
 					}					
 					break;
 				case "save_tot_4":
-					if( $('#index_4').length ){
-						$("#tol_table").html("1060003");// Calcula UB 3
+					if( $('#i_tab4').length ){
+						$("#tol_table").html("1060003");// Calcula UB 4
 					}
 					else{ 
 						$("#tot_headingOne_4").html("Prima Neta Calculada: $2000");
-						$("#tol_table").html("1060003");// Re-Calcula UB 3
-						$("#tabla_total>thead>tr").append("<th id='index_4'>"+tabID+"</th>");
-						$("#tabla_total>tbody>tr").append("<td>100000</td>");
+						$("#tol_table").html("1060003");// Re-Calcula UB 4
+						$("#tabla_total>thead>tr").append("<th id='i_tab4'>"+tabID+"</th>");
+						$("#tabla_total>tbody>tr").append("<td id='s_tab4'>100000</td>");
 					}		
 					break;
 				case "save_tot_5":
-					if( $('#index_5').length ){
-						$("#tol_table").html("1160003");// Calcula UB 3
+					if( $('#i_tab5').length ){
+						$("#tol_table").html("1160003");// Calcula UB 5
 					}
 					else{ 
 						$("#tot_headingOne_5").html("Prima Neta Calculada: $12000");
-						$("#tol_table").html("1160003");// Re-Calcula UB 3
-						$("#tabla_total>thead>tr").append("<th id='index_5'>"+tabID+"</th>");
-						$("#tabla_total>tbody>tr").append("<td>100000</td>");
+						$("#tol_table").html("1160003");// Re-Calcula UB 5
+						$("#tabla_total>thead>tr").append("<th id='i_tab5'>"+tabID+"</th>");
+						$("#tabla_total>tbody>tr").append("<td id='s_tab5'>100000</td>");
 					}	
 					break;
 				default:
 					console.log("Nan")
-			}
-			
-			
+			}	
 		}
 		
 	</script>	
