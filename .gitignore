@@ -2,3 +2,5 @@
 *.ini
 *.ini
 *.ini
+
+.DS_Store
