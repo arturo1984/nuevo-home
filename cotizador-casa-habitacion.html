@@ -612,17 +612,14 @@ border-bottom-color: transparent;
 			$("#step1").removeClass("warning").addClass("active");
 			$("#paso1").show();
 		});
-		
-		$("#nx_paso2,#paso1_next").click(function(){
+		 $("#nx_paso2,#paso1_next").click(function(){
 			$("#paso1,#paso3").hide();
-			$(".stepper li").removeClass("active").addClass("warning");
 			$("#step2").removeClass("warning").addClass("active");
+			$("#step3").removeClass("active").addClass("warning");
 			$("#paso2").show();
 		});
-		
-		$("#nx_paso3,#paso2_next").click(function(){			
+		 $("#nx_paso3,#paso2_next").click(function(){			
 			$("#paso1,#paso2").hide();
-			$(".stepper li").removeClass("active").addClass("warning");
 			$("#step3").removeClass("warning").addClass("active");
 			$("#paso3").show();
 		});
