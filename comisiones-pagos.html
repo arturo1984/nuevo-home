@@ -15,8 +15,7 @@
     </head>
 	<style>
 	#comisiones-tokio .dataTables_filter,#comisiones-tokio .dt-buttons{display:none;}
-	#comisiones-tokio .dataTables_info,#comisiones-tokio .dataTables_paginate,#comisiones-tokio .dataTables_length{display:none;}
-	
+	#comisiones-tokio .dataTables_info,#comisiones-tokio .dataTables_paginate,#comisiones-tokio .dataTables_length{display:none;}	
 	.site-wrapper #comisiones-tokio .table-striped tbody tr.selected{background-color:pink;}
 	.site-wrapper #comisiones-tokio .btn.btn-sm {padding: 0.5rem 1.1rem;}
 	</style>
@@ -57,10 +56,10 @@
 						</div>
 						<div class="row">
 							<div class="col-sm-6">
-								<p><strong>Comisiones Ganadas Pendinetes de Pago</strong></p>
+								<p><strong>Comisiones Ganadas Pendientes de Pago</strong></p>
 							</div>
 							<div class="col-sm-6">
-								<p class="float-right"><strong>Solicitus de Pago por los siguiente Conceptos</strong></p>
+								<p class="float-right"><strong>Solicitud de Pago por los siguiente Conceptos</strong></p>
 							</div>
 						</div>
 						<div class="row">
@@ -128,14 +127,28 @@
                                     <td>$23,134</td>
                                     <td>Pendiente</td>                                    
                                 </tr>
+								<tr class="t_vida">
+                                    <td>4587411</td>
+                                    <td>Nombre</td>
+                                    <td>$653,432</td>
+                                    <td>$12,432</td>
+                                    <td>VIDA</td>
+                                    <td>$3,435</td>
+                                    <td>$5,332</td>
+                                    <td>$9,321</td>
+                                    <td>$1,134</td>
+                                    <td>Pendiente</td>                                    
+                                </tr>
 								</table>
 							</div>
 																					
 							<div class="col-sm-1 text-center" >
-									<button type="button" class="btn btn-blue btn-sm" id="TodosVida"> Vida </button><br/>
+									<button type="button" class="btn btn-blue btn-sm" id="TodosVida"> Vida </button>
 									<button type="button" class="btn btn-blue btn-sm" id="TodosDano"> Daño </button>
-									<button type="button" class="btn btn-blue btn-sm" id="RightMove"> > </button><br/>
-									<button type="button" class="btn btn-blue btn-sm" id="LeftMove"> < </button>
+									<button type="button" class="btn btn-blue btn-sm" id="RightTodos"> >>  </button>
+									<button type="button" class="btn btn-blue btn-sm" id="LeftTodos">  <<  </button>
+									<button type="button" class="btn btn-blue btn-sm" id="RightMove">  >   </button>
+									<button type="button" class="btn btn-blue btn-sm" id="LeftMove">   <   </button>
 							</div>
 							
 							<div class="table-wrapper col-sm-4 float-right">
@@ -147,7 +160,11 @@
 										<th>Prima Neta</th>
 										<th>Comisión</th>
 										<th>Tipo</th> 
-										<th>IVA</th>										
+										<th>IVA</th>
+										<th>Retención IVA</th>
+										<th>Retención ISR</th>                                
+										<th>Toatal a Pagar</th>
+										<th>Estado</th>										
 									</tr>
 								</thead>
 								<tbody>
@@ -158,16 +175,11 @@
 										<td>$2,903</td>
 										<td>Vida</td>
 										<td>$3,234</td>
+										<td>$1.00</td>
+										<td>$54,213</td>
+										<td>$1.00</td>
+										<td>Activo</td>
 									</tr>
-									<tr class="t_dano">
-										<td>526834</td>
-										<td>Valor Valor</td>
-										<td>$2,434</td>
-										<td>$903</td>
-										<td>Daño</td>
-										<th>$434,00</th>
-									</tr>
-									
 								</tbody>
 								</table>
 							</div>
@@ -324,65 +336,70 @@
         <script type="text/javascript" src="js/mdb.min.js"></script>
         <script type="text/javascript" src="js/custom.js"></script>
         <script type="text/javascript">
-            $.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
-            $.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}}); 
-			// Code goes here
-$(document).ready(function() {
-    var stockTable = $('#table1').dataTable({
-        "sPaginationType": "full_numbers"
-        //"bFilter": false
-    }); // first table 
-    
-	var catalogTable = $('#table2').dataTable({
-        "sPaginationType": "full_numbers",
-        //"bFilter": false
-    }); // Second table 
-   
-    stockTable.on('click', 'tbody tr' ,function() {
-		 $(this).toggleClass('selected');
-    });
-	catalogTable.on('click', 'tbody tr' ,function() {
-		 $(this).toggleClass('selected');
-    });
-	
-	$('#LeftMove').on('click',function () {
-		moveRows(catalogTable, stockTable);
-	});
-	
-	$('#RightMove').on('click',function () {
-		moveRows(stockTable, catalogTable);
-	});
-	
-	$('#TodosVida').on('click',function () {
-		moveRows2(stockTable, catalogTable);
-	});
-	
-});
-	
-function moveRows(fromTable, toTable){
-	var $row= fromTable.find(".selected");
-	$.each($row, function(k, v){
-		if(this !== null){
-			addRow = fromTable.fnGetData(this);
-			toTable.fnAddData(addRow);
-			fromTable.fnDeleteRow(this);
-		}
-	});
-}
+        $.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
+        $.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}}); 
 
-function moveRows2(fromTable, toTable){
-	var $row = fromTable.find('.t_vida');
-	$.each($row, function(k, v){
-		if(this !== null){
-			addRow = fromTable.fnGetData(this);
-			toTable.fnAddData(addRow);
-			fromTable.fnDeleteRow(this);
+		$(document).ready(function() {
+			var stockTable = $('#table1').dataTable({
+				"sPaginationType": "full_numbers",
+				"bFilter": false
+			});
+			
+			var catalogTable = $('#table2').dataTable({
+				"sPaginationType": "full_numbers",
+				"bFilter": false
+			});
+		   
+			stockTable.on('click', 'tbody tr' ,function() {
+				 $(this).toggleClass('selected');
+			});
+			catalogTable.on('click', 'tbody tr' ,function() {
+				 $(this).toggleClass('selected');
+			});
+			
+			$('#LeftMove').on('click',function () {
+				moveRows_tipo(catalogTable, stockTable,'selected');
+			});
+			
+			$('#RightMove').on('click',function () {
+				moveRows_tipo(stockTable, catalogTable,'selected');
+			});
+			
+			$('#TodosVida').on('click',function () {
+				moveRows_tipo(stockTable, catalogTable,'vida');
+			});
+			
+			$('#TodosDano').on('click',function () {
+				moveRows_tipo(stockTable, catalogTable,'danos');
+			});
+			
+			$("#RightTodos").on('click',function(){
+				$("#table1 tbody tr").toggleClass('selected');
+				moveRows_tipo(stockTable, catalogTable,'selected');
+			});
+			
+			$("#LeftTodos").on('click',function(){
+				$("#table2 tbody tr").toggleClass('selected');
+				moveRows_tipo(catalogTable,stockTable ,'selected');
+			});
+			
+		});
+			
+		function moveRows_tipo(fromTable, toTable,tipo){
+			if(tipo == "vida" )
+				var $row = fromTable.find('.t_vida');
+			else if (tipo == "danos")
+				var $row = fromTable.find('.t_dano');
+			else
+				var $row= fromTable.find(".selected");
+			$.each($row, function(k, v){
+				if(this !== null){
+					addRow = fromTable.fnGetData(this);
+					toTable.fnAddData(addRow);
+					fromTable.fnDeleteRow(this);
+				}
+			});
 		}
-	});
-}
-
-			
-			
 			
         </script>
     </body>
