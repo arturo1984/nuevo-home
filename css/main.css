@@ -1340,4 +1340,11 @@ margin-right: 0; }
 .site-wrapper .calc_fin{margin:25px 0; text-align: right;}
 .site-wrapper #paso1 .form-right{display:inline-flex; margin-bottom: 20px;}
 
+.site-wrapper .accordion, .site-wrapper .accordion .card .card-header,.site-wrapper .accordion .card .card-body{width:100%;}
+
+@media (max-width: 767px){
+.site-wrapper .stepper-horizontal {flex-direction: row;}
+.site-wrapper .stepper-horizontal li {flex-direction: initial;}
+.site-wrapper .form-inline .form-check { padding-left: 0px;}
+}
 /* **************************** */
