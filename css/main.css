@@ -1317,7 +1317,7 @@ margin-right: 0; }
     display: block;
     padding: 10px 15px;
 }
-.site-wrapper .nav-tabs {
+.site-wrapper .nav-tabs.cotizador {
     border: 0;
     padding: 0.7rem;
     margin-left: 0px;
