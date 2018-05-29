@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Siniestros</title>
+        <link href="css/fontawesome/fontawesome-all.css" rel="stylesheet">
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="css/material-design/mdb.css" rel="stylesheet">
+        <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="site-wrapper">
+            <header></header>
+            <section>
+                <div class="container-fluid">
+                    <div class="section-heading">
+                        <h1 class="title text-left">Consulta de Siniestros</h1>
+                    </div>
+                    <div class="form-wrapper">
+                        <form id="search-form" class="mb-4">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <input type="text" name="poliza" class="form-control">
+                                        <label for="poliza" >Póliza</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <input type="text" name="endoso" class="form-control">
+                                        <label for="endoso" >Siniestro</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-6">
+                                    <div class="md-form form-group">
+                                        <input type="text" name="asegurado" class="form-control">
+                                        <label for="asegurado" >Asegurado</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-lg-6">
+                                    <div class="md-form form-group">
+                                        <div class="row">
+                                            <label for="inicio" class="active">Periodo - Fecha desde/hasta</label>
+                                            <div class="col">
+                                                <input name="inicio" placeholder="Desde" type="text" id="creationDate" class="form-control datepicker">
+                                            </div>
+                                            <div class="col">
+                                                <input name="fin" placeholder="Hasta" type="text" id="creationDate" class="form-control datepicker">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-6">
+                                    <div class="md-form form-group">
+                                        <select name="agente" class="mdb-select">
+                                            <option value="1">Todos</option>
+                                            <option value="2">Marsh</option>
+                                            <option value="3">Kataoka</option>
+                                        </select>
+                                        <label for="agente" >Agente</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a class="btn btn-pink float-right" onclick="document.getElementById('search-form').submit();">BUSCAR</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="table data-table table-striped table-bordered" style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th>Póliza</i></th>
+                                    <th>Siniestro</i></th>
+                                    <th>Asegurado</i></th>
+                                    <th>Fecha Siniestro</i></th>
+                                    <th>Fecha Reclamo</i></th>
+                                    <th>Estado</i></th>
+                                    <th>Bien Dañado</i></th>                                       
+                                    <th>Causa Siniestro</i></th>
+                                    <th>Ajustador</i></th>
+                                    <th>Fecha Pago</i></th>                                
+                                    <th>Teléfono Ajustador</i></th>
+                                    <th>Moneda</i></th>
+                                    <th>Monto Total</i></th>                                    
+                                    <th>Estatus</i></th>
+                                    <th class="all" data-orderable="false"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PEMMX000006800</td>
+                                    <td>Siniestro 1</td>
+                                    <td>Asegurado 1</td>
+                                    <td>01/01/2018</td>
+                                    <td>01/01/2019</td>
+                                    <td>Estado de México</td>
+                                    <td>Fallecimiento</td>
+                                    <td>Heridas</td>
+                                    <td>Ajustador 1</td>
+                                    <td>01/01/2019</td>
+                                    <td>55-152100000</td>
+                                    <td>Pesos</td>
+                                    <td>$250,000.00</td>
+                                    <td>Pagado</td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                               <a class="dropdown-item" data-id="Siniestro 2" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Siniestralidad</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PEMMX000006800</td>
+                                    <td>Siniestro 2</td>
+                                    <td>Asegurado 2</td>
+                                    <td>01/01/2018</td>
+                                    <td>01/01/2019</td>
+                                    <td>Estado de México</td>
+                                    <td>Fallecimiento</td>
+                                    <td>Heridas</td>
+                                    <td>Ajustador 2</td>
+                                    <td>01/01/2019</td>
+                                    <td>55-152100000</td>
+                                    <td>Pesos</td>
+                                    <td>$250,000.00</td>
+                                    <td>Pagado</td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                               <a class="dropdown-item" data-id="Siniestro 2" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Siniestralidad</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PEMMX000006800</td>
+                                    <td>Siniestro 3</td>
+                                    <td>Asegurado 3</td>
+                                    <td>01/01/2018</td>
+                                    <td>01/01/2019</td>
+                                    <td>Estado de México</td>
+                                    <td>Fallecimiento</td>
+                                    <td>Heridas</td>
+                                    <td>Ajustador 3</td>
+                                    <td>01/01/2019</td>
+                                    <td>55-152100000</td>
+                                    <td>Pesos</td>
+                                    <td>$250,000.00</td>
+                                    <td>Pagado</td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                               <a class="dropdown-item" data-id="Siniestro 3" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Siniestralidad</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PEMMX000006800</td>
+                                    <td>Siniestro 4</td>
+                                    <td>Asegurado 4</td>
+                                    <td>01/01/2018</td>
+                                    <td>01/01/2019</td>
+                                    <td>Estado de México</td>
+                                    <td>Fallecimiento</td>
+                                    <td>Heridas</td>
+                                    <td>Ajustador 4</td>
+                                    <td>01/01/2019</td>
+                                    <td>55-152100000</td>
+                                    <td>Pesos</td>
+                                    <td>$250,000.00</td>
+                                    <td>Pagado</td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                               <a class="dropdown-item" data-id="Siniestro 4" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Siniestralidad</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PEMMX000006800</td>
+                                    <td>Siniestro 5</td>
+                                    <td>Asegurado 5</td>
+                                    <td>01/01/2018</td>
+                                    <td>01/01/2019</td>
+                                    <td>Estado de México</td>
+                                    <td>Fallecimiento</td>
+                                    <td>Heridas</td>
+                                    <td>Ajustador 1</td>
+                                    <td>01/01/2019</td>
+                                    <td>55-152100000</td>
+                                    <td>Pesos</td>
+                                    <td>$250,000.00</td>
+                                    <td>Pagado</td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                               <a class="dropdown-item" data-id="Siniestro 5" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Siniestralidad</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PEMMX000006800</td>
+                                    <td>Siniestro 6</td>
+                                    <td>Asegurado 6</td>
+                                    <td>01/01/2018</td>
+                                    <td>01/01/2019</td>
+                                    <td>Estado de México</td>
+                                    <td>Fallecimiento</td>
+                                    <td>Heridas</td>
+                                    <td>Ajustador 6</td>
+                                    <td>01/01/2019</td>
+                                    <td>55-152100000</td>
+                                    <td>Pesos</td>
+                                    <td>$250,000.00</td>
+                                    <td>Pagado</td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                               <a class="dropdown-item" data-id="Siniestro 6" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Siniestralidad</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr> 
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>               
+            </section>            
+            <footer class="text-center text-md-left pt-4 mt-4 border-top border-info"></footer>
+            <!-- Modal Ver Archivos -->
+            <div class="modal fade" id="modal-archives" tabindex="-1" role="dialog" aria-labelledby="archivesLabel" aria-hidden="true">
+                <div class="modal-dialog modal-fluid modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="#archivesLabel">Archivos</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                                                <div class="table-wrapper">
+                        <table class="table data-table table-striped table-bordered" style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th>Póliza</i></th>
+                                    <th>Siniestro</i></th>
+                                    <th>Asegurado</i></th>
+                                    <th>Fecha Siniestro</i></th>
+                                    <th>Fecha Reclamo</i></th>
+                                    <th>Estado</i></th>
+                                    <th>Bien Dañado</i></th>                                       
+                                    <th>Causa Siniestro</i></th>
+                                    <th>Ajustador</i></th>
+                                    <th>Fecha Pago</i></th>                                
+                                    <th>Teléfono Ajustador</i></th>
+                                    <th>Moneda</i></th>
+                                    <th>Monto Total</i></th>                                    
+                                    <th>Estatus</i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PEMMX000006800</td>
+                                    <td>Siniestro X</td>
+                                    <td>Asegurado X</td>
+                                    <td>01/01/2018</td>
+                                    <td>01/01/2019</td>
+                                    <td>Estado de México</td>
+                                    <td>Fallecimiento</td>
+                                    <td>Heridas</td>
+                                    <td>Ajustador X</td>
+                                    <td>01/01/2019</td>
+                                    <td>55-152100000</td>
+                                    <td>Pesos</td>
+                                    <td>$250,000.00</td>
+                                    <td>Pagado</td>
+                                </tr>        
+                            </tbody>
+                        </table>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Modal Ver archivos -->
+            <!-- Modal Short Help -->
+            <div class="modal fade" id="modal-short-help" tabindex="-1" role="dialog" aria-labelledby="helpLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="helpLabel">Ayuda</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="instruction">
+                                            <h6 class="title font-weight-bold mb-3"><i class="far fa-comment pr-2"></i>Ver mensajes</h6>
+                                            <p>Disponible en todos los estados de esta pantalla para lectura de mensajes. La funcionalidad para crear nuevos mensajes esta disponible en los estados: "POR EMITIR"</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="instruction">
+                                            <h6 class="title font-weight-bold mb-3"><i class="far fa-file-alt pr-2"></i>Ver archivos</h6>
+                                            <p>Disponible en todos los estados de esta pantalla respetando las reglas de negocio siguientes: Los Agentes/Brokers sólo pueden eliminar archivos cargados por otro perfil de agente o por sí mismos y que el estado de la poliza sea “EMITIDA”</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Modal Short Help -->
+        </section>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/datatables.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="js/responsive.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/jszip.min.js"></script>
+        <script type="text/javascript" src="js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="js/buttons.print.min.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+        <script type="text/javascript">
+            $.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
+            $.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}}); 
+        </script>
+        <script type="text/javascript">
+            $.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
+            $.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}}); 
+        </script>
+        <script type="text/javascript">
+
+            $(document).on("click", ".dropdown-item", function () {
+                var pdfArchive = $(this).data('id');
+                $('.modal-header h5').text(pdfArchive);
+            });
+        </script>
+    </body>
+</html>
