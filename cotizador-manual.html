@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Cotizador Casa Habitacion</title>
+        <link href="css/fontawesome/fontawesome-all.css" rel="stylesheet">
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="css/material-design/mdb.css" rel="stylesheet">
+        <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+		<link href="css/owl/owl.carousel.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">		
+    </head>
+<style>
+
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+#tab-list .close {
+	margin-left: 7px;
+}
+
+#tab-list li{    border: 1px solid #ddd;
+border-radius: 4px;}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+color: #555;
+cursor: default;
+background-color: #fff;
+border-bottom-color: transparent;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+.site-wrapper .nav-tabs {
+    border: 0;
+    padding: 0.7rem;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    background-color: transparent;
+    z-index: 2;
+    position: relative;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.nav>li>a.active { text-decoration:underline;}
+
+.site-wrapper .tab-content {
+    border: 1px solid #ddd;
+    margin: -15px 12px;
+}
+
+.pull-right{ text-align:right}
+.pull-left{ text-align:left}
+
+.calc_fin{margin:25px 0;text-align: right;}
+#paso1 .form-right{display:inline-flex;margin-bottom: 20px;}
+</style>
+
+<body>
+<section class="site-wrapper">
+        <header></header>
+			
+        <section id="landing-agentes">
+			<div class="section-heading">
+                    <div class="container-fluid">
+                        <h4 class="title text-left">Cotizador Manual</h4>
+                    </div>				
+                </div>
+				
+                <!--formulario -->
+				<div class="container-fluid" id="paso1" style="padding:0 70px">
+					<form>
+						<h5>Datos del Contratante</h5><br/>						
+													
+						<div class="row" id="data_cteext">
+                            
+                            <div class="col-sm-6">
+                                <div class="md-form form-group">
+                                    <select name="estatus" class="mdb-select">
+                                        <option value="1">Seguro nuevo</option>
+                                        <option value="2">Renovar seguro</option>
+                                    </select>
+                                    <label for="estatus">Tipo de movimiento</label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6 text-center">
+								<button type="button" class="btn btn-blue btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">Subir archivo</button>
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <div class="md-form form-group">
+                                    <input type="text" name="folioTMX" class="form-control">
+								    <label for="folioTMX" >Póliza anterior</label>
+                                </div>
+                            </div>
+						</div>
+                        
+                        <div class="row" id="">
+                            
+                            <div class="col-sm-6">
+                                <div class="md-form form-group">
+                                    <select name="estatus" class="mdb-select">
+                                        <option value="1">Todas</option>
+                                        <option value="2">Todas</option>
+                                    </select>
+                                    <label for="estatus">Nombre cliente</label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <div class="md-form form-group">
+                                    <input type="text" name="folioTMX" class="form-control">
+								    <label for="folioTMX" >RFC</label>
+                                </div>
+                            </div>                       
+                            
+						</div>
+                        
+                        
+                        
+                        <div class="row" id="">
+                            
+                            <div class="col-sm-12">
+                                <div class="md-form form-group">
+                                    <label for="modoCotizacion" class="active">Desde</label>
+                                    <div class="row">
+                                        <div class="col">
+                                            <input placeholder="Desde" type="text" id="creationDate" class="form-control datepicker">
+                                        </div>
+                                        <div class="col">
+                                            <input placeholder="Hasta" type="text" id="creationDate" class="form-control datepicker">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+						</div>
+                        
+                        
+                        
+                        
+                        <div class="row" id="">
+                            
+                            <div class="col-sm-6">
+                                <div class="md-form form-group">
+                                    <select name="estatus" class="mdb-select">
+                                        <option value="1">MXN</option>
+                                        <option value="2">Todas</option>
+                                    </select>
+                                    <label for="estatus">Moneda</label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <div class="md-form form-group">
+                                    <select name="estatus" class="mdb-select">
+                                        <option value="1">Familiar</option>
+                                        <option value="2">Todos</option>
+                                    </select>
+                                    <label for="estatus">Producto</label>
+                                </div>
+                            </div>                       
+                            
+						</div>
+                        
+                        
+                        <div class="row" id="">
+                            
+                            <div class="col-sm-12">
+                                <div class="md-form form-group">
+                                    <textarea type="text" id="" class="form-control md-textarea" rows="3"></textarea>
+                                    <label for="materialFormContactMessageEx">Solicitud</label>
+                                </div>
+                            </div>
+                        
+						</div>
+                        
+                        
+						<div class="row">
+						    <div class="col-sm-12" style="text-align:right">								
+								<a class="btn btn-pink" id="paso1_next" data-toggle="modal" href="#modal-add-user">Enviar</a>
+							</div>
+                        </div>
+
+						
+					</form>
+                    
+                    <div class="modal fade" id="modal-add-user" tabindex="-1" role="dialog" aria-labelledby="rechazoLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="h4 text-center">Envío exitoso</p>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+
+
+                                <div class="alert alert-success" role="alert" id="user_add_success">
+                                  El alta se realizó correctamente
+                                </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Subir documento</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="file-loading">
+                                      <input id="input-folder-3" name="input-folder-3[]" type="file" >
+                                    </div>
+                                    <div id="kartik-file-errors"></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-blue btn-sm btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-pink btn-sm btn-primary" title="Your custom upload logic">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+				</div>	<!-- paso 1-->
+				
+                
+		</section>
+		
+		<section id="box-form-login"></section>		
+	    <section id="box-form-passw"></section>               
+		<footer class="text-center text-md-left pt-4 mt-4 border-top border-info"></footer>
+                                         
+</section>
+		 
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>				
+<script type="text/javascript" src="js/datatables.min.js"></script>
+<script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="js/responsive.bootstrap4.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="js/mdb.min.js"></script>	
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
+		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
+		$("#box-form-passw").load("form-rec-pass.html");	
+		new WOW().init();		    
+		$("#tab1").addClass("show");	
+		//var list = document.getElementById("tab-list");
+		
+	});
+</script>	
+</body>
+</html>
