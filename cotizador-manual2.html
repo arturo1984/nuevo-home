@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Cotizador Manual</title>
+        <link rel="icon" href="images/logo/favicon.ico">
+        <link href="css/fontawesome/fontawesome-all.css" rel="stylesheet">
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="css/material-design/mdb.css" rel="stylesheet">
+        <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+		<link href="css/owl/owl.carousel.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">		
+    </head>
+<body>
+<section class="site-wrapper">
+	<header></header>			
+	<section id="landing-agentes">
+		<div class="section-heading">
+			<div class="container-fluid">
+				<h4 class="title text-left">Cotizador Manual</h4>
+			</div>				
+		</div>
+
+		<div class="container">
+			<form>
+				<h5>Datos del Contratante</h5><br/>
+				<div class="row">
+					<div class="col-md-12">					
+						<div class="form-inline">
+							<div class="form-check">
+								<input class="form-check-input" name="group20" type="radio" id="radio1_ce" checked="checked">
+								<label class="form-check-label" for="radio1_ce">Cliente Existente</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" name="group20" type="radio" id="radio2_cn">
+								<label class="form-check-label" for="radio2_cn">Cliente Nuevo</label>
+							</div>
+						</div>
+					</div>
+				</div>
+											
+				<div class="row" id="data_cteext">
+					<div class="col-sm-3">
+						<div class="md-form form-group">
+							<input type="text" name="folioTMX" class="form-control">
+							<label for="folioTMX" >RFC del Contratante:</label>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="md-form form-group">
+							<input type="text" name="poliza" class="form-control">
+							<label for="poliza" >Nombre Completo:</label>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="md-form form-group">
+							<input type="text" name="folioTMX" class="form-control">
+							<label for="folioTMX" >Código Cliente:</label>
+						</div>
+					</div>							   
+				</div>
+				
+				<div class="row" id="data_ctenvo" style="display:none">
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="md-form form-group">
+									<input type="text" name="folioTMX" class="form-control">
+									<label for="folioTMX" >Nombre Completo:</label>
+								</div>
+							</div>
+							<div class="col-sm-6">					
+								<div class="form-inline" style="padding-top: 40px;">
+									<div class="form-check">
+										<input class="form-check-input" name="persona" type="radio" id="fisica" checked="checked">
+										<label class="form-check-label" for="fisica">Persona Fisica</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" name="persona" type="radio" id="moral">
+										<label class="form-check-label" for="moral">Persona Moral</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row" id="fisicarow">
+							<div class="col-sm-3">
+								<div class="md-form form-group">
+									<input type="text" name="folioTMX" class="form-control">
+									<label for="folioTMX" >RFC del Contratante:</label>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="md-form form-group">
+									<input type="text" name="folioTMX" class="form-control">
+									<label for="folioTMX" >Nombre:</label>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="md-form form-group">
+									<input type="text" name="folioTMX" class="form-control">
+									<label for="folioTMX" >Apellido Paterno:</label>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="md-form form-group">
+									<input type="text" name="folioTMX" class="form-control">
+									<label for="folioTMX" >Apellido Materno:</label>
+								</div>
+							</div>								
+						</div>
+						<div class="row" id="moralrow">
+							<div class="col-sm-3">
+								<div class="md-form form-group">
+									<input type="text" name="folioTMX" class="form-control">
+									<label for="folioTMX" >RFC del Contratante:</label>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="md-form form-group">
+									<input type="text" name="folioTMX" class="form-control">
+									<label for="folioTMX" >Nombre del Contratante:</label>
+								</div>
+							</div>									
+							<div class="col-sm-3">
+								<div class="md-form form-group">
+										<select name="estatus" class="mdb-select">
+											<option value="1">S.A. de C.V.</option>
+											<option value="2">Otra</option>
+										</select>
+										<label for="estatus" >Denominacion</label>
+								</div>
+							</div>
+						</div>
+					</div>   
+				</div>
+				
+				<br/><h5>Datos de la Cotización</h5><br/>
+				<div class="row" style="text-align:right">
+					<div class="col-sm-12">					
+						<div class="form-inline float-right">
+							<div class="form-check">
+								<input class="form-check-input" name="group21" type="radio" id="radio3_cv" checked="checked">
+								<label class="form-check-label" for="radio3_cv">Cotizar con Vigencia</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" name="group21" type="radio" id="radio4_cv">
+								<label class="form-check-label" for="radio4_cv">Vigencia Anual a Partir de la Soliciutd de Emisión</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-3">
+						<div class="md-form form-group">
+							<select name="estatus" class="mdb-select">
+								<option value="1">Todos</option>
+								<option value="2">Seguro Nuevo</option>
+								<option value="3">Renovar Seguro</option>
+							</select>
+							<label for="estatus" >Tipo de Movimiento</label>
+						</div>
+					</div>
+					<div class="col-sm-3">
+                        <div class="md-form form-group">
+                            <input type="text" name="folioTMX" class="form-control">
+						    <label for="folioTMX" >Póliza anterior</label>
+                        </div>
+                    </div>
+					<div class="col-sm-6">
+						<div class="md-form form-group">
+							<label for="modoCotizacion" class="active">Desde</label>
+							<div class="row">
+								<div class="col">
+									<input placeholder="Desde" type="text" id="creationDate" class="form-control datepicker"/>
+								</div>
+								<div class="col">
+									<input placeholder="Hasta" type="text" id="creationDate" class="form-control datepicker"/>
+								</div>
+							</div>
+						</div>
+					</div>							   
+				</div>
+				
+				<div class="row">
+					<div class="col-md-3">
+						<div class="md-form form-group">
+							<select name="estatus" class="mdb-select">
+								<option value="1">01 MARSH</option>
+								<option value="2">02 MARSH</option>
+								<option value="3">03 MARSH</option>
+							</select>
+							<label for="estatus" >Agentes</label>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="md-form form-group">
+							<select name="estatus" class="mdb-select">
+								<option value="1">USD</option>
+								<option value="2">MXN</option>
+								<option value="3">EUR</option>
+							</select>
+							<label for="estatus" >Moneda</label>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="md-form form-group">
+							<select name="estatus" class="mdb-select">
+								<option value="1">Mensual</option>
+								<option value="2">Anual</option>
+								<option value="3">Semestral</option>
+							</select>
+							<label for="estatus" >Forma de Pago</label>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="md-form form-group">
+							<button type="button" class="btn btn-blue btn-sm btn-primary" data-toggle="modal" data-target="#modal-archives">Subir archivo</button>	
+						</div>
+					</div>	
+				</div>
+
+				
+				
+				<div class="row">
+					<div class="col-sm-12" style="text-align:right">				
+						<a class="btn btn-pink">Enviar</a>
+					</div>
+				</div>				
+			</form>					
+		</div>
+        
+        <!-- Modal Ver archivos -->
+        <div class="modal fade" id="modal-archives" tabindex="-1" role="dialog" aria-labelledby="archivesLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="archivesLabel">Archivos</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    	<form>
+                    		<h5>Seleccione Archivo:</h5><br/>
+							<div class="row">
+	                    		<div class="col-sm-12 col-md-6">
+									<div class="md-form form-group">
+										<div class="file-loading">
+											<input id="input-folder-3" name="input-folder-3[]" type="file" >
+										</div>
+										<div id="kartik-file-errors"></div>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-3">
+									<div class="md-form form-group">
+										<select name="estatus" class="mdb-select">
+											<option value="1">INE</option>
+											<option value="2">ActaConstitutiva</option>
+											<option value="3">Ubicaciones</option>
+											<option value="4">Poder Notarial</option>
+											<option value="5">Comprobante de Domicilio</option>
+											<option value="6">Predial</option>
+										</select>
+										<label for="estatus" >Tipo Archivo</label>
+									</div>
+								</div>	
+								<div class="col-sm-12 col-md-3">
+									<div class="md-form form-group">
+										<button type="button" class="btn btn-pink btn-rounded btn-sm waves-effect waves-light float-right">Agregar Archivo</button>
+									</div>
+								</div>
+							</div>
+						</form>
+                        <table class="table simple-data-table table-striped table-bordered" style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th>Archivo</th>
+                                    <th>Usuario de creación</th>
+                                    <th>Fecha de creación</th>
+                                    <th>Tipo</th>
+                                    <th class="all" data-orderable="false"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Slip.pdf</td>
+                                    <td>aluna</td>
+                                    <td>09-abr-18</td>
+                                    <td>PDF</td>
+                                    <td class="text-center"><i class="fa fa-close"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Lista de datos.xlsx</td>
+                                    <td>yhernandez</td>
+                                    <td>14-abr-18</td>
+                                    <td>Lista de datos</td>
+                                    <td class="text-center"><i class="fa fa-close"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Acta Constitutiva.pdf</td>
+                                    <td>yhernandez</td>
+                                    <td>16-abr-18</td>
+                                    <td>CURP</td>
+                                    <td class="text-center"><i class="fa fa-close"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>INE.jpg</td>
+                                    <td>yhernandez</td>
+                                    <td>16-abr-18</td>
+                                    <td>INE</td>
+                                    <td class="text-center"><i class="fa fa-close"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+    				<div class="modal-footer">
+						<button type="button" class="btn btn-blue btn-sm btn-secondary" data-dismiss="modal">Cerrar</button>
+					</div>
+                </div>
+            </div>
+        </div>
+        <!-- END Modal Ver archivos -->            
+		<footer class="text-center text-md-left pt-4 mt-4 border-top border-info"></footer>
+                                         
+</section>
+		 
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>				
+<script type="text/javascript" src="js/datatables.min.js"></script>
+<script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="js/responsive.bootstrap4.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="js/mdb.min.js"></script>	
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
+		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});
+		$("#fisicarow").show();
+		$("#moralrow").hide();
+		
+		$('input[type="radio"]').click(function(){
+			if ($(this).is(':checked') && $(this).attr('id')=="radio2_cn")
+			{
+				$("#data_ctenvo").show();
+				$("#data_cteext").hide();		
+			}
+		});
+		 
+		$('input[type="radio"]').click(function(){
+			if ($(this).is(':checked') && $(this).attr('id')=="radio1_ce")
+			{
+				$("#data_ctenvo").hide();
+				$("#data_cteext").show();
+			}
+		});
+
+		$('input[type="radio"]').click(function(){
+			if ($(this).is(':checked') && $(this).attr('id')=="fisica")
+			{
+				$("#moralrow").hide();
+				$("#fisicarow").show();
+			}
+		});
+
+		$('input[type="radio"]').click(function(){
+			if ($(this).is(':checked') && $(this).attr('id')=="moral")
+			{
+				$("#fisicarow").hide();
+				$("#moralrow").show();
+			}
+		});
+		
+		$('#btn-add-tab').click(function() {
+			tabID++;
+			if(tabID < 11){				
+				$('#tab-list').append($('<li><a id="in_tab'+tabID+'" href="#tab' + tabID + '" role="tab" data-toggle="tab"><i class="fa fa-map-marker" aria-hidden="true"></i> ' + tabID + '<button class="close" type="button" title="Remove this page">×</button></a></li>'));					
+				$('#tab-content').append($('<div class="tab-pane fade" id="tab' + tabID + '"> 1 </div>'));
+				$("#tab"+ tabID).load("tab_ad_hogar.html");
+				
+				 time_tabs = setTimeout(function(){ 
+				 var tab_id = $("#tit_tab").parent().attr('id');
+					$("#tit_tab").attr("id","tit_tab_"+tab_id);
+					$("#tit_tab_"+tab_id).html("Datos del riesgo: "+ tabID);			
+					$("#save_tot").attr("id","save_tot_"+ tabID);
+					$("#checkbox70").attr("id","checkbox70_"+tabID);
+					$('#tab'+tabID+' .mdb-select').material_select();
+				}, 500);
+				var tabShow = $('#tab-list a#in_tab'+tabID);
+				tabShow.tab('show');	
+				sum_ubicacion(0);
+			}
+			else
+			{alert("No se pudeden agragar más ubicaciones")}
+		});
+		
+		$('#tab-list').on('click', '.close', function() {
+			var tabID = $(this).parents('a').attr('href');
+			$(this).parents('li').remove();
+			$(tabID).remove();
+			var id_tbl = tabID.substring(1);
+			$("#i_"+id_tbl).remove();
+			$("#s_"+id_tbl).remove();
+			//display first tab
+			var tabFirst = $('#tab-list a:first');
+			resetTab();
+			sum_ubicacion(1);
+			tabFirst.tab('show');
+		});
+	});
+										
+	var button='<button class="close" type="button" title="Remove this page">×</button>';
+	var tabID = 1;
+	
+	function resetTab(){
+		var tabs=$("#tab-list li:not(:first)");
+		var len=1
+		$(tabs).each(function(k,v){
+			len++;
+			$(this).find('a').html('Ubicacion ' + len + button);
+		})
+		tabID--;
+	}
+
+	function sum_ubicacion(sum){		
+		if( tabID > 1 ){
+			if(sum == 0)
+			{	
+				costo = 0; 
+				sumTot = parseInt($("#tol_table").html());
+				$('#tabla_total>thead>tr').append('<th id="i_tab'+tabID+'">'+tabID+'</th>');
+				$('#tabla_total>tbody>tr').append('<td id="s_tab'+tabID+'" class="tot_parc">'+costo+'</td>');
+				$('#tol_table').html(sumTot+costo);
+			}
+			else{
+				sumParc = 0;
+				costo = Math.floor(Math.random() * 101); //calculo por cada ubicacion n > 1
+				$('#s_tab'+tabID).html(costo);
+				$('.tot_parc').each(function(){
+					sumParc = parseInt($(this).html())+sumParc;
+				})
+				$('#tol_table').html(sumParc);// Calcula total		
+			}				
+		}
+		else{
+			costo = 10; //calculo ubicacion 1
+			$("#s_tab1").html(costo);
+			$("#tol_table").html(costo);
+		}
+	}					
+</script>	
+</body>
+</html>
