@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Cobranza</title>
+        <link href="css/fontawesome/fontawesome-all.css" rel="stylesheet">
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="css/material-design/mdb.css" rel="stylesheet">
+        <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <section class="site-wrapper">
+            <header></header>
+            <section>
+                <div class="container-fluid">
+                    <div class="section-heading">
+                        <h1 class="title text-left">Cobranza de Pólizas</h1>
+                    </div>
+                    <div class="form-wrapper">
+                        <form id="search-form" class="mb-4">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <input type="text" name="poliza" class="form-control">
+                                        <label for="poliza" >Póliza</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <input type="text" name="endoso" class="form-control">
+                                        <label for="endoso" >Endoso</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <select name="estatus" class="mdb-select">
+                                            <option value="1">Todos</option>
+                                            <option value="2">Por Emitir</option>
+                                            <option value="3">Pendiente de Pago</option>
+                                            <option value="4">Emitida</option>
+                                            <option value="5">Al Corriente</option>
+                                        </select>
+                                        <label for="estatus" >Estatus</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <select name="tipopago" class="mdb-select">
+                                            <option value="1">Todos</option>
+                                            <option value="2">Contado</option>
+                                            <option value="3">Mensual</option>
+                                            <option value="4">Trimestral</option>
+                                            <option value="5">Anual</option>
+                                        </select>
+                                        <label for="tipopago" >Tipo Pago</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-lg-6">
+                                    <div class="md-form form-group">
+                                        <div class="row">
+                                            <label for="inicio" class="active">Periodo - Fecha desde/hasta</label>
+                                            <div class="col">
+                                                <input name="inicio" placeholder="Desde" type="text" id="creationDate" class="form-control datepicker">
+                                            </div>
+                                            <div class="col">
+                                                <input name="fin" placeholder="Hasta" type="text" id="creationDate" class="form-control datepicker">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <select name="agente" class="mdb-select">
+                                            <option value="1">Todos</option>
+                                            <option value="2">Marsh</option>
+                                            <option value="3">Kataoka</option>
+                                        </select>
+                                        <label for="agente" >Agente</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <input type="text" name="asegurado" class="form-control">
+                                        <label for="asegurado" >Asegurado</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">   
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <select name="tipoPoliza" class="mdb-select">
+                                            <option value="1">Todos</option>
+                                            <option value="2">Nuevo</option>
+                                            <option value="3">Endoso</option>
+                                            <option value="4">Renovación</option>
+                                        </select>
+                                        <label for="tipoPoliza" >Tipo de Movimiento</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <select name="moneda" class="mdb-select">
+                                            <option value="1">Todas</option>
+                                            <option value="2">USD</option>
+                                            <option value="3">MXN</option>
+                                        </select>
+                                        <label for="moneda" >Moneda</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <select name="producto" class="mdb-select">
+                                            <option value="1">Todos</option>
+                                            <option value="2">Accidentes personales</option>
+                                            <option value="3">Vida grupo</option>
+                                            <option value="4">Paquete empresarial</option>
+                                            <option value="5">Paquete familiar</option>
+                                        </select>
+                                        <label for="producto" >Producto</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="md-form form-group">
+                                        <select name="ramo" class="mdb-select">
+                                            <option value="1">Todos</option>
+                                            <option value="1">Daños</option>
+                                            <option value="1">Vida</option>
+                                        </select>
+                                        <label for="ramo" >Ramo</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a class="btn btn-pink float-right" onclick="document.getElementById('search-form').submit();">BUSCAR</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="table data-table table-striped table-bordered" style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th>Póliza</i></th>
+                                    <th>Endoso</i></th>
+                                    <th>Factura</i></th>
+                                    <th>Tipo Mov</i></th>
+                                    <th>Producto</i></th>
+                                    <th>Comisión</i></th>
+                                    <th>Coaseguro</i></th>                                       
+                                    <th>Agente</i></th>
+                                    <th>Contratante</i></th>
+                                    <th>Asegurado</i></th>                                
+                                    <th>Inicio Vigencia</i></th>
+                                    <th>Fin Vigencia</i></th>
+                                    <th>Moneda</i></th>                                    
+                                    <th>Forma Pago</i></th>
+                                    <th>No. Pago</i></th>
+                                    <th>Prima neta</i></th>
+                                    <th>Derechos</i></th>
+                                    <th>Recargos</i></th>
+                                    <th>IVA</i></th>
+                                    <th>Prima total</i></th>
+                                    <th>Fecha Cancelacion</i></th>
+                                    <th>Motivo Cancelacion</i></th>
+                                    <th class="all" data-orderable="false"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PEMMX000006800</td>
+                                    <td>DP006675</td>
+                                    <td>A544</td>
+                                    <td>Nueva</td>
+                                    <td>Paquete empresarial</td>
+                                    <td>18%</td>
+                                    <td>Directo</td>
+                                    <td>Maria...</td>
+                                    <td>Jose P...</td>
+                                    <td>Asegurado</td>
+                                    <td>01/01/2017</td>
+                                    <td>01/01/2018</td>
+                                    <td>Pesos</td>
+                                    <td>Mensual</td>
+                                    <td>1/12</td>
+                                    <td>$100,000.00</td>
+                                    <td>$1,200.00</td>
+                                    <td>$0.00</td>
+                                    <td>$1,600.00</td>
+                                    <td>$102,800.00</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                               <a class="dropdown-item" data-id="ejemploPoliza.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Poliza</span></a>
+                                                <a class="dropdown-item" data-id="ejemploEndoso.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Endoso</span></a>
+                                                <a class="dropdown-item" data-id="ejemploFactura.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Factura</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PEMMX000006801</td>
+                                    <td>DP006676</td>
+                                    <td>A545</td>
+                                    <td>Nueva</td>
+                                    <td>Paquete empresarial</td>
+                                    <td>18%</td>
+                                    <td>Directo</td>
+                                    <td>Maria...</td>
+                                    <td>Jose P...</td>
+                                    <td>Asegurado</td>
+                                    <td>01/01/2017</td>
+                                    <td>01/01/2018</td>
+                                    <td>Pesos</td>
+                                    <td>Mensual</td>
+                                    <td>1/12</td>
+                                    <td>$100,000.00</td>
+                                    <td>$1,200.00</td>
+                                    <td>$0.00</td>
+                                    <td>$1,600.00</td>
+                                    <td>$102,800.00</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                               <a class="dropdown-item" data-id="ejemploPoliza.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Poliza</span></a>
+                                                <a class="dropdown-item" data-id="ejemploEndoso.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Endoso</span></a>
+                                                <a class="dropdown-item" data-id="ejemploFactura.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Factura</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PEMMX000006802</td>
+                                    <td>DP006677</td>
+                                    <td>A546</td>
+                                    <td>Nueva</td>
+                                    <td>Paquete empresarial</td>
+                                    <td>18%</td>
+                                    <td>Directo</td>
+                                    <td>Maria...</td>
+                                    <td>Jose P...</td>
+                                    <td>Asegurado</td>
+                                    <td>01/01/2017</td>
+                                    <td>01/01/2018</td>
+                                    <td>Pesos</td>
+                                    <td>Mensual</td>
+                                    <td>1/12</td>
+                                    <td>$100,000.00</td>
+                                    <td>$1,200.00</td>
+                                    <td>$0.00</td>
+                                    <td>$1,600.00</td>
+                                    <td>$102,800.00</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                               <a class="dropdown-item" data-id="ejemploPoliza.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Poliza</span></a>
+                                                <a class="dropdown-item" data-id="ejemploEndoso.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Endoso</span></a>
+                                                <a class="dropdown-item" data-id="ejemploFactura.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Factura</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PEMMX000006803</td>
+                                    <td>DP006678</td>
+                                    <td>A547</td>
+                                    <td>Nueva</td>
+                                    <td>Paquete empresarial</td>
+                                    <td>18%</td>
+                                    <td>Directo</td>
+                                    <td>Maria...</td>
+                                    <td>Jose P...</td>
+                                    <td>Asegurado</td>
+                                    <td>01/01/2017</td>
+                                    <td>01/01/2018</td>
+                                    <td>Pesos</td>
+                                    <td>Mensual</td>
+                                    <td>1/12</td>
+                                    <td>$100,000.00</td>
+                                    <td>$1,200.00</td>
+                                    <td>$0.00</td>
+                                    <td>$1,600.00</td>
+                                    <td>$102,800.00</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                               <a class="dropdown-item" data-id="ejemploPoliza.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Poliza</span></a>
+                                                <a class="dropdown-item" data-id="ejemploEndoso.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Endoso</span></a>
+                                                <a class="dropdown-item" data-id="ejemploFactura.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Factura</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PEMMX000006804</td>
+                                    <td>DP006679</td>
+                                    <td>A548</td>
+                                    <td>Nueva</td>
+                                    <td>Paquete empresarial</td>
+                                    <td>18%</td>
+                                    <td>Directo</td>
+                                    <td>Maria...</td>
+                                    <td>Jose P...</td>
+                                    <td>Asegurado</td>
+                                    <td>01/01/2017</td>
+                                    <td>01/01/2018</td>
+                                    <td>Pesos</td>
+                                    <td>Mensual</td>
+                                    <td>1/12</td>
+                                    <td>$100,000.00</td>
+                                    <td>$1,200.00</td>
+                                    <td>$0.00</td>
+                                    <td>$1,600.00</td>
+                                    <td>$102,800.00</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                               <a class="dropdown-item" data-id="ejemploPoliza.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Poliza</span></a>
+                                                <a class="dropdown-item" data-id="ejemploEndoso.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Endoso</span></a>
+                                                <a class="dropdown-item" data-id="ejemploFactura.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Factura</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PEMMX000006805</td>
+                                    <td>DP006680</td>
+                                    <td>A549</td>
+                                    <td>Nueva</td>
+                                    <td>Paquete empresarial</td>
+                                    <td>18%</td>
+                                    <td>Directo</td>
+                                    <td>Maria...</td>
+                                    <td>Jose P...</td>
+                                    <td>Asegurado</td>
+                                    <td>01/01/2017</td>
+                                    <td>01/01/2018</td>
+                                    <td>Pesos</td>
+                                    <td>Mensual</td>
+                                    <td>1/12</td>
+                                    <td>$100,000.00</td>
+                                    <td>$1,200.00</td>
+                                    <td>$0.00</td>
+                                    <td>$1,600.00</td>
+                                    <td>$102,800.00</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                               <a class="dropdown-item" data-id="ejemploPoliza.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Poliza</span></a>
+                                                <a class="dropdown-item" data-id="ejemploEndoso.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Endoso</span></a>
+                                                <a class="dropdown-item" data-id="ejemploFactura.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Factura</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PEMMX000006806</td>
+                                    <td>DP006681</td>
+                                    <td>A550</td>
+                                    <td>Nueva</td>
+                                    <td>Paquete empresarial</td>
+                                    <td>18%</td>
+                                    <td>Directo</td>
+                                    <td>Maria...</td>
+                                    <td>Jose P...</td>
+                                    <td>Asegurado</td>
+                                    <td>01/01/2017</td>
+                                    <td>01/01/2018</td>
+                                    <td>Pesos</td>
+                                    <td>Mensual</td>
+                                    <td>1/12</td>
+                                    <td>$100,000.00</td>
+                                    <td>$1,200.00</td>
+                                    <td>$0.00</td>
+                                    <td>$1,600.00</td>
+                                    <td>$102,800.00</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                               <a class="dropdown-item" data-id="ejemploPoliza.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Poliza</span></a>
+                                                <a class="dropdown-item" data-id="ejemploEndoso.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Endoso</span></a>
+                                                <a class="dropdown-item" data-id="ejemploFactura.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Factura</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PEMMX000006807</td>
+                                    <td>DP006682</td>
+                                    <td>A551</td>
+                                    <td>Nueva</td>
+                                    <td>Paquete empresarial</td>
+                                    <td>18%</td>
+                                    <td>Directo</td>
+                                    <td>Maria...</td>
+                                    <td>Jose P...</td>
+                                    <td>Asegurado</td>
+                                    <td>01/01/2017</td>
+                                    <td>01/01/2018</td>
+                                    <td>Pesos</td>
+                                    <td>Mensual</td>
+                                    <td>1/12</td>
+                                    <td>$100,000.00</td>
+                                    <td>$1,200.00</td>
+                                    <td>$0.00</td>
+                                    <td>$1,600.00</td>
+                                    <td>$102,800.00</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="actions-container dropleft">
+                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu animated fadeIn">
+                                               <a class="dropdown-item" data-id="ejemploPoliza.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Poliza</span></a>
+                                                <a class="dropdown-item" data-id="ejemploEndoso.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Endoso</span></a>
+                                                <a class="dropdown-item" data-id="ejemploFactura.pdf" data-toggle="modal" href="#modal-archives" ><i class="far fa-file-alt mr-2"></i><span>Ver Factura</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>                       
+                            </tbody>
+                        </table>
+                    </div>
+                </div>               
+            </section>            
+            <footer class="text-center text-md-left pt-4 mt-4 border-top border-info"></footer>
+            <!-- Modal Ver Archivos -->
+            <div class="modal fade" id="modal-archives" tabindex="-1" role="dialog" aria-labelledby="archivesLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="#archivesLabel">Archivos</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe src="http://globalquark.com.mx/proyectos/mockup-tokio-marine/images/logo/main_logo.png" style="width:100%; height:446px;" frameborder="0" id="#frameContent"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Modal Ver archivos -->
+            <!-- Modal Short Help -->
+            <div class="modal fade" id="modal-short-help" tabindex="-1" role="dialog" aria-labelledby="helpLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="helpLabel">Ayuda</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="instruction">
+                                            <h6 class="title font-weight-bold mb-3"><i class="far fa-comment pr-2"></i>Ver mensajes</h6>
+                                            <p>Disponible en todos los estados de esta pantalla para lectura de mensajes. La funcionalidad para crear nuevos mensajes esta disponible en los estados: "POR EMITIR"</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="instruction">
+                                            <h6 class="title font-weight-bold mb-3"><i class="far fa-file-alt pr-2"></i>Ver archivos</h6>
+                                            <p>Disponible en todos los estados de esta pantalla respetando las reglas de negocio siguientes: Los Agentes/Brokers sólo pueden eliminar archivos cargados por otro perfil de agente o por sí mismos y que el estado de la poliza sea “EMITIDA”</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Modal Short Help -->
+        </section>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/datatables.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="js/responsive.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/jszip.min.js"></script>
+        <script type="text/javascript" src="js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="js/buttons.print.min.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+        <script type="text/javascript">
+            $.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
+            $.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}}); 
+        </script>
+        <script type="text/javascript">
+            $.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
+            $.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}}); 
+        </script>
+        <script type="text/javascript">
+
+            $(document).on("click", ".dropdown-item", function () {
+                var pdfArchive = $(this).data('id');
+                var url = 'http://docs.google.com/gview?url=http://globalquark.com.mx/proyectos/mockup-tokio-marine/pdf/'+pdfArchive+'&embedded=true';
+                var titulo = $('.modal-header h5').text();
+                var frame = $('.modal-body iframe');
+                var location = frame.attr('src');
+                frame.attr('src', url);
+                //frame.parentNode.replaceChild(frame.cloneNode(), frame);
+                $('.modal-header h5').text(pdfArchive);
+
+                //$(".modal-body #frameContent").src('http://docs.google.com/gview?url=https://globalquark.com.mx/proyectos/mockup-tokio-marine/pdf/'+pdfArchive+'&embedded=true');
+                // As pointed out in comments, 
+                // it is superfluous to have to manually call the modal.
+            });
+        </script>
+    </body>
+</html>
