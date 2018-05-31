@@ -14,7 +14,7 @@
         <link href="css/main.css" rel="stylesheet">        
         
         <script src="js/amcharts/amcharts.js"></script>
-        <script src="js/amcharts/funnel.js"></script>
+        <script src="js/amcharts/serial.js"></script>
         <script src="js/amcharts/pie.js"></script>
         <script src="js/amcharts/plugins/export/export.min.js"></script>
         <link rel="stylesheet" href="js/amcharts/plugins/export/export.css" type="text/css" media="all" />
@@ -40,13 +40,19 @@
             <div class="col-12 masonry-item wow fadeInUp animation-delay-2 text-center mb-4">
                 <h1 class="font-weight-bold center-block mt-4 mb-4 animated zoomInDown animation-delay-5 footer-title">Analitica</h1>
                 <p class="text-center center-block mt-2 animated fadeInUp animation-delay-7">Conociendo la importancia de las distintas industrias y comercios, nuestro enfoque empresarial nos permite ofrecer productos que ayuden a proteger a las empresas de pérdidas potenciales que, en ocasiones, no pueden costear por sí mismas, permitiéndoles operar con confianza con el soporte de Tokio Marine México.</p>
-            </div>           
-            
-            
+            </div>
+                
+        </div>
+        
+        
+        
+        
+        
+        <div class="row">
             <div class="col-12 mt5">
                 <form>
 
-                    <br/><h5>COTIZACIONES SOLICITADAS EN EL MES/AÑO (Pipeline)</h5><br/>						
+                    <br/><h5>COTIZACIONES SOLICITADAS EN EL MES/AÑO (Detalle por Producto)</h5><br/>						
 
                     <div class="row linea">
                         <div class="col-sm-4">
@@ -101,26 +107,25 @@
 								<div class="indeterminate"></div>
 							</div>
 						</div>
-                        
                         <!--graficas-->
-                        <div class="col-md-12">							
-                            <div class="row container-fluid graficas" style="display:none">						
+                        <div class="col-md-12">						
+							<div class="row container-fluid graficas" style="display:none">						
                                 <div class="card col-sm-12">
-                                    <div class="card-header primary-color white-text">COTIZACIONES SOLICITADAS EN EL MES/AÑO (Pipeline)</div>
+                                    <div class="card-header primary-color white-text">COTIZACIONES SOLICITADAS EN EL MES/AÑO (Detalle por Producto)</div>
                                     <div class="card-body">                                    
                                         <div id="chartdiv"></div>
                                     </div>
-                                </div>
+                                </div>                                
                             </div>
 						</div>
                         
-                        
-                        
-                    </div>                    
+                    </div>
+                    
+                    
                 </form>	
             </div>
                 
-        </div>
+        </div>        
         
     </div>    
     
@@ -171,49 +176,132 @@
 		
 	</script>
     
+    
     <script>
-    var chart = AmCharts.makeChart( "chartdiv", {
-      "type": "funnel",
-      "theme": "light",
-      "dataProvider": [ {
-        "title": "En Revisión",
-        "value": 30
-      }, {
-        "title": "No Aceptada",
-        "value": 5
-      }, {
-        "title": "Rechazadas",
-        "value": 10
-      }, {
-        "title": "Proceso de Cotización",
-        "value": 40
-      }, {
-        "title": "Emitidas",
-        "value": 15
-      }, ],
-      "balloon": {
-        "fixedPosition": true
-      },
-      "valueField": "value",
-      "titleField": "title",
-      "marginRight": 240,
-      "marginLeft": 50,
-      "startX": -500,
-      "depth3D": 100,
-      "angle": 40,
-      "outlineAlpha": 1,
-      "outlineColor": "#FFFFFF",
-      "outlineThickness": 2,
-      "labelPosition": "right",
-      "balloonText": "[[title]]: [[value]]n[[description]]",
-      "export": {
-        "enabled": true
-      }
-    } );
-    </script>
-    
-    
-    
+    var chart = AmCharts.makeChart("chartdiv", {
+    "type": "serial",
+	"theme": "light",
+    "legend": {
+        "horizontalGap": 10,
+        "maxColumns": 1,
+        "position": "right",
+		"useGraphSettings": true,
+		"markerSize": 10
+    },
+    "dataProvider": [{
+        "year": 'En Revisión',
+        "paqEmpress": 5,
+        "paqFamili": 3,
+        "rc": 5,
+        "vida": 1,
+        "transporte": 1,
+        "africa": 0.1
+    }, {
+        "year": 'No Aceptada',
+        "paqEmpress": 24,
+        "paqFamili": 22,
+        "rc": 10,
+        "vida": 2,
+        "transporte": 2,
+        "africa": 0.1
+    }, {
+        "year": 'Rechazadas',
+        "paqEmpress": 10,
+        "paqFamili": 10,
+        "rc": 8,
+        "vida": 7,
+        "transporte": 5,
+        "africa": 0.1
+    }, {
+        "year": 'Proceso de Cotización',
+        "paqEmpress": 24,
+        "paqFamili": 22,
+        "rc": 10,
+        "vida": 2,
+        "transporte": 2,
+        "africa": 0.1
+    }, {
+        "year": 'Emitidas',
+        "paqEmpress": 10,
+        "paqFamili": 10,
+        "rc": 8,
+        "vida": 7,
+        "transporte": 5,
+        "africa": 0.1
+    }],
+    "valueAxes": [{
+        "stackType": "regular",
+        "axisAlpha": 0.5,
+        "gridAlpha": 0
+    }],
+    "graphs": [{
+        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+        "fillAlphas": 0.8,
+        "labelText": "[[value]]",
+        "lineAlpha": 0.3,
+        "title": "Paquete Empresarial",
+        "type": "column",
+		"color": "#000000",
+        "valueField": "paqEmpress"
+    }, {
+        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+        "fillAlphas": 0.8,
+        "labelText": "[[value]]",
+        "lineAlpha": 0.3,
+        "title": "Paquete Familiar",
+        "type": "column",
+		"color": "#000000",
+        "valueField": "paqFamili"
+    }, {
+        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+        "fillAlphas": 0.8,
+        "labelText": "[[value]]",
+        "lineAlpha": 0.3,
+        "title": "R.C.",
+        "type": "column",
+		"color": "#000000",
+        "valueField": "rc"
+    }, {
+        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+        "fillAlphas": 0.8,
+        "labelText": "[[value]]",
+        "lineAlpha": 0.3,
+        "title": "Vida",
+        "type": "column",
+		"color": "#000000",
+        "valueField": "vida"
+    }, {
+        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+        "fillAlphas": 0.8,
+        "labelText": "[[value]]",
+        "lineAlpha": 0.3,
+        "title": "Transporte",
+        "type": "column",
+		"color": "#000000",
+        "valueField": "transporte"
+    }, {
+        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+        "fillAlphas": 0.8,
+        "labelText": "[[value]]",
+        "lineAlpha": 0.3,
+        "title": "Total",
+        "type": "column",
+		"color": "#000000",
+        "valueField": "total"
+    }],
+    "rotate": true,
+    "categoryField": "year",
+    "categoryAxis": {
+        "gridPosition": "start",
+        "axisAlpha": 0,
+        "gridAlpha": 0,
+        "position": "left"
+    },
+    "export": {
+    	"enabled": true
+     }
+});
+</script>
     
     
     </body>

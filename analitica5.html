@@ -40,13 +40,16 @@
             <div class="col-12 masonry-item wow fadeInUp animation-delay-2 text-center mb-4">
                 <h1 class="font-weight-bold center-block mt-4 mb-4 animated zoomInDown animation-delay-5 footer-title">Analitica</h1>
                 <p class="text-center center-block mt-2 animated fadeInUp animation-delay-7">Conociendo la importancia de las distintas industrias y comercios, nuestro enfoque empresarial nos permite ofrecer productos que ayuden a proteger a las empresas de pérdidas potenciales que, en ocasiones, no pueden costear por sí mismas, permitiéndoles operar con confianza con el soporte de Tokio Marine México.</p>
-            </div>           
-            
-            
+            </div>
+                
+        </div>
+        
+        
+        <div class="row">
             <div class="col-12 mt5">
                 <form>
 
-                    <br/><h5>COTIZACIONES SOLICITADAS EN EL MES/AÑO (Pipeline)</h5><br/>						
+                    <br/><h5>MÉTRICAS DE BONO KARATE</h5><br/>						
 
                     <div class="row linea">
                         <div class="col-sm-4">
@@ -100,27 +103,107 @@
 							<div class="progress-search progress primary-color-dark bar" style="display:none">
 								<div class="indeterminate"></div>
 							</div>
-						</div>
+						</div>                        
                         
-                        <!--graficas-->
-                        <div class="col-md-12">							
-                            <div class="row container-fluid graficas" style="display:none">						
-                                <div class="card col-sm-12">
-                                    <div class="card-header primary-color white-text">COTIZACIONES SOLICITADAS EN EL MES/AÑO (Pipeline)</div>
-                                    <div class="card-body">                                    
-                                        <div id="chartdiv"></div>
-                                    </div>
-                                </div>
-                            </div>
-						</div>
-                        
-                        
+                        <div class="col-md-12">						
+							<div class="row container-fluid graficas" style="display:none">
+                                
+                                <div class="col-md-12">
+
+                                    <div class="table-wrapper">
+                                        <table class="table data-table table-striped table-bordered" style="width:100%;">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Paquete empresarial</th>
+                                                    <th>Paquete Familiar</th>
+                                                    <th>R.C.</th>
+                                                    <th>Vida</th>
+                                                    <th>Transporte</th>
+                                                    <th>Total</th>
+                                                    <th class="all" data-orderable="false">Acciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>                                                    
+                                                    <td>Prima Pagada que participa para el Bono Karate</td>
+                                                    <td>2,250,000</td>
+                                                    <td>48,000,000</td>
+                                                    <td>400,000</td>
+                                                    <td>45,000,000</td>
+                                                    <td>2,500,000</td>
+                                                    <td>98,150,000</td>
+                                                    <td>
+                                                        <div class="actions-container dropleft">
+                                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu animated fadeIn">
+                                                                <a class="dropdown-item" data-toggle="modal" href="#modal-messages"><i class="fa fa-lock mr-2"></i><span>Desactivar</span></a>
+                                                                <a class="dropdown-item" data-toggle="modal" href="#modal-asociar-users"><i class="fa fa-external-link mr-2"></i><span>Asociar</span></a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Siniestros Netos (Reserva) que participan para Bono Karate</td>
+                                                    <td>300,250</td>
+                                                    <td>4,500,000</td>
+                                                    <td>25,000</td>
+                                                    <td>36,000,000</td>
+                                                    <td>900,000</td>
+                                                    <td>40,825,250</td>
+                                                    <td>
+                                                        <div class="actions-container dropleft">
+                                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu animated fadeIn">
+                                                                <a class="dropdown-item" data-toggle="modal" href="#modal-messages"><i class="fa fa-comment-o mr-2"></i><span>Desactivar</span></a>
+                                                                <a class="dropdown-item" data-toggle="modal" href="#modal-asociar-users"><i class="fa fa-file-text-o mr-2"></i><span>Asociar</span></a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Siniestralidad</td>
+                                                    <td>13%</td>
+                                                    <td>9%</td>
+                                                    <td>6%</td>
+                                                    <td>80%</td>
+                                                    <td>36%</td>
+                                                    <td>42%</td>
+                                                    <td>
+                                                        <div class="actions-container dropleft">
+                                                            <button type="button" class="btn btn-outline-pink dropdown-menu-right px-3 py-2 waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu animated fadeIn">
+                                                                <a class="dropdown-item" data-toggle="modal" href="#modal-messages"><i class="fa fa-comment-o mr-2"></i><span>Desactivar</span></a>
+                                                                <a class="dropdown-item" data-toggle="modal" href="#modal-asociar-users"><i class="fa fa-file-text-o mr-2"></i><span>Asociar</span></a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                
+
+                                            </tbody>
+                                        </table>
+                                    </div><!-- table-wrapper -->
+                                    
+                                </div><!-- col-md-12 -->
+                            </div> 
+						</div>                        
                         
                     </div>                    
+                    
+                   
+                    
                 </form>	
             </div>
                 
         </div>
+        
         
     </div>    
     
@@ -170,50 +253,6 @@
 
 		
 	</script>
-    
-    <script>
-    var chart = AmCharts.makeChart( "chartdiv", {
-      "type": "funnel",
-      "theme": "light",
-      "dataProvider": [ {
-        "title": "En Revisión",
-        "value": 30
-      }, {
-        "title": "No Aceptada",
-        "value": 5
-      }, {
-        "title": "Rechazadas",
-        "value": 10
-      }, {
-        "title": "Proceso de Cotización",
-        "value": 40
-      }, {
-        "title": "Emitidas",
-        "value": 15
-      }, ],
-      "balloon": {
-        "fixedPosition": true
-      },
-      "valueField": "value",
-      "titleField": "title",
-      "marginRight": 240,
-      "marginLeft": 50,
-      "startX": -500,
-      "depth3D": 100,
-      "angle": 40,
-      "outlineAlpha": 1,
-      "outlineColor": "#FFFFFF",
-      "outlineThickness": 2,
-      "labelPosition": "right",
-      "balloonText": "[[title]]: [[value]]n[[description]]",
-      "export": {
-        "enabled": true
-      }
-    } );
-    </script>
-    
-    
-    
     
     
     </body>

@@ -43,10 +43,35 @@
             </div>           
             
             
+            
+                
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <div class="row">
             <div class="col-12 mt5">
                 <form>
 
-                    <br/><h5>COTIZACIONES SOLICITADAS EN EL MES/AÑO (Pipeline)</h5><br/>						
+                    <br/><h5>PRIMAS Y COMISIONES PAGADA DEL MES DEL MES/AÑO</h5><br/>						
 
                     <div class="row linea">
                         <div class="col-sm-4">
@@ -103,20 +128,25 @@
 						</div>
                         
                         <!--graficas-->
-                        <div class="col-md-12">							
-                            <div class="row container-fluid graficas" style="display:none">						
-                                <div class="card col-sm-12">
-                                    <div class="card-header primary-color white-text">COTIZACIONES SOLICITADAS EN EL MES/AÑO (Pipeline)</div>
+                        <div class="col-md-12">						
+							<div class="row container-fluid graficas" style="display:none">						
+                                <div class="card col-sm-6">
+                                    <div class="card-header primary-color white-text">Prima Pagada MN</div>
                                     <div class="card-body">                                    
                                         <div id="chartdiv"></div>
                                     </div>
                                 </div>
+
+                                <div class="card col-sm-6">
+                                    <div class="card-header primary-color white-text">Comisión Pagada MN</div>
+                                    <div class="card-body">                                    
+                                        <div id="chartdiv2"></div>
+                                    </div>
+                                </div>
                             </div>
 						</div>
-                        
-                        
-                        
-                    </div>                    
+                    </div>                     
+                    
                 </form>	
             </div>
                 
@@ -172,48 +202,181 @@
 	</script>
     
     <script>
-    var chart = AmCharts.makeChart( "chartdiv", {
-      "type": "funnel",
-      "theme": "light",
-      "dataProvider": [ {
-        "title": "En Revisión",
-        "value": 30
-      }, {
-        "title": "No Aceptada",
-        "value": 5
-      }, {
-        "title": "Rechazadas",
-        "value": 10
-      }, {
-        "title": "Proceso de Cotización",
-        "value": 40
-      }, {
-        "title": "Emitidas",
-        "value": 15
-      }, ],
-      "balloon": {
-        "fixedPosition": true
-      },
-      "valueField": "value",
-      "titleField": "title",
-      "marginRight": 240,
-      "marginLeft": 50,
-      "startX": -500,
-      "depth3D": 100,
-      "angle": 40,
-      "outlineAlpha": 1,
-      "outlineColor": "#FFFFFF",
-      "outlineThickness": 2,
-      "labelPosition": "right",
-      "balloonText": "[[title]]: [[value]]n[[description]]",
-      "export": {
-        "enabled": true
+var chart;
+var legend;
+var selected;
+
+var types = [{
+  type: "Paquete empresarial",
+  percent: 27,
+  color: "#ff9e01",  
+}, {
+  type: "Paquete Familiar",
+  percent: 8,
+  color: "#b0de09",  
+}, {
+  type: "R.C.",
+  percent: 14,
+  color: "#b0de09",  
+}, {
+  type: "Vida",
+  percent: 49,
+  color: "#b0de09",  
+}, {
+  type: "Transporte",
+  percent: 1,
+  color: "#b0de09",  
+}];
+
+function generateChartData() {
+  var chartData = [];
+  for (var i = 0; i < types.length; i++) {
+    if (i == selected) {
+      for (var x = 0; x < types[i].subs.length; x++) {
+        chartData.push({
+          type: types[i].subs[x].type,
+          percent: types[i].subs[x].percent,
+          color: types[i].color,
+          pulled: true
+        });
       }
-    } );
-    </script>
+    } else {
+      chartData.push({
+        type: types[i].type,
+        percent: types[i].percent,
+        color: types[i].color,
+        id: i
+      });
+    }
+  }
+  return chartData;
+}
+
+AmCharts.makeChart("chartdiv", {
+  "type": "pie",
+"theme": "light",
+
+  "dataProvider": generateChartData(),
+  "labelText": "[[title]]: [[value]]",
+  "balloonText": "[[title]]: [[value]]",
+  "titleField": "type",
+  "valueField": "percent",
+  "outlineColor": "#FFFFFF",
+  "outlineAlpha": 0.8,
+  "outlineThickness": 2,
+  "colorField": "color",
+  "pulledField": "pulled",
+  "titles": [{
+    "text": " "
+  }],
+  "listeners": [{
+    "event": "clickSlice",
+    "method": function(event) {
+      var chart = event.chart;
+      if (event.dataItem.dataContext.id != undefined) {
+        selected = event.dataItem.dataContext.id;
+      } else {
+        selected = undefined;
+      }
+      chart.dataProvider = generateChartData();
+      chart.validateData();
+    }
+  }],
+  "export": {
+    "enabled": true
+  }
+});
+</script>
     
     
     
+    
+<script>
+var chart;
+var legend;
+var selected;
+
+var types = [{
+  type: "Paquete empresarial",
+  percent: 27,
+  color: "#ff9e01",  
+}, {
+  type: "Paquete Familiar",
+  percent: 8,
+  color: "#b0de09",  
+}, {
+  type: "R.C.",
+  percent: 14,
+  color: "#b0de09",  
+}, {
+  type: "Vida",
+  percent: 49,
+  color: "#b0de09",  
+}, {
+  type: "Transporte",
+  percent: 1,
+  color: "#b0de09",  
+}];
+
+function generateChartData() {
+  var chartData = [];
+  for (var i = 0; i < types.length; i++) {
+    if (i == selected) {
+      for (var x = 0; x < types[i].subs.length; x++) {
+        chartData.push({
+          type: types[i].subs[x].type,
+          percent: types[i].subs[x].percent,
+          color: types[i].color,
+          pulled: true
+        });
+      }
+    } else {
+      chartData.push({
+        type: types[i].type,
+        percent: types[i].percent,
+        color: types[i].color,
+        id: i
+      });
+    }
+  }
+  return chartData;
+}
+
+AmCharts.makeChart("chartdiv2", {
+  "type": "pie",
+"theme": "light",
+
+  "dataProvider": generateChartData(),
+  "labelText": "[[title]]: [[value]]",
+  "balloonText": "[[title]]: [[value]]",
+  "titleField": "type",
+  "valueField": "percent",
+  "outlineColor": "#FFFFFF",
+  "outlineAlpha": 0.8,
+  "outlineThickness": 2,
+  "colorField": "color",
+  "pulledField": "pulled",
+  "titles": [{
+    "text": " "
+  }],
+  "listeners": [{
+    "event": "clickSlice",
+    "method": function(event) {
+      var chart = event.chart;
+      if (event.dataItem.dataContext.id != undefined) {
+        selected = event.dataItem.dataContext.id;
+      } else {
+        selected = undefined;
+      }
+      chart.dataProvider = generateChartData();
+      chart.validateData();
+    }
+  }],
+  "export": {
+    "enabled": true
+  }
+});
+</script>
     
     
     </body>
