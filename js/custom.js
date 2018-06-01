@@ -3,7 +3,13 @@ $(document).ready(function(){
     /*Initialize all select components*/
     $('.mdb-select').material_select();
     /*Initialize all datepicker components*/
-    $('.datepicker').pickadate();
+    $('.datepicker').pickadate({
+        monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+        weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+        weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+    });
+    
     /*Datatable*/
     $('.data-table').DataTable({
       responsive: true,
@@ -98,5 +104,10 @@ $(document).ready(function(){
 		$("#form-login").hide();
 		$("#form-login-pass").hide();
 	});	
+    
+    
+    
+    
+    
   
 });
