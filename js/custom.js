@@ -103,7 +103,20 @@ $(document).ready(function(){
 	$(document).click(function(){
 		$("#form-login").hide();
 		$("#form-login-pass").hide();
-	});	
+	});
+    
+    
+  /* para igualar las alturas de las cajas de texto de las cards */
+  var altura_arr = [];
+  $('.row .contenedores').each(function(){
+    var altura = $(this).height();
+    altura_arr.push(altura);
+  });
+  altura_arr.sort(function(a, b){return b-a});
+  $('.row .contenedores').each(function(){
+    $(this).css('height',altura_arr[0]);
+  });
+       
     
     
     

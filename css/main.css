@@ -1346,7 +1346,7 @@ margin-right: 0; }
 .site-wrapper .txt-med {font-size: 1.2rem;}
 .site-wrapper .linea-division {border-bottom: solid 1px #fff;}
 .site-wrapper .color-titulos {color: #005b9b}
-.site-wrapper .far.sidebar-icon, .fas.fa-comments{font-size: 2rem; cursor:pointer;}
+.site-wrapper .far.sidebar-icon, .fas.fa-comments{font-size: 1.5rem; cursor:pointer;}
 .site-wrapper #pdf-files{margin-top:40px;}
 .site-wrapper .pdf-icon{text-align: center;}
 .site-wrapper .ms-bg-fixed {background-attachment: fixed}
