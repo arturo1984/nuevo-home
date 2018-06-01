@@ -1341,7 +1341,7 @@ margin-right: 0; }
 
 /* ========================= */
 
-.site-wrapper .titulo-xl {font-size: 4.5rem; text-shadow: 4px 3px #000;}
+.site-wrapper .titulo-xl {font-size: 4.5rem; text-shadow: 2px 2px #000;}
 .site-wrapper .mt-20 {margin-top: 20rem;}
 .site-wrapper .txt-med {font-size: 1.2rem;}
 .site-wrapper .linea-division {border-bottom: solid 1px #fff;}
@@ -1352,13 +1352,13 @@ margin-right: 0; }
 .site-wrapper .ms-bg-fixed {background-attachment: fixed}
 .site-wrapper .icono-sec-not{max-width: 40px; margin-right: 10px;}
 .site-wrapper .banner-header{max-height: 300px;}
-.site-wrapper .bt_naranja{background-color: #e18500;}
-.site-wrapper .bt_verde{background-color: #99bb05;}
+.site-wrapper .bt_naranja{background-color: rgb(255, 153, 0);}
+.site-wrapper .bt_verde{background-color: rgb(153, 204, 0);}
 .site-wrapper .bt_azul{background-color: #008ad3;}
 .site-wrapper .breadcrumb {background-color: inherit;}
 .site-wrapper .card-title.big{font-size: 1.2rem;}
-.site-wrapper .ident_verde{color: #459929 !important;}
-.site-wrapper .ident_naranja{color: #cc7219 !important;}
+.site-wrapper .ident_verde{color: rgb(153, 204, 0) !important;}
+.site-wrapper .ident_naranja{color: rgb(255, 153, 0) !important;}
 .site-wrapper .ident_ambar{color: #cfa116 !important;}
 .site-wrapper .owl-next span{right: 1%;}
 .site-wrapper .owl-prev span{left: 1%;}
