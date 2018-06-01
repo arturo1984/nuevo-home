@@ -69,7 +69,7 @@
 						</div>
 					</div>
 												
-					<div class="row" id="data_cteext">
+					<div class="row data_cteext" id="">
 							<div class="col-md-3">
 								<div class="md-form form-group">
 									<input type="text" name="folioTMX" class="form-control">
@@ -90,7 +90,7 @@
 							</div>							   
 					</div>
 					
-					<div class="row" id="data_ctenvo" style="display:none">
+					<div class="row data_ctenvo" id="" style="display:none">
 						<div class="col-sm-12">
 							<div class="row">
 								<div class="col-md-8">
@@ -825,22 +825,28 @@
 			$("#paso3,#paso2").hide();
 			$("#paso1").show();
 		});
-		
-		$('input[type="radio"]').click(function(){
+		        
+        
+        
+        $('input#radio2_cn"]').click(function(){
 			if ($(this).is(':checked') && $(this).attr('id')=="radio2_cn")
 			{
-				$("#data_ctenvo").show();
-				$("#data_cteext").hide();		
+				$(".data_ctenvo").show();
+				$(".data_cteext").hide();		
 			}
 		 });
 		 
-		 $('input[type="radio"]').click(function(){
+		 $('input#radio1_ce').click(function(){
 			if ($(this).is(':checked') && $(this).attr('id')=="radio1_ce")
 			{
-				$("#data_ctenvo").hide();
-				$("#data_cteext").show();
+				$(".data_ctenvo").hide();
+				$(".data_cteext").show();
 			}
 		 });
+        
+        
+        
+        
 				
 		var button='<button class="close" type="button" title="Remove this page">×</button>';
 		var tabID = 1;

@@ -17,7 +17,7 @@
 <body>
 <section class="site-wrapper">
 	<header></header>			
-	<section id="landing-agentes">
+	<section class="landing-agentes">
 		<div class="section-heading">
 			<div class="container-fluid">
 				<h4 class="title text-left">Cotizador Casa Habitacion</h4>
@@ -69,7 +69,7 @@
 					</div>
 				</div>
 											
-				<div class="row" id="data_cteext">
+				<div class="row data_cteext">
 					<div class="col-sm-3">
 						<div class="md-form form-group">
 							<input type="text" name="folioTMX" class="form-control">
@@ -178,10 +178,10 @@
 							<label for="modoCotizacion" class="active">Desde</label>
 							<div class="row">
 								<div class="col">
-									<input placeholder="Desde" type="text" id="creationDate" class="form-control datepicker">
+									<input placeholder="Desde" type="text" id="" class="form-control datepicker ">
 								</div>
 								<div class="col">
-									<input placeholder="Hasta" type="text" id="creationDate" class="form-control datepicker">
+									<input placeholder="Hasta" type="text" id="" class="form-control datepicker">
 								</div>
 							</div>
 						</div>
@@ -551,21 +551,28 @@
 			$("#paso1").show();
 		});
 		
-		$('input[type="radio"]').click(function(){
+		
+        
+        
+        $('input#radio2_cn').click(function(){
 			if ($(this).is(':checked') && $(this).attr('id')=="radio2_cn")
 			{
-				$("#data_ctenvo").show();
-				$("#data_cteext").hide();		
+				$(".data_ctenvo").show();
+				$(".data_cteext").hide();		
 			}
 		});
 		 
-		$('input[type="radio"]').click(function(){
+		$('input#radio1_ce').click(function(){
 			if ($(this).is(':checked') && $(this).attr('id')=="radio1_ce")
 			{
-				$("#data_ctenvo").hide();
-				$("#data_cteext").show();
+				$(".data_ctenvo").hide();
+				$(".data_cteext").show();
 			}
 		});
+        
+        
+        
+        
 		
 		$('#btn-add-tab').click(function() {
 			tabID++;

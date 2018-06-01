@@ -71,7 +71,7 @@
 															   
 									<div class="row">
 										<div class="col-md-12">
-											<a class="btn btn-pink pull-left" id="form_search" >BUSCAR</a>
+											<a class="btn btn-pink pull-left form_search" id="form_search" >BUSCAR</a>
 										</div>
 									</div>
 								</form>
@@ -82,7 +82,7 @@
 
 					<div class="row container-fluid">
 						<div class="col-md-12">						
-							<div class="progress primary-color-dark" id="progress-search" style="display:none">
+							<div class="progress primary-color-dark progress-search" id="progress-search" style="display:none">
 								<div class="indeterminate"></div>
 							</div>
 						</div>
@@ -95,11 +95,11 @@
 								<table class="table data-table table-striped table-bordered" style="width:100%;">
 									<thead>
 										<tr>
-											<th>Username</i></th>
-											<th>Nombre</i></th>
-											<th>Correo</i></th>
-											<th>Perfil</i></th>
-											<th>Estatus</i></th>
+											<th>Username</th>
+											<th>Nombre</th>
+											<th>Correo</th>
+											<th>Perfil</th>
+											<th>Estatus</th>
 											<th class="all" data-orderable="false">Acciones</th>
 										</tr>
 									</thead>
@@ -201,7 +201,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-						    <form id="form-add-user">
+						    <form class="form-add-user" id="form-add-user">
 							<div class="row">
 									<div class="col-sm-6">
 										<!-- Material input text -->
@@ -254,13 +254,13 @@
 									
 							<div class="row text-center">		
 								<div class="col-sm-12">
-									<button type="button" class="btn btn-blue btn-sm waves-effect float-right" id="add-user">Guardar</button>
+									<button type="button" class="btn btn-blue btn-sm waves-effect float-right add-user" id="add-user">Guardar</button>
 								</div>			
 							</div>	
 							</form> <!-- Material form register -->
 							
 							
-						<div class="alert alert-success" role="alert" style="display:none" id="user_add_success">
+						<div class="alert alert-success user_add_success" role="alert" style="display:none" id="user_add_success">
 						  El alta se realizó correctamente
 						</div>
 						
@@ -288,7 +288,7 @@
 								<div class="row container-fluid">
 									<div class="col-sm-5">
 									    <p class="asociar-usuario">Agente disponible por ejecutivo</p>
-										<ul class="list-group list-group-sortable-connected" id="old-list">
+										<ul class="list-group list-group-sortable-connected old-list" id="old-list">
 											<li class="list-group-item list-group-item-info">01 - Marsh</li>
 											<li class="list-group-item list-group-item-info">02 - Chacon</li>
 											<li class="list-group-item list-group-item-info">03 - Agente Seguros</li>
@@ -302,7 +302,7 @@
 									</div>
 									<div class="col-sm-5">
 										<p class="asociar-usuario">Agente/broker que puede ver</p>
-										<ul class="list-group list-group-sortable-connected" id="nuevo-list">
+										<ul class="list-group list-group-sortable-connected nuevo-list" id="nuevo-list">
 											<li class="list-group-item list-group-item-success">06 - Willis</li>
 											<li class="list-group-item list-group-item-success">07 - Agente 2</li>
 											<li class="list-group-item list-group-item-success">08 - Agente 3</li>
@@ -378,24 +378,24 @@
 		$.ajax({url: "header-publico.html", context: document.body,success: function(response) {$("header").html(response);}});
 		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});			
 		
-		$( "#form_search").click(function() {
-			  $('#progress-search').show();
+		$( ".form_search").click(function() {
+			  $('.progress-search').show();
 			  $('.table-wrapper').hide();
 			  progress_search = setTimeout(function(){ 
-				$('#progress-search').hide();
+				$('.progress-search').hide();
 				$('.table-wrapper').show();
 				}, 3000);
 		});
 		
-		$("#add-user").click(function(){
-		   $("#form-add-user").hide();
-		   $("#user_add_success").show();
-		   $("#form-add-user")[0].reset();
+		$(".add-user").click(function(){
+		   $(".form-add-user").hide();
+		   $(".user_add_success").show();
+		   $(".form-add-user")[0].reset();
 		});
 		
 		$('#modal-add-user').on('hidden.bs.modal', function () {
-			$("#user_add_success").hide();
-			$("#form-add-user").show();
+			$(".user_add_success").hide();
+			$(".form-add-user").show();
 		});
 		
 		$('.list-group-sortable-connected').sortable({
@@ -406,7 +406,7 @@
 		function addAllItems(){		
 			$('.list-group-item-info').each(function(){
 				$(this).removeClass('list-group-item-info');
-				$("#nuevo-list").append(this);
+				$(".nuevo-list").append(this);
 				$(this).addClass('list-group-item-success');
 			});
 		}
@@ -414,7 +414,7 @@
 		function removeAllItems(){		
 			$('.list-group-item-success').each(function(){
 				$(this).removeClass('list-group-item-success');
-				$("#old-list").append(this);
+				$(".old-list").append(this);
 				$(this).addClass('list-group-item-info');
 			});
 		}
