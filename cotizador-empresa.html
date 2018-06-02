@@ -15,6 +15,10 @@
         <link href="css/main.css" rel="stylesheet">		
     </head>
 <body>
+<style>
+.site-wrapper .tipo_persona{ padding-top:40px;}
+.site-wrapper .active_2{text-decoration: underline};
+</style>
 <section class="site-wrapper">
         <header></header>			
         <section id="landing-agentes">
@@ -28,22 +32,22 @@
 				<div class="row">
 					<div class="col-md-12">
 						<ul class="stepper stepper-horizontal">
-							<li class="active" id="step1">
-								<a href="#!" id="nx_paso1">
+							<li id="step1" class="active">
+								<a href="javascript:void(0)">
 									<span class="circle">1</span>
-									<span class="label">Paso Uno</span>
+									<span class="label">Datos de contización</span>
 								</a>
 							</li>
-							<li class="warning" id="step2">
-								<a href="#!" id="nx_paso2">
+							<li id="step2">
+								<a href="javascript:void(0)">
 									<span class="circle">2</span>
-									<span class="label">Paso Dos</span>
+									<span class="label">Datos de riesgo y modalidad</span>
 								</a>
 							</li>
-							<li class="warning" id="step3">
-								<a href="#!" id="nx_paso3">
+							<li id="step3">
+								<a href="javascript:void(0)">
 									<span class="circle">3</span>
-									<span class="label">Paso tres</span>
+									<span class="label">Generar Slip y solicitar Emisión</span>
 								</a>
 							</li>
 						</ul>
@@ -52,193 +56,193 @@
 			</div>	
 
 			<div class="container-fluid" id="paso1" style="padding:0 70px">
-				<form>
+				<form id="cot_empresa_1">
 					<h5>Datos del Contratante</h5><br/>
 					<div class="row">
 						<div class="col-md-12">					
 							<div class="form-inline">
 								<div class="form-check">
-									<input class="form-check-input" name="group20" type="radio" id="radio1_ce" checked="checked">
-									<label class="form-check-label" for="radio1_ce">Cliente Existente</label>
+									<input class="form-check-input form-control" name="group1" type="radio" id="radio_ce" checked="checked">
+									<label class="form-check-label" for="radio_ce">Cliente Existente</label>
 								</div>
 								<div class="form-check">
-									<input class="form-check-input" name="group20" type="radio" id="radio2_cn">
-									<label class="form-check-label" for="radio2_cn">Cliente Nuevo</label>
+									<input class="form-check-input form-control" name="group1" type="radio" id="radio_cn">
+									<label class="form-check-label" for="radio_cn">Cliente Nuevo</label>
 								</div>
 							</div>
 						</div>
 					</div>
 												
-					<div class="row data_cteext" id="">
+					<div class="row data_cteext">
 							<div class="col-md-3">
-								<div class="md-form form-group">
-									<input type="text" name="folioTMX" class="form-control">
-									<label for="folioTMX" >RFC del Contratante:</label>
+								<div class="md-form">
+									<input type="text" name="ce_rfc" id="ce_rfc" class="form-control">
+									<label for="ce_rfc" >RFC del Contratante:</label>
 								</div>
 							</div>
 							<div class="col-md-6">
-								<div class="md-form form-group">
-									<input type="text" name="poliza" class="form-control">
-									<label for="poliza" >Nombre Completo:</label>
+								<div class="md-form">
+									<input type="text" name="ce_nombre" id="ce_nombre" class="form-control">
+									<label for="ce_nombre" >Nombre Completo:</label>
 								</div>
 							</div>
 							<div class="col-md-3">
-								<div class="md-form form-group">
-									<input type="text" name="folioTMX" class="form-control">
-									<label for="folioTMX" >Código Cliente:</label>
+								<div class="md-form">
+									<input type="hidden" name="ce_codigo" id="ce_codigo" value="111" class="form-control">
 								</div>
 							</div>							   
 					</div>
 					
-					<div class="row data_ctenvo" id="" style="display:none">
+					<div class="row data_ctenvo" style="display:none">
 						<div class="col-sm-12">
 							<div class="row">
 								<div class="col-md-8">
 									<div class="md-form form-group">
-										<input type="text" name="folioTMX" class="form-control">
-										<label for="folioTMX" >Nombre Complero:</label>
+										<input type="text" name="cn_nombrecompleto" id="cn_nombrecompleto" class="form-control">
+										<label for="cn_nombrecompleto" >Nombre Completo:</label>
 									</div>
 								</div>
 								<div class="col-md-4">
-									<div class="md-form form-group">
-											<select name="estatus" class="mdb-select">
-												<option value="1">Moral</option>
-												<option value="2">Fisica</option>
-											</select>
-											<label for="estatus" >Tipo de persona</label>
+									<div class="form-inline tipo_persona">
+										<div class="form-check">
+											<input class="form-check-input form-control" name="group2" type="radio" id="cn_personafisica" checked="checked">
+											<label class="form-check-label" for="cn_personafisica">Persona Física</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input form-control" name="group2" type="radio" id="cn_personamoral">
+											<label class="form-check-label" for="cn_personamoral">Persona Moral</label>
+										</div>
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-3">
 									<div class="md-form form-group">
-										<input type="text" name="folioTMX" class="form-control">
-										<label for="folioTMX" >RFC del Contratante:</label>
+										<input type="text" name="cn_rfccontratatante" id="cn_rfccontratatante" class="form-control">
+										<label for="cn_rfccontratatante" >RFC del Contratante:</label>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="md-form form-group">
-										<input type="text" name="folioTMX" class="form-control">
-										<label for="folioTMX" >Nombre del Contratante:</label>
+										<input type="text" name="cn_nombrecontratante" id="cn_nombrecontratante" class="form-control">
+										<label for="cn_nombrecontratante" >Nombre del Contratante:</label>
 									</div>
 								</div>									
 								<div class="col-md-3">
 									<div class="md-form form-group">
-											<select name="estatus" class="mdb-select">
+											<select name="cn_denominacion" id="cn_denominacion" class="mdb-select form-control-sel">
 												<option value="1">S.A. de C.V.</option>
 												<option value="2">Otra</option>
 											</select>
-											<label for="estatus" >Denominacion</label>
+											<label for="cn_denominacion" >Denominacion</label>
 									</div>
 								</div>
 							</div>
 						</div>   
 					</div>
-												
-					<br/><h5>Datos de la Cotización</h5><br/>
-					<div class="row">
-						<div class="col-md-12">					
-							<div class="form-inline form-right float-right">
-								<div class="form-check">
-									<input class="form-check-input" name="group21" type="radio" id="radio3_cv" checked="checked">
-									<label class="form-check-label" for="radio3_cv">Cotizar con Vigencia</label>
-								</div>
-								<div class="form-check">
-									<input class="form-check-input" name="group21" type="radio" id="radio4_cv">
-									<label class="form-check-label" for="radio4_cv">Vigencia Anual a Partir de la Soliciutd de Emisión</label>
+					
+					<div class="data_cotizacion">
+						<br/><h5>Datos de la Cotización</h5><br/>
+						<div class="row">
+							<div class="col-md-12">					
+								<div class="form-inline form-right float-right">
+									<div class="form-check">
+										<input class="form-check-input form-control" name="group3" type="radio" id="dc_cotizarVig" checked="checked">
+										<label class="form-check-label" for="dc_cotizarVig">Cotizar con Vigencia</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input form-control" name="group3" type="radio" id="dc_vigenAnual">
+										<label class="form-check-label" for="dc_vigenAnual">Vigencia Anual a Partir de la Solicitud de Emisión</label>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="row">
-							<div class="col-sm-3">
-								<div class="md-form form-group">
-										<select name="estatus" class="mdb-select">
-											<option value="1">Todos</option>
-											<option value="2">Nueva</option>
-											<option value="3">Existente</option>
-										</select>
-										<label for="estatus" >Tipo de Movimiento</label>
+						<div class="row">
+								<div class="col-sm-3">
+									<div class="md-form form-group">
+											<select name="dc_movimientos" id="dc_movimientos " class="mdb-select form-control-sel">
+												<option value="1">Nuevo</option>
+												<option value="2">Renovar</option>
+												<option value="3">Endoso</option>
+											</select>
+											<label for="dc_movimientos" >Tipo de Movimiento</label>
+									</div>
 								</div>
-							</div>
-							<div class="col-sm-3">
-								<div class="md-form form-group">
-										<select name="estatus" class="mdb-select">
-											<option value="1">USD</option>
-											<option value="2">MXN</option>
-											<option value="3">EUR</option>
-										</select>
-										<label for="estatus" >Moneda</label>
+								<div class="col-sm-3">
+									<div class="md-form form-group">
+											<select name="dc_moneda" id="dc_moneda" class="mdb-select form-control-sel">
+												<option value="1">USD</option>
+												<option value="2">MXN</option>
+												<option value="3">EUR</option>
+											</select>
+											<label for="dc_moneda" >Moneda</label>
+									</div>
 								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="md-form form-group">
-										<label for="modoCotizacion" class="active">Desde</label>
-										<div class="row">
-											<div class="col">
-												<input placeholder="Desde" type="text" id="creationDate" class="form-control datepicker">
-											</div>
-											<div class="col">
-												<input placeholder="Hasta" type="text" id="creationDate" class="form-control datepicker">
+								<div class="col-sm-6">
+									<div class="md-form form-group">
+											<div class="row">
+												<div class="col">
+													<input placeholder="Fecha Desde" type="text" id="dc_dateDesde" class="form-control datepicker">
+												</div>
+												<div class="col">
+													<input placeholder="Fecha Hasta" type="text" id="dc_dateHasta" class="form-control datepicker">
+												</div>
 											</div>
 										</div>
-									</div>
-							</div>							   
-					</div>
-						
-					<div class="row">
-						<div class="col-sm-3">
-							<div class="md-form form-group">
-									<select name="estatus" class="mdb-select">
-										<option value="1">01 MARSH</option>
-										<option value="2">02 MARSH</option>
-										<option value="3">03 MARSH</option>
-									</select>
-									<label for="estatus" >Agentes</label>
+								</div>							   
+						</div>
+							
+						<div class="row">
+							<div class="col-sm-3">
+								<div class="md-form form-group">
+										<select name="dc_agentes" id="dc_agentes" class="mdb-select form-control-sel">
+											<option value="1">01 MARSH</option>
+											<option value="2">02 MARSH</option>
+											<option value="3">03 MARSH</option>
+										</select>
+										<label for="dc_agentes" >Agentes</label>
+								</div>
+							</div>
+								
+							<div class="col-sm-3">
+								<div class="md-form form-group">
+										<select name="dc_formpago" id="dc_formpago" class="mdb-select form-control-sel">
+											<option value="1">Mensual</option>
+											<option value="2">Anual</option>
+											<option value="3">Semestral</option>
+										</select>
+										<label for="dc_formpago" >Forma de Pago</label>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="md-form form-group">
+										<select name="dc_giro" id="dc_giro" class="mdb-select form-control-sel">
+											<option value="1">Escuela</option>
+											<option value="2">Hospiatal</option>
+											<option value="3">Empresa</option>
+										</select>
+										<label for="dc_giro" >Giro</label>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="md-form form-group">
+										<select name="dc_subgiro" id="dc_subgiro" class="mdb-select form-control-sel">
+											<option value="1">Pre-Escolar</option>
+											<option value="2">Primaria</option>
+											<option value="3">Secundaria</option>
+										</select>
+										<label for="dc_subgiro" >Sub Giro</label>
+								</div>
 							</div>
 						</div>
 							
-						<div class="col-sm-3">
-							<div class="md-form form-group">
-									<select name="estatus" class="mdb-select">
-										<option value="1">Mensual</option>
-										<option value="2">Anual</option>
-										<option value="3">Semestral</option>
-									</select>
-									<label for="estatus" >Forma de Pago</label>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="md-form form-group">
-									<select name="estatus" class="mdb-select">
-										<option value="1">Escuela</option>
-										<option value="2">Hospiatal</option>
-										<option value="3">Empresa</option>
-									</select>
-									<label for="estatus" >Giro</label>
-							</div>
-						</div>
-						<div class="col-sm-3">
-							<div class="md-form form-group">
-									<select name="estatus" class="mdb-select">
-										<option value="1">Pre-Escolar</option>
-										<option value="2">Primaria</option>
-										<option value="3">Secundaria</option>
-									</select>
-									<label for="estatus" >Sub Giro</label>
+						<div class="row">
+							<div class="col-sm-12 text-right">			
+								<a class="btn btn-pink" id="paso1_next">Continuar</a>
 							</div>
 						</div>
 					</div>
-						
-					<div class="row">
-						<div class="col-sm-12" style="text-align:right">
-							<a class="btn btn-blue">Guardar</a>					
-							<a class="btn btn-pink" id="paso1_next">Continuar</a>
-						</div>
-					</div>
-
-						
 				</form>					
 			</div>	<!-- paso 1-->
 				
@@ -262,37 +266,37 @@
 								<h6 id="tit_tab_1">Datos del Riesgo:</h6>
 								<div class="row">
 									<div class="col-md-2">
-										<div class="md-form form-group">
-											<input type="text" name="folioTMX" class="form-control">
-											<label for="folioTMX" >Código Postal</label>
+										<div class="md-form">
+											<input type="text" name="dr_cp_1" id="dr_cp_1" class="form-control">
+											<label for="dr_cp_1" >Código Postal:</label>
 										</div>
 									</div>
 									<div class="col-md-3">
-										<div class="md-form form-group">
-											<input type="text" name="poliza" class="form-control">
-											<label for="poliza" >Calle</label>
+										<div class="md-form">
+											<input type="text" name="dr_calle_1" id="dr_calle_1" class="form-control">
+											<label for="dr_calle_1" >Calle:</label>
 										</div>
 									</div>
 									<div class="col-md-2">
 										<div class="md-form form-group">
-											<input type="text" name="folioTMX" class="form-control">
-											<label for="folioTMX" >Número</label>
+											<input type="text" name="dr_numero_1" id="dr_numero_1" class="form-control">
+											<label for="dr_numero_1" >Número:</label>
 										</div>
 									</div>
 									<div class="col-md-2">
 										<div class="md-form form-group">
-											<select name="estatus" class="mdb-select">
+											<select name="dr_colonia_1" class="mdb-select form-control-sel">
 												<option value="1">Colonia 1</option>
 												<option value="2">Colonia 2</option>
 												<option value="3">Colonia 3</option>
 											</select>
-											<label for="estatus" >Colonia</label>
+											<label for="dr_colonia_1" >Colonia</label>
 										</div>
 									</div>
 									<div class="col-md-3">
 										<div class="md-form form-group">
-											<input type="text" name="folioTMX" class="form-control">
-											<label for="folioTMX" >Delegación/municipio:</label>
+											<input type="text" name="dr_municipio_1" id="dr_municipio_1" class="form-control">
+											<label for="dr_municipio_1" >Delegación/municipio:</label>
 										</div>
 									</div>										   
 								</div>
@@ -300,29 +304,29 @@
 								<div class="row">
 									<div class="col-md-2">
 										<div class="md-form form-group">
-											<input type="text" name="folioTMX" class="form-control">
-											<label for="folioTMX" >Estado:</label>
+											<input type="text" name="dr_estado_1" id="dr_estado_1" class="form-control">
+											<label for="dr_estado_1" >Estado:</label>
 										</div>
 									</div>
 									<div class="col-md-2">
 										<div class="md-form form-group">
-											<select name="estatus" class="mdb-select">
+											<select name="dr_nivel_1" class="mdb-select form-control-sel">
 												<option value="1">Nivel 1</option>
 												<option value="2">Nivel 2</option>
 												<option value="3">Nivel 3</option>
 											</select>
-											<label for="estatus" >Niveles</label>
+											<label for="dr_nivel_1" >Niveles</label>
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="md-form form-group">
-											<input type="text" name="folioTMX" class="form-control">
-											<label for="folioTMX" >Valor del Inmueble</label>
+											<input type="number" name="dr_valorinm_1" id="dr_valorinm_1" class="form-control">
+											<label for="dr_valorinm_1" >Valor del Inmueble:</label>
 										</div>
 									</div>	
 
 									<div class="col-md-4 text-right">
-										<a class="btn btn-blue btn-sm" style="margin-top:30px">Generar propuesta autoatica</a>
+										<a class="btn btn-blue btn-sm" style="margin-top:30px">Generar propuesta automática</a>
 									</div>
 								</div>
 								
@@ -335,27 +339,35 @@
 											<div class="card-header" role="tab" id="headingOne_1">
 												<a data-toggle="collapse" data-parent="#accordionEx_1" href="#collapseOne_1" aria-expanded="true" aria-controls="collapseOne_1">
 													<h6 class="mb-0">
-														Sección del Incendio <span id="tot_headingOne_1" class="tot_heading"> </span><i class="fa fa-angle-down rotate-icon"></i>
+														Incendio <span id="tot_headingOne_1" class="tot_heading"> </span><i class="fa fa-angle-down rotate-icon"></i>
 													</h6>
 												</a>
 											</div>
 											<!-- Card body -->
 											<div id="collapseOne_1" class="collapse show" role="tabpanel" aria-labelledby="headingOne_1" data-parent="#accordionEx_1">
 												<div class="card-body">
-													<div class="row">
-														<div class="col-sm-4">
-															<p>Coberturas básicas:</p>
-															<div class="md-form form-group">
-																<input type="number" name="SA_Edificio" class="form-control">
-																<label for="SA_Edificio" >S.A. Edificio</label>
-															</div>
-															<div class="md-form form-group">
-																<input type="number" name="SA_Contenido" class="form-control">
-																<label for="SA_Contenido" >S.A. Contenidos</label>
+													<div class="row">	
+														<div class="col-sm-12">
+															<p><strong>Coberturas básicas:</strong></p>	
+															<div class="row">
+																<div class="col-sm-4">
+																	<div class="md-form form-group">
+																		<input type="number" id="SA_Edificio" name="SA_Edificio" class="form-control">
+																		<label for="SA_Edificio" >S.A. Edificio</label>
+																	</div>
+																</div>
+																<div class="col-sm-4">
+																	<div class="md-form form-group">
+																		<input type="number" id="SA_Contenido" name="SA_Contenido" class="form-control">
+																		<label for="SA_Contenido" >S.A. Contenidos</label>
+																	</div>
+																</div>	
 															</div>
 														</div>
-														<div class="col-sm-8">
-														<p>Coberturas Adicionales:</p>
+													</div>	
+													<div class="row">
+														<div class="col-sm-12">
+														<p><strong>Coberturas Adicionales:</strong></p>
 															<div class="row">
 																<div class="col-sm-6">
 																	<div class="form-check">
@@ -371,7 +383,7 @@
 																		<label for="checkbox104" class="form-check-label">¿Bienes en Incubadora?</label>
 																	</div>																	
 																	<div class="md-form form-group">
-																		<input type="text" name="SaBienInc" class="form-control">
+																		<input type="text" name="SaBienInc" id="SaBienInc" class="form-control">
 																		<label for="SaBienInc" >S.A. Bienes en Incubadora</label>
 																	</div>
 																</div>
@@ -381,7 +393,7 @@
 																		<label for="checkbox105" class="form-check-label">¿Bienes en refrigeración?</label>
 																	</div>
 																	<div class="md-form form-group">
-																		<input type="text" name="SaBienref" class="form-control">
+																		<input type="text" name="SaBienref" id="SaBienref" class="form-control">
 																		<label for="SaBienref" >S.A. Bienes en Refrigeración</label>
 																	</div>																
 																</div>
@@ -400,7 +412,7 @@
 											<div class="card-header" role="tab" id="headingTwo_1">
 												<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx_1" href="#collapseTwo_1" aria-expanded="false" aria-controls="collapseTwo">
 													<h6 class="mb-0">
-														Perdidad Consecuenciales  <span id="tot_headingTwo_1" class="tot_heading"> </span><i class="fa fa-angle-down rotate-icon"></i>
+														Perdidas consecuencia  <span id="tot_headingTwo_1" class="tot_heading"> </span><i class="fa fa-angle-down rotate-icon"></i>
 													</h6>
 												</a>
 											</div>
@@ -408,34 +420,34 @@
 											<!-- Card body -->
 											<div id="collapseTwo_1" class="collapse" role="tabpanel" aria-labelledby="headingTwo_1" data-parent="#accordionEx_1">
 												<div class="card-body">
-												<p>Coberturas básicas:</p>
+												<p><strong>Coberturas básicas:</strong></p>
 													<div class="row">														
 															<div class="col-sm-4">
 																<div class="md-form form-group">
-																	<input type="text" name="SaBienref" class="form-control">
-																	<label for="SaBienref" >S.A. Gastos Extraordinarios</label>
+																	<input type="text" name="SaGastExtra" id="SaGastExtra" class="form-control">
+																	<label for="SaGastExtra" >S.A. Gastos Extraordinarios</label>
 																</div>
 																<div class="md-form form-group">
-																	<input type="text" name="SaBienref" class="form-control">
-																	<label for="SaBienref" >S.A. Perdida de Utilidades</label>
+																	<input type="text" name="SaPerdUtil" id="SaPerdUtil" class="form-control">
+																	<label for="SaPerdUtil" >S.A. Perdida de Utilidades</label>
 																</div>
 																<div class="md-form form-group">
-																	<input type="text" name="SaBienref" class="form-control">
-																	<label for="SaBienref" >S.A. Salarios y Gastos Fijos</label>
+																	<input type="text" name="SaSalGast" id="SaSalGast" class="form-control">
+																	<label for="SaSalGast" >S.A. Salarios y Gastos Fijos</label>
 																</div>
 															</div>
 															<div class="col-sm-4">
 																<div class="md-form form-group">
-																	<input type="text" name="SaBienref" class="form-control">
-																	<label for="SaBienref" >S.A. Perdida de Rentas</label>
+																	<input type="text" name="SaPerdRentas" id="SaPerdRentas" class="form-control">
+																	<label for="SaPerdRentas" >S.A. Perdida de Rentas</label>
 																</div>
 																<div class="md-form form-group">
-																	<input type="text" name="SaBienref" class="form-control">
-																	<label for="SaBienref" >S.A. Reducción de Ingresos</label>
+																	<input type="text" name="SaRedIngr" id="SaRedIngr" class="form-control">
+																	<label for="SaRedIngr" >S.A. Reducción de Ingresos</label>
 																</div>
 																<div class="md-form form-group">
-																	<input type="text" name="SaBienref" class="form-control">
-																	<label for="SaBienref" >S.A. Ganancias Brutas</label>
+																	<input type="text" name="SaGananBrutas" id="SaGananBrutas" class="form-control">
+																	<label for="SaGananBrutas" >S.A. Ganancias Brutas</label>
 																</div>
 															</div>
 															<div class="col-sm-4">
@@ -462,17 +474,17 @@
 											<div id="collapseThree_1" class="collapse" role="tabpanel" aria-labelledby="headingThree_1" data-parent="#accordionEx_1">
 												<div class="card-body">														
 													<div class="row">														
-															<div class="col-sm-4">
-																<p>Coberturas básicas:</p>
+															<div class="col-sm-12">
+																<p><strong>Coberturas básicas:</strong></p>
 																<div class="md-form form-group">
-																	<input type="text" name="SaBienref" class="form-control">
-																	<label for="SaBienref" >S.A. Responsabilidad Civil</label>
+																	<input type="text" name="SaRespCivil" id="SaRespCivil" class="form-control">
+																	<label for="SaRespCivil" >S.A. Responsabilidad Civil</label>
 																</div>
 															</div>
 															
-															<div class="col-sm-8">
+															<div class="col-sm-12">
 															
-																<p>Coberturas Adicionales:</p>
+																<p><strong>Coberturas Adicionales:</strong></p>
 																<div class="row">
 																	<div class="form-check">
 																		<input type="checkbox" class="form-check-input" id="checkbox110" >
@@ -480,30 +492,36 @@
 																	</div>
 																</div>
 																<div class="row">
-																	<div class="md-form form-group col-sm-4">
-																		<select name="estatus" class="mdb-select">
-																			<option value="1">Sin Acomomodadores</option>
-																			<option value="2">Con Acomomodadores</option>
-																		</select>
-																		<label for="estatus" >Tipo</label>
-																	</div>
-																	<div class="md-form form-group col-sm-4">
-																		<input type="text" name="SaBienref" class="form-control">
-																		<label for="SaBienref" >Sublimite por Vehículo</label>
-																	</div>
-																	<div class="md-form form-group col-sm-4">
-																		<input type="text" name="SaBienref" class="form-control">
-																		<label for="SaBienref" >No. de Vehículos</label>
-																	</div>
+																	<div class="col-sm-4">
+																		<div class="md-form form-group">
+																			<select name="SaTipoEst" class="mdb-select">
+																				<option value="1">Sin Acomomodadores</option>
+																				<option value="2">Con Acomomodadores</option>
+																			</select>
+																			<label for="SaTipoEst" >Tipo</label>
+																		</div>
+																	</div>	
+																	<div class="col-sm-4">
+																		<div class="md-form form-group">
+																			<input type="text" name="SaSublimVeh" id="SaSublimVeh" class="form-control">
+																			<label for="SaSublimVeh" >Sublimite por Vehículo</label>
+																		</div>
+																	</div>	
+																	<div class="col-sm-4">
+																		<div class="md-form form-group">
+																			<input type="text" name="SaNumVeh" id="SaNumVeh" class="form-control">
+																			<label for="SaNumVeh" >No. de Vehículos</label>
+																		</div>
+																	</div>	
 																</div>
 																<div class="row">
 																	<div class="form-check col-sm-4">
 																		<input type="checkbox" class="form-check-input" id="checkbox111" >
 																		<label for="checkbox111" class="form-check-label">¿R.C. Estacionamiento?</label>
 																	</div>
-																	<div class="form-check col-sm-4">
+																	<div class="form-check col-sm-4">	
 																		<input type="checkbox" class="form-check-input" id="checkbox112" >
-																		<label for="checkbox112" class="form-check-label">¿R.C. Cruzada?</label>
+																		<label for="checkbox112" class="form-check-label">¿R.C. Cruzada?</label>									
 																	</div>
 																	<div class="form-check col-sm-4">
 																		<input type="checkbox" class="form-check-input" id="checkbox113" >
@@ -519,7 +537,6 @@
 																		<input type="checkbox" class="form-check-input" id="checkbox115" >
 																		<label for="checkbox115" class="form-check-label">¿R.C. Asuminda?</label>
 																	</div>
-																	
 																</div>
 																<div class="row">
 																	<div class="form-check col-sm-12">
@@ -529,31 +546,41 @@
 																</div>
 																
 																<div class="row">
-																	<div class="md-form form-group col-sm-4">
-																		<input type="text" name="SaBienref" class="form-control">
-																		<label for="SaBienref" >No. de Instituciones</label>
+																	<div class="col-sm-4">
+																		<div class="md-form form-group">
+																			<input type="text" name="SaNumInst" id="SaNumInst" class="form-control">
+																			<label for="SaNumInst" >No. de Instituciones</label>
+																		</div>
+																	</div>	
+																	<div class="col-sm-4">
+																		<div class="md-form form-group">
+																			<select name="SaTipoInst" class="mdb-select">
+																				<option value="1">Preescolar</option>
+																				<option value="2">primaria</option>
+																			</select>
+																			<label for="SaTipoInst" >Tipo de Institucion</label>
+																		</div>
 																	</div>
-																	<div class="md-form form-group col-sm-4">
-																		<select name="estatus" class="mdb-select">
-																			<option value="1">Preescolar</option>
-																			<option value="2">primaria</option>
-																		</select>
-																		<label for="estatus" >Tipo de Institucion</label>
-																	</div>
-																	<div class="md-form form-group col-sm-4">
-																		<input type="text" name="SaBienref" class="form-control">
-																		<label for="SaBienref" >No. de Educadores</label>
+																	<div class="col-sm-4">
+																		<div class="md-form form-group">
+																			<input type="text" name="SaNumEduc" id="SaNumEduc" class="form-control">
+																			<label for="SaNumEduc" >No. de Educadores</label>
+																		</div>
 																	</div>
 																</div>
 																
 																<div class="row">
-																	<div class="md-form form-group col-sm-4">
-																		<input type="text" name="SaBienref" class="form-control">
-																		<label for="SaBienref" >R.C. Profesional</label>
+																	<div class="col-sm-4">
+																		<div class="md-form form-group">
+																			<input type="text" name="RcProfes" id="RcProfes" class="form-control">
+																			<label for="RcProfes" >R.C. Profesional</label>
+																		</div>
 																	</div>
-																	<div class="md-form form-group col-sm-8">
-																		<input type="text" name="SaBienref" class="form-control">
-																		<label for="SaBienref" >Gastos de Defensa por Presunto Abuso Sexual</label>
+																	<div class="col-sm-8">
+																		<div class="md-form form-group">
+																			<input type="text" name="SaGasDefAbu" id="SaGasDefAbu" class="form-control">
+																			<label for="SaGasDefAbu" >Gastos de Defensa por Presunto Abuso Sexual</label>
+																		</div>
 																	</div>
 																</div>
 																
@@ -568,40 +595,47 @@
 											<!-- Card header -->
 											<div class="card-header" role="tab" id="headingFour_1">
 												<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx_1" href="#collapseFour_1" aria-expanded="false" aria-controls="collapseFour_1">
-													<h6 class="mb-0">Diversos Micelaneos  <span id="tot_headingFour_1" class="tot_heading"> </span><i class="fa fa-angle-down rotate-icon"></i></h6>
+													<h6 class="mb-0">Diversos Misceláneos  <span id="tot_headingFour_1" class="tot_heading"> </span><i class="fa fa-angle-down rotate-icon"></i></h6>
 												</a>
 											</div>
 
 											<!-- Card body -->
 											<div id="collapseFour_1" class="collapse" role="tabpanel" aria-labelledby="headingFour_1" data-parent="#accordionEx_1">
 												<div class="card-body">
-													<div class="row">														
-														<div class="col-sm-4">
-															<p>Coberturas básicas:</p>
-															<div class="row">
-																<div class="md-form form-group col-sm-12">
-																	<input type="text" name="SaBienref" class="form-control">
-																	<label for="SaBienref" >S.A. Rotura de Cristales</label>
-																</div>
-																<div class="md-form form-group col-sm-12">
-																	<input type="text" name="SaBienref" class="form-control">
-																	<label for="SaBienref" >S.A. Dinero y Valores</label>
-																</div>
-																<div class="md-form form-group col-sm-12">
-																	<input type="text" name="SaBienref" class="form-control">
-																	<label for="SaBienref" >S.A. Anuncios Luminosos</label>
-																</div>
-																<div class="md-form form-group col-sm-12">
-																	<input type="text" name="SaBienref" class="form-control">
-																	<label for="SaBienref" >S.A. Robo de Mercancias</label>
-																</div>
+													<p><strong>Coberturas básicas:</strong></p>
+													<div class="row">
+														<div class="col-sm-3">
+															<div class="md-form form-group">
+																<input type="text" name="SaRotCrist" id="SaRotCrist" class="form-control">
+																<label for="SaRotCrist" >S.A. Rotura de Cristales</label>
+															</div>
+														</div>	
+														<div class="col-sm-3">
+															<div class="md-form form-group">
+																<input type="text" name="SaDinVal" id="SaDinVal" class="form-control">
+																<label for="SaDinVal" >S.A. Dinero y Valores</label>
 															</div>
 														</div>
-														<div class="col-sm-8">
-															<p>Coberturas Adicionales:</p>
+														<div class="col-sm-3">
+															<div class="md-form form-group">
+																<input type="text" name="SaAnunLum" id="SaAnunLum" class="form-control">
+																<label for="SaAnunLum" >S.A. Anuncios Luminosos</label>
+															</div>
+														</div>
+														<div class="col-sm-3">
+															<div class="md-form form-group">
+																<input type="text" name="SaRoboMerc" id="SaRoboMerc" class="form-control">
+																<label for="SaRoboMerc" >S.A. Robo de Mercancias</label>
+															</div>
+														</div>	
+													</div>
+													
+													<div class="row">													
+														<div class="col-sm-4">
+															<p><strong>Coberturas Adicionales:</strong></p>
 															<div class="md-form form-group col-sm-12">
-																<input type="text" name="SaBienref" class="form-control">
-																<label for="SaBienref" >Adicionales</label>
+																<input type="text" name="SaAdicion" id="SaAdicion" class="form-control">
+																<label for="SaAdicion" >Adicionales</label>
 															</div>
 														</div>
 													</div>
@@ -624,31 +658,37 @@
 
 											<!-- Card body -->
 											<div id="collapseFive_1" class="collapse" role="tabpanel" aria-labelledby="headingFive_1" data-parent="#accordionEx_1">
-												<div class="card-body">
-													<div class="row">														
-														<div class="col-sm-4">
-															<p>Coberturas básicas:</p>
-															<div class="row">
-																<div class="md-form form-group col-sm-12">
-																	<input type="text" name="SaBienref" class="form-control">
-																	<label for="SaBienref" >S.A. Equipo Electrónico</label>
-																</div>
-																<div class="md-form form-group col-sm-12">
-																	<input type="text" name="SaBienref" class="form-control">
-																	<label for="SaBienref" >S.A. Equipo Electrónico Móvil</label>
-																</div>
-																<div class="md-form form-group col-sm-12">
-																	<input type="text" name="SaBienref" class="form-control">
-																	<label for="SaBienref" >S.A. Rotura de Maquinaria</label>
-																</div>
-																<div class="md-form form-group col-sm-12">
-																	<input type="text" name="SaBienref" class="form-control">
-																	<label for="SaBienref" >S.A. Calderas</label>
-																</div>
+												<div class="card-body">												
+													<p><strong>Coberturas básicas:</strong></p>
+													<div class="row">															
+														<div class="col-sm-3">
+															<div class="md-form form-group">
+																<input type="text" name="SaEqipElec" id="SaEqipElec" class="form-control">
+																<label for="SaEqipElec" >S.A. Equipo Electrónico</label>
+															</div>
+														</div>	
+														<div class="col-sm-3">
+															<div class="md-form form-group">
+																<input type="text" name="SaEqipElecMov" id="SaEqipElecMov" class="form-control">
+																<label for="SaEqipElecMov" >S.A. Equipo Electrónico Móvil</label>
 															</div>
 														</div>
+														<div class="col-sm-3">	
+															<div class="md-form form-group">
+																<input type="text" name="SaRotMaq" id="SaRotMaq" class="form-control">
+																<label for="SaRotMaq" >S.A. Rotura de Maquinaria</label>
+															</div>
+														</div>
+														<div class="col-sm-3">
+															<div class="md-form form-group">
+																<input type="text" name="SaCalderas" id="SaCalderas" class="form-control">
+																<label for="SaCalderas" >S.A. Calderas</label>
+															</div>
+														</div>
+													</div>
+													<div class="row">
 														<div class="col-sm-8">
-															<p>Coberturas Adicionales:</p>
+															<p><strong>Coberturas Adicionales:</strong></p>
 															<p class="small">Equipo Electrónico</p>
 															<div class="form-check col-sm-12">
 																<input type="checkbox" class="form-check-input" id="checkbox117" >
@@ -801,52 +841,75 @@
 		$.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
 		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
 		$("#box-form-passw").load("form-rec-pass.html");	
-		new WOW().init();
+	
+		$("#tab1").addClass("show");	
+		$("#step1 span").addClass("active_2");
+				
+		$("#paso1_next").click(function(){	
+			tipo = $('.data_cteext').css('display');
+			var init_form = true;
+			if(tipo != "none"){
+				$(".data_cteext .form-control").each(function(){
+				  console.log(this.id + " : " + this.value );
+				  if(this.value == ""){
+					alert("Debes capturar toda la información necesaria");
+					init_form = false;
+					return false;
+				  }					  
+				});				
+			}
+			else{
+				$(".data_ctenvo .form-control").each(function(){
+				  console.log(this.id + " : " + this.value );
+				  if(this.value == ""){
+					alert("Debes capturar toda la información necesaria");
+					init_form = false;
+					return false;
+				  }			
+				});
+				
+			}
+			
+			if(init_form){
+				var init_form_2 = true;
+				$(".data_cotizacion .form-control,.data_cotizacion select.form-control-sel").each(function() {
+					console.log(this.id + " : " + this.value);	
+					if(this.value == ""){
+						alert("Debes capturar toda la información necesaria");
+						init_form_2 = false;
+						return false;
+					}
+				});
+				if(init_form_2){
+					continue_step("2");
+				}
+			}
+		});
 		
-		$("#nx_paso1").click(function(){
-			$("#paso2,#paso3").hide();
-			$(".stepper li").removeClass("active").addClass("warning");
-			$("#step1").removeClass("warning").addClass("active");
-			$("#paso1").show();
-		});
-		 $("#nx_paso2,#paso1_next").click(function(){
-			$("#paso1,#paso3").hide();
-			$("#step2").removeClass("warning").addClass("active");
-			$("#step3").removeClass("active").addClass("warning");
-			$("#paso2").show();
-		});
-		 $("#nx_paso3,#paso2_next").click(function(){			
+		$("#paso2_next").click(function(){			
 			$("#paso1,#paso2").hide();
-			$("#step3").removeClass("warning").addClass("active");
+			$("#step3").addClass("active");
+			$("#step3 span").addClass("active_2");
+			$("#nx_paso2 span").removeClass("active_2");
 			$("#paso3").show();
 		});
 		
 		$("#paso1_back").click(function(){
-			$("#paso3,#paso2").hide();
-			$("#paso1").show();
-		});
-		        
+			continue_step("1");
+		});       
         
-        
-        $('input#radio2_cn"]').click(function(){
-			if ($(this).is(':checked') && $(this).attr('id')=="radio2_cn")
+        $('input#radio_cn,input#radio_ce').click(function(){
+			if ($(this).attr('id')=="radio_cn")
 			{
 				$(".data_ctenvo").show();
 				$(".data_cteext").hide();		
 			}
-		 });
-		 
-		 $('input#radio1_ce').click(function(){
-			if ($(this).is(':checked') && $(this).attr('id')=="radio1_ce")
-			{
+			else{
 				$(".data_ctenvo").hide();
 				$(".data_cteext").show();
 			}
-		 });
-        
-        
-        
-        
+		});
+		     
 				
 		var button='<button class="close" type="button" title="Remove this page">×</button>';
 		var tabID = 1;
@@ -941,6 +1004,27 @@
 			}
 		}	
 		
+		function continue_step(paso){
+			switch(paso) {
+				case "1":
+					$("#paso2,#paso3").hide();
+					$("#step2").removeClass("active");
+					$("#step2 span,#step3 span").removeClass("active_2");
+					$("#step1").addClass("active");
+					$("#step1 span").addClass("active_2");
+					$("#paso1").show();
+				break;
+				case "2":
+					$("#paso1,#paso3").hide();
+					$("#step2").addClass("active");
+					$("#step2 span").addClass("active_2");
+					$("#nx_paso1 span,#nx_paso3 span").removeClass("active_2");
+					$("#step3").removeClass("active");
+					$("#step1").addClass("active");
+					$("#paso2").show();
+				break;
+			}
+		}
 		
 		
 		function sum_pol(id_btn){

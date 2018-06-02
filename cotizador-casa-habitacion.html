@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Cotizador Casa Habitacion</title>
+        <title>Cotizador Paquete Familiar</title>
         <link rel="icon" href="images/logo/favicon.ico">
         <link href="css/fontawesome/fontawesome-all.css" rel="stylesheet">
         <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -15,12 +15,18 @@
         <link href="css/main.css" rel="stylesheet">		
     </head>
 <body>
+<style>
+.site-wrapper .tipo_persona{ padding-top:40px;}
+.site-wrapper .active_2{text-decoration: underline};
+.site-wrapper .stepper li.completed a .circle {background-color:green!important;}
+.site-wrapper .stepper-horizontal li:hover {background-color:#fff!important;}
+</style>
 <section class="site-wrapper">
 	<header></header>			
 	<section class="landing-agentes">
 		<div class="section-heading">
 			<div class="container-fluid">
-				<h4 class="title text-left">Cotizador Casa Habitacion</h4>
+				<h4 class="title text-left">Cotizador Paquete Familiar</h4>
 			</div>				
 		</div>
 							
@@ -28,22 +34,22 @@
 			<div class="row">
 				<div class="col-md-12">
 					<ul class="stepper stepper-horizontal">
-						<li class="active" id="step1">
-							<a href="#!" id="nx_paso1">
+						<li id="step1" class="active">
+							<a href="javascript:void(0)">
 								<span class="circle">1</span>
-								<span class="label">Paso Uno</span>
+								<span class="label">Datos de contización</span>
 							</a>
 						</li>
-						<li class="warning" id="step2">
-							<a href="#!" id="nx_paso2">
+						<li id="step2">
+							<a href="javascript:void(0)">
 								<span class="circle">2</span>
-								<span class="label">Paso Dos</span>
+								<span class="label">Datos de riesgo y modalidad</span>
 							</a>
 						</li>
-						<li class="warning" id="step3">
-							<a href="#!" id="nx_paso3">
+						<li id="step3">
+							<a href="javascript:void(0)">
 								<span class="circle">3</span>
-								<span class="label">Paso tres</span>
+								<span class="label">Generar Slip y solicitar Emisión</span>
 							</a>
 						</li>
 					</ul>
@@ -58,166 +64,167 @@
 					<div class="col-md-12">					
 						<div class="form-inline">
 							<div class="form-check">
-								<input class="form-check-input" name="group20" type="radio" id="radio1_ce" checked="checked">
-								<label class="form-check-label" for="radio1_ce">Cliente Existente</label>
+								<input class="form-check-input" name="group1" type="radio" id="radio_ce" checked="checked">
+								<label class="form-check-label" for="radio_ce">Cliente Existente</label>
 							</div>
 							<div class="form-check">
-								<input class="form-check-input" name="group20" type="radio" id="radio2_cn">
-								<label class="form-check-label" for="radio2_cn">Cliente Nuevo</label>
+								<input class="form-check-input" name="group1" type="radio" id="radio_cn">
+								<label class="form-check-label" for="radio_cn">Cliente Nuevo</label>
 							</div>
 						</div>
 					</div>
 				</div>
 											
 				<div class="row data_cteext">
-					<div class="col-sm-3">
-						<div class="md-form form-group">
-							<input type="text" name="folioTMX" class="form-control">
-							<label for="folioTMX" >RFC del Contratante:</label>
+					<div class="col-md-3">
+						<div class="md-form">
+							<input type="text" id="ce_rfc" name="ce_rfc" class="form-control" maxlength="13">
+							<label for="ce_rfc" >RFC del Contratante:</label>
 						</div>
 					</div>
-					<div class="col-sm-6">
-						<div class="md-form form-group">
-							<input type="text" name="poliza" class="form-control">
-							<label for="poliza" >Nombre Completo:</label>
+					<div class="col-md-6">
+						<div class="md-form">
+							<input type="text" id="ce_nombre" name="ce_nombre" class="form-control">
+							<label for="ce_nombre" >Nombre Completo:</label>
 						</div>
 					</div>
-					<div class="col-sm-3">
+					<div class="col-md-3">
 						<div class="md-form form-group">
-							<input type="text" name="folioTMX" class="form-control">
-							<label for="folioTMX" >Código Cliente:</label>
+							<input type="hidden" name="ce_codigocliente" id="ce_codigocliente" value="111" class="form-control">
 						</div>
 					</div>							   
 				</div>
 				
-				<div class="row" id="data_ctenvo" style="display:none">
+				<div class="row data_ctenvo" style="display:none">
 					<div class="col-sm-12">
 						<div class="row">
-							<div class="col-sm-8">
+							<div class="col-md-8">
 								<div class="md-form form-group">
-									<input type="text" name="folioTMX" class="form-control">
-									<label for="folioTMX" >Nombre Complero:</label>
+									<input type="text" id="cn_nombrecompleto" name="cn_nombrecompleto" class="form-control">
+									<label for="cn_nombrecompleto" >Nombre Completo:</label>
 								</div>
 							</div>
-							<div class="col-sm-4">
-								<div class="md-form form-group">
-										<select name="estatus" class="mdb-select">
-											<option value="1">Moral</option>
-											<option value="2">Fisica</option>
-										</select>
-										<label for="estatus" >Tipo de persona</label>
+							<div class="col-md-4">
+								<div class="form-inline tipo_persona">
+										<div class="form-check">
+											<input class="form-check-input form-control" name="group2" type="radio" id="cn_personafisica" checked="checked">
+											<label class="form-check-label" for="cn_personafisica">Persona Física</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input form-control" name="group2" type="radio" id="cn_personamoral">
+											<label class="form-check-label" for="cn_personamoral">Persona Moral</label>
+										</div>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-3">
-								<div class="md-form form-group">
-									<input type="text" name="folioTMX" class="form-control">
-									<label for="folioTMX" >RFC del Contratante:</label>
+								<div class="md-form">
+									<input type="text" id="cn_rfc" name="cn_rfc" class="form-control">
+									<label for="cn_rfc" >RFC del Contratante:</label>
 								</div>
 							</div>
 							<div class="col-sm-6">
-								<div class="md-form form-group">
-									<input type="text" name="folioTMX" class="form-control">
-									<label for="folioTMX" >Nombre del Contratante:</label>
+								<div class="md-form">
+									<input type="text"  id="cn_nombrecontratante" name="cn_nombrecontratante" class="form-control">
+									<label for="cn_nombrecontratante" >Nombre del Contratante:</label>
 								</div>
 							</div>									
 							<div class="col-sm-3">
 								<div class="md-form form-group">
-										<select name="estatus" class="mdb-select">
+										<select name="cn_denominacion" class="mdb-select">
 											<option value="1">S.A. de C.V.</option>
 											<option value="2">Otra</option>
 										</select>
-										<label for="estatus" >Denominacion</label>
+										<label for="cn_denominacion" >Denominacion:</label>
 								</div>
 							</div>
 						</div>
 					</div>   
 				</div>
-				
-				<br/><h5>Datos de la Cotización</h5><br/>
-				<div class="row" style="text-align:right">
-					<div class="col-sm-12">					
-						<div class="form-inline form-right">
-							<span><strong>Vigencia</strong></span>
-							<div class="form-check">
-								<input class="form-check-input" name="group21" type="radio" id="radio3_cv" checked="checked">
-								<label class="form-check-label" for="radio3_cv">Cotizar con Vigencia</label>
-							</div>
-							<div class="form-check">
-								<input class="form-check-input" name="group21" type="radio" id="radio4_cv">
-								<label class="form-check-label" for="radio4_cv">Vigencia Anual a Partir de la Soliciutd de Emisión</label>
+				<div class="data_cotizacion">
+					<br/><h5>Datos de la Cotización</h5><br/>
+					<div class="row" style="text-align:right">
+						<div class="col-sm-12">					
+							<div class="form-inline form-right">
+								<span><strong>Vigencia</strong></span>
+								<div class="form-check">
+									<input class="form-check-input form-control" name="group21" type="radio" id="dc_cotizarVig" checked="checked">
+									<label class="form-check-label" for="dc_cotizarVig">Cotizar con Vigencia</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input form-control" name="group21" type="radio" id="dc_vigenAnual">
+									<label class="form-check-label" for="dc_vigenAnual">Vigencia Anual a Partir de la Solicitud de Emisión</label>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="row">
-					<div class="col-sm-3">
-						<div class="md-form form-group">
-							<select name="estatus" class="mdb-select">
-								<option value="1">Todos</option>
-								<option value="2">Nueva</option>
-								<option value="3">Existente</option>
-							</select>
-							<label for="estatus" >Tipo de Movimiento</label>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="md-form form-group">
-							<select name="estatus" class="mdb-select">
-								<option value="1">USD</option>
-								<option value="2">MXN</option>
-								<option value="3">EUR</option>
-							</select>
-							<label for="estatus" >Moneda</label>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="md-form form-group">
-							<label for="modoCotizacion" class="active">Desde</label>
-							<div class="row">
-								<div class="col">
-									<input placeholder="Desde" type="text" id="" class="form-control datepicker ">
-								</div>
-								<div class="col">
-									<input placeholder="Hasta" type="text" id="" class="form-control datepicker">
-								</div>
+					<div class="row">
+						<div class="col-sm-3">
+							<div class="md-form form-group">
+								<select name="dc_movimientos" id="dc_movimientos" class="mdb-select form-control-sel">
+									<option value="1">Nuevo</option>
+									<option value="2">Renovar</option>
+									<option value="3">Endoso</option>
+								</select>
+								<label for="dc_movimientos" >Tipo de Movimiento</label>
 							</div>
 						</div>
-					</div>							   
-				</div>
-				
-				<div class="row">
-					<div class="col-sm-3">
-						<div class="md-form form-group">
-							<select name="estatus" class="mdb-select">
-								<option value="1">01 MARSH</option>
-								<option value="2">02 MARSH</option>
-								<option value="3">03 MARSH</option>
-							</select>
-							<label for="estatus" >Agentes</label>
+						<div class="col-sm-3">
+							<div class="md-form form-group">
+								<select name="dc_moneda" id="dc_moneda" class="mdb-select form-control-sel">
+									<option value="1">USD</option>
+									<option value="2">MXN</option>
+									<option value="3">EUR</option>
+								</select>
+								<label for="dc_moneda" >Moneda</label>
+							</div>
 						</div>
+						<div class="col-sm-6">
+							<div class="md-form form-group">
+								<div class="row">
+									<div class="col">
+										<input placeholder="Fecha Desde" type="text" id="dc_dateDesde" class="form-control datepicker">
+									</div>
+									<div class="col">
+										<input placeholder="Fecha Hasta" type="text" id="dc_dateHasta" class="form-control datepicker">
+									</div>
+								</div>
+							</div>
+						</div>							   
 					</div>
 					
-					<div class="col-sm-3">
-						<div class="md-form form-group">
-							<select name="estatus" class="mdb-select">
-								<option value="1">Mensual</option>
-								<option value="2">Anual</option>
-								<option value="3">Semestral</option>
-							</select>
-							<label for="estatus" >Forma de Pago</label>
+					<div class="row">
+						<div class="col-sm-3">
+							<div class="md-form form-group">
+								<select name="dc_agentes" id="dc_agentes" class="mdb-select form-control-sel">
+									<option value="1">01 MARSH</option>
+									<option value="2">02 MARSH</option>
+									<option value="3">03 MARSH</option>
+								</select>
+								<label for="dc_agentes" >Agentes</label>
+							</div>
 						</div>
-					</div>						
-				</div>
-				
-				<div class="row">
-					<div class="col-sm-12" style="text-align:right">
-						<a class="btn btn-blue">Guardar</a>					
-						<a class="btn btn-pink" id="paso1_next">Continuar</a>
+						
+						<div class="col-sm-3">
+							<div class="md-form form-group">
+								<select name="dc_formpago" id="dc_formpago" class="mdb-select form-control-sel">
+									<option value="1">Mensual</option>
+									<option value="2">Anual</option>
+									<option value="3">Semestral</option>
+								</select>
+								<label for="dc_formpago" >Forma de Pago</label>
+							</div>
+						</div>						
 					</div>
-				</div>				
+					
+					<div class="row">
+						<div class="col-sm-12 text-right">			
+							<a class="btn btn-pink" id="paso1_next">Continuar</a>
+						</div>
+					</div>	
+				</div>		
 			</form>					
 		</div>
 		<!-- paso 1-->
@@ -242,91 +249,91 @@
 						<div class="tab-pane fade in active" id="tab1">
 							<h6 id="tit_tab_1">Datos del Riesgo:</h6>
 							<div class="row">
-									<div class="col-sm-2">
+									<div class="col-md-2">
 										<div class="md-form form-group">
-											<input type="text" name="folioTMX" class="form-control">
-											<label for="folioTMX" >Código Postal</label>
+											<input type="number" name="dr_cp_1" id="dr_cp_1" maxlength="5" class="form-control">
+											<label for="dr_cp_1" >Código Postal</label>
 										</div>
 									</div>
-									<div class="col-sm-4">
+									<div class="col-md-3">
 										<div class="md-form form-group">
-											<input type="text" name="poliza" class="form-control">
-											<label for="poliza" >Calle</label>
+											<input type="text" name="dr_calle_1" id="dr_calle_1" class="form-control">
+											<label for="dr_calle_1" >Calle</label>
 										</div>
 									</div>
-									<div class="col-sm-2">
+									<div class="col-md-2">
 										<div class="md-form form-group">
-											<input type="text" name="folioTMX" class="form-control">
-											<label for="folioTMX" >Número</label>
+											<input type="text" name="dr_numero_1" id="dr_numero_1" class="form-control">
+											<label for="dr_numero_1" >Número</label>
 										</div>
 									</div>
-									<div class="col-sm-2">
+									<div class="col-md-2">
 										<div class="md-form form-group">
-												<select name="estatus" class="mdb-select">
+												<select name="dr_colonia_1" id="dr_colonia_1" class="mdb-select form-control-sel">
 													<option value="1">Colonia 1</option>
 													<option value="2">Colonia 2</option>
 													<option value="3">Colonia 3</option>
 												</select>
-												<label for="estatus" >Colonia</label>
+												<label for="dr_colonia_1" >Colonia</label>
 										</div>
 									</div>
-									<div class="col-sm-2">
+									<div class="col-md-3">
 										<div class="md-form form-group">
-											<input type="text" name="folioTMX" class="form-control">
-											<label for="folioTMX" >Delagación/municipio:</label>
+											<input type="text" name="dr_municipio_1" id="dr_municipio_1" class="form-control">
+											<label for="dr_municipio_1" >Delagación/municipio:</label>
 										</div>
 									</div>										   
 							</div>
 							
 							<div class="row">
-									<div class="col-sm-2">
+									<div class="col-md-2">
 										<div class="md-form form-group">
-											<input type="text" name="folioTMX" class="form-control">
-											<label for="folioTMX" >Estado:</label>
+											<input type="text" name="dr_estado_1" id="dr_estado_1" class="form-control">
+											<label for="dr_estado_1" >Estado:</label>
 										</div>
 									</div>
-									<div class="col-sm-2">
+									<div class="col-md-2">
 										<div class="md-form form-group">
-												<select name="estatus" class="mdb-select">
+												<select name="dr_tipoinm_1" id="dr_tipoinm_1" class="mdb-select form-control-sel">
 													<option value="1">Tipo 1</option>
 													<option value="2">Tipo 2</option>
 													<option value="3">Tipo 3</option>
 												</select>
-												<label for="estatus" >Tipo de inmueble</label>
+												<label for="dr_tipoinm_1" >Tipo de inmueble</label>
 										</div>
 									</div>
-									<div class="col-sm-4">
+									<div class="col-md-4">
 										<div class="md-form form-group">
-												<select name="estatus" class="mdb-select">
+												<select name="dr_tipouso_1" id="dr_tipouso_1" class="mdb-select form-control-sel">
 													<option value="1">Tipo uso 1</option>
 													<option value="2">Tipo uso 2</option>
 													<option value="3">Tipo uso 3</option>
 												</select>
-												<label for="estatus" >Tipo de uso</label>
+												<label for="dr_tipouso_1" >Tipo de uso</label>
 										</div>
 									</div>
-									<div class="col-sm-2">
+									<div class="col-md-2">
 										<div class="md-form form-group">
-												<select name="estatus" class="mdb-select">
+												<select name="dr_niveles_1" id="dr_niveles_1" class="mdb-select form-control-sel">
 													<option value="1">Nivel 1</option>
 													<option value="2">Nivel 2</option>
 													<option value="3">Nivel 3</option>
 												</select>
-												<label for="estatus" >Niveles</label>
+												<label for="dr_niveles_1" >Niveles</label>
 										</div>
 									</div>
-									<div class="col-sm-2">
+									<div class="col-md-2">
 										<div class="md-form form-group">
-											<input type="text" name="folioTMX" class="form-control">
-											<label for="folioTMX" >Valor del Inmueble</label>
+											<input type="number" name="dr_valorinm" id="dr_valorinm" class="form-control">
+											<label for="dr_valorinm" >Valor del Inmueble</label>
 										</div>
 									</div>	
 
 									
 							</div>
 							<div class="row">
-								<div class="col-sm-12 pull-right">
-										<a class="btn btn-blue btn-sm" style="margin-top:30px">Generar propuesta autoatica</a>
+								<div class="col-sm-12 text-right">
+										<a class="btn btn-blue btn-sm" style="margin-top:30px">Generar propuesta automática</a>
 								</div>
 							</div>
 							<br/><h6>Suma Asegurada por Cobertura:</h6>
@@ -494,9 +501,11 @@
 			</div>
 			<div class="row" style="padding:0 70px">
 				<div class="col-sm-12">
-					<button type="button" class="btn btn-pink waves-effect waves-light float-right">Regresar</button>						
-					<button type="button" class="btn btn-pink waves-effect waves-light float-right">Generar Slip</button>
+				    <button type="button" class="btn btn-pink waves-effect waves-light float-right">Pendientes Tokio Marine</button>
+					<button type="button" class="btn btn-pink waves-effect waves-light float-right">Pendientes del Agente</button>
 					<button type="button" class="btn btn-pink waves-effect waves-light float-right">Solicitar Emisión</button>
+					<button type="button" class="btn btn-pink waves-effect waves-light float-right">Generar Slip</button>
+					<button type="button" class="btn btn-blue waves-effect waves-light float-right">Regresar</button>											
 				</div>
 			</div>
 			
@@ -523,56 +532,78 @@
 	$(document).ready(function() {
 		$.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
 		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
-		$("#box-form-passw").load("form-rec-pass.html");	
-		new WOW().init();		    
-		$("#tab1").addClass("show");	
-		//var list = document.getElementById("tab-list");
+		$("#box-form-passw").load("form-rec-pass.html");		    
 		
-		$("#nx_paso1").click(function(){
-			$("#paso2,#paso3").hide();
-			$(".stepper li").removeClass("active").addClass("warning");
-			$("#step1").removeClass("warning").addClass("active");
-			$("#paso1").show();
+		$("#tab1").addClass("show");	
+		$("#step1 span").addClass("active_2");
+		
+		
+		$("#paso1_next").click(function(){	
+			tipo = $('.data_cteext').css('display');
+			var init_form = true;
+			if(tipo != "none"){
+				$(".data_cteext .form-control").each(function(){
+				  console.log(this.id + " : " + this.value );
+				  if(this.value == ""){
+					alert("Debes capturar toda la información necesaria");
+					init_form = false;
+					return false;
+				  }					  
+				});				
+			}
+			else{
+				$(".data_ctenvo .form-control").each(function(){
+				  console.log(this.id + " : " + this.value );
+				  if(this.value == ""){
+					alert("Debes capturar toda la información necesaria");
+					init_form = false;
+					return false;
+				  }			
+				});
+				
+			}
+			
+			if(init_form){
+				var init_form_2 = true;
+				$(".data_cotizacion .form-control,.data_cotizacion select.form-control-sel").each(function() {
+					console.log(this.id + " : " + this.value);	
+					if(this.value == ""){
+						alert("Debes capturar toda la información necesaria");
+						init_form_2 = false;
+						return false;
+					}
+				});
+				if(init_form_2){
+					continue_step("2");
+				}
+			}
 		});
-		 $("#nx_paso2,#paso1_next").click(function(){
-			$("#paso1,#paso3").hide();
-			$("#step2").removeClass("warning").addClass("active");
-			$("#step3").removeClass("active").addClass("warning");
-			$("#paso2").show();
-		});
-		 $("#nx_paso3,#paso2_next").click(function(){			
+		
+		
+		$("#nx_paso3,#paso2_next").click(function(){			
 			$("#paso1,#paso2").hide();
-			$("#step3").removeClass("warning").addClass("active");
+			$("#step3").addClass("active");
+			$("#step3 span").addClass("active_2");
+			$("#nx_paso2 span").removeClass("active_2");
 			$("#paso3").show();
 		});
 		
 		$("#paso1_back").click(function(){
-			$("#paso3,#paso2").hide();
-			$("#paso1").show();
-		});
-		
-		
+			continue_step("1");
+		});       
         
-        
-        $('input#radio2_cn').click(function(){
-			if ($(this).is(':checked') && $(this).attr('id')=="radio2_cn")
+         $('input#radio_cn,input#radio_ce').click(function(){
+			if ($(this).attr('id')=="radio_cn")
 			{
 				$(".data_ctenvo").show();
 				$(".data_cteext").hide();		
 			}
-		});
-		 
-		$('input#radio1_ce').click(function(){
-			if ($(this).is(':checked') && $(this).attr('id')=="radio1_ce")
-			{
+			else{
 				$(".data_ctenvo").hide();
 				$(".data_cteext").show();
 			}
 		});
-        
-        
-        
-        
+               
 		
 		$('#btn-add-tab').click(function() {
 			tabID++;
@@ -623,6 +654,28 @@
 			$(this).find('a').html('<i class="fa fa-map-marker" aria-hidden="true"></i> ' + len + button);
 		})
 		tabID--;
+	}
+	
+	function continue_step(paso){
+		switch(paso) {
+			case "1":
+				$("#paso2,#paso3").hide();
+				$("#step2").removeClass("active");
+				$("#step2 span,#step3 span").removeClass("active_2");
+				$("#step1").addClass("active");
+				$("#step1 span").addClass("active_2");
+				$("#paso1").show();
+			break;
+			case "2":
+				$("#paso1,#paso3").hide();
+				$("#step2").addClass("active");
+				$("#step2 span").addClass("active_2");
+				$("#step1 span,#step3 span").removeClass("active_2");
+				$("#step3").removeClass("active");
+				$("#step1").addClass("active");
+				$("#paso2").show();
+			break;
+		}
 	}
 
 	function sum_ubicacion(sum){		
