@@ -1427,10 +1427,11 @@ margin-right: 0; }
     padding-bottom: 20px;
     color: #fff;
     text-align: center;
-    height: 30%;
+    height: 60%;
     box-sizing: border-box;
     padding-right: 0px !important;
     padding-left: 0px !important;
+    width: 100%;
 }
 
 .site-wrapper .pdf-name{
