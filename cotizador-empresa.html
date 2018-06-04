@@ -16,8 +16,10 @@
     </head>
 <body>
 <style>
-.site-wrapper .tipo_persona{ padding-top:40px;}
+.site-wrapper .tipo_persona{ padding-top:40px; float:right;}
 .site-wrapper .active_2{text-decoration: underline};
+.site-wrapper .stepper li.completed a .circle {background-color:green!important;}
+.site-wrapper .stepper-horizontal li:hover {background-color:#fff!important;}
 </style>
 <section class="site-wrapper">
         <header></header>			
@@ -76,7 +78,7 @@
 					<div class="row data_cteext">
 							<div class="col-md-3">
 								<div class="md-form">
-									<input type="text" name="ce_rfc" id="ce_rfc" class="form-control">
+									<input type="text" name="ce_rfc" id="ce_rfc" class="form-control" maxlength="13" pattern="^[a-zA-Z0-9]{4,10}$">
 									<label for="ce_rfc" >RFC del Contratante:</label>
 								</div>
 							</div>
@@ -95,46 +97,72 @@
 					
 					<div class="row data_ctenvo" style="display:none">
 						<div class="col-sm-12">
-							<div class="row">
+							<div class="row data_nuevotip">
 								<div class="col-md-8">
 									<div class="md-form form-group">
-										<input type="text" name="cn_nombrecompleto" id="cn_nombrecompleto" class="form-control">
+										<input type="text" id="cn_nombrecompleto" name="cn_nombrecompleto" class="form-control">
 										<label for="cn_nombrecompleto" >Nombre Completo:</label>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-inline tipo_persona">
-										<div class="form-check">
-											<input class="form-check-input form-control" name="group2" type="radio" id="cn_personafisica" checked="checked">
-											<label class="form-check-label" for="cn_personafisica">Persona Física</label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input form-control" name="group2" type="radio" id="cn_personamoral">
-											<label class="form-check-label" for="cn_personamoral">Persona Moral</label>
-										</div>
+											<div class="form-check">
+												<input class="form-check-input form-control" name="group2" type="radio" id="cn_personamoral" checked="checked">
+												<label class="form-check-label" for="cn_personamoral">Persona Moral</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input form-control" name="group2" type="radio" id="cn_personafisica">
+												<label class="form-check-label" for="cn_personafisica">Persona Física</label>
+											</div>
 									</div>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row tip_moral">
 								<div class="col-md-3">
-									<div class="md-form form-group">
-										<input type="text" name="cn_rfccontratatante" id="cn_rfccontratatante" class="form-control">
-										<label for="cn_rfccontratatante" >RFC del Contratante:</label>
+									<div class="md-form">
+										<input type="text" id="cn_rfc" name="cn_rfc" class="form-control" maxlength="13" pattern="^[a-zA-Z0-9]{4,10}$">
+										<label for="cn_rfc" >RFC del Contratante:</label>
 									</div>
-								</div>
+								</div>	
 								<div class="col-md-6">
-									<div class="md-form form-group">
-										<input type="text" name="cn_nombrecontratante" id="cn_nombrecontratante" class="form-control">
+									<div class="md-form">
+										<input type="text" id="cn_nombrecontratante" name="cn_nombrecontratante" class="form-control">
 										<label for="cn_nombrecontratante" >Nombre del Contratante:</label>
 									</div>
-								</div>									
+								</div>	
 								<div class="col-md-3">
 									<div class="md-form form-group">
 											<select name="cn_denominacion" id="cn_denominacion" class="mdb-select form-control-sel">
 												<option value="1">S.A. de C.V.</option>
 												<option value="2">Otra</option>
 											</select>
-											<label for="cn_denominacion" >Denominacion</label>
+											<label for="cn_denominacion" >Denominacion:</label>
+									</div>
+								</div> 
+							</div>	
+							<div class="row tip_fisica" style="display:none">
+								<div class="col-md-3">
+									<div class="md-form">
+										<input type="text" id="cn_rfc_2" name="cn_rfc_2" class="form-control">
+										<label for="cn_rfc_2" >RFC del Contratante:</label>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="md-form">
+										<input type="text"  id="cn_fispaterno" name="cn_fispaterno" class="form-control">
+										<label for="cn_fispaterno" >Apellido Paterno:</label>
+									</div>
+								</div>									
+								<div class="col-md-3">
+									<div class="md-form">
+										<input type="text"  id="cn_fismaterno" name="cn_fismaterno" class="form-control">
+										<label for="cn_fismaterno" >Apellido Materno:</label>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="md-form">
+										<input type="text"  id="cn_fisnombre" name="cn_fisnombre" class="form-control">
+										<label for="cn_fisnombre" >Nombre(s):</label>
 									</div>
 								</div>
 							</div>
@@ -853,23 +881,49 @@
 				  console.log(this.id + " : " + this.value );
 				  if(this.value == ""){
 					alert("Debes capturar toda la información necesaria");
+					$("#"+this.id).focus();
 					init_form = false;
 					return false;
 				  }					  
 				});				
 			}
 			else{
-				$(".data_ctenvo .form-control").each(function(){
-				  console.log(this.id + " : " + this.value );
-				  if(this.value == ""){
-					alert("Debes capturar toda la información necesaria");
-					init_form = false;
-					return false;
-				  }			
-				});
-				
-			}
-			
+				init_form = true;
+				$(".data_nuevotip .form-control").each(function(){
+					console.log(this.id + " : " + this.value );
+					if(this.value == "" ){
+						alert("Debes capturar toda la información necesaria");
+						init_form = false;
+						return false;
+				    }
+				 });		
+				if(init_form)
+				{
+					persona = $('.tip_moral').css('display');
+					if(persona != "none"){
+						$(".tip_moral .form-control,.tip_moral select.form-control-sel").each(function(){
+							console.log(this.id + " : " + this.value );
+							if(this.value == ""){
+								alert("Debes capturar toda la información necesaria");
+								$("#"+this.id).focus();
+								init_form = false;
+								return false;
+							}					  
+						});						
+					}
+					else{
+						$(".tip_fisica .form-control").each(function(){
+							console.log(this.id + " : " + this.value );
+							if(this.value == ""){
+								alert("Debes capturar toda la información necesaria");
+								$("#"+this.id).focus();
+								init_form = false;
+								return false;
+							}					  
+						});					
+					}
+				}														
+			}			
 			if(init_form){
 				var init_form_2 = true;
 				$(".data_cotizacion .form-control,.data_cotizacion select.form-control-sel").each(function() {
@@ -907,6 +961,18 @@
 			else{
 				$(".data_ctenvo").hide();
 				$(".data_cteext").show();
+			}
+		});
+		
+		$('input#cn_personafisica,input#cn_personamoral').click(function(){
+			if ($(this).attr('id')=="cn_personafisica")
+			{
+				$(".tip_fisica").show();
+				$(".tip_moral").hide();		
+			}
+			else{
+				$(".tip_fisica").hide();
+				$(".tip_moral").show();
 			}
 		});
 		     
@@ -1018,13 +1084,14 @@
 					$("#paso1,#paso3").hide();
 					$("#step2").addClass("active");
 					$("#step2 span").addClass("active_2");
-					$("#nx_paso1 span,#nx_paso3 span").removeClass("active_2");
+					$("#step1 span,#step3 span").removeClass("active_2");
 					$("#step3").removeClass("active");
 					$("#step1").addClass("active");
 					$("#paso2").show();
 				break;
 			}
 		}
+
 		
 		
 		function sum_pol(id_btn){

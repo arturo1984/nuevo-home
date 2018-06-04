@@ -16,7 +16,7 @@
     </head>
 <body>
 <style>
-.site-wrapper .tipo_persona{ padding-top:40px;}
+.site-wrapper .tipo_persona{ padding-top:40px; float:right;}
 .site-wrapper .active_2{text-decoration: underline};
 .site-wrapper .stepper li.completed a .circle {background-color:green!important;}
 .site-wrapper .stepper-horizontal li:hover {background-color:#fff!important;}
@@ -78,7 +78,7 @@
 				<div class="row data_cteext">
 					<div class="col-md-3">
 						<div class="md-form">
-							<input type="text" id="ce_rfc" name="ce_rfc" class="form-control" maxlength="13">
+							<input type="text" id="ce_rfc" name="ce_rfc" class="form-control" maxlength="13" pattern="^[a-zA-Z0-9]{4,10}$">
 							<label for="ce_rfc" >RFC del Contratante:</label>
 						</div>
 					</div>
@@ -120,10 +120,16 @@
 						<div class="row tip_moral">
 							<div class="col-md-3">
 								<div class="md-form">
-									<input type="text" id="cn_rfc" name="cn_rfc" class="form-control">
+									<input type="text" id="cn_rfc" name="cn_rfc" class="form-control" maxlength="13" pattern="^[a-zA-Z0-9]{4,10}$">
 									<label for="cn_rfc" >RFC del Contratante:</label>
 								</div>
-							</div>								
+							</div>	
+							<div class="col-md-6">
+								<div class="md-form">
+									<input type="text" id="cn_nombrecontratante" name="cn_nombrecontratante" class="form-control">
+									<label for="cn_nombrecontratante" >Nombre del Contratante:</label>
+								</div>
+							</div>	
 							<div class="col-md-3">
 								<div class="md-form form-group">
 										<select name="cn_denominacion" id="cn_denominacion" class="mdb-select form-control-sel">
@@ -162,6 +168,7 @@
 						</div>
 					</div>   
 				</div>
+				
 				<div class="data_cotizacion">
 					<br/><h5>Datos de la Cotización</h5><br/>
 					<div class="row" style="text-align:right">
@@ -552,8 +559,7 @@
 	$(document).ready(function() {
 		$.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
 		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
-		$("#box-form-passw").load("form-rec-pass.html");		    
-		
+		$("#box-form-passw").load("form-rec-pass.html");		    		
 		$("#tab1").addClass("show");	
 		$("#step1 span").addClass("active_2");
 		
@@ -582,33 +588,32 @@
 						return false;
 				    }
 				 });		
-					if(init_form)
-					{
-						persona = $('.tip_moral').css('display');
-						if(persona != "none"){
-							$(".tip_moral .form-control,.tip_moral select.form-control-sel").each(function(){
+				if(init_form)
+				{
+					persona = $('.tip_moral').css('display');
+					if(persona != "none"){
+						$(".tip_moral .form-control,.tip_moral select.form-control-sel").each(function(){
 							console.log(this.id + " : " + this.value );
 							if(this.value == ""){
 								alert("Debes capturar toda la información necesaria");
 								$("#"+this.id).focus();
 								init_form = false;
 								return false;
-						   }					  
-						  });						
-						}
-						else{
-							$(".tip_fisica .form-control").each(function(){
-							  console.log(this.id + " : " + this.value );
-							  if(this.value == ""){
-									alert("Debes capturar toda la información necesaria");
-									$("#"+this.id).focus();
-									init_form = false;
-									return false;
-							   }					  
-							  });
-						
-						}
-					}														
+							}					  
+						});						
+					}
+					else{
+						$(".tip_fisica .form-control").each(function(){
+							console.log(this.id + " : " + this.value );
+							if(this.value == ""){
+								alert("Debes capturar toda la información necesaria");
+								$("#"+this.id).focus();
+								init_form = false;
+								return false;
+							}					  
+						});					
+					}
+				}														
 			}
 			
 			if(init_form){
@@ -640,7 +645,7 @@
 			continue_step("1");
 		});       
         
-         $('input#radio_cn,input#radio_ce').click(function(){
+        $('input#radio_cn,input#radio_ce').click(function(){
 			if ($(this).attr('id')=="radio_cn")
 			{
 				$(".data_ctenvo").show();
