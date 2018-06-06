@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Comisiones y Pagos</title>
+        <link rel="icon" href="images/logo/favicon.ico">
+        <link href="css/fontawesome/fontawesome-all.css" rel="stylesheet">
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="css/material-design/mdb.css" rel="stylesheet">
+        <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">		
+        <link href="css/fileinput.css" rel="stylesheet">
+		<link href="css/fileinput-rtl.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+	<style>
+	#comisiones-tokio .dataTables_filter,#comisiones-tokio .dt-buttons{display:none;}
+	#comisiones-tokio .dataTables_info,#comisiones-tokio .dataTables_paginate,#comisiones-tokio .dataTables_length{display:none;}	
+	.site-wrapper #comisiones-tokio .table-striped tbody tr.selected{background-color:pink;}
+	.site-wrapper #comisiones-tokio .btn.btn-sm {padding: 0.5rem 1.1rem;}
+	</style>
+
+    <body>
+        <section class="site-wrapper">
+            <header></header>
+            <section>
+                <div class="section-heading">
+                    <div class="container-fluid">
+                        <h1 class="title text-left">Solicitudes de Pago</h1>
+                    </div>
+                </div>
+              
+                <div class="container">
+                    <div class="form-wrapper">
+                        <form id="search-form" class="mb-4">
+                            
+                            <div class="row">
+								 <div class="col-sm-3">
+                                    <div class="md-form form-group">
+                                        <select name="agente" class="mdb-select">
+                                            <option value="1">Todos</option>
+                                            <option value="2">Marsh</option>
+                                            <option value="3">Kataoka</option>
+                                        </select>
+                                        <label for="agente" >Agente</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="md-form form-group">
+                                        <label for="modoCotizacion" class="active">Fecha de solicitus</label>
+                                        <div class="row">
+                                            <div class="col">
+                                                <input placeholder="Desde" type="text" id="creationDate" class="form-control datepicker">
+                                            </div>
+                                            <div class="col">
+                                                <input placeholder="Hasta" type="text" id="creationDate" class="form-control datepicker">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                <div class="col-sm-3">
+                                   <div class="md-form form-group">
+                                        <select name="agente" class="mdb-select">
+                                            <option value="1">Pagado</option>
+                                            <option value="2">Pendiente</option>
+                                        </select>
+                                        <label for="agente" >Estatus</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <a class="btn btn-pink" onclick="document.getElementById('search-form').submit();">BUSCAR</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+					
+                    <div class="table-wrapper">
+	                    <table class="table data-table table-striped table-bordered" style="width:100%;">
+	                        <thead>
+	                            <tr>
+									<th>Fecha de solicitud</th>
+	                                <th>Tipo de solicitud</th>
+	                                <th>Prima Neta</th>
+	                                <th>Comisión</th>
+	                                <th>Bono</th>                                       
+	                                <th>IVA</th>
+	                                <th>Retención IVA</th>
+	                                <th>Retención ISR</th>                                
+	                                <th>Toatal a Pagar</th>
+									<th>Estado</th>									
+	                                <th class="all" data-orderable="true">Acción</th>
+	                            </tr>
+	                        </thead>
+	                        <tbody>
+	                            <tr>
+	                                <td>01/01/2017 12:20</td>
+	                                <td>Comisiones</td>
+	                                <td>$223,432</td>
+	                                <td>$223,432</td>
+	                                <td></td>
+	                                <td>$34,435</td>
+	                                <td>$35,332</td>
+	                                <td>$32,321</td>
+	                                <td>$23,134</td>
+	                                <td>Pendiente</td>
+	                                <td>
+	                                    <button type="button" class="btn btn-outline-pink px-3 py-2 waves-effect waves-light" data-toggle="modal" data-target="#modal-archives"><i class="fa fa-search" aria-hidden="true"></i></button>
+	                                </td>
+	                            </tr>
+	                             <tr>
+	                                <td>02/01/2017 12:20</td>
+	                                <td>Comisiones</td>
+	                                <td>$123,432</td>
+	                                <td>$23,432</td>
+	                                <td></td>
+	                                <td>$394,323</td>
+	                                <td>$323,983</td>
+	                                <td>$32,123</td>
+	                                <td>$98,543</td>
+	                                <td>Pagado</td>
+	                                <td>
+	                                    <button type="button" class="btn btn-outline-pink px-3 py-2 waves-effect waves-light" data-toggle="modal" data-target="#modal-archives"><i class="fa fa-search" aria-hidden="true"></i></button>
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                                <td>01/01/2017 12:20</td>
+	                                <td>Comisiones</td>
+	                                <td>$123,432</td>
+	                                <td>$34,325</td>
+	                                <td></td>
+	                                <td>$546,763</td>
+	                                <td>$32,9874</td>
+	                                <td>$87,000</td>
+	                                <td>$32,214</td>
+	                                <td>Pendiente</td>
+	                                <td>
+	                                    <button type="button" class="btn btn-outline-pink px-3 py-2 waves-effect waves-light" data-toggle="modal" data-target="#modal-archives"><i class="fa fa-search" aria-hidden="true"></i></button>
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                                <td>04/05/2017 12:20</td>
+	                                <td>Bonos</td>
+	                                <td>$347,212</td>
+	                                <td></td>
+	                                <td>$456,345</td>
+	                                <td>$5,934</td>
+	                                <td>$32,000</td>
+	                                <td>$87,983</td>
+	                                <td>$32,123</td>
+	                                <td>Pendiente</td>
+	                                <td>
+	                                    <button type="button" class="btn btn-outline-pink px-3 py-2 waves-effect waves-light" data-toggle="modal" data-target="#modal-archives"><i class="fa fa-search" aria-hidden="true"></i></button>
+	                                </td>
+	                            </tr>                                               
+	                        </tbody>
+	                    </table>
+                	</div>
+                </div>
+            </section>            
+            <footer class="text-center text-md-left pt-4 mt-4 border-top border-info"></footer>
+            <!-- Modal Ver Archivos -->
+            <div class="modal fade" id="modal-archives" tabindex="-1" role="dialog" aria-labelledby="archivesLabel" aria-hidden="true">
+                <div class="modal-dialog modal-fluid modal-dialog-centered" role="document" style="width:90%">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="#archivesLabel">Detalle de Solicitud</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+							<div class="table-wrapper">
+								<table class="table data-table table-striped table-bordered" style="width:100%;" id="table1">
+									<thead>
+									<tr>
+										<th>ID</th>
+									    <th>Asegurado</th>
+									    <th>Prima Neta</th>
+									    <th>Comisión</th>
+									    <th>Tipo</th>                                       
+									    <th>IVA</th>
+									    <th>Retención IVA</th>
+									    <th>Retención ISR</th>                                
+									    <th>Toatal a Pagar</th>
+										<th>Estado</th>
+									</tr>
+									</thead>
+									<tr class="t_vida">
+	                                    <td>12345</td>
+	                                    <td>Comisiones</td>
+	                                    <td>$223,432</td>
+	                                    <td>$223,432</td>
+	                                    <td>VIDA</td>
+	                                    <td>$34,435</td>
+	                                    <td>$35,332</td>
+	                                    <td>$32,321</td>
+	                                    <td>$23,134</td>
+	                                    <td>Pendiente</td>                                    
+	                                </tr>
+									<tr class="t_vida">
+	                                    <td>326388</td>
+	                                    <td>Comisiones</td>
+	                                    <td>$223,432</td>
+	                                    <td>$223,432</td>
+	                                    <td>VIDA</td>
+	                                    <td>$34,435</td>
+	                                    <td>$35,332</td>
+	                                    <td>$32,321</td>
+	                                    <td>$23,134</td>
+	                                    <td>Pendiente</td>                                    
+	                                </tr>
+									<tr class="t_dano">
+	                                    <td>437382</td>
+	                                    <td>Comisiones</td>
+	                                    <td>$223,432</td>
+	                                    <td>$223,432</td>
+	                                    <td>DAÑO</td>
+	                                    <td>$34,435</td>
+	                                    <td>$35,332</td>
+	                                    <td>$32,321</td>
+	                                    <td>$23,134</td>
+	                                    <td>Pendiente</td>                                    
+	                                </tr>
+									<tr class="t_dano">
+	                                    <td>543273</td>
+	                                    <td>Comisiones</td>
+	                                    <td>$223,432</td>
+	                                    <td>$223,432</td>
+	                                    <td>DAÑO</td>
+	                                    <td>$34,435</td>
+	                                    <td>$35,332</td>
+	                                    <td>$32,321</td>
+	                                    <td>$23,134</td>
+	                                    <td>Pendiente</td>                                    
+	                                </tr>
+									<tr class="t_vida">
+	                                    <td>4587411</td>
+	                                    <td>Nombre</td>
+	                                    <td>$653,432</td>
+	                                    <td>$12,432</td>
+	                                    <td>VIDA</td>
+	                                    <td>$3,435</td>
+	                                    <td>$5,332</td>
+	                                    <td>$9,321</td>
+	                                    <td>$1,134</td>
+	                                    <td>Pendiente</td>                                    
+	                                </tr>
+								</table>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Modal Ver archivos -->
+        </section>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/datatables.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="js/responsive.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/jszip.min.js"></script>
+        <script type="text/javascript" src="js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="js/buttons.print.min.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+		<script type="text/javascript" src="js/fileInput.min.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+        <script type="text/javascript">
+        $.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
+        $.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}}); 
+        </script>
+    </body>
+</html>
