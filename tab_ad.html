@@ -1,68 +1,64 @@
 	<h6 id="tit_tab">Datos del Riesgo:</h6>
 	<div class="row">
-			<div class="col-sm-2">
-				<div class="md-form form-group">
-					<input type="text" name="folioTMX" class="form-control">
-					<label for="folioTMX" >Código Postal</label>
-				</div>
+		<div class="col-md-2">
+			<div class="md-form">
+				<input type="text" name="dr_cp" id="dr_cp" oninput="numberOnly(this.id);" maxlength="5" class="form-control">
+				<label for="dr_cp" >Código Postal:</label>
 			</div>
-			<div class="col-sm-4">
-				<div class="md-form form-group">
-					<input type="text" name="poliza" class="form-control">
-					<label for="poliza" >Calle</label>
-				</div>
+		</div>
+		<div class="col-md-3">
+			<div class="md-form">
+				<input type="text" name="dr_calle" id="dr_calle" class="form-control">
+				<label for="dr_calle" >Calle:</label>
 			</div>
-			<div class="col-sm-2">
-				<div class="md-form form-group">
-					<input type="text" name="folioTMX" class="form-control">
-					<label for="folioTMX" >Número</label>
-				</div>
+		</div>
+		<div class="col-md-2">
+			<div class="md-form form-group">
+				<input type="text" name="dr_numero" id="dr_numero" class="form-control">
+				<label for="dr_numero" >Número:</label>
 			</div>
-			<div class="col-sm-2">
-				<div class="md-form form-group">
-						<select name="estatus" class="mdb-select">
-							<option value="1">Colonia 1</option>
-							<option value="2">Colonia 2</option>
-							<option value="3">Colonia 3</option>
-						</select>
-						<label for="estatus" >Colonia</label>
-				</div>
+		</div>
+		<div class="col-md-2">
+			<div class="md-form form-group">
+				<select name="dr_colonia" class="mdb-select form-control-sel">
+					<option value="1">Colonia 1</option>
+					<option value="2">Colonia 2</option>
+					<option value="3">Colonia 3</option>
+				</select>
+				<label for="dr_colonia" >Colonia</label>
 			</div>
-			<div class="col-sm-2">
-				<div class="md-form form-group">
-					<input type="text" name="folioTMX" class="form-control">
-					<label for="folioTMX" >Delagación/municipio:</label>
-				</div>
-			</div>										   
+		</div>
+		<div class="col-md-3">
+			<div class="md-form form-group">
+				<input type="text" name="dr_municipio" id="dr_municipio" class="form-control">
+				<label for="dr_municipio" >Delegación/municipio:</label>
+			</div>
+		</div>										   
 	</div>
 	
 	<div class="row">
-			<div class="col-sm-2">
-				<div class="md-form form-group">
-					<input type="text" name="folioTMX" class="form-control">
-					<label for="folioTMX" >Estado:</label>
-				</div>
+		<div class="col-md-2">
+			<div class="md-form form-group">
+				<input type="text" name="dr_estado" id="dr_estado" class="form-control">
+				<label for="dr_estado" >Estado:</label>
 			</div>
-			<div class="col-sm-2">
-				<div class="md-form form-group">
-						<select name="estatus" class="mdb-select">
-							<option value="1">Nivel 1</option>
-							<option value="2">Nivel 2</option>
-							<option value="3">Nivel 3</option>
-						</select>
-						<label for="estatus" >Niveles</label>
-				</div>
+		</div>
+		<div class="col-md-2">
+			<div class="md-form form-group">
+				<select name="dr_nivel" id="dr_nivel" class="mdb-select form-control-sel">
+					<option value="1">Nivel 1</option>
+					<option value="2">Nivel 2</option>
+					<option value="3">Nivel 3</option>
+				</select>
+				<label for="dr_nivel" >Niveles</label>
 			</div>
-			<div class="col-sm-2">
-				<div class="md-form form-group">
-					<input type="text" name="folioTMX" class="form-control">
-					<label for="folioTMX" >Valor del Inmueble</label>
-				</div>
-			</div>	
-
-			<div class="col-sm-6 text-right">
-				<a class="btn btn-blue btn-sm" style="margin-top:30px">Generar propuesta automatica</a>
+		</div>
+		<div class="col-md-4">
+			<div class="md-form form-group">
+				<input type="number" name="dr_valorinm" id="dr_valorinm"  class="form-control">
+				<label for="dr_valorinm" >Valor del Inmueble:</label>
 			</div>
+		</div>	
 	</div>
 	
 	<br/><h6>Suma Asegurada por Cobertura:</h6>

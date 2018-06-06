@@ -20,6 +20,7 @@
 .site-wrapper .active_2{text-decoration: underline};
 .site-wrapper .stepper li.completed a .circle {background-color:green!important;}
 .site-wrapper .stepper-horizontal li:hover {background-color:#fff!important;}
+
 </style>
 <section class="site-wrapper">
         <header></header>			
@@ -33,7 +34,7 @@
 			<div class="container-fluid">					
 				<div class="row">
 					<div class="col-md-12">
-						<ul class="stepper stepper-horizontal">
+						<ul class="stepper stepper-horizontal container-fluid">
 							<li id="step1" class="active">
 								<a href="javascript:void(0)">
 									<span class="circle">1</span>
@@ -295,7 +296,7 @@
 								<div class="row">
 									<div class="col-md-2">
 										<div class="md-form">
-											<input type="text" name="dr_cp_1" id="dr_cp_1" class="form-control">
+											<input type="text" name="dr_cp_1" id="dr_cp_1" oninput="numberOnly(this.id);" maxlength="5" class="form-control">
 											<label for="dr_cp_1" >Código Postal:</label>
 										</div>
 									</div>
@@ -348,14 +349,10 @@
 									</div>
 									<div class="col-md-4">
 										<div class="md-form form-group">
-											<input type="number" name="dr_valorinm_1" id="dr_valorinm_1" class="form-control">
+											<input type="number" name="dr_valorinm_1" id="dr_valorinm_1"  class="form-control">
 											<label for="dr_valorinm_1" >Valor del Inmueble:</label>
 										</div>
-									</div>	
-
-									<div class="col-md-4 text-right">
-										<a class="btn btn-blue btn-sm" style="margin-top:30px">Generar propuesta automática</a>
-									</div>
+									</div>										
 								</div>
 								
 								<br/><h6>Suma Asegurada por Cobertura:</h6>
@@ -411,7 +408,7 @@
 																		<label for="checkbox104" class="form-check-label">¿Bienes en Incubadora?</label>
 																	</div>																	
 																	<div class="md-form form-group">
-																		<input type="text" name="SaBienInc" id="SaBienInc" class="form-control">
+																		<input type="number" name="SaBienInc" id="SaBienInc" class="form-control">
 																		<label for="SaBienInc" >S.A. Bienes en Incubadora</label>
 																	</div>
 																</div>
@@ -421,7 +418,7 @@
 																		<label for="checkbox105" class="form-check-label">¿Bienes en refrigeración?</label>
 																	</div>
 																	<div class="md-form form-group">
-																		<input type="text" name="SaBienref" id="SaBienref" class="form-control">
+																		<input type="number" name="SaBienref" id="SaBienref" class="form-control">
 																		<label for="SaBienref" >S.A. Bienes en Refrigeración</label>
 																	</div>																
 																</div>
@@ -452,29 +449,29 @@
 													<div class="row">														
 															<div class="col-sm-4">
 																<div class="md-form form-group">
-																	<input type="text" name="SaGastExtra" id="SaGastExtra" class="form-control">
+																	<input type="number" name="SaGastExtra" id="SaGastExtra" class="form-control">
 																	<label for="SaGastExtra" >S.A. Gastos Extraordinarios</label>
 																</div>
 																<div class="md-form form-group">
-																	<input type="text" name="SaPerdUtil" id="SaPerdUtil" class="form-control">
+																	<input type="number" name="SaPerdUtil" id="SaPerdUtil" class="form-control">
 																	<label for="SaPerdUtil" >S.A. Perdida de Utilidades</label>
 																</div>
 																<div class="md-form form-group">
-																	<input type="text" name="SaSalGast" id="SaSalGast" class="form-control">
+																	<input type="number" name="SaSalGast" id="SaSalGast" class="form-control">
 																	<label for="SaSalGast" >S.A. Salarios y Gastos Fijos</label>
 																</div>
 															</div>
 															<div class="col-sm-4">
 																<div class="md-form form-group">
-																	<input type="text" name="SaPerdRentas" id="SaPerdRentas" class="form-control">
+																	<input type="number" name="SaPerdRentas" id="SaPerdRentas" class="form-control">
 																	<label for="SaPerdRentas" >S.A. Perdida de Rentas</label>
 																</div>
 																<div class="md-form form-group">
-																	<input type="text" name="SaRedIngr" id="SaRedIngr" class="form-control">
+																	<input type="number" name="SaRedIngr" id="SaRedIngr" class="form-control">
 																	<label for="SaRedIngr" >S.A. Reducción de Ingresos</label>
 																</div>
 																<div class="md-form form-group">
-																	<input type="text" name="SaGananBrutas" id="SaGananBrutas" class="form-control">
+																	<input type="number" name="SaGananBrutas" id="SaGananBrutas" class="form-control">
 																	<label for="SaGananBrutas" >S.A. Ganancias Brutas</label>
 																</div>
 															</div>
@@ -1153,7 +1150,12 @@
 					console.log("Nan")
 			}	
 		}
-		
+	
+	function numberOnly(id) {
+    var element = document.getElementById(id);
+    var regex = /[^0-9]/gi;
+    element.value = element.value.replace(regex, "");
+}
 	</script>	
     </body>
 </html>

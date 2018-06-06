@@ -1332,8 +1332,9 @@ margin-right: 0; }
     border: 1px solid #ddd;
     margin: -15px 12px;
 }
-.site-wrapper #paso2 .accordion .card .card-header{width:1150px; background-color: lightgray; border: 1px solid grey;}
-.site-wrapper #paso2 .accordion .card .card-body {width: 1150px;border: 1px solid #ddd;}
+.site-wrapper #paso2 .accordion .card .card-header{width:100%; background-color: #0066cc; border: 1px solid white;}
+.site-wrapper .accordion .card .card-header a{color:#fff;}
+.site-wrapper #paso2 .accordion .card .card-body {width: 100%;border: 1px solid #fff;}
 .site-wrapper .tot_heading{float: right; margin-left: 20px;}
 .site-wrapper .calc_fin{margin:25px 0; text-align: right;}
 .site-wrapper #paso1 .form-right{display:inline-flex; margin-bottom: 20px;}

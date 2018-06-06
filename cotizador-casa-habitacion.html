@@ -33,7 +33,7 @@
 		<div class="container-fluid">					
 			<div class="row">
 				<div class="col-md-12">
-					<ul class="stepper stepper-horizontal">
+					<ul class="stepper stepper-horizontal container-fluid">
 						<li id="step1" class="active">
 							<a href="javascript:void(0)">
 								<span class="circle">1</span>
@@ -278,7 +278,7 @@
 							<div class="row">
 									<div class="col-md-2">
 										<div class="md-form form-group">
-											<input type="number" name="dr_cp_1" id="dr_cp_1" maxlength="5" class="form-control">
+											<input type="text" name="dr_cp_1" id="dr_cp_1" oninput="numberOnly(this.id);" maxlength="5" class="form-control">
 											<label for="dr_cp_1" >Código Postal</label>
 										</div>
 									</div>
@@ -367,57 +367,57 @@
 							<div class="row">
 								<div class="col-sm-3">
 									<div class="md-form form-group">
-										<input type="text" name="SA_Edificio" class="form-control">
+										<input type="text" name="SA_Edificio" id="SA_Edificio" oninput="numberOnly(this.id);" class="form-control">
 										<label for="SA_Edificio" >S.A. Edificio</label>
 									</div>
 									<div class="md-form form-group">
-										<input type="text" name="SA_Rotura" class="form-control">
+										<input type="text" name="SA_Rotura" id="SA_Rotura" oninput="numberOnly(this.id);" class="form-control">
 										<label for="SA_Rotura" >S.A. Rotura de Cristales</label>
 									</div>
 									<div class="md-form form-group">
-										<input type="text" name="SA_Dinero" class="form-control">
+										<input type="text" name="SA_Dinero" id="SA_Dinero" oninput="numberOnly(this.id);" class="form-control">
 										<label for="SA_Dinero" >S.A. Dinero y Valores</label>
 									</div>
 								</div>
 								<div class="col-sm-3">
 									<div class="md-form form-group">
-										<input type="text" name="SA_Edificio" class="form-control">
-										<label for="SA_Edificio" >S.A. Contenidos</label>
+										<input type="text" name="SA_Contenidos" id="SA_Contenidos" oninput="numberOnly(this.id);" class="form-control">
+										<label for="SA_Contenidos" >S.A. Contenidos</label>
 									</div>
 									<div class="md-form form-group">
-										<input type="text" name="SA_Robos" class="form-control">
+										<input type="text" name="SA_Robos" id="SA_Robos" oninput="numberOnly(this.id);" class="form-control">
 										<label for="SA_Robos" >S.A. Robos (Seccion I)</label>
 									</div>
 									<div class="md-form form-group">
-										<input type="text" name="SA_RespCivil" class="form-control">
+										<input type="text" name="SA_RespCivil" id="SA_RespCivil" oninput="numberOnly(this.id);" class="form-control">
 										<label for="SA_RespCivil" >S.A. Responsabilidad Civil</label>
 									</div>
 								</div>
 								<div class="col-sm-3">
 									<div class="md-form form-group">
-										<input type="text" name="SA_PerdidaRentas" class="form-control">
+										<input type="text" name="SA_PerdidaRentas" id="SA_PerdidaRentas" oninput="numberOnly(this.id);" class="form-control">
 										<label for="SA_PerdidaRentas" >S.A. Perdida de rentas</label>
 									</div>
 									<div class="md-form form-group">
-										<input type="text" name="SA_Robosii" class="form-control">
+										<input type="text" name="SA_Robosii" id="SA_Robosii" oninput="numberOnly(this.id);" class="form-control">
 										<label for="SA_Robosii" >S.A. Robos (Seccion II)</label>
 									</div>
 									<div class="md-form form-group">
-										<input type="text" name="SA_EquipoElec" class="form-control">
+										<input type="text" name="SA_EquipoElec" id="SA_EquipoElec" oninput="numberOnly(this.id);" class="form-control">
 										<label for="SA_EquipoElec" >S.A. Equipo Electrónico</label>
 									</div>
 								</div>
 								<div class="col-sm-3">
 									<div class="md-form form-group">
-										<input type="text" name="gastos_Ext" class="form-control">
+										<input type="text" name="gastos_Ext" id="gastos_Ext" oninput="numberOnly(this.id);" class="form-control">
 										<label for="gastos_Ext" >Gastos Extraordiarios</label>
 									</div>
 									<div class="md-form form-group">
-										<input type="text" name="SA_Robosii" class="form-control">
+										<input type="text" name="SA_Robosiii" id="SA_Robosiii" oninput="numberOnly(this.id);" class="form-control">
 										<label for="SA_Robosiii" >S.A. Robos (Seccion III)</label>
 									</div>
 									<div class="md-form form-group">
-										<input type="text" name="SA_EquipoElec" class="form-control">
+										<input type="text" name="SA_EquipoElecMovil" id="SA_EquipoElecMovil" oninput="numberOnly(this.id);" class="form-control">
 										<label for="SA_EquipoElecMovil" >S.A. Equipo Electrónico movil</label>
 									</div>
 								</div>																					
@@ -768,7 +768,13 @@
 			$("#s_tab1").html(costo);
 			$("#tol_table").html(costo);
 		}
-	}					
+	}
+
+function numberOnly(id) {
+    var element = document.getElementById(id);
+    var regex = /[^0-9]/gi;
+    element.value = element.value.replace(regex, "");
+}	
 </script>	
 </body>
 </html>
