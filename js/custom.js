@@ -118,7 +118,13 @@ $(document).ready(function(){
   });
        
     
+   /* tamaño monitor menu desplegable */
+var ventana_ancho = $(window).width();    
     
+if (ventana_ancho >= 1100) {
+    $('#slide-out').css({"-webkit-transform":"translate(-100%)"});
+    /*$('#slide-out').hide();*/
+}
     
     
     
