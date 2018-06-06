@@ -141,3 +141,12 @@ $(window).resize(function() {
         $('#slide-out').css({"-webkit-transform":"translate(-100%)"});
     }
 });
+
+
+$(window).load(function() {
+  var ventana_ancho = $(window).width();    
+    
+    if (ventana_ancho >= 1000) {
+        $('#slide-out').css({"-webkit-transform":"translate(-100%)"});
+    }
+});
