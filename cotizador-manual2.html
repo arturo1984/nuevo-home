@@ -17,7 +17,7 @@
 <body>
 <section class="site-wrapper">
 	<header></header>			
-	
+	<section id="landing-agentes">
 		<div class="section-heading">
 			<div class="container-fluid">
 				<h4 class="title text-left">Cotizador Manual</h4>
@@ -42,7 +42,7 @@
 					</div>
 				</div>
 											
-				<div class="row data_cteext" id="">
+				<div class="row" id="data_cteext">
 					<div class="col-sm-3">
 						<div class="md-form form-group">
 							<input type="text" name="folioTMX" class="form-control">
@@ -63,7 +63,7 @@
 					</div>							   
 				</div>
 				
-				<div class="row data_ctenvo" id="" style="display:none">
+				<div class="row" id="data_ctenvo" style="display:none">
 					<div class="col-sm-12">
 						<div class="row">
 							<div class="col-sm-6">
@@ -85,7 +85,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="row fisicarow" id="">
+						<div class="row" id="fisicarow">
 							<div class="col-sm-3">
 								<div class="md-form form-group">
 									<input type="text" name="folioTMX" class="form-control">
@@ -111,7 +111,7 @@
 								</div>
 							</div>								
 						</div>
-						<div class="row moralrow">
+						<div class="row" id="moralrow">
 							<div class="col-sm-3">
 								<div class="md-form form-group">
 									<input type="text" name="folioTMX" class="form-control">
@@ -160,6 +160,7 @@
 								<option value="1">Todos</option>
 								<option value="2">Seguro Nuevo</option>
 								<option value="3">Renovar Seguro</option>
+								<option value="2">Endoso</option>
 							</select>
 							<label for="estatus" >Tipo de Movimiento</label>
 						</div>
@@ -175,10 +176,10 @@
 							<label for="modoCotizacion" class="active">Desde</label>
 							<div class="row">
 								<div class="col">
-									<input placeholder="Desde creationDate" type="text" id="" class="form-control datepicker"/>
+									<input placeholder="Desde" type="text" id="creationDate" class="form-control datepicker"/>
 								</div>
 								<div class="col">
-									<input placeholder="Hasta creationDate" type="text" id="" class="form-control datepicker"/>
+									<input placeholder="Hasta" type="text" id="creationDate" class="form-control datepicker"/>
 								</div>
 							</div>
 						</div>
@@ -341,43 +342,38 @@
 	$(document).ready(function() {
 		$.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
 		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});
-		$(".fisicarow").show();
-		$(".moralrow").hide();
-        
-        $('input#radio2_cn').click(function(){
+		$("#fisicarow").show();
+		$("#moralrow").hide();
+		
+		$('input[type="radio"]').click(function(){
 			if ($(this).is(':checked') && $(this).attr('id')=="radio2_cn")
 			{
-				$(".data_ctenvo").show();
-				$(".data_cteext").hide();		
+				$("#data_ctenvo").show();
+				$("#data_cteext").hide();		
 			}
 		});
 		 
-		$('input#radio1_ce"]').click(function(){
+		$('input[type="radio"]').click(function(){
 			if ($(this).is(':checked') && $(this).attr('id')=="radio1_ce")
 			{
-				$(".data_ctenvo").hide();
-				$(".data_cteext").show();
+				$("#data_ctenvo").hide();
+				$("#data_cteext").show();
 			}
 		});
-
-		$('input#fisica"]').click(function(){
+		$('input[type="radio"]').click(function(){
 			if ($(this).is(':checked') && $(this).attr('id')=="fisica")
 			{
-				$(".moralrow").hide();
-				$(".fisicarow").show();
+				$("#moralrow").hide();
+				$("#fisicarow").show();
 			}
 		});
-
-		$('input#moral"]').click(function(){
+		$('input[type="radio"]').click(function(){
 			if ($(this).is(':checked') && $(this).attr('id')=="moral")
 			{
-				$(".fisicarow").hide();
-				$(".moralrow").show();
+				$("#fisicarow").hide();
+				$("#moralrow").show();
 			}
 		});
-        
-        
-        
 		
 		$('#btn-add-tab').click(function() {
 			tabID++;
@@ -429,7 +425,6 @@
 		})
 		tabID--;
 	}
-
 	function sum_ubicacion(sum){		
 		if( tabID > 1 ){
 			if(sum == 0)
