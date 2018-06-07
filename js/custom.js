@@ -3,12 +3,23 @@ $(document).ready(function(){
     /*Initialize all select components*/
     $('.mdb-select').material_select();
     /*Initialize all datepicker components*/
+    /*
     $('.datepicker').pickadate({
         monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
         monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
         weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
         weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+    });*/
+
+    var myDate = new Date();
+    var res = myDate.getFullYear() + "," + myDate.getMonth() + "," + myDate.getDate();
+    $('.datepicker').pickadate({
+      format : 'yyyy/mm/dd',
+      formatSubmit : 'yyyy/mm/dd',
+      min : res
     });
+
+
     
     /*Datatable*/
     $('.data-table').DataTable({
