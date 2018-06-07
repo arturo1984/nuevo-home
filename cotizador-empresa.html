@@ -59,6 +59,11 @@
 			</div>	
 
 			<div class="container-fluid" id="paso1" style="padding:0 70px">
+				<div class="row">
+					<div class="col-md-12" style="text-align: right;">
+						<span >Folio: FU003150</span>
+					</div>
+				</div>
 				<form id="cot_empresa_1">
 					<h5>Datos del Contratante</h5><br/>
 					<div class="row">
@@ -91,7 +96,8 @@
 							</div>
 							<div class="col-md-3">
 								<div class="md-form">
-									<input type="hidden" name="ce_codigo" id="ce_codigo" value="111" class="form-control">
+									<input type="text" name="ce_codigo" id="ce_codigo" value="111" class="form-control" disabled="true">
+									<label for="ce_nombre" >Código de Cliente:</label>
 								</div>
 							</div>							   
 					</div>
@@ -101,7 +107,7 @@
 							<div class="row data_nuevotip">
 								<div class="col-md-8">
 									<div class="md-form form-group">
-										<input type="text" id="cn_nombrecompleto" name="cn_nombrecompleto" class="form-control">
+										<input type="text" id="cn_nombrecompleto" name="cn_nombrecompleto" class="form-control" disabled>
 										<label for="cn_nombrecompleto" >Nombre Completo:</label>
 									</div>
 								</div>
@@ -118,7 +124,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="row tip_moral">
+							<div class="row tip_moral divPerMor">
 								<div class="col-md-3">
 									<div class="md-form">
 										<input type="text" id="cn_rfc" name="cn_rfc" class="form-control" maxlength="13" pattern="^[a-zA-Z0-9]{4,10}$">
@@ -127,7 +133,7 @@
 								</div>	
 								<div class="col-md-6">
 									<div class="md-form">
-										<input type="text" id="cn_nombrecontratante" name="cn_nombrecontratante" class="form-control">
+										<input type="text" id="cn_nombrecontratante" name="cn_nombrecontratante" class="form-control fisiComp">
 										<label for="cn_nombrecontratante" >Nombre del Contratante:</label>
 									</div>
 								</div>	
@@ -150,19 +156,19 @@
 								</div>
 								<div class="col-md-3">
 									<div class="md-form">
-										<input type="text"  id="cn_fispaterno" name="cn_fispaterno" class="form-control">
+										<input type="text"  id="cn_fispaterno" name="cn_fispaterno" class="form-control tip_fisica_llena">
 										<label for="cn_fispaterno" >Apellido Paterno:</label>
 									</div>
 								</div>									
 								<div class="col-md-3">
 									<div class="md-form">
-										<input type="text"  id="cn_fismaterno" name="cn_fismaterno" class="form-control">
+										<input type="text"  id="cn_fismaterno" name="cn_fismaterno" class="form-control tip_fisica_llena">
 										<label for="cn_fismaterno" >Apellido Materno:</label>
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="md-form">
-										<input type="text"  id="cn_fisnombre" name="cn_fisnombre" class="form-control">
+										<input type="text"  id="cn_fisnombre" name="cn_fisnombre" class="form-control tip_fisica_llena">
 										<label for="cn_fisnombre" >Nombre(s):</label>
 									</div>
 								</div>
@@ -174,13 +180,13 @@
 						<br/><h5>Datos de la Cotización</h5><br/>
 						<div class="row">
 							<div class="col-md-12">					
-								<div class="form-inline form-right float-right">
+								<div id="divRdoVigencia" class="form-inline form-right float-right">
 									<div class="form-check">
-										<input class="form-check-input form-control" name="group3" type="radio" id="dc_cotizarVig" checked="checked">
+										<input class="form-check-input form-control" name="group3" type="radio" id="dc_cotizarVig" checked="checked" value="0">
 										<label class="form-check-label" for="dc_cotizarVig">Cotizar con Vigencia</label>
 									</div>
 									<div class="form-check">
-										<input class="form-check-input form-control" name="group3" type="radio" id="dc_vigenAnual">
+										<input class="form-check-input form-control" name="group3" type="radio" id="dc_vigenAnual" value="1">
 										<label class="form-check-label" for="dc_vigenAnual">Vigencia Anual a Partir de la Solicitud de Emisión</label>
 									</div>
 								</div>
@@ -212,10 +218,12 @@
 									<div class="md-form form-group">
 											<div class="row">
 												<div class="col">
-													<input placeholder="Fecha Desde" type="text" id="dc_dateDesde" class="form-control datepicker">
+													<input placeholder="Fecha Desde" type="date" id="dc_dateDesde" class="form-control datepicker" >
+													<label for="dc_dateDesde" >Desde</label>
 												</div>
 												<div class="col">
-													<input placeholder="Fecha Hasta" type="text" id="dc_dateHasta" class="form-control datepicker">
+													<input placeholder="Fecha Hasta" type="date" id="dc_dateHasta" class="form-control datepicker" disabled>
+													<label for="dc_dateHasta" >Hasta</label>
 												</div>
 											</div>
 										</div>
@@ -248,7 +256,7 @@
 								<div class="md-form form-group">
 										<select name="dc_giro" id="dc_giro" class="mdb-select form-control-sel">
 											<option value="1">Escuela</option>
-											<option value="2">Hospiatal</option>
+											<option value="2">Hospital</option>
 											<option value="3">Empresa</option>
 										</select>
 										<label for="dc_giro" >Giro</label>
@@ -279,6 +287,12 @@
 			<!-- paso 2 -->
 			
 			<div class="container-fluid" id="paso2" style="display:none; padding:0 70px">					
+				<div class="row">
+					<div class="col-md-12" style="text-align: right;">
+						<span >Folio: FU003150</span>
+					</div>
+				</div>
+
 				<div class="row">
 					<div class="col-sm-12">
 						<p><button id="btn-add-tab" type="button" class="btn btn-blue btn-sm waves-effect waves-light float-right">Agregar Ubicación</button></p>
@@ -741,6 +755,79 @@
 											</div>
 										</div>
 										<!-- Accordion card -->
+
+										<!-- Accordion card -->
+										<div class="card">
+
+											<!-- Card header -->
+											<div class="card-header" role="tab" id="headingFive">
+												<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx_1" href="#collapseFive_2" aria-expanded="false" aria-controls="collapseFive_2">
+													<h6 class="mb-0">
+														Beneficios Adicionales  <span id="tot_headingFive_1" class="tot_heading"> </span><i class="fa fa-angle-down rotate-icon"></i>
+													</h6>
+												</a>
+											</div>
+
+											<!-- Card body -->
+											<div id="collapseFive_2" class="collapse" role="tabpanel" aria-labelledby="headingFive_2" data-parent="#accordionEx_1">
+												<div class="card-body">												
+													<p><strong>Coberturas básicas:</strong></p>
+													<div class="row">															
+														<div class="col-sm-3">
+															<div class="md-form form-group">
+																<input type="text" name="SaEqipElec" id="SaEqipElec" class="form-control">
+																<label for="SaEqipElec" >S.A. Equipo Electrónico</label>
+															</div>
+														</div>	
+														<div class="col-sm-3">
+															<div class="md-form form-group">
+																<input type="text" name="SaEqipElecMov" id="SaEqipElecMov" class="form-control">
+																<label for="SaEqipElecMov" >S.A. Equipo Electrónico Móvil</label>
+															</div>
+														</div>
+														<div class="col-sm-3">	
+															<div class="md-form form-group">
+																<input type="text" name="SaRotMaq" id="SaRotMaq" class="form-control">
+																<label for="SaRotMaq" >S.A. Rotura de Maquinaria</label>
+															</div>
+														</div>
+														<div class="col-sm-3">
+															<div class="md-form form-group">
+																<input type="text" name="SaCalderas" id="SaCalderas" class="form-control">
+																<label for="SaCalderas" >S.A. Calderas</label>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-sm-8">
+															<p><strong>Coberturas Adicionales:</strong></p>
+															<p class="small">Equipo Electrónico</p>
+															<div class="form-check col-sm-12">
+																<input type="checkbox" class="form-check-input" id="checkbox117" >
+																<label for="checkbox117" class="form-check-label">¿Robo sin Violencia?</label>
+															</div>
+															<div class="form-check col-sm-12">
+																<input type="checkbox" class="form-check-input" id="checkbox118" >
+																<label for="checkbox118" class="form-check-label">¿Huelgas?</label>
+															</div>
+															<div class="form-check col-sm-12">
+																<input type="checkbox" class="form-check-input" id="checkbox119" >
+																<label for="checkbox119" class="form-check-label">¿Huracán, Granizo e Inundación?</label>
+															</div>
+															<div class="form-check col-sm-12">
+																<input type="checkbox" class="form-check-input" id="checkbox120" >
+																<label for="checkbox120" class="form-check-label">¿Terremoto y Erupción Volcánica?</label>
+															</div>
+															<div class="form-check col-sm-12">
+																<input type="checkbox" class="form-check-input" id="checkbox121" >
+																<label for="checkbox121" class="form-check-label">¿Cobertura de Equipo Móvil?</label>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- Accordion card -->
 										
 									</div>												
 								</div>
@@ -796,10 +883,17 @@
 								
 			<!-- paos 3 -->
 			
-			<div class="container-fluid" id="paso3" style="display:none">					
+			<div class="container-fluid" id="paso3" style="display:none">	
+				<div class="row">
+					<div class="col-md-12" style="text-align: right;">
+						<span >Folio: FU003150</span>
+					</div>
+				</div>
+				
 				<div class="row" style="padding:0 70px">
 					<div class="col-md-12">
-						<table class="table simple-data-table table-striped table-bordered" style="width:100%;">
+						<table class="customTable" style="width:100%;">
+							<!-- <table class="table simple-data-table table-striped table-bordered" style="width:100%;"> -->
 							<thead>
 								<tr>
 									<th>Edificio</th>
@@ -811,39 +905,73 @@
 							<tbody>
 								<tr>
 									<td>Edificio</td>
-									<td>$1,384,434</td>
-									<td>$495,000</td>
+									<td class="number">$1,384,434</td>
+									<td class="number">$495,000</td>
 									<td>Sin Deducible</td>
 								</tr>
 								<tr>
 									<td>Contenidos</td>
-									<td>$384,434</td>
-									<td>$45,000</td>
+									<td class="number">$384,434</td>
+									<td class="number">$45,000</td>
 									<td>Sin Deducible</td>
 								</tr>
 								<tr>
 									<td>Bienes Bajos</td>
-									<td>$1,234,434</td>
-									<td>$395,000</td>
+									<td class="number">$1,234,434</td>
+									<td class="number">$395,000</td>
 									<td>5%</td>
 								</tr>
 								<tr>
 									<td>Perdidas</td>
-									<td>$344,434</td>
-									<td>$1,618</td>
+									<td class="number">$344,434</td>
+									<td class="number">$1,618</td>
 									<td>1%</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>						
 				</div>
-				<div class="row" style="padding:0 70px">
-					<div class="col-sm-12">
-						<button type="button" class="btn btn-pink waves-effect waves-light float-right">Regresar</button>						
-						<button type="button" class="btn btn-pink waves-effect waves-light float-right">Generar Slip</button>
-						<button type="button" class="btn btn-pink waves-effect waves-light float-right">Solicitar Emisión</button>
+					<div class="row" style="padding:0 70px;">
+					<div class="col-md-3"></div>	
+					<div class="col-md-6">
+						<table class="table-borderless" style="width:100%;">
+							<tbody>
+								<tr>
+									<td>Prima Neta:</td>
+									<td class="number">$1,384.44</td>
+								</tr>
+								<tr>
+									<td>Recargo por Pago Fraccionado:</td>
+									<td class="number">$0.00</td>
+								</tr>
+								<tr>
+									<td>Gastos de Expedición</td>
+									<td class="number">$1,200.00</td>
+								</tr>
+								<tr>
+									<td>IVA:</td>
+									<td class="number">$344.43</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td><b>Prima total:</b></td>
+									<td class="number"><b>$2,903.00</b></td>
+								</tr>
+							</tfoot>
+						</table>
 					</div>
 				</div>
+				<br /><br />
+				<div class="row" style="padding:0 70px">
+				<div class="col-sm-12">
+				    <button type="button" class="btn btn-pink waves-effect waves-light float-right">Pendientes Tokio Marine</button>
+					<button type="button" class="btn btn-pink waves-effect waves-light float-right">Pendientes del Agente</button>
+					<button type="button" class="btn btn-pink waves-effect waves-light float-right">Solicitar Emisión</button>
+					<button type="button" class="btn btn-pink waves-effect waves-light float-right">Generar Slip</button>
+					<button type="button" class="btn btn-blue waves-effect waves-light float-right">Regresar</button>											
+				</div>
+			</div>
 				
 			</div>		                
 		</section>		
@@ -865,6 +993,102 @@
 	<script type="text/javascript">
 		$.ajax({url: "header.html", context: document.body,success: function(response) {$("header").html(response);}});
 		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
+
+
+		$(document).ready(
+			function() {
+				inicializaFechaHoy();				
+			});
+
+		function inicializaFechaHoy(){
+			var fs = new Date($.now());
+			var day = ("0" + (fs.getDate())).slice(-2);
+			var month = ("0" + (fs.getMonth() + 1)).slice(-2);
+			var fechaFin =  fs.getFullYear()+ "/" + (month) + "/"  + (day) ;
+			$('#dc_dateDesde').val(fechaFin);
+			genAnioSiguiente(fs);
+		};
+
+		$('#dc_dateDesde').change(function() {
+			console.log($(this).val());
+			if ($(this).val() == ""){
+				$('#dc_dateDesde').val("");
+				$('#dc_dateHasta').val("");	
+			}else{
+				var fs = new Date($(this).val());
+				console.log("fs");
+				console.log(fs);
+				var day = ("0" + (fs.getDate())).slice(-2);
+				var month = ("0" + (fs.getMonth() + 1)).slice(-2);
+				var fechaFin =  fs.getFullYear()+ "/" + (month) + "/"  + (day) ;
+/*				$('#dc_dateDesde').val(fechaFin);
+				$('#dc_dateDesde').val(fechaFin);*/
+				genAnioSiguiente(fs);	
+			}
+		});
+
+		function genAnioSiguiente(fechaSeleccionada) {
+			var fs = new Date(fechaSeleccionada);
+			fs.setFullYear(fs.getFullYear() + 1);
+			//fs.setDate(fs.getDate() + 1);
+			var day = ("0" + (fs.getDate())).slice(-2);
+			var month = ("0" + (fs.getMonth() + 1)).slice(-2);
+			var fechaFin =  fs.getFullYear()+ "/" + (month) + "/"  + (day) ;
+			$('#dc_dateHasta').val(fechaFin);
+		};
+
+		$("#divRdoVigencia .form-check-input").click(function() {
+			if ($(this).val() == "1") {
+				$("#dc_dateDesde").prop("disabled", true);
+				$('#dc_dateDesde').val(" ");
+				$('#dc_dateHasta').val(" ");
+			} else {
+				$("#dc_dateDesde").prop("disabled", false);
+				inicializaFechaHoy();
+
+			}
+		});
+
+	$('.tip_fisica .tip_fisica_llena').keyup(function() {
+		fLlenaNombreFisica();
+	});
+
+	$('.divPerMor #cn_nombrecontratante').keyup(function() {
+		fLlenaNombreMoral();
+	});
+
+	$('.divPerMor #cn_denominacion').on('change', function() {
+		fLlenaNombreMoral();
+	});
+
+	function fLlenaNombreFisica() {
+		var apPat = $("#cn_fispaterno").val();
+		var apMat = $("#cn_fismaterno").val();
+		var nom = $("#cn_fisnombre").val();
+		$("#cn_nombrecompleto").val(apPat + " " + apMat + " " + nom);
+		if ($("#cn_nombrecompleto").val().length >= 1){
+				$("#cn_nombrecompleto").focusin();
+			}
+	};
+
+	function fLlenaNombreMoral() {
+		var nom = $("#cn_nombrecontratante").val();
+		if (nom.length > 0){
+			tip = $("#cn_denominacion :selected").text();
+			$("#cn_nombrecompleto").val(nom + ", " + tip);
+			if (nom.length >= 1){
+				$("#cn_nombrecompleto").focusin();
+			}
+		}else{
+			$("#cn_nombrecompleto").val("");
+		}
+	};
+
+
+
+
+//----------------------------------------
+
 		$("#box-form-passw").load("form-rec-pass.html");	
 	
 		$("#tab1").addClass("show");	
@@ -941,7 +1165,7 @@
 			$("#paso1,#paso2").hide();
 			$("#step3").addClass("active");
 			$("#step3 span").addClass("active_2");
-			$("#nx_paso2 span").removeClass("active_2");
+			$("#step2 span").removeClass("active_2");
 			$("#paso3").show();
 		});
 		
@@ -965,11 +1189,13 @@
 			if ($(this).attr('id')=="cn_personafisica")
 			{
 				$(".tip_fisica").show();
-				$(".tip_moral").hide();		
+				$(".tip_moral").hide();	
+				fLlenaNombreFisica();	
 			}
 			else{
 				$(".tip_fisica").hide();
 				$(".tip_moral").show();
+				fLlenaNombreMoral();
 			}
 		});
 		     
