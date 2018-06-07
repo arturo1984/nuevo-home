@@ -58,6 +58,12 @@
 		</div>	
 
 		<div class="container-fluid" id="paso1" style="padding:0 70px">
+			<div class="row">
+				<div class="col-md-12" style="text-align: right;">
+					<span >Folio: FU003150</span>
+				</div>
+			</div>
+
 			<form>
 				<h5>Datos del Contratante</h5><br/>
 				<div class="row">
@@ -79,18 +85,19 @@
 					<div class="col-md-3">
 						<div class="md-form">
 							<input type="text" id="ce_rfc" name="ce_rfc" class="form-control" maxlength="13" pattern="^[a-zA-Z0-9]{4,10}$">
-							<label for="ce_rfc" >RFC del Contratante:</label>
+							<label for="ce_rfc">RFC del Contratante:</label>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="md-form">
 							<input type="text" id="ce_nombre" name="ce_nombre" class="form-control">
-							<label for="ce_nombre" >Nombre Completo:</label>
+							<label for="ce_nombre">Nombre Completo:</label>
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="md-form form-group">
-							<input type="hidden" name="ce_codigocliente" id="ce_codigocliente" value="111" class="form-control">
+							<input type="text" name="ce_codigocliente" id="ce_codigocliente" value="111" class="form-control">
+							<label for="ce_codigocliente">Nombre Completo:</label>
 						</div>
 					</div>							   
 				</div>
@@ -100,24 +107,24 @@
 						<div class="row data_nuevotip">
 							<div class="col-md-8">
 								<div class="md-form form-group">
-									<input type="text" id="cn_nombrecompleto" name="cn_nombrecompleto" class="form-control">
+									<input type="text" id="cn_nombrecompleto" name="cn_nombrecompleto" class="form-control" disabled>
 									<label for="cn_nombrecompleto" >Nombre Completo:</label>
 								</div>
 							</div>
 							<div class="col-md-4">
-								<div class="form-inline tipo_persona">
+								<div class="form-inline tipo_persona" id="divRdoTipPer">
 										<div class="form-check">
-											<input class="form-check-input form-control" name="group2" type="radio" id="cn_personamoral" checked="checked">
+											<input class="form-check-input form-control" name="group2" type="radio" id="cn_personamoral" value="0" checked="checked">
 											<label class="form-check-label" for="cn_personamoral">Persona Moral</label>
 										</div>
 										<div class="form-check">
-											<input class="form-check-input form-control" name="group2" type="radio" id="cn_personafisica">
+											<input class="form-check-input form-control" name="group2" type="radio" id="cn_personafisica" value="1">
 											<label class="form-check-label" for="cn_personafisica">Persona Física</label>
 										</div>
 								</div>
 							</div>
 						</div>
-						<div class="row tip_moral">
+						<div class="row tip_moral" id="moralRow">
 							<div class="col-md-3">
 								<div class="md-form">
 									<input type="text" id="cn_rfc" name="cn_rfc" class="form-control" maxlength="13" pattern="^[a-zA-Z0-9]{4,10}$">
@@ -126,21 +133,21 @@
 							</div>	
 							<div class="col-md-6">
 								<div class="md-form">
-									<input type="text" id="cn_nombrecontratante" name="cn_nombrecontratante" class="form-control">
+									<input type="text" id="cn_nombrecontratante" name="cn_nombrecontratante" class="form-control llenaNomMor">
 									<label for="cn_nombrecontratante" >Nombre del Contratante:</label>
 								</div>
 							</div>	
 							<div class="col-md-3">
 								<div class="md-form form-group">
-										<select name="cn_denominacion" id="cn_denominacion" class="mdb-select form-control-sel">
-											<option value="1">S.A. de C.V.</option>
-											<option value="2">Otra</option>
+										<select name="cn_denominacion" id="cn_denominacion" class="mdb-select form-control-sel llenaNomMorSel">
+											<option value="S.A. de C.V.">S.A. de C.V.</option>
+											<option value="Otra">Otra</option>
 										</select>
 										<label for="cn_denominacion" >Denominacion:</label>
 								</div>
 							</div> 
 						</div>	
-						<div class="row tip_fisica" style="display:none">
+						<div class="row tip_fisica" id="fisicaRow" style="display:none">
 							<div class="col-md-3">
 								<div class="md-form">
 									<input type="text" id="cn_rfc_2" name="cn_rfc_2" class="form-control">
@@ -149,19 +156,19 @@
 							</div>
 							<div class="col-md-3">
 								<div class="md-form">
-									<input type="text"  id="cn_fispaterno" name="cn_fispaterno" class="form-control">
+									<input type="text"  id="cn_fispaterno" name="cn_fispaterno" class="form-control llenaNomFis">
 									<label for="cn_fispaterno" >Apellido Paterno:</label>
 								</div>
 							</div>									
 							<div class="col-md-3">
 								<div class="md-form">
-									<input type="text"  id="cn_fismaterno" name="cn_fismaterno" class="form-control">
+									<input type="text"  id="cn_fismaterno" name="cn_fismaterno" class="form-control llenaNomFis">
 									<label for="cn_fismaterno" >Apellido Materno:</label>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="md-form">
-									<input type="text"  id="cn_fisnombre" name="cn_fisnombre" class="form-control">
+									<input type="text"  id="cn_fisnombre" name="cn_fisnombre" class="form-control llenaNomFis">
 									<label for="cn_fisnombre" >Nombre(s):</label>
 								</div>
 							</div>
@@ -173,14 +180,14 @@
 					<br/><h5>Datos de la Cotización</h5><br/>
 					<div class="row" style="text-align:right">
 						<div class="col-sm-12">					
-							<div class="form-inline form-right">
+							<div class="form-inline form-right" id="divRdoVigencia">
 								<span><strong>Vigencia</strong></span>
 								<div class="form-check">
-									<input class="form-check-input form-control" name="group21" type="radio" id="dc_cotizarVig" checked="checked">
+									<input class="form-check-input form-control" name="group21" type="radio" id="dc_cotizarVig" value="0" checked="checked">
 									<label class="form-check-label" for="dc_cotizarVig">Cotizar con Vigencia</label>
 								</div>
 								<div class="form-check">
-									<input class="form-check-input form-control" name="group21" type="radio" id="dc_vigenAnual">
+									<input class="form-check-input form-control" name="group21" type="radio" id="dc_vigenAnual" value="1">
 									<label class="form-check-label" for="dc_vigenAnual">Vigencia Anual a Partir de la Solicitud de Emisión</label>
 								</div>
 							</div>
@@ -212,10 +219,10 @@
 							<div class="md-form form-group">
 								<div class="row">
 									<div class="col">
-										<input placeholder="Fecha Desde" type="text" id="dc_dateDesde" class="form-control datepicker">
+										<input placeholder="Fecha Desde" type="date" id="dc_dateDesde" class="form-control datepicker">
 									</div>
 									<div class="col">
-										<input placeholder="Fecha Hasta" type="text" id="dc_dateHasta" class="form-control datepicker">
+										<input placeholder="Fecha Hasta" type="date" id="dc_dateHasta" class="form-control datepicker" disabled>
 									</div>
 								</div>
 							</div>
@@ -257,7 +264,13 @@
 		<!-- paso 1-->
 				
 		<!-- paso 2 -->		
-		<div class="container-fluid" id="paso2" style="display:none; padding:0 70px">					
+		<div class="container-fluid" id="paso2" style="display:none; padding:0 70px">	
+			<div class="row">
+				<div class="col-md-12" style="text-align: right;">
+					<span >Folio: FU003150</span>
+				</div>
+			</div>
+				
 			<div class="row">
 				<div class="col-md-12">
 					<p>
@@ -485,10 +498,16 @@
 		
 		<!-- paos 3 -->
 		
-		<div class="container-fluid" id="paso3" style="display:none">					
+		<div class="container-fluid" id="paso3" style="display:none">	
+			<div class="row">
+				<div class="col-md-12" style="text-align: right;">
+					<span >Folio: FU003150</span>
+				</div>
+			</div>
 			<div class="row" style="padding:0 70px">
 				<div class="col-md-12">
-					<table class="table simple-data-table table-striped table-bordered" style="width:100%;">
+					<table class="customTable" style="width:100%;">
+						<!-- <table class="table simple-data-table table-striped table-bordered" style="width:100%;"> -->
 						<thead>
 							<tr>
 								<th>Edificio</th>
@@ -500,32 +519,69 @@
 						<tbody>
 							<tr>
 								<td>Edificio</td>
-								<td>$1,384,434</td>
-								<td>$495,000</td>
+								<td class="number">$1,384,434</td>
+								<td class="number">$495,000</td>
 								<td>Sin Deducible</td>
 							</tr>
 							<tr>
 								<td>Contenidos</td>
-								<td>$384,434</td>
-								<td>$45,000</td>
+								<td class="number">$384,434</td>
+								<td class="number">$45,000</td>
 								<td>Sin Deducible</td>
 							</tr>
 							<tr>
 								<td>Bienes Bajos</td>
-								<td>$1,234,434</td>
-								<td>$395,000</td>
+								<td class="number">$1,234,434</td>
+								<td class="number">$395,000</td>
 								<td>5%</td>
 							</tr>
 							<tr>
 								<td>Perdidas</td>
-								<td>$344,434</td>
-								<td>$1,618</td>
+								<td class="number">$344,434</td>
+								<td class="number">$1,618</td>
 								<td>1%</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>						
+			</div>				
+			<div class="row" style="padding:0 70px;">
+				<div class="col-md-3"></div>	
+				<div class="col-md-6">
+					<table class="table-borderless" style="width:100%;">
+						<tbody>
+							<tr>
+								<td>Prima Neta:</td>
+								<td class="number">$1,384.44</td>
+							</tr>
+							<tr>
+								<td>Recargo por Pago Fraccionado:</td>
+								<td class="number">$0.00</td>
+							</tr>
+							<tr>
+								<td>Gastos de Expedición</td>
+								<td class="number">$1,200.00</td>
+							</tr>
+							<tr>
+								<td>IVA:</td>
+								<td class="number">$344.43</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td><b>Prima total:</b></td>
+								<td class="number"><b>$2,903.00</b></td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
 			</div>
+
+
+
+
+
+			
 			<div class="row" style="padding:0 70px">
 				<div class="col-sm-12">
 				    <button type="button" class="btn btn-pink waves-effect waves-light float-right">Pendientes Tokio Marine</button>
@@ -637,7 +693,7 @@
 			$("#paso1,#paso2").hide();
 			$("#step3").addClass("active");
 			$("#step3 span").addClass("active_2");
-			$("#nx_paso2 span").removeClass("active_2");
+			$("#step2 span").removeClass("active_2");
 			$("#paso3").show();
 		});
 		
@@ -775,6 +831,121 @@ function numberOnly(id) {
     var regex = /[^0-9]/gi;
     element.value = element.value.replace(regex, "");
 }	
+
+//---------------------------Global Quark---------------------------
+	/*
+	$(document).ready(function(){
+		var myDate = new Date();
+		var res = myDate.getFullYear() + "," + myDate.getMonth() + "," + myDate.getDate();
+
+		//$("#dc_dateDesde").val(res);
+		$('#dc_dateDesde').pickadate({ 
+			format: 'yyyy-mm-dd',
+ 		    formatSubmit: 'yyyy-mm-dd',
+ 		    //$("#dc_dateDesde").val(res),
+ 		    //$("#dc_dateDesde").min(res)
+			//min: res
+			
+		});
+		
+		
+	}); */ 
+
+	$(document).ready(
+		function() {
+		inicializaFechaHoy();	
+	});
+
+	function inicializaFechaHoy(){
+		var fs = new Date($.now());
+		var day = ("0" + (fs.getDate())).slice(-2);
+		var month = ("0" + (fs.getMonth() + 1)).slice(-2);
+		var fechaFin =  fs.getFullYear()+ "/" + (month) + "/"  + (day) ;
+		$('#dc_dateDesde').val(fechaFin);
+		genAnioSiguiente(fs);
+	};
+
+	$('#dc_dateDesde').change(function() {
+		console.log($(this).val());
+		if ($(this).val() == ""){
+		$('#dc_dateDesde').val("");
+		$('#dc_dateHasta').val("");	
+		}else{
+		var fs = new Date($(this).val());
+		var day = ("0" + (fs.getDate())).slice(-2);
+		var month = ("0" + (fs.getMonth() + 1)).slice(-2);
+		var fechaFin =  fs.getFullYear()+ "/" + (month) + "/"  + (day) ;
+		$('#dc_dateDesde').val(fechaFin);
+		min:fechaFin;
+		genAnioSiguiente(fs);	
+		}
+	});
+
+	function genAnioSiguiente(fechaSeleccionada) {
+		var fs = new Date(fechaSeleccionada);
+		fs.setFullYear(fs.getFullYear() + 1);
+		//fs.setDate(fs.getDate() + 1);
+		var day = ("0" + (fs.getDate())).slice(-2);
+		var month = ("0" + (fs.getMonth() + 1)).slice(-2);
+		var fechaFin =  fs.getFullYear()+ "/" + (month) + "/"  + (day) ;
+		$('#dc_dateHasta').val(fechaFin);
+	};
+
+	$("#divRdoVigencia .form-check-input").click(function() {
+		if ($(this).val() == "1") {
+		$("#dc_dateDesde").prop("disabled", false);
+		$('#dc_dateDesde').val(" ");
+		$('#dc_dateHasta').val(" ");
+		} else {
+		$("#dc_dateDesde").prop("disabled", false);
+		inicializaFechaHoy();
+		}
+	});
+
+	$("#divRdoTipPer .form-check-input").click(function() {
+		if ($(this).val() == "0") {
+			//$('#cn_nombrecompleto').val("Moral");
+			//var a = $
+			$('#cn_nombrecompleto').val($('#cn_nombrecontratante').val() + " " + $('#cn_denominacion').val());
+		} else {
+			//$('#cn_nombrecompleto').val("Física");
+			//$('#cn_nombrecompleto').val($('#cn_fisnombre').val() + " " + $('#cn_fispaterno').val() + " " + $('#cn_fismaterno').val());
+			fLlenaNombreFisica();
+		inicializaFechaHoy();
+		}
+	});
+
+	function fLlenaNombreFisica() {
+		var nom = $("#cn_fisnombre").val();
+		var apPat = $("#cn_fispaterno").val();
+		var apMat = $("#cn_fismaterno").val();
+		$("#cn_nombrecompleto").val(nom + " " + apPat + " " + apMat);
+		if ($("#cn_nombrecompleto").val().length >= 1){
+				$("#cn_nombrecompleto").focusin();
+			}
+	};
+
+	function fLlenaNombreMoral() {
+		var contra = $("#cn_nombrecontratante").val();
+		var deno = $("#cn_denominacion").val();
+		$("#cn_nombrecompleto").val(contra + " " + deno);
+		if ($("#cn_nombrecompleto").val().length >= 1){
+				$("#cn_nombrecompleto").focusin();
+			}
+	};
+
+	$('#fisicaRow .llenaNomFis').keyup(function() {
+		fLlenaNombreFisica();
+	});
+	
+	$('#moralRow .llenaNomMor').keyup(function() {
+		fLlenaNombreMoral();
+	});
+	
+	$('#moralRow .llenaNomMorSel').change(function() {
+		fLlenaNombreMoral();
+	});
+
 </script>	
 </body>
 </html>
