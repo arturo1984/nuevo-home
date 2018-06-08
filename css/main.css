@@ -1507,6 +1507,14 @@ margin-right: 0; }
   margin-top: 40px;
 }
 
+.site-wrapper .carousel-caption {
+    left: 5%;
+    right: inherit;
+}
+.cuadros-title{
+    color: #01579b!important;
+    font-weight: 400!important;
+}
 
 @media only screen and (max-width: 760px) {
     .site-wrapper .carousel-caption{
