@@ -1507,6 +1507,15 @@ margin-right: 0; }
   text-align: right;
 }
 
+
+label.waves-effect.waves-light{
+    background-color: #A681BA;
+    color:#fff;
+}
+label.waves-effect.waves-light.active{
+    background-color: #8A3399;
+    color:#fff;
+}
 /*
 .site-wrapper .table-borderless{
   margin-top: 40px;
