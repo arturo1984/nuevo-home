@@ -98,7 +98,9 @@
 										<th>Tipo</th>                                       
 										<th>IVA</th>
 										<th>Retención IVA</th>
-										<th>Retención ISR</th>                                
+										<th>Retención ISR</th>
+										<th>Comisión</th>
+										<th>% de Comisión</th>
 										<th>Total a Pagar</th>
 										<th>Estado</th>
 									</tr>
@@ -112,6 +114,8 @@
 										<td>$34,435</td>
 										<td>$35,332</td>
 										<td>$32,321</td>
+										<td>$5,123</td>
+										<td>15.85 %</td>
 										<td>$23,134</td>
 										<td>Pendiente</td>                                    
 									</tr>
@@ -124,6 +128,8 @@
 										<td>$34,435</td>
 										<td>$35,332</td>
 										<td>$32,321</td>
+										<td>$5,123</td>
+										<td>15.85 %</td>
 										<td>$23,134</td>
 										<td>Pendiente</td>                                    
 									</tr>
@@ -136,6 +142,8 @@
 										<td>$34,435</td>
 										<td>$35,332</td>
 										<td>$32,321</td>
+										<td>$5,123</td>
+										<td>15.85 %</td>
 										<td>$23,134</td>
 										<td>Pendiente</td>                                    
 									</tr>
@@ -148,6 +156,8 @@
 										<td>$34,435</td>
 										<td>$35,332</td>
 										<td>$32,321</td>
+										<td>$5,123</td>
+										<td>15.85 %</td>
 										<td>$23,134</td>
 										<td>Pendiente</td>                                    
 									</tr>
@@ -160,6 +170,8 @@
 										<td>$3,435</td>
 										<td>$5,332</td>
 										<td>$9,321</td>
+										<td>$1,230</td>
+										<td>13.19 %</td>
 										<td>$1,134</td>
 										<td>Pendiente</td>                                    
 									</tr>
@@ -176,6 +188,7 @@
 												<th></th>
 												<th>Prima neta</th>
 												<th>Comisión</th>
+												<th>% de Comisión</th>
 												<th>IVA</th>
 												<th>Total Comisión</th> 								
 											</tr>
@@ -185,6 +198,7 @@
 												<td>TOTALES</td>
 												<td>$1245</td>
 												<td>$345</td>
+												<td>27.71 %</td>
 												<td>$2,987</td>
 												<td>$2345</td>
 											</tr>
@@ -336,11 +350,11 @@
                                     <div class="col-sm-3">
                                        <div class="md-form form-group">
                                             <select name="agente" class="mdb-select">
-                                                <option value="1">Tipo 1</option>
-                                                <option value="2">Tipo 2</option>
-                                                <option value="3">Tipo 3</option>
+                                                <option value="1">Todos</option>
+                                                <option value="2">Comisiones</option>
+                                                <option value="3">Bonos</option>
                                             </select>
-                                            <label for="agente" >Movimiento</label>
+                                            <label for="agente" >Tipo de Solicitud</label>
                                         </div>
                                     </div>
                                 </div>
@@ -367,7 +381,7 @@
                                     <th>Retención ISR</th>                                
                                     <th>Toatal a Pagar</th>
 									<th>Estado</th>									
-                                    <th class="all" data-orderable="true">Acción</th>
+                                    <th class="all" data-orderable="true">Ver detalle</th>
                                 </tr>
                             </thead>
                             <tbody>
