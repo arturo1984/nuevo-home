@@ -1358,9 +1358,9 @@ margin-right: 0; }
 .site-wrapper .bt_azul{background-color: #008ad3;}
 .site-wrapper .breadcrumb {background-color: inherit;}
 .site-wrapper .card-title.big{font-size: 1.2rem;}
-.site-wrapper .ident_verde{color: rgb(153, 204, 0) !important;}
-.site-wrapper .ident_naranja{color: rgb(255, 153, 0) !important;}
-.site-wrapper .ident_ambar{color: #cfa116 !important;}
+.site-wrapper .ident_verde{color: rgb(153, 204, 0);}
+.site-wrapper .ident_naranja{color: rgb(255, 153, 0);}
+.site-wrapper .ident_ambar{color: #cfa116;}
 .site-wrapper .owl-next span{right: 1%;}
 .site-wrapper .owl-prev span{left: 1%;}
 .site-wrapper .pull-right{text-align:right}
@@ -1374,7 +1374,7 @@ margin-right: 0; }
 .site-wrapper .ico-pdf.fa-lightbulb,
 .site-wrapper .ico-pdf.fa-smile,
 .site-wrapper .ico-pdf.fa-question,
-.site-wrapper .ico-pdf.fa-frown{font-size: 4rem !important; cursor:pointer !important;}
+.site-wrapper .ico-pdf.fa-frown{font-size: 4rem; cursor:pointer;}
 
 .site-wrapper .ms-hero-img-home1 {
     background-image: url(../images/home/home1.jpg);
@@ -1430,8 +1430,8 @@ margin-right: 0; }
     text-align: center;
     height: 60%;
     box-sizing: border-box;
-    padding-right: 0px !important;
-    padding-left: 0px !important;
+    padding-right: 0px;
+    padding-left: 0px;
     width: 100%;
 }
 
