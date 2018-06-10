@@ -1179,6 +1179,9 @@
   height: 40px;
   padding: 0px; }
 
+.site-wrapper .dropdown-content li > span {
+    color: #0066CC;  }
+
 .site-wrapper .dataTables_wrapper {
   padding: 0px; }
   .site-wrapper .dataTables_wrapper table.dataTable > tbody > tr.child ul.dtr-details > li {
