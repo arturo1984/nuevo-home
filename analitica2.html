@@ -298,8 +298,27 @@
         "position": "left"
     },
     "export": {
-    	"enabled": true
-     }
+    "enabled": true,
+    
+    "menu": [ {
+        "class": "export-main",
+        "menu": [ {
+            "label": "Descargar como",
+            "menu": [ "PNG", "JPG", "SVG" ]
+            }, {
+            "label": "Guardar como",
+            "menu": [ "CSV", "XLSX" ]
+            }, {
+            "format": "PRINT",
+            "label": "Imprimir"
+            }
+            ]
+        } ]
+}
+        
+        
+        
+        
 });
 </script>
     

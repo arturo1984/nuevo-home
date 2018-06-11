@@ -265,8 +265,22 @@ AmCharts.makeChart("chartdiv", {
     }
   }],
   "export": {
-    "enabled": true
-  }
+    "enabled": true,    
+    "menu": [ {
+        "class": "export-main",
+        "menu": [ {
+            "label": "Descargar como",
+            "menu": [ "PNG", "JPG", "SVG" ]
+            }, {
+            "label": "Guardar como",
+            "menu": [ "CSV", "XLSX" ]
+            }, {
+            "format": "PRINT",
+            "label": "Imprimir"
+            }
+            ]
+        } ]
+}
 });
 </script>
     
@@ -355,9 +369,31 @@ AmCharts.makeChart("chartdiv2", {
       chart.validateData();
     }
   }],
-  "export": {
-    "enabled": true
-  }
+    
+    
+"export": {
+    "enabled": true,    
+    "menu": [ {
+        "class": "export-main",
+        "menu": [ {
+            "label": "Descargar como",
+            "menu": [ "PNG", "JPG", "SVG" ]
+            }, {
+            "label": "Guardar como",
+            "menu": [ "CSV", "XLSX" ]
+            }, {
+            "format": "PRINT",
+            "label": "Imprimir"
+            }
+            ]
+        } ]
+}
+    
+    
+    
+    
+    
+    
 });
 </script>
     
