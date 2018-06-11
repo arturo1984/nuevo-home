@@ -25,7 +25,7 @@
 		</div>
 
 		<div class="container">
-			<form>
+			<form id="frmPaso1" name="frmPaso1" method="post">
 				<h5>Datos del Contratante</h5><br/>
 				<div class="row">
 					<div class="col-md-12">					
@@ -57,7 +57,7 @@
 					</div>
 					<div class="col-sm-3">
 						<div class="md-form form-group">
-							<input type="text" name="folioTMX" class="form-control" disabled>
+							<input type="text" name="folioTMX" class="form-control" value="111" disabled>
 							<label for="folioTMX" >Código Cliente:</label>
 						</div>
 					</div>							   
@@ -143,10 +143,9 @@
 					<div class="col-sm-3">
 						<div class="md-form form-group">
 							<select name="estatus" class="mdb-select">
-								<option value="1">Todos</option>
-								<option value="2">Seguro Nuevo</option>
-								<option value="3">Renovar Seguro</option>
-								<option value="2">Endoso</option>
+								<option value="1">Seguro Nuevo</option>
+								<option value="2">Renovación</option>
+								<option value="3">Endoso</option>
 							</select>
 							<label for="estatus" >Tipo de Movimiento</label>
 						</div>
@@ -162,10 +161,10 @@
 							<label for="modoCotizacion" class="active">Desde</label>
 							<div class="row">
 								<div class="col">
-									<input placeholder="Desde" type="text" id="creationDate" class="form-control datepicker"/>
+									<input placeholder="Desde" type="date" id="dc_dateDesde" class="form-control datepicker"/>
 								</div>
 								<div class="col">
-									<input placeholder="Hasta" type="text" id="creationDate" class="form-control datepicker"/>
+									<input placeholder="Hasta" type="date" id="dc_dateHasta" class="form-control datepicker" disabled/>
 								</div>
 							</div>
 						</div>
@@ -205,14 +204,15 @@
 					</div>
 					<div class="col-md-3">
 						<div class="md-form form-group">
-							<button type="button" class="btn btn-blue btn-sm btn-primary" data-toggle="modal" data-target="#modal-archives">Subir archivo</button>	
+							<button type="button" class="btn btn-blue btn-sm btn-primary" data-toggle="modal" data-target="#modal-archives">Subir archivo</button>
+							<!--	<a class="btn-floating btn-sm teal waves-effect waves-light py-2 my-0" data-toggle="modal" data-target="#modal-archives">Subir archivo</a>	-->
 						</div>
 					</div>	
 				</div>
 				<div class="row">
 					<div class="col-md-12">
                             <div class="md-form form-group">
-                                <textarea type="text" id="" class="form-control md-textarea" rows="3"></textarea>
+                                <textarea type="text" id="menTxt" class="form-control md-textarea validaTxtCotiza" rows="3"></textarea>
                                 <label for="materialFormContactMessageEx">Mensaje</label>
                             </div>
                     </div>
@@ -220,7 +220,8 @@
 				
 				<div class="row">
 					<div class="col-sm-12" style="text-align:right">				
-						<a class="btn btn-pink">Enviar</a>
+						<!-- <a class="btn btn-pink">Enviar</a> -->
+						<button type="submit" class="btn btn-pink">Enviar</button>	
 					</div>
 				</div>				
 			</form>					
@@ -230,15 +231,17 @@
         <div class="modal fade" id="modal-archives" tabindex="-1" role="dialog" aria-labelledby="archivesLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="archivesLabel">Archivos</h5>
+                    <div class="modal-header section-heading">
+                        <h5 class="title" id="archivesLabel">Archivos</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                     	<form>
-                    		<h5>Seleccione Archivo:</h5><br/>
+                    		<div class="text-left section-heading">
+                    			<h5 class="title">Seleccione Archivo:</h5><br/>
+                    		</div>
 							<div class="row">
 	                    		<div class="col-sm-12 col-md-6">
 									<div class="md-form form-group">
@@ -442,7 +445,77 @@
 			$("#s_tab1").html(costo);
 			$("#tol_table").html(costo);
 		}
-	}					
+	}
+
+	//---------------------------------------
+	$(document).ready(
+		function() {
+		inicializaFechaHoy();	
+	});
+
+	function inicializaFechaHoy(){
+		var fs = new Date($.now());
+		var day = ("0" + (fs.getDate())).slice(-2);
+		var month = ("0" + (fs.getMonth() + 1)).slice(-2);
+		var fechaFin =  fs.getFullYear()+ "/" + (month) + "/"  + (day) ;
+		$('#dc_dateDesde').val(fechaFin);
+		genAnioSiguiente(fs);
+	};
+
+	$('#dc_dateDesde').change(function() {
+		console.log($(this).val());
+		if ($(this).val() == ""){
+		$('#dc_dateDesde').val("");
+		$('#dc_dateHasta').val("");	
+		}else{
+		var fs = new Date($(this).val());
+		var day = ("0" + (fs.getDate())).slice(-2);
+		var month = ("0" + (fs.getMonth() + 1)).slice(-2);
+		var fechaFin =  fs.getFullYear()+ "/" + (month) + "/"  + (day) ;
+		$('#dc_dateDesde').val(fechaFin);
+		min:fechaFin;
+		genAnioSiguiente(fs);	
+		}
+	});
+
+	function genAnioSiguiente(fechaSeleccionada) {
+		var fs = new Date(fechaSeleccionada);
+		fs.setFullYear(fs.getFullYear() + 1);
+		//fs.setDate(fs.getDate() + 1);
+		var day = ("0" + (fs.getDate())).slice(-2);
+		var month = ("0" + (fs.getMonth() + 1)).slice(-2);
+		var fechaFin =  fs.getFullYear()+ "/" + (month) + "/"  + (day) ;
+		$('#dc_dateHasta').val(fechaFin);
+	};
+
+	$('#frmPaso1').submit(function(e) {
+		e.preventDefault();
+		$(".text-danger").remove();
+		var errores = false;
+		//var tamaño = $('#menTxt').val().length;
+		//if(tamaño<3){
+		//	errores = (vaciosTxt($('.validaTxtCotiza')) ? true : errores );
+		//}
+		errores = (vaciosTxt($('.validaTxtCotiza')) ? true : errores );
+		console.log(errores);
+	});
+
+	function vaciosTxt(campos){
+		var errores = false;
+		$.each(campos,function(index, value) {
+			var tamaño = $('#menTxt').val().length;
+			//if (valIsNullOrEmpty($(value).val())) {
+			if (tamaño < 1500) {
+				errores = true;
+				$(value).parent().append("<div class=\"text-danger\"> <span class=\"glyphicon glyphicon-ban-circle\"></span> El campo debe tener más de 1500 caracteres</div>");
+			}
+		});
+		return errores;
+	};
+
+	function valIsNullOrEmpty(value) {
+		return (value == null || value === "");
+	};
 </script>	
 </body>
 </html>

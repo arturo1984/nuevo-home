@@ -1506,6 +1506,19 @@ margin-right: 0; }
   padding-left: 0px;
 }
 
+.site-wrapper .data-table td.number{
+  text-align: right;
+}
+
+
+label.waves-effect.waves-light{
+    background-color: #A681BA;
+    color:#fff;
+}
+label.waves-effect.waves-light.active{
+    background-color: #8A3399;
+    color:#fff;
+}
 .site-wrapper .table-borderless{
   margin-top: 40px;
 }
@@ -1518,6 +1531,7 @@ label.waves-effect.waves-light.active{
     background-color: #8A3399;
     color:#fff;
 }
+
 
 .site-wrapper .carousel-caption {
     left: 5%;
