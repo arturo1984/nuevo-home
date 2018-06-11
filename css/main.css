@@ -1510,6 +1510,15 @@ margin-right: 0; }
   margin-top: 40px;
 }
 
+label.waves-effect.waves-light{
+    background-color: #A681BA;
+    color:#fff;
+}
+label.waves-effect.waves-light.active{
+    background-color: #8A3399;
+    color:#fff;
+}
+
 .site-wrapper .carousel-caption {
     left: 5%;
     right: inherit;
