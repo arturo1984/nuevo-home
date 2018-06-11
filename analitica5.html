@@ -24,7 +24,21 @@
     
     <style>
         .dataTables_length, .dataTables_filter, .paging_simple_numbers, .dataTables_info{display: none;}
-    </style>
+        #comisiones-tokio .dataTables_filter,#comisiones-tokio .dt-buttons{display:none;}
+        #comisiones-tokio2 .dataTables_filter,#comisiones-tokio2 .dt-buttons{display:none;}
+        #comisiones-tokio .dataTables_info,#comisiones-tokio .dataTables_paginate,#comisiones-tokio .dataTables_length{display:none;}
+        #comisiones-tokio2 .dataTables_info,#comisiones-tokio2 .dataTables_paginate,#comisiones-tokio2 .dataTables_length{display:none;}	
+        .site-wrapper #comisiones-tokio .table-striped tbody tr.selected{background-color:pink;}
+        .site-wrapper #comisiones-tokio2 .table-striped tbody tr.selected{background-color:pink;}
+        .site-wrapper #comisiones-tokio .btn.btn-sm {padding: 0.5rem 1.1rem;}
+        .site-wrapper #comisiones-tokio2 .btn.btn-sm {padding: 0.5rem 1.1rem;}
+
+        .cinta-blanca{background-color: #fff; font-weight: bold;}
+        .cinta-amarilla{background-color: #ffff00; font-weight: bold;}
+        .cinta-azul{background-color: #0062d4; color: #fff; font-weight: bold;}
+        .cinta-x{background-color: #ff0000; color: #fff; font-weight: bold;}
+        .cinta-negra{background-color: #000; color: #fff; font-weight: bold;}
+    </style>    
 
 <body>
 <section class="site-wrapper">
@@ -131,30 +145,30 @@
                                             <tbody>
                                                 <tr>                                                    
                                                     <td>Prima Pagada que participa para el Bono Karate</td>
-                                                    <td>$ 2,250,000.00</td>
-                                                    <td>$ 48,000,000.00</td>
-                                                    <td>$ 400,000.00</td>
-                                                    <td>$ 45,000,000.00</td>
-                                                    <td>$ 2,500,000.00</td>
-                                                    <td>$ 98,150,000.00</td>                                                    
+                                                    <td class="number">$ 2,250,000.00</td>
+                                                    <td class="number">$ 48,000,000.00</td>
+                                                    <td class="number">$ 400,000.00</td>
+                                                    <td class="number">$ 45,000,000.00</td>
+                                                    <td class="number">$ 2,500,000.00</td>
+                                                    <td class="number">$ 98,150,000.00</td>                                                    
                                                 </tr>
                                                 <tr>
                                                     <td>Siniestros Netos (Reserva) que participan para Bono Karate</td>
-                                                    <td>$ 300,250.00</td>
-                                                    <td>$ 4,500,000.00</td>
-                                                    <td>$ 25,000.00</td>
-                                                    <td>$ 36,000,000.00</td>
-                                                    <td>$ 900,000.00</td>
-                                                    <td>$ 40,825,250.00</td>                                                    
+                                                    <td class="number">$ 300,250.00</td>
+                                                    <td class="number">$ 4,500,000.00</td>
+                                                    <td class="number">$ 25,000.00</td>
+                                                    <td class="number">$ 36,000,000.00</td>
+                                                    <td class="number">$ 900,000.00</td>
+                                                    <td class="number">$ 40,825,250.00</td>                                                    
                                                 </tr>
                                                 <tr>
                                                     <td>Siniestralidad</td>
-                                                    <td>13%</td>
-                                                    <td>9%</td>
-                                                    <td>6%</td>
-                                                    <td>80%</td>
-                                                    <td>36%</td>
-                                                    <td>42%</td>                                                    
+                                                    <td class="number">13%</td>
+                                                    <td class="number">9%</td>
+                                                    <td class="number">6%</td>
+                                                    <td class="number">80%</td>
+                                                    <td class="number">36%</td>
+                                                    <td class="number">42%</td>                                                    
                                                 </tr>
                                                 
 
@@ -164,6 +178,244 @@
                                     
                                 </div><!-- col-md-12 -->
                             </div> 
+						</div>                        
+                        
+                    </div>                    
+                    
+                   
+                    
+                </form>	
+            </div>
+                
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <div class="row">
+            <div class="col-12 mt5">
+                <form>
+
+                    <br/><h5>MONITOR DE BONO KARATE</h5><br/>						
+
+                    <div class="row linea">
+                        <div class="col-sm-4">
+                            <div class="md-form form-group">
+                                <select name="estatus" class="mdb-select">
+                                    <option value="" disabled selected>Folio</option>
+                                    <option value="1">1984</option>
+                                    <option value="2">1985</option>
+                                    <option value="3">1986</option>
+                                    <option value="4">1987</option>
+                                    <option value="5">1988</option>
+                                    <option value="6">1989</option>
+                                    <option value="7">1990</option>
+                                    <option value="8">1991</option>
+                                    <option value="9">1992</option>
+                                    <option value="10">1993</option>
+                                    <option value="11">1994</option>
+                                    <option value="12">1995</option>
+                                    <option value="13">1996</option>
+                                    <option value="14">1997</option>
+                                    <option value="15">1998</option>
+                                </select>
+                                <label for="estatus" >Año</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="md-form form-group">
+                                <select name="estatus" class="mdb-select">
+                                    <option value="" disabled selected>Todos</option>
+                                    <option value="1">Enero</option>
+                                    <option value="2">Febrero</option>
+                                    <option value="3">Marzo</option>
+                                    <option value="4">Abril</option>
+                                    <option value="5">Mayo</option>
+                                    <option value="6">Junio</option>
+                                    <option value="7">Julio</option>
+                                    <option value="8">Agosto</option>
+                                    <option value="9">Septiembre</option>
+                                </select>
+                                <label for="estatus" >Mes</label>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="md-form form-group form_search btn_search">
+                                <a class="btn btn-blue pull-left">Actualizar</a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12">						
+							<div class="progress-search progress primary-color-dark bar" style="display:none">
+								<div class="indeterminate"></div>
+							</div>
+						</div>                        
+                        
+                        <div class="col-md-12">
+                            
+                            
+                            <div class=" fade in show active" id="comisiones-tokio" role="tabpanel">
+						
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <p><strong>BONO KARATE DAÑOS</strong></p>
+                                    </div>							
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="table-wrapper col-sm-12">
+                                        <table class="table data-table table-striped table-bordered" style="width:100%;" id="table1">
+                                        <thead>
+                                        <tr>
+                                            <th>CINTAS</th>
+                                            <th>MONTO PRIMA PAGADA POR CINTA</th>
+                                            <th>Prima Actual</th>
+                                            <th>Siniestralidad Actual</th>
+                                            <th>Pendiente para alcanzar Objetivo</th>                                       
+                                            <th>Pronóstico de Bono</th>
+                                            <th>ESTATUS</th>
+                                        </tr>
+                                    </thead>
+                                        <tr class="t_vida">
+                                            <td class="cinta-blanca">Cinta Blanca</td>
+                                            <td class="number">$ 50,000,000.00</td>
+                                            <td class="number"></td>
+                                            <td class="number"></td>
+                                            <td class="number">$ -</td>
+                                            <td class="number">1%</td>
+                                            <td>Objetivo Alcanzado</td>                        
+                                        </tr>
+                                        <tr class="t_vida">
+                                            <td class="cinta-amarilla">Cinta Amarilla</td>
+                                            <td class="number">$ 60,000,000.00</td>
+                                            <td class="number">$ 53,150,000.00</td>
+                                            <td class="number">16%</td>
+                                            <td class="number">$ 6,850,000.00</td>
+                                            <td class="number">2%</td>
+                                            <td>No alcanzado</td>                               
+                                        </tr>
+                                        <tr class="t_dano">
+                                            <td class="cinta-azul">Cinta Azul</td>
+                                            <td class="number">$ 70,000,000.00</td>
+                                            <td class="number"></td>
+                                            <td class="number"></td>
+                                            <td class="number">$ 16,850,000.00</td>
+                                            <td class="number">3%</td>
+                                            <td>No alcanzado</td>
+                                        </tr>
+                                        <tr class="t_dano">
+                                            <td class="cinta-x">Cinta x</td>
+                                            <td class="number">$ 80,000,000.00</td>
+                                            <td class="number"></td>
+                                            <td class="number"></td>
+                                            <td class="number">$ 26,850,000.00</td>
+                                            <td class="number">4%</td>
+                                            <td>No alcanzado</td>                              
+                                        </tr>
+                                        <tr class="t_vida">
+                                            <td class="cinta-negra">Cinta Negra</td>
+                                            <td class="number">$ 100,000,000.00</td>
+                                            <td class="number"></td>
+                                            <td class="number"></td>
+                                            <td class="number">$ 46,850,000.00</td>
+                                            <td class="number">5%</td>
+                                            <td>No alcanzado</td>   
+                                        </tr>
+                                        </table>
+                                    </div>
+
+                                </div>
+						
+                            </div>
+                            
+                            
+                            <div class="tab-pane fade in show active mt-5" id="comisiones-tokio2" role="tabpanel">
+						
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <p><strong>BONO KARATE VIDA</strong></p>
+                                    </div>							
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="table-wrapper col-sm-12">
+                                        <table class="table data-table table-striped table-bordered" style="width:100%;" id="table2">
+                                        <thead>
+                                        <tr>
+                                            <th>CINTAS</th>
+                                            <th>MONTO PRIMA PAGADA POR CINTA</th>
+                                            <th>Prima Actual</th>
+                                            <th>Siniestralidad Actual</th>
+                                            <th>Pendiente de Prima para alcanzar Objetivo</th>                                       
+                                            <th>Pronóstico de Bono</th>
+                                            <th>ESTATUS</th>
+                                        </tr>
+                                    </thead>
+                                        <tr class="t_vida">
+                                            <td class="cinta-blanca">Cinta Blanca</td>
+                                            <td class="number">$ 50,000,000.00</td>
+                                            <td class="number">$ 45,000,000.00</td>
+                                            <td class="number">80%</td>
+                                            <td class="number">$ 5,000,000.00</td>
+                                            <td class="number">1%</td>
+                                            <td>No alcanzado</td>
+                                        </tr>
+                                        <tr class="t_vida">
+                                            <td class="cinta-amarilla">Cinta Amarilla</td>
+                                            <td class="number">$ 60,000,000.00</td>
+                                            <td class="number"></td>
+                                            <td class="number"></td>
+                                            <td class="number">$ 15,000,000.00</td>
+                                            <td class="number">2%</td>
+                                            <td>No alcanzado</td>
+                                        </tr>
+                                        <tr class="t_dano">
+                                            <td class="cinta-azul">Cinta Azul</td>
+                                            <td class="number">$ 70,000,000.00</td>
+                                            <td class="number"></td>
+                                            <td class="number"></td>
+                                            <td class="number">$ 25,000,000.00</td>
+                                            <td class="number">3%</td>
+                                            <td>No alcanzado</td>
+                                        </tr>
+                                        <tr class="t_dano">
+                                            <td class="cinta-x">Cinta x</td>
+                                            <td class="number">$ 80,000,000.00</td>
+                                            <td class="number"></td>
+                                            <td class="number"></td>
+                                            <td class="number">$ 35,000,000.00</td>
+                                            <td class="number">4%</td>
+                                            <td>No alcanzado</td>
+                                        </tr>
+                                        <tr class="t_vida">
+                                            <td class="cinta-negra">Cinta Negra</td>
+                                            <td class="number">100,000,000.00</td>
+                                            <td class="number"></td>
+                                            <td class="number"></td>
+                                            <td class="number">$ 55,000,000.00</td>
+                                            <td class="number">5%</td>
+                                            <td>No alcanzado</td>
+                                        </tr>
+                                        </table>
+                                    </div>
+
+                                </div>
+						
+                            </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                                
+                                
 						</div>                        
                         
                     </div>                    
@@ -224,6 +476,81 @@
 
 		
 	</script>
+    
+    
+    
+    <script>
+        $(document).ready(function() {
+            var stockTable = $('#table1').dataTable({
+                "sPaginationType": "full_numbers",
+                "bFilter": false
+            });
+
+            var catalogTable = $('#table2').dataTable({
+                "sPaginationType": "full_numbers",
+                "bFilter": false
+            });
+
+            stockTable.on('click', 'tbody tr' ,function() {
+                 $(this).toggleClass('selected');
+            });
+            catalogTable.on('click', 'tbody tr' ,function() {
+                 $(this).toggleClass('selected');
+            });
+
+            $('#LeftMove').on('click',function () {
+                moveRows_tipo(catalogTable, stockTable,'selected');
+            });
+
+            $('#RightMove').on('click',function () {
+                moveRows_tipo(stockTable, catalogTable,'selected');
+            });
+
+            $('#TodosVida').on('click',function () {
+                moveRows_tipo(stockTable, catalogTable,'vida');
+            });
+
+            $('#TodosDano').on('click',function () {
+                moveRows_tipo(stockTable, catalogTable,'danos');
+            });
+
+            $("#RightTodos").on('click',function(){
+                $("#table1 tbody tr").toggleClass('selected');
+                moveRows_tipo(stockTable, catalogTable,'selected');
+            });
+
+            $("#LeftTodos").on('click',function(){
+                $("#table2 tbody tr").toggleClass('selected');
+                moveRows_tipo(catalogTable,stockTable ,'selected');
+            });
+
+            $("#input-b9").fileinput({
+                showPreview: false,
+                showUpload: false,
+                elErrorContainer: '#kartik-file-errors',
+                allowedFileExtensions: ["pdf", "xml"],
+                uploadUrl: '/files/file-upload-single'
+            });
+
+        });
+        
+        
+        function moveRows_tipo(fromTable, toTable,tipo){
+			if(tipo == "vida" )
+				var $row = fromTable.find('.t_vida');
+			else if (tipo == "danos")
+				var $row = fromTable.find('.t_dano');
+			else
+				var $row= fromTable.find(".selected");
+			$.each($row, function(k, v){
+				if(this !== null){
+					addRow = fromTable.fnGetData(this);
+					toTable.fnAddData(addRow);
+					fromTable.fnDeleteRow(this);
+				}
+			});
+		}
+</script>
     
     
     </body>
