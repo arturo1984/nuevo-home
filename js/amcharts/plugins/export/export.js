@@ -29,37 +29,37 @@ not apply to any other amCharts products that are covered by different licenses.
 if ( !AmCharts.translations[ "export" ] ) {
 	AmCharts.translations[ "export" ] = {}
 }
-if ( !AmCharts.translations[ "export" ][ "en" ] ) {
-	AmCharts.translations[ "export" ][ "en" ] = {
+if ( !AmCharts.translations[ "export" ][ "es" ] ) {
+	AmCharts.translations[ "export" ][ "es" ] = {
 		"fallback.save.text": "CTRL + C to copy the data into the clipboard.",
 		"fallback.save.image": "Rightclick -> Save picture as... to save the image.",
 
 		"capturing.delayed.menu.label": "{{duration}}",
-		"capturing.delayed.menu.title": "Click to cancel",
+		"capturing.delayed.menu.title": "Click para cancelar",
 
-		"menu.label.print": "Print",
-		"menu.label.undo": "Undo",
-		"menu.label.redo": "Redo",
-		"menu.label.cancel": "Cancel",
+		"menu.label.print": "Imprimir",
+        "menu.label.undo": "Deshacer",
+        "menu.label.redo": "Rehacer",
+        "menu.label.cancel": "Cancelar",
 
-		"menu.label.save.image": "Download as ...",
-		"menu.label.save.data": "Save as ...",
+        "menu.label.save.image": "Descargar como ...",
+        "menu.label.save.data": "Guardar como ...",
 
-		"menu.label.draw": "Annotate ...",
-		"menu.label.draw.change": "Change ...",
-		"menu.label.draw.add": "Add ...",
-		"menu.label.draw.shapes": "Shape ...",
-		"menu.label.draw.colors": "Color ...",
-		"menu.label.draw.widths": "Size ...",
-		"menu.label.draw.opacities": "Opacity ...",
-		"menu.label.draw.text": "Text",
+        "menu.label.draw": "Anotar ...",
+        "menu.label.draw.change": "Cambiar ...",
+        "menu.label.draw.add": "Añadir ...",
+        "menu.label.draw.shapes": "Forma ...",
+        "menu.label.draw.colors": "Color ...",
+        "menu.label.draw.widths": "Tamaño ...",
+        "menu.label.draw.opacities": "Opacidad ...",
+        "menu.label.draw.text": "Texto",
 
-		"menu.label.draw.modes": "Mode ...",
-		"menu.label.draw.modes.pencil": "Pencil",
-		"menu.label.draw.modes.line": "Line",
-		"menu.label.draw.modes.arrow": "Arrow",
+        "menu.label.draw.modes": "Modo ...",
+        "menu.label.draw.modes.pencil": "Lápiz",
+        "menu.label.draw.modes.line": "Linea",
+        "menu.label.draw.modes.arrow": "Flecha",
 
-		"label.saved.from": "Saved from: "
+        "label.saved.from": "Guardar desde: "
 	}
 }
 

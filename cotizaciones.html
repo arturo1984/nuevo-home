@@ -162,19 +162,19 @@
                             <table class="table data-table table-striped table-bordered" style="width:100%;">
                                 <thead>
                                     <tr>
-                                        <th>Folio</i></th>
-                                        <th>Fecha creación</i></th>
-                                        <th>Modo cotización</i></th>
-                                        <th>Estatus</i></th>
-                                        <th>Producto</i></th>
-                                        <th>Asegurado</i></th>
-                                        <th>Agente</i></th>
-                                        <th>Moneda</i></th>
-                                        <th>Ramo</i></th>
-                                        <th>Movimiento</i></th>
-                                        <th>Póliza</i></th>
-                                        <th>Endoso</i></th>
-                                        <th>Prima</i></th>
+                                        <th>Folio</th>
+                                        <th>Fecha creación</th>
+                                        <th>Modo cotización</th>
+                                        <th>Estatus</th>
+                                        <th>Producto</th>
+                                        <th>Asegurado</th>
+                                        <th>Agente</th>
+                                        <th>Moneda</th>
+                                        <th>Ramo</th>
+                                        <th>Movimiento</th>
+                                        <th>Póliza</th>
+                                        <th>Endoso</th>
+                                        <th>Prima</th>
                                         <th class="all" data-orderable="false"></th>
                                     </tr>
                                 </thead>
@@ -852,6 +852,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <a class="btn btn-pink pull-right" onclick="document.getElementById('search-form').submit();">BUSCAR</a>
+                                        <button type="button" class="btn btn-blue" data-toggle="modal" data-target="#exampleModal">AGREGAR</button>
                                     </div>
                                 </div>
                             </form>
@@ -862,19 +863,19 @@
                                     <tr>
                                         <th>ID cotizador</th>
                                         <th>Versión</th>
-                                        <th>Folio</i></th>
-                                        <th>Fecha creación</i></th>
-                                        <th>Modo cotización</i></th>
-                                        <th>Estatus</i></th>
-                                        <th>Producto</i></th>
-                                        <th>Asegurado</i></th>
-                                        <th>Agente</i></th>
-                                        <th>Moneda</i></th>
-                                        <th>Ramo</i></th>
-                                        <th>Movimiento</i></th>
-                                        <th>Póliza</i></th>
-                                        <th>Endoso</i></th>
-                                        <th>Prima</i></th>
+                                        <th>Folio</th>
+                                        <th>Fecha creación</th>
+                                        <th>Modo cotización</th>
+                                        <th>Estatus</th>
+                                        <th>Producto</th>
+                                        <th>Asegurado</th>
+                                        <th>Agente</th>
+                                        <th>Moneda</th>
+                                        <th>Ramo</th>
+                                        <th>Movimiento</th>
+                                        <th>Póliza</th>
+                                        <th>Endoso</th>
+                                        <th>Prima</th>
                                         <th class="all" data-orderable="false"></th>
                                     </tr>
                                 </thead>
@@ -1855,6 +1856,63 @@
                 </div>
             </div>
             <!-- END Modal Short Help -->
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tipo de Cotizador</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                   
+                        
+                        <div class="row masonry-container"> 
+                            <div class="col-12 masonry-item wow fadeInUp animation-delay-2 text-center mb-4">
+                                <h1 class="font-weight-bold center-block mt-4 mb-4 animated zoomInDown animation-delay-5 footer-title">Solicita una cotización</h1>
+                                <p class="text-center center-block mt-2 animated fadeInUp animation-delay-7">Para nosotros es importante que su seguridad y brindarle un mejor servicio con las mejores herramientas a su disposicion.</p>
+                            </div>
+                        </div>
+                        <div class="card-group">
+                            <div class="card card-image mb-3" style="background-image: url(images/cotizadores/landing-tmx.jpg);">              
+                                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                                    <div>
+                                        <h3 class="card-title pt-2"><strong>Cotizar Paquete Familiar<br><br></strong></h3>
+                                        <p>Breve descripcion de los servicios del paquete familiar</p>
+                                        <a class="btn btn-pink waves-light"><i class="fa fa-clone left"></i> Entrar al cotizador</a>
+                                    </div>
+                                </div>                       
+                            </div>
+                            <div class="card card-image mb-3" style="background-image: url(images/cotizadores/landing-empresarial.jpg);">
+                                <div class="text-white text-center d-flex align-items-center rgba-indigo-strong py-5 px-4">
+                                    <div>
+                                        <h3 class="card-title pt-2"><strong>Paquete Empresarial<br><br></strong></h3>
+                                        <p>Breve descripcion de los servicios del Paquete Empresarial</p>
+                                        <a class="btn btn-deep-orange waves-light"><i class="fa fa-clone left"></i> Entrar al cotizador</a>
+                                    </div>
+                                </div>                       
+                            </div>
+                            <div class="card card-image mb-3" style="background-image: url(images/cotizadores/landing-tmx.jpg);">              
+                                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                                    <div>
+                                        <h3 class="card-title pt-2"><strong>Pedir Cotización a TMX <br><br></strong></h3>
+                                        <p>Breve descripcion de los servicios del Pedir Cotización a TMX</p>
+                                        <a class="btn btn-pink waves-light"><i class="fa fa-clone left"></i> Entrar al cotizador</a>
+                                    </div>
+                                </div>                       
+                            </div>
+                        </div>  
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+       
+       
         </section>
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/datatables.min.js"></script>
