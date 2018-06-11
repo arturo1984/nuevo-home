@@ -1364,8 +1364,8 @@ margin-right: 0; }
 .site-wrapper .ident_verde{color: rgb(153, 204, 0);}
 .site-wrapper .ident_naranja{color: rgb(255, 153, 0);}
 .site-wrapper .ident_ambar{color: #cfa116;}
-.site-wrapper .owl-next span{right: 1%;}
-.site-wrapper .owl-prev span{left: 1%;}
+.site-wrapper .owl-next span{right: -10px;}
+.site-wrapper .owl-prev span{left: -10px;}
 .site-wrapper .pull-right{text-align:right}
 .site-wrapper .pull-left{text-align:left}
 .site-wrapper section.agentes{margin-top: 30px;}
@@ -1460,7 +1460,10 @@ margin-right: 0; }
     font-size: 5rem;
     top: 20%;
     position: absolute;
-    color: white;
+    color: #000;
+    border: solid 1px #fff;
+    background-color: #ffffff73;
+    border-radius: 5px;
 }
 
 .site-wrapper .btn-agentes{

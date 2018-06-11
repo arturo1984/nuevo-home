@@ -117,6 +117,27 @@ $(document).ready(function(){
 		$("#form-login-pass").hide();
 	});
     
+    /* convertir en slider */
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        dots:false,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 3,
+            },
+            1000: {
+                items: 3,
+                margin: 20,
+            }
+        }
+    });
+    
     
   /* para igualar las alturas de las cajas de texto de las cards */
   var altura_arr = [];
