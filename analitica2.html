@@ -152,16 +152,7 @@
 		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
 		$("#box-form-passw").load("form-rec-pass.html");	
 		new WOW().init();
-        
-        
-        $('.datepicker').pickadate({
-            selectMonths: false,
-            formatSubmit: 'yyyy//',
-            disabled: 'picker__day--disabled',
-            selectYears: 4,
-            firstDay: 1,
-        });    
-        
+                
         $('.btn_search').click(function() {	
             $(this).parents('.linea').find('.bar').show();            
             $(this).parents('.linea').find('.graficas').hide();
