@@ -163,3 +163,14 @@ if (ventana_ancho >= 1100) {
     
   
 });
+
+
+
+
+
+$(document).ready(function() {
+    $('#selector_moneda').change(function() {
+        $('.campos_moneda').hide();
+        $('.' + $(this).val()).show();    
+    });
+});

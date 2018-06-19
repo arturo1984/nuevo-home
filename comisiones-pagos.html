@@ -55,12 +55,27 @@
                   </div>
                   <div class="row">
                      <div class="col-sm-6">
-                        <p><strong>Comisiones Ganadas Pendientes de Pago</strong></p>
+                        <p><strong>Comisiones Ganadas Pendientes de Pago</strong></p>                        
                      </div>
+                      
                      <div class="col-sm-6">
                         <p class="float-right"><strong>Solicitud de Pago por los siguiente Conceptos</strong></p>
                      </div>
                   </div>
+                   
+                   <div class="row">
+                     <div class="col-sm-4">
+                        <!--Blue select-->
+                        <select id="selector_moneda" class="mdb-select colorful-select dropdown-primary ">
+                            <option value="" disabled selected>Todas</option>
+                            <option value="mn">MN</option>
+                            <option value="usd">USD</option>
+                        </select>
+                        <label>Secciona Moneda</label>
+                        <!--/Blue select-->
+                     </div>
+                  </div>
+                   
                   <div class="row">
                      <div class="table-wrapper col-sm-7">
                         <table class="table simple-data-table table-striped table-bordered" style="width:100%;" id="table1">
@@ -82,7 +97,7 @@
                               </tr>
                            </thead>
                            <tbody>
-                           <tr class="t_vida">
+                           <tr class="campos_moneda t_vida mn">
                               <td>83667</td>
                               <td>Casa CECALDI S.A. de C.V</td>
                               <td>PTMMX001236784</td>
@@ -97,14 +112,14 @@
                               <td>-238.80</td>
                               <td>-254.72</td>
                            </tr>
-                           <tr class="t_vida">
+                           <tr class="campos_moneda t_vida usd">
                               <td>84538</td>
                               <td>CS Carga Forwarders S.A. de C.V</td>
                               <td>PTMMX0014445784</td>
                               <td>DP0883340</td>
                               <td>Paquete Empresarial</td>                           
                               <td>$1,753.09</td>
-                              <td>MN</td>
+                              <td>USD</td>
                               <td>$17,332</td>
                               <td>11.40%</td>
                               <td>$2,134</td>
@@ -112,7 +127,7 @@
                               <td>-238.80</td>
                               <td>-254.72</td>
                            </tr>
-                           <tr class="t_dano">
+                           <tr class="campos_moneda t_dano mn">
                               <td>85983</td>
                               <td>Luz MAria Quiroz Mosqueda</td>
                               <td>PTMMX001233234</td>
@@ -127,14 +142,14 @@
                               <td>-238.80</td>
                               <td>-254.72</td>
                            </tr>
-                           <tr class="t_dano">
+                           <tr class="campos_moneda t_dano usd">
                               <td>86437</td>
                               <td>CXD México S.A. de C.V</td>
                               <td>PTMMX009876784</td>
                               <td>DP088250</td>
                               <td>Vida Grupo</td>                           
                               <td>$5,753.09</td>
-                              <td>MN</td>
+                              <td>USD</td>
                               <td>$22,332</td>
                               <td>3.40%</td>
                               <td>$1,134</td>
@@ -142,7 +157,7 @@
                               <td>-238.80</td>
                               <td>-254.72</td>
                            </tr>
-                           <tr class="t_vida">
+                           <tr class="campos_moneda t_vida mn">
                               <td>88324</td>
                               <td>Yomefa Ingenieria S.A. de C.V</td>
                               <td>PTMMX001236784</td>
@@ -315,6 +330,20 @@
                         <p class="float-right"><strong>Solicitud de Pago por los siguiente Conceptos</strong></p>
                      </div>
                   </div>
+                    
+                    <div class="row">
+                     <div class="col-sm-4">
+                        <!--Blue select-->
+                        <select id="selector_moneda" class="mdb-select colorful-select dropdown-primary ">
+                            <option value="" disabled selected>Todas</option>
+                            <option value="mn">MN</option>
+                            <option value="usd">USD</option>
+                        </select>
+                        <label>Secciona Moneda</label>
+                        <!--/Blue select-->
+                     </div>
+                  </div>
+                    
                   <div class="row">
                      <div class="table-wrapper col-sm-7">
                         <table class="table simple-data-table table-striped table-bordered" style="width:100%;" id="table5">
@@ -334,7 +363,7 @@
                                  <th>Comentario</th>
                               </tr>
                            </thead>
-                           <tr class="t_dano">
+                           <tr class="campos_moneda t_dano mn">
                               <td>83667</td>
                               <td>BONO KARATE (PRIMA Y SINIESTRALIDAD)</td>
                               <td>Daños</td>
@@ -348,7 +377,7 @@
                               <td>$501,455.53</td>
                               <td>Cinta Blanca</td>
                            </tr>
-                           <tr class="t_vida">
+                           <tr class="campos_moneda t_vida mn">
                               <td>85240</td>
                               <td>BONO KARATE (PRIMA Y SINIESTRALIDAD)</td>
                               <td>Vida</td>
@@ -362,7 +391,7 @@
                               <td>$1,252,684.39</td>
                               <td>Cinta Amarilla</td>
                            </tr>
-                           <tr class="t_vida">
+                           <tr class="campos_moneda t_vida mn">
                               <td>85095</td>
                               <td>CONVENIO DE INCENTIVOS</td>
                               <td>Vida & Daños</td>
@@ -376,7 +405,7 @@
                               <td>$4,159.60</td>
                               <td></td>
                            </tr>
-                           <tr class="t_vida">
+                           <tr class="campos_moneda t_vida mn">
                               <td>85439</td>
                               <td>BONO POR VENTAS EN DICIEMBRE</td>
                               <td>Daños</td>
@@ -390,7 +419,7 @@
                               <td>$38,644.32</td>
                               <td></td>
                            </tr>
-                           <tr class="t_vida">
+                           <tr class="campos_moneda t_vida mn">
                               <td>86126</td>
                               <td>CONVENIO DE CARTERA</td>
                               <td>Vida & Daños</td>
@@ -669,7 +698,10 @@
                 }
             });
          }
-         
+          
+                   
       </script>
+       
+       
    </body>
 </html>
