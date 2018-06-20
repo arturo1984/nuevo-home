@@ -159,18 +159,13 @@ if (ventana_ancho >= 1100) {
     /*$('#slide-out').hide();*/
 }
     
-    
-    
-  
-});
-
-
-
-
-
-$(document).ready(function() {
-    $('#selector_moneda').change(function() {
+/* seleccion de tipo de moneda */
+$('#selector_moneda').change(function() {
         $('.campos_moneda').hide();
         $('.' + $(this).val()).show();    
     });
+    
+    
+    
+  
 });
