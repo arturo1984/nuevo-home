@@ -1498,10 +1498,10 @@ label.waves-effect.waves-light.active{background-color: #8A3399; color:#fff;}
 .site-wrapper .carousel-caption {left: 5%; right: inherit;}
 .site-wrapper .cuadros-title{color: #01579b!important; font-weight: 400!important;}
 
-.site-wrapper .dataTables_length, .dataTables_filter, .paging_simple_numbers, .dataTables_info{display: none;}
+/*.site-wrapper .dataTables_length, .dataTables_filter, .paging_simple_numbers, .dataTables_info{display: none;}*/
 .site-wrapper #comisiones-tokio .dataTables_filter,#comisiones-tokio .dt-buttons{display:none;}
 .site-wrapper #comisiones-tokio2 .dataTables_filter,#comisiones-tokio2 .dt-buttons{display:none;}
-.site-wrapper #comisiones-tokio2 .dataTables_info,#comisiones-tokio2 .dataTables_paginate,#comisiones-tokio2 .dataTables_length{display:none;}
+/*.site-wrapper #comisiones-tokio2 .dataTables_info,#comisiones-tokio2 .dataTables_paginate,#comisiones-tokio2 .dataTables_length{display:none;}*/
 .site-wrapper #comisiones-tokio2 .table-striped tbody tr.selected{background-color:pink;}
 .site-wrapper #comisiones-tokio2 .btn.btn-sm {padding: 0.5rem 1.1rem;}
 .site-wrapper .cinta-blanca{background-color: #fff; font-weight: bold;}
