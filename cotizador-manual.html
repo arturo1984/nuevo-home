@@ -21,13 +21,13 @@
         <section>
             
             <div class="container">
-            
-			<div class="section-heading">
-                    <div class="container-fluid">
-                        <h4 class="title text-left">Cotizador Manual</h4>
-                    </div>				
+                
+                <div class="row">
+                    <div class="col-12 mt-4">
+                        <p class="font-weight-bold h1-responsive">Cotizador Manual</p>
+                    </div>
                 </div>
-				
+                
                 <!--formulario -->
 				<div class="container-fluid" id="paso1" style="padding:0 70px">
 					<form>
@@ -52,7 +52,7 @@
                             
                             <div class="col-sm-6">
                                 <div class="md-form form-group">
-                                    <input type="text" name="folioTMX" id="folioTMX" class="form-control">
+                                    <input type="text" name="folioTMX" id="folioTMX" class="form-control" oninput="numberOnly(this.id);" maxlength="14">
 								    <label for="folioTMX" >Póliza anterior</label>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                             <div class="col-sm-6">
                                 <div class="md-form form-group">
                                     <select name="estatus" class="mdb-select">
-                                        <option value="1">MXN</option>
+                                        <option value="1">MN</option>
                                         <option value="2">Todas</option>
                                     </select>
                                     <label for="estatus">Moneda</label>

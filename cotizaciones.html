@@ -19,12 +19,13 @@
             <header></header>
             <section>
                 <div class="container">
-                
-                <div class="section-heading">
-                    <div class="container-fluid">
-                        <h1 class="title text-left">Consulta de Cotizaciones</h1>
+                    
+                    <div class="row">
+                        <div class="col-12 mt-4">
+                            <p class="font-weight-bold h1-responsive">Consulta de Cotizaciones</p>
+                        </div>
                     </div>
-                </div>
+                
                 <div class="section-nav-wrapper">
                     <ul class="nav nav-tabs nav-justified light-blue darken-4" role="tablist">
                         <li class="nav-item">
@@ -43,13 +44,13 @@
                                 <div class="row">
                                     <div class="col-sm-6 col-lg-3">
                                         <div class="md-form form-group">
-                                            <input type="number" name="folioTMX" id="folioTMX" class="form-control">
+                                            <input type="text" name="folioTMX" id="folioTMX" class="form-control" oninput="numberOnly(this.id);" maxlength="16">
                                             <label for="folioTMX" >Folio TMX</label>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-lg-3">
                                         <div class="md-form form-group">
-                                            <input type="number" name="poliza" id="poliza" class="form-control">
+                                            <input type="text" name="poliza" id="poliza" class="form-control" oninput="numberOnly(this.id);" maxlength="14">
                                             <label for="poliza" >Póliza</label>
                                         </div>
                                     </div>
@@ -124,7 +125,7 @@
                                             <select name="moneda" class="mdb-select">
                                                 <option value="1">Todas</option>
                                                 <option value="2">USD</option>
-                                                <option value="3">MXN</option>
+                                                <option value="3">MN</option>
                                             </select>
                                             <label for="moneda" >Moneda</label>
                                         </div>
@@ -228,7 +229,7 @@
                                         <td>Vida grupo</td>
                                         <td>Catalina</td>
                                         <td>Kataoka</td>
-                                        <td>MXN</td>
+                                        <td>MN</td>
                                         <td>Vida</td>
                                         <td>Renovación</td>
                                         <td>VGMMX0052800</td>
@@ -255,7 +256,7 @@
                                         <td>Paquete empresarial</td>
                                         <td>Carla</td>
                                         <td>Marsh</td>
-                                        <td>MXN</td>
+                                        <td>MN</td>
                                         <td>Daños</td>
                                         <td>Renovación</td>
                                         <td>PTJMX00985600</td>
@@ -363,7 +364,7 @@
                                         <td>Vida grupo</td>
                                         <td>Catalina</td>
                                         <td>Kataoka</td>
-                                        <td>MXN</td>
+                                        <td>MN</td>
                                         <td>Vida</td>
                                         <td>Renovación</td>
                                         <td>VGMMX0052800</td>
@@ -390,7 +391,7 @@
                                         <td>Paquete empresarial</td>
                                         <td>Carla</td>
                                         <td>Marsh</td>
-                                        <td>MXN</td>
+                                        <td>MN</td>
                                         <td>Daños</td>
                                         <td>Renovación</td>
                                         <td>PTJMX00985600</td>
@@ -498,7 +499,7 @@
                                         <td>Vida grupo</td>
                                         <td>Catalina</td>
                                         <td>Kataoka</td>
-                                        <td>MXN</td>
+                                        <td>MN</td>
                                         <td>Vida</td>
                                         <td>Renovación</td>
                                         <td>VGMMX0052800</td>
@@ -525,7 +526,7 @@
                                         <td>Paquete empresarial</td>
                                         <td>Carla</td>
                                         <td>Marsh</td>
-                                        <td>MXN</td>
+                                        <td>MN</td>
                                         <td>Daños</td>
                                         <td>Renovación</td>
                                         <td>PTJMX00985600</td>
@@ -633,7 +634,7 @@
                                         <td>Vida grupo</td>
                                         <td>Catalina</td>
                                         <td>Kataoka</td>
-                                        <td>MXN</td>
+                                        <td>MN</td>
                                         <td>Vida</td>
                                         <td>Renovación</td>
                                         <td>VGMMX0052800</td>
@@ -660,7 +661,7 @@
                                         <td>Paquete empresarial</td>
                                         <td>Carla</td>
                                         <td>Marsh</td>
-                                        <td>MXN</td>
+                                        <td>MN</td>
                                         <td>Daños</td>
                                         <td>Renovación</td>
                                         <td>PTJMX00985600</td>
@@ -746,7 +747,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="md-form form-group">
-                                                    <input type="number" name="folioTMX" class="form-control">
+                                                    <input type="text" name="folioTMX" class="form-control" oninput="numberOnly(this.id);" maxlength="16">
                                                     <label for="folioTMX">Folio TMX</label>
                                                 </div>
                                             </div>
@@ -760,7 +761,7 @@
                                     </div>
                                     <div class="col-sm-6 col-lg-3">
                                         <div class="md-form form-group">
-                                            <input type="number" name="poliza" class="form-control">
+                                            <input type="text" name="poliza" class="form-control" oninput="numberOnly(this.id);" maxlength="14">
                                             <label for="poliza" >Póliza</label>
                                         </div>
                                     </div>
@@ -835,7 +836,7 @@
                                             <select name="moneda" class="mdb-select">
                                                 <option value="1">Todas</option>
                                                 <option value="2">USD</option>
-                                                <option value="3">MXN</option>
+                                                <option value="3">MN</option>
                                             </select>
                                             <label for="moneda" >Moneda</label>
                                         </div>
@@ -972,7 +973,7 @@
                                         <td>Paquete familiar</td>
                                         <td>Liz</td>
                                         <td>Marsh</td>
-                                        <td>MXN</td>
+                                        <td>MN</td>
                                         <td>Daños</td>
                                         <td>Renovación</td>
                                         <td>PFMMX0085200</td>
@@ -1006,7 +1007,7 @@
                                         <td>Paquete familiar</td>
                                         <td>Arturo</td>
                                         <td>Kataoka</td>
-                                        <td>MXN</td>
+                                        <td>MN</td>
                                         <td>Daños</td>
                                         <td>Nueva</td>
                                         <td>-</td>
@@ -1142,7 +1143,7 @@
                                         <td>Paquete familiar</td>
                                         <td>Liz</td>
                                         <td>Marsh</td>
-                                        <td>MXN</td>
+                                        <td>MN</td>
                                         <td>Daños</td>
                                         <td>Renovación</td>
                                         <td>PFMMX0085200</td>
@@ -1176,7 +1177,7 @@
                                         <td>Paquete familiar</td>
                                         <td>Arturo</td>
                                         <td>Kataoka</td>
-                                        <td>MXN</td>
+                                        <td>MN</td>
                                         <td>Daños</td>
                                         <td>Nueva</td>
                                         <td>-</td>
@@ -1312,7 +1313,7 @@
                                         <td>Paquete familiar</td>
                                         <td>Liz</td>
                                         <td>Marsh</td>
-                                        <td>MXN</td>
+                                        <td>MN</td>
                                         <td>Daños</td>
                                         <td>Renovación</td>
                                         <td>PFMMX0085200</td>
@@ -1346,7 +1347,7 @@
                                         <td>Paquete familiar</td>
                                         <td>Arturo</td>
                                         <td>Kataoka</td>
-                                        <td>MXN</td>
+                                        <td>MN</td>
                                         <td>Daños</td>
                                         <td>Nueva</td>
                                         <td>-</td>
