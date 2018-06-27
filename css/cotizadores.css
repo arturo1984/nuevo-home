@@ -1,0 +1,124 @@
+/* CSS COTIZADORES */
+
+
+.site-wrapper #paso2 .nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+
+.site-wrapper #paso2 .nav-tabs>li.active>a, .site-wrapper .nav-tabs>li.active>a:hover, .site-wrapper .nav-tabs>li.active>a:focus {
+    color: #808080;
+    cursor: default;
+    background-color: #fff;
+    border-bottom-color: transparent;
+}
+
+.site-wrapper #paso2 .nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+
+.site-wrapper #paso2 .nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+.site-wrapper #paso2 .nav-tabs{
+    border: 0;
+    padding: 0.7rem;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    background-color: transparent;
+    z-index: 2;
+    position: relative;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.site-wrapper .nav-tabs{border-bottom: 1px solid #ddd;}
+
+.site-wrapper #paso2 .nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.site-wrapper #paso2 #tab-list .close {
+	 margin-left: 7px;
+}	
+.site-wrapper #paso2 #tab-list a{color: #808080;}
+.site-wrapper #paso2 #tab-list li{    
+	border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.site-wrapper #paso2 .nav>li>a.active { text-decoration:underline; color:blue;}
+.site-wrapper #paso2 .tab-content {
+    border: 1px solid #ddd;
+    margin: -15px 12px;
+}
+.site-wrapper #paso2 .accordion .card .card-header{width:100%; background-color: #0066cc; border: 1px solid white;}
+.site-wrapper .accordion .card .card-header a{color:#fff;}
+.site-wrapper #paso2 .accordion .card .card-body {width: 100%;border: 1px solid #fff;}
+.site-wrapper .tot_heading{float: right; margin-left: 20px;}
+.site-wrapper .calc_fin{margin:25px 0; text-align: right;}
+.site-wrapper #paso1 .form-right{display:inline-flex; margin-bottom: 20px;}
+.site-wrapper #paso2 .accordion, .site-wrapper #paso2 .accordion .card .card-header,.site-wrapper #paso2 .accordion .card .card-body{width:100%;}
+
+.site-wrapper .nav{padding-left: 0; margin-bottom: 0; list-style: none;}
+
+.site-wrapper .nav-item .nav-link:hover, .nav-link.active{ background-color: rgba(158,158,158,.3)}
+
+.site-wrapper .customTable td:first-child {border-left: none;}
+.site-wrapper .customTable td {border-left: 1px solid black;}
+.site-wrapper .customTable th {text-align: center; font-weight: bold;}
+.site-wrapper .customTable tbody {border: 1px solid black;}
+.site-wrapper .customTable td {padding-left: 20px;}
+.site-wrapper .customTable td.number,
+.site-wrapper .table-borderless td.number {text-align: right; padding-right: 35px; padding-left: 0px;}
+
+.site-wrapper #comisiones-tokio .dataTables_filter,#comisiones-tokio .dt-buttons{display:none;}
+.site-wrapper #comisiones-tokio2 .dataTables_filter,#comisiones-tokio2 .dt-buttons{display:none;}
+
+.site-wrapper #comisiones-tokio2 .table-striped tbody tr.selected{background-color:pink;}
+.site-wrapper #comisiones-tokio2 .btn.btn-sm {padding: 0.5rem 1.1rem;}
+
+.h1-responsive, .h2-responsive, .h3-responsive, .h4-responsive, .h5-responsive{color: #01579b;}
+
+.site-wrapper #comisiones-tokio .dataTables_info,#comisiones-tokio .dataTables_paginate,#comisiones-tokio .dataTables_length{display:none;}
+
+.site-wrapper #comisiones-tokio .table-striped tbody tr.selected{background-color:pink;}
+
+.site-wrapper #comisiones-tokio .btn.btn-sm {padding: 0.5rem 1.1rem;}
+
+.site-wrapper #modal-asociar-users .list-group-item-info { background-color: lightgrey; color:#000;}
+
+.site-wrapper .stepper-horizontal li:hover {background-color:#fff;}
+
+.site-wrapper .active_2{text-decoration: underline}
+
+.site-wrapper .tipo_persona{ padding-top:40px; float:right;}
+
+.site-wrapper label.waves-effect.waves-light{background-color: #A681BA; color:#fff;}
+
+.site-wrapper label.waves-effect.waves-light.active{background-color: #8A3399; color:#fff;}
+
+.site-wrapper label.waves-effect.waves-light{background-color: #A681BA; color:#fff;}
+
+.site-wrapper label.waves-effect.waves-light.active{background-color: #8A3399; color:#fff;}
+
+.site-wrapper .data-table td.number{text-align: right;}
+
+.site-wrapper .table-borderless{margin-top: 40px;}
+
+.site-wrapper .tab-pane .table-striped tbody tr.selected{background-color:pink;}
+
+.site-wrapper .stepper li.completed a .circle {background-color:green;}
+
+@media (max-width: 767px){
+.site-wrapper .stepper-horizontal {flex-direction: row;}
+.site-wrapper .stepper-horizontal li {flex-direction: initial;}
+.site-wrapper .form-inline .form-check { padding-left: 0px;}
+}
