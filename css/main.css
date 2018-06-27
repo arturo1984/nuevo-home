@@ -1498,8 +1498,8 @@ margin-right: 0; }
     top: 20%;
     position: absolute;
     color: #000;
-    border: solid 1px #fff;
-    background-color: #ffffff73;
+    border: solid 1px rgb(165, 215, 255);
+    background-color: rgba(1, 87, 155, 0.18);
     border-radius: 5px;
 }
 
@@ -1532,7 +1532,7 @@ label.waves-effect.waves-light.active{background-color: #8A3399; color:#fff;}
 .site-wrapper label.waves-effect.waves-light{background-color: #A681BA; color:#fff;}
 .site-wrapper label.waves-effect.waves-light.active{background-color: #8A3399; color:#fff;}
 
-.site-wrapper .carousel-caption {left: 5%; right: inherit;}
+.site-wrapper .carousel-caption {left: inherit; right: 5%;}
 .site-wrapper .cuadros-title{color: #01579b ; font-weight: 400 ;}
 
 /*.site-wrapper .dataTables_length, .dataTables_filter, .paging_simple_numbers, .dataTables_info{display: none;}*/
@@ -1574,7 +1574,7 @@ label.waves-effect.waves-light.active{background-color: #8A3399; color:#fff;}
 .site-wrapper .mt-10{margin-top: 10rem;}
 .site-wrapper .contacto-gris{background-color: #D5D5D5;}
 .site-wrapper .borde-negro{border: solid 1px #666;}
-.site-wrapper .borde-izquierdo{border-left: solid 6px #666;}
+.site-wrapper .borde-izquierdo{border-left: solid 6px #01579b;}
 .site-wrapper .borde-izquierdo p{line-height: normal;}
 .site-wrapper .borde-izquierdo a {cursor: pointer; text-decoration: none; color: #666; transition: all 0.2s ease-in-out;}
 .site-wrapper .borde-izquierdo a:hover {text-decoration: underline;}
