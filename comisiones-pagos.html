@@ -13,7 +13,9 @@
       <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
       <link href="css/main.css" rel="stylesheet">
    </head>
-   
+   <style>
+   .grid-options{padding:0;}
+   </style>
    <body>
       <section class="site-wrapper">
          <header></header>
@@ -173,7 +175,7 @@
                            </tbody>
                         </table>
                      </div>
-                     <div class="col-sm-1 text-center" >
+                     <div class="col-sm-1 text-center grid-options" >
                         <button type="button" class="btn btn-blue btn-sm" id="TodosVida"> Vida </button><br/>
                         <button type="button" class="btn btn-blue btn-sm" id="TodosDano"> Daño </button><br/>
                         <button type="button" class="btn btn-blue btn-sm" id="RightTodos">&gt;&gt;</button><br/>
@@ -343,7 +345,7 @@
                   </div>
                     
                   <div class="row">
-                     <div class="table-wrapper col-sm-7">
+                     <div class="table-wrapper col-sm-6">
                         <table class="table simple-data-table table-striped table-bordered" style="width:100%;" id="table5">
                            <thead>
                               <tr>
@@ -433,7 +435,7 @@
                            </tr>
                         </table>
                      </div>
-                    <div class="col-sm-1 text-center" >
+                    <div class="col-sm-1 text-center grid-options" >
                         <button type="button" class="btn btn-blue btn-sm" id="TodosVida"> Vida </button><br/>
                         <button type="button" class="btn btn-blue btn-sm" id="TodosDano"> Daño </button><br/>
                         <button type="button" class="btn btn-blue btn-sm" id="RightTodos">&gt;&gt;</button><br/>
@@ -441,7 +443,7 @@
                         <button type="button" class="btn btn-blue btn-sm" id="RightMove"> &gt; </button><br/>
                         <button type="button" class="btn btn-blue btn-sm" id="LeftMove">  &lt; </button><br/>
                      </div>
-                     <div class="table-wrapper col-sm-4 float-right">
+                     <div class="table-wrapper col-sm-5 float-right">
                         <table class="table simple-data-table table-striped table-bordered" style="width:100%;" id="table6">
                            <thead>
                               <tr>
@@ -479,7 +481,7 @@
                      </div>
                   </div>
                   <div class="row">
-                     <div class="col-sm-2"></div>
+                     <div class="col-sm-1"></div>
                      <div class="table-wrapper col-sm-5">
                         <table class="table simple-data-table table-bordered" style="width:100%;" id="table7">
                            <thead>
@@ -507,25 +509,35 @@
                         </table>
                      </div>
                      <div class="col-sm-1"></div>
-                     <div class="table-wrapper col-sm-4">
+                     <div class="table-wrapper col-sm-5">
                         <div class="float-right">
-                           <table class="table simple-data-table table-bordered" style="width:100%;" id="table8">
+                           <table class="table simple-data-table table-bordered" style="width:100%;" id="table4">
                               <thead>
-                                 <tr>
-                                 	<th>BONO</th>
-                                    <th>IVA</th>
-                                    <th>RET ISR</th>
-                                    <th>RET IVA</th>
-                                    <th>TOTAL A FACTURAR</th>
+                                 <tr style="display:none">
+                                    <th></th>
+                                    <th></th>
                                  </tr>
                               </thead>
                               <tbody>
+                                <tr>
+                                    <td>Comision</td>
+                                    <td>$1245</td>
+                                 </tr>
                                  <tr>
-                                    <td>$5,866,026.12</td>
-                                    <td>$938,564.18</td>
-                                    <td>$586,602.61</td>
-                                    <td>$625,709.45</td>
-                                    <td>$5,592,278.24</td>
+                                    <td>IVA</td>
+                                    <td>$1245</td>
+                                 </tr>
+                                 <tr>
+                                    <td>RET ISR</td>
+                                    <td>$1245</td>
+                                 </tr>
+                                 <tr>
+                                    <td>RET IVA</td>
+                                    <td>$1245</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Total a Facturar</td>
+                                    <td>$1245</td>
                                  </tr>
                               </tbody>
                            </table>
@@ -582,6 +594,7 @@
       <script type="text/javascript" src="js/buttons.print.min.js"></script>
       <script type="text/javascript" src="js/popper.min.js"></script>
       <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	  <script type="text/javascript" src="js/owl.carousel.js"></script>
       <script type="text/javascript" src="js/mdb.min.js"></script>
       <script type="text/javascript" src="js/custom.js"></script>
       <script type="text/javascript">
@@ -670,13 +683,7 @@
          moveRows_tipo(catalogTable,stockTable ,'selected');
          });
          
-         $("#input-b9").fileinput({
-         showPreview: false,
-         showUpload: false,
-         elErrorContainer: '#kartik-file-errors',
-         allowedFileExtensions: ["pdf", "xml"],
-         uploadUrl: '/files/file-upload-single'
-         });
+         
          
          });
          
