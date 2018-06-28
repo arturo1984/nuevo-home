@@ -1,24 +1,4 @@
-/* CSS COTIADORES */
-
-.site-wrapper .gradiente_negro{
-    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    z-index: 9;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: #fff;
-    text-align: center;
-    height: 60%;
-    box-sizing: border-box;
-    padding-right: 0px;
-    padding-left: 0px;
-    width: 100%;
-}
+/* analitica */
 
 .site-wrapper .linea-division {border-bottom: solid 1px #fff;}
 .site-wrapper section.agentes{margin-top: 30px;}
@@ -41,16 +21,10 @@
 
 .site-wrapper #comisiones-tokio .table-striped tbody tr.selected{background-color:pink;}
 
-.h1-responsive, .h2-responsive, .h3-responsive, .h4-responsive, .h5-responsive{color: #01579b;}
-
 .site-wrapper .cinta-blanca{background-color: #fff; font-weight: bold;}
-
 .site-wrapper .cinta-amarilla{background-color: #ffff00; font-weight: bold;}
-
 .site-wrapper .cinta-azul{background-color: #0062d4; color: #fff; font-weight: bold;}
-
 .site-wrapper .cinta-x{background-color: #ff0000; color: #fff; font-weight: bold;}
-
 .site-wrapper .cinta-negra{background-color: #000; color: #fff; font-weight: bold;}
 
 .site-wrapper #chartdiv, .site-wrapper #chartdiv2 {
@@ -60,7 +34,6 @@
 }
 
 .site-wrapper .tab-pane .table-striped tbody tr.selected{background-color:pink;}
-
 .site-wrapper #comisiones-tokio2 .table-striped tbody tr.selected{background-color:pink;}
 
 .site-wrapper .amcharts-pie-slice {
@@ -76,7 +49,6 @@
 }
 
 .site-wrapper .data-table td.number{text-align: right;}
-
 
 @media only screen and (max-width: 760px) {
    
