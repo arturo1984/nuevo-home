@@ -14,11 +14,6 @@
 .site-wrapper .breadcrumb {background-color: inherit;}
 .site-wrapper .card-title.big{font-size: 1.2rem;}
 
-
-
-
-
-
 @media only screen and (max-width: 760px) {
     .site-wrapper .carousel-caption{
         position: absolute;

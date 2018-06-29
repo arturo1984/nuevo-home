@@ -1,11 +1,20 @@
+/* cotizadores */
+
 .site-wrapper {
-  #paso2 .nav-tabs {
-    border-bottom: 1px solid #ddd;
-    > li.active > a {
-      color: #808080;
-      cursor: default;
-      background-color: #fff;
-      border-bottom-color: transparent;
+  #paso2 {
+    .nav {
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+    }
+    .nav-tabs {
+      border-bottom: 1px solid #ddd;
+      > li.active > a {
+        color: #808080;
+        cursor: default;
+        background-color: #fff;
+        border-bottom-color: transparent;
+      }
     }
   }
   .nav-tabs > li.active > a {
@@ -45,11 +54,6 @@
     border-bottom: 1px solid #ddd;
   }
   #paso2 {
-    .nav {
-      padding-left: 0;
-      margin-bottom: 0;
-      list-style: none;
-    }
     #tab-list {
       .close {
         margin-left: 7px;
@@ -146,29 +150,41 @@
     padding-right: 35px;
     padding-left: 0px;
   }
-  #comisiones-tokio .dataTables_filter {
-    display: none;
+  #modal-asociar-users .list-group-item-info {
+    background-color: lightgrey;
+    color: #000;
   }
-}
-
-#comisiones-tokio .dt-buttons, .site-wrapper #comisiones-tokio2 .dataTables_filter, #comisiones-tokio2 .dt-buttons {
-  display: none;
-}
-
-.site-wrapper #comisiones-tokio2 {
-  .table-striped tbody tr.selected {
+  .stepper-horizontal li:hover {
+    background-color: #fff;
+  }
+  .active_2 {
+    text-decoration: underline;
+  }
+  .tipo_persona {
+    padding-top: 40px;
+    float: right;
+  }
+  .data-table td.number {
+    text-align: right;
+  }
+  .table-borderless {
+    margin-top: 40px;
+  }
+  .tab-pane .table-striped tbody tr.selected {
     background-color: pink;
   }
-  .btn.btn-sm {
-    padding: 0.5rem 1.1rem;
+  .stepper li.completed a .circle {
+    background-color: green;
   }
 }
 
-.h1-responsive, .h2-responsive, .h3-responsive, .h4-responsive, .h5-responsive {
-  color: #01579b;
+.grid-options {
+  padding: 0;
 }
 
-.site-wrapper #comisiones-tokio .dataTables_info {
+/* comisiones-pagos2.html */
+
+.site-wrapper #comisiones-tokio .dataTables_filter, #comisiones-tokio .dt-buttons, .site-wrapper #comisiones-tokio .dataTables_info {
   display: none;
 }
 
@@ -187,43 +203,21 @@
       padding: 0.5rem 1.1rem;
     }
   }
-  #modal-asociar-users .list-group-item-info {
-    background-color: lightgrey;
-    color: #000;
+  #comisiones-tokio2 .dataTables_filter {
+    display: none;
   }
-  .stepper-horizontal li:hover {
-    background-color: #fff;
-  }
-  .active_2 {
-    text-decoration: underline;
-  }
-  .tipo_persona {
-    padding-top: 40px;
-    float: right;
-  }
-  label.waves-effect.waves-light {
-    background-color: #A681BA;
-    color: #fff;
-    &.active {
-      background-color: #8A3399;
-      color: #fff;
-      background-color: #8A3399;
-      color: #fff;
-    }
-    background-color: #A681BA;
-    color: #fff;
-  }
-  .data-table td.number {
-    text-align: right;
-  }
-  .table-borderless {
-    margin-top: 40px;
-  }
-  .tab-pane .table-striped tbody tr.selected {
+}
+
+#comisiones-tokio2 .dt-buttons {
+  display: none;
+}
+
+.site-wrapper #comisiones-tokio2 {
+  .table-striped tbody tr.selected {
     background-color: pink;
   }
-  .stepper li.completed a .circle {
-    background-color: green;
+  .btn.btn-sm {
+    padding: 0.5rem 1.1rem;
   }
 }
 
