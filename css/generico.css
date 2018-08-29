@@ -95,6 +95,28 @@
     min-height: 350px;
 }
 
+
+.site-wrapper .ms-hero-img-about-us-1 {
+    background-image: url(../images/nosotros/mexico-nosotros.jpg);
+    background-size: cover;
+    background-position: center center;
+    min-height: 550px;
+}
+
+.site-wrapper .ms-hero-img-about-us-2 {
+    background-image: url(../images/nosotros/cerezos-nosotros.jpg);
+    background-size: cover;
+    background-position: center center;
+    min-height: 550px;
+}
+
+.site-wrapper .ms-hero-img-about-us-3 {
+    background-image: url(../images/nosotros/vision-nosotros.jpg);
+    background-size: cover;
+    background-position: center center;
+    min-height: 550px;
+}
+
 .site-wrapper #form-login{
     position:absolute; 
     background:white; 
