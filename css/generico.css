@@ -26,6 +26,7 @@
 .site-wrapper #modal-asociar-users .list-group{border: 1px solid grey;padding: 10px;}
 .site-wrapper .titulo-xl {font-size: 4.5rem; text-shadow: 2px 2px #000;}
 .site-wrapper .mt-20 {margin-top: 20rem;}
+.site-wrapper .mt-14 {margin-top: 14rem;}
 .site-wrapper .txt-med {font-size: 1.2rem;}
 
 .site-wrapper .color-titulos {color: #005b9b}
@@ -107,15 +108,44 @@
     background-image: url(../images/nosotros/cerezos-nosotros.jpg);
     background-size: cover;
     background-position: center center;
-    min-height: 550px;
+    min-height: 350px;
 }
 
 .site-wrapper .ms-hero-img-about-us-3 {
     background-image: url(../images/nosotros/vision-nosotros.jpg);
     background-size: cover;
     background-position: center center;
-    min-height: 550px;
+    min-height: 350px;
 }
+
+
+.site-wrapper .ms-hero-img-good-1 {
+    background-image: url(../images/nosotros/goodcompany-waves.jpg);
+    background-size: cover;
+    background-position: center center;
+    min-height: 350px;
+}
+
+.site-wrapper .ms-hero-img-good-2 {
+    background-image: url(../images/nosotros/goodcompany-back.jpg);
+    background-size: cover;
+    background-position: center center;
+    min-height: 650px;
+}
+
+
+.site-wrapper .card.card-cascade .view {    
+    min-height: 110px;
+}
+
+.site-wrapper .view .portrait{    
+    height: 200px;
+}
+
+.site-wrapper .card.card-image .panel{
+    min-height: 160px;
+}
+.site-wrapper .view .max-60 {max-width: 60%;}
 
 .site-wrapper #form-login{
     position:absolute; 
