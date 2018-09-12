@@ -221,3 +221,21 @@
     .site-wrapper .modal .modal-fluid .modal-content {width: 50%; margin: auto;}
     
 }
+
+/* TOKIO COLORS */
+
+.site-wrapper .tokio-blue{
+    color: #3470ab;
+}
+
+.site-wrapper .tokio-pink{
+    color: #b50276;
+}
+
+.site-wrapper .tokio-orange{
+    color: #ff7306;
+}
+
+.site-wrapper .tokio-green{
+    color: #377923;
+}
