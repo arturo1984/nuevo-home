@@ -165,7 +165,13 @@ $('#selector_moneda').change(function() {
         $('.' + $(this).val()).show();    
     });
     
-    
-    
+
+/* counter sección colaboradores */
+$('.counter').counterUp({
+    delay: 10,
+    time: 1000
+});
+
+
   
 });

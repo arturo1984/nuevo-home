@@ -133,6 +133,20 @@
     min-height: 650px;
 }
 
+.site-wrapper .ms-hero-img-map {
+    background-image: url(../images/nosotros/mapa.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.site-wrapper .ms-hero-img-colaboradores {
+    background-image: url(../images/nosotros/people.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+}
 
 .site-wrapper .card.card-cascade .view {    
     min-height: 110px;
@@ -238,4 +252,23 @@
 
 .site-wrapper .tokio-green{
     color: #377923;
+}
+
+    /* Tokio Counter Responsive Text*/
+
+@media only screen and (min-width: 1100px){
+    .site-wrapper .responsive-counter-text {
+        font-size: 20rem;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .site-wrapper .responsive-counter-text {
+        font-size: 6rem;
+    }
+}
+
+@media (min-width: 992px){
+    .site-wrapper .responsive-counter-text {
+        font-size: 12rem;
+    }
 }
