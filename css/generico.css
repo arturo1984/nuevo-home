@@ -74,7 +74,7 @@
     border-radius: 5px;
 }
 
-
+/*Sección Home*/
 .site-wrapper .ms-hero-img-home1 {
     background-image: url(../images/home/home1.jpg);
     background-size: cover;
@@ -95,8 +95,9 @@
     background-position: center center;
     min-height: 350px;
 }
+/*Sección Home*/
 
-
+/*Sección Acerca de Tokio Marine*/
 .site-wrapper .ms-hero-img-about-us-1 {
     background-image: url(../images/nosotros/mexico-nosotros.jpg);
     background-size: cover;
@@ -117,8 +118,9 @@
     background-position: center center;
     min-height: 350px;
 }
+/*Sección Acerca de Tokio Marine*/
 
-
+/*Sección Good Company*/
 .site-wrapper .ms-hero-img-good-1 {
     background-image: url(../images/nosotros/goodcompany-waves.jpg);
     background-size: cover;
@@ -132,7 +134,9 @@
     background-position: center center;
     min-height: 650px;
 }
+/*Sección Good Company*/
 
+/*Sección Empresas del Grupo*/
 .site-wrapper .ms-hero-img-map {
     background-image: url(../images/nosotros/mapa.jpg);
     background-position: center;
@@ -147,7 +151,28 @@
     background-size: cover;
     min-height: 300px;
 }
+/*Sección Empresas del Grupo*/
 
+/*Sección Presencia en México*/
+.site-wrapper .ms-hero-img-presencia {
+    background-image: url(../images/mapas/presencia-mexico.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+}
+
+.site-wrapper .ms-hero-img-mexico {
+    background-image: url(../images/mapas/mapa-mexico.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 400px;
+}
+/*Sección Presencia en México*/
+
+
+/*Tarjetas Mision, Vision, Valores*/
 .site-wrapper .card.card-cascade .view {    
     min-height: 110px;
 }
@@ -160,6 +185,9 @@
     min-height: 160px;
 }
 .site-wrapper .view .max-60 {max-width: 60%;}
+/*Tarjetas Mision, Vision, Valores*/
+
+.site-wrapper .btn-floating .m85 {margin-left: 85%;}
 
 .site-wrapper #form-login{
     position:absolute; 
