@@ -11,20 +11,26 @@
         <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
         <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
 		<link href="css/owl/owl.carousel.min.css" rel="stylesheet">
-        <link href="css/main.css" rel="stylesheet">		
+        
+        <link href="css/main.css" rel="stylesheet">
+        <link href="css/cotizadores.css" rel="stylesheet">
+        <link href="css/generico.css" rel="stylesheet">        
     </head>
 
 <body>
 <section class="site-wrapper">
         <header></header>
 			
-        <section id="landing-agentes">
-			<div class="section-heading">
-                    <div class="container-fluid">
-                        <h4 class="title text-left">Cotizador Manual</h4>
-                    </div>				
+        <section>
+            
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-12 mt-4">
+                        <p class="font-weight-bold h1-responsive">Cotizador Manual</p>
+                    </div>
                 </div>
-				
+                
                 <!--formulario -->
 				<div class="container-fluid" id="paso1" style="padding:0 70px">
 					<form>
@@ -34,7 +40,7 @@
                             
                             <div class="col-sm-6">
                                 <div class="md-form form-group">
-                                    <select name="estatus" class="mdb-select">
+                                    <select name="estatus" id="estatus" class="mdb-select">
                                         <option value="1">Seguro Nuevo</option>
                                         <option value="2">Renovación</option>
                                         <option value="3">Endoso</option>
@@ -49,7 +55,7 @@
                             
                             <div class="col-sm-6">
                                 <div class="md-form form-group">
-                                    <input type="text" name="folioTMX" class="form-control">
+                                    <input type="text" name="folioTMX" id="folioTMX" class="form-control" oninput="numberOnly(this.id);" maxlength="14">
 								    <label for="folioTMX" >Póliza anterior</label>
                                 </div>
                             </div>
@@ -66,33 +72,12 @@
                             
                             <div class="col-sm-6">
                                 <div class="md-form form-group">
-                                    <input type="text" name="folioTMX" class="form-control">
-								    <label for="folioTMX" >RFC</label>
+                                    <input type="text" name="folioRFC" id="folioRFC" class="form-control">
+								    <label for="folioRFC" >RFC</label>
                                 </div>
                             </div>                       
                             
 						</div>
-                        
-                        
-                        
-                        <!--<div class="row" id="">
-                            
-                            <div class="col-sm-12">
-                                <div class="md-form form-group">
-                                    <label for="modoCotizacion" class="active">Desde</label>
-                                    <div class="row">
-                                        <div class="col">
-                                            <input placeholder="Desde" type="text" id="" class="form-control datepicker">
-                                        </div>
-                                        <div class="col">
-                                            <input placeholder="Hasta" type="text" id="" class="form-control datepicker">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-						</div>-->
-                        
                         
                         
                         
@@ -101,7 +86,7 @@
                             <div class="col-sm-6">
                                 <div class="md-form form-group">
                                     <select name="estatus" class="mdb-select">
-                                        <option value="1">MXN</option>
+                                        <option value="1">MN</option>
                                         <option value="2">Todas</option>
                                     </select>
                                     <label for="estatus">Moneda</label>
@@ -192,7 +177,7 @@
                     
 				</div>	<!-- paso 1-->
 				
-                
+            </div>
 		</section>
 		
 		<section id="box-form-login"></section>		

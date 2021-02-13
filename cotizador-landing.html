@@ -12,45 +12,13 @@
         <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
         <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
         <link href="css/owl/owl.carousel.min.css" rel="stylesheet">
+        
         <link href="css/main.css" rel="stylesheet">
+        <link href="css/cotizadores.css" rel="stylesheet">
+        <link href="css/generico.css" rel="stylesheet">
     </head>
 
     
-    <style>
-        .icono-sec-not{
-            max-width: 40px;
-            margin-right: 10px;
-        }
-        
-        .site-wrapper .footer-title{
-            color: #01579b;
-        }
-        
-        .ident_verde{
-            color: #459929 !important;
-        }
-        .ident_naranja{
-            color: #cc7219 !important;
-        }
-        .ident_ambar{
-            color: #cfa116 !important;
-        }
-        
-        @media only screen and (max-width: 760px) {
-            .site-wrapper .carousel-caption{
-                    position: absolute;
-                    top: 20%;
-                    right: 0;
-                    padding: 30px 5px 5px;
-                    min-width: 230px;
-                    opacity: .8;
-                }
-            .site-wrapper .carousel-caption h3{
-                    font-size: .8rem;
-                } 
-        }
-	
-    </style>
     
     <body>
         <section class="site-wrapper">
@@ -134,20 +102,7 @@
 		$.ajax({url: "header-publico.html", context: document.body,success: function(response) {$("header").html(response);}});
 		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
         new WOW().init();
-            
-        $('.carousel').carousel({
-            interval: 1000000,
-            pause:"true",
-        });
-            
-            
-        $('.owl-carousel').owlCarousel({
-            loop:false,
-            center: true,
-            margin:0,
-            nav:true,
-            autoWidth:true,            
-        })
+        
   
 		</script>
     </body>

@@ -12,7 +12,10 @@
         <link href="css/material-design/mdb.css" rel="stylesheet">
         <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
         <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+        
         <link href="css/main.css" rel="stylesheet">
+        <link href="css/cotizadores.css" rel="stylesheet">
+        <link href="css/generico.css" rel="stylesheet">
     </head>
 
     <body>
@@ -20,21 +23,25 @@
             <header></header>
             <section>
                 <div class="container">
-                    <div class="section-heading">
-                        <h1 class="title text-left">Cobranza de Pólizas</h1>
+                    
+                    <div class="row">
+                        <div class="col-md-12">					
+                            <p class="font-weight-bold h1-responsive center-block mt-4 mb-4 animated zoomInDown animation-delay-5">Cobranza de Pólizas</p>
+                        </div>
                     </div>
+                   
                     <div class="form-wrapper">
                         <form id="search-form" class="mb-4">
                             <div class="row">
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="md-form form-group">
-                                        <input type="text" name="poliza" class="form-control">
+                                        <input type="number" name="poliza" id="poliza" class="form-control" maxlength="14">
                                         <label for="poliza" >Póliza</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="md-form form-group">
-                                        <input type="text" name="endoso" class="form-control">
+                                        <input type="number" name="endoso" id="endoso" class="form-control">
                                         <label for="endoso" >Endoso</label>
                                     </div>
                                 </div>
@@ -89,7 +96,7 @@
                                 </div>
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="md-form form-group">
-                                        <input type="text" name="asegurado" class="form-control">
+                                        <input type="text" name="asegurado" id="asegurado" class="form-control">
                                         <label for="asegurado" >Asegurado</label>
                                     </div>
                                 </div>
@@ -111,7 +118,7 @@
                                         <select name="moneda" class="mdb-select">
                                             <option value="1">Todas</option>
                                             <option value="2">USD</option>
-                                            <option value="3">MXN</option>
+                                            <option value="3">MN</option>
                                         </select>
                                         <label for="moneda" >Moneda</label>
                                     </div>
@@ -150,28 +157,28 @@
                         <table class="table data-table table-striped table-bordered" style="width:100%;">
                             <thead>
                                 <tr>
-                                    <th>Póliza</i></th>
-                                    <th>Endoso</i></th>
-                                    <th>Factura</i></th>
-                                    <th>Tipo Mov</i></th>
-                                    <th>Producto</i></th>
-                                    <th>Comisión</i></th>
-                                    <th>Coaseguro</i></th>                                       
-                                    <th>Agente</i></th>
-                                    <th>Contratante</i></th>
-                                    <th>Asegurado</i></th>                                
-                                    <th>Inicio Vigencia</i></th>
-                                    <th>Fin Vigencia</i></th>
-                                    <th>Moneda</i></th>                                    
-                                    <th>Forma Pago</i></th>
-                                    <th>No. Pago</i></th>
-                                    <th>Prima neta</i></th>
-                                    <th>Derechos</i></th>
-                                    <th>Recargos</i></th>
-                                    <th>IVA</i></th>
-                                    <th>Prima total</i></th>
-                                    <th>Fecha Cancelacion</i></th>
-                                    <th>Motivo Cancelacion</i></th>
+                                    <th>Póliza</th>
+                                    <th>Endoso</th>
+                                    <th>Factura</th>
+                                    <th>Tipo Mov</th>
+                                    <th>Producto</th>
+                                    <th>Comisión</th>
+                                    <th>Coaseguro</th>                                       
+                                    <th>Agente</th>
+                                    <th>Contratante</th>
+                                    <th>Asegurado</th>                                
+                                    <th>Inicio Vigencia</th>
+                                    <th>Fin Vigencia</th>
+                                    <th>Moneda</th>                                    
+                                    <th>Forma Pago</th>
+                                    <th>No. Pago</th>
+                                    <th>Prima neta</th>
+                                    <th>Derechos</th>
+                                    <th>Recargos</th>
+                                    <th>IVA</th>
+                                    <th>Prima total</th>
+                                    <th>Fecha Cancelacion</th>
+                                    <th>Motivo Cancelacion</th>
                                     <th class="all" data-orderable="false"></th>
                                 </tr>
                             </thead>

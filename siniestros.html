@@ -12,7 +12,10 @@
         <link href="css/material-design/mdb.css" rel="stylesheet">
         <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
         <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+        
         <link href="css/main.css" rel="stylesheet">
+        <link href="css/cotizadores.css" rel="stylesheet">
+        <link href="css/generico.css" rel="stylesheet">
     </head>
 
     <body>
@@ -20,27 +23,31 @@
             <header></header>
             <section>
                 <div class="container">
-                    <div class="section-heading">
-                        <h1 class="title text-left">Consulta de Siniestros</h1>
+                    
+                    <div class="row">
+                        <div class="col-12 mt-4">
+                            <p class="font-weight-bold h1-responsive">Consulta de Siniestros</p>
+                        </div>
                     </div>
+                    
                     <div class="form-wrapper">
                         <form id="search-form" class="mb-4">
                             <div class="row">
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="md-form form-group">
-                                        <input type="text" name="poliza" class="form-control">
+                                        <input type="number" id="poliza" name="poliza" class="form-control" maxlength="14">
                                         <label for="poliza" >Póliza</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="md-form form-group">
-                                        <input type="text" name="endoso" class="form-control">
-                                        <label for="endoso" >Siniestro</label>
+                                        <input type="number" id="siniestro" name="endoso" class="form-control">
+                                        <label for="siniestro" >Siniestro</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-lg-6">
                                     <div class="md-form form-group">
-                                        <input type="text" name="asegurado" class="form-control">
+                                        <input type="text" id="asegurado" name="asegurado" class="form-control">
                                         <label for="asegurado" >Asegurado</label>
                                     </div>
                                 </div>
@@ -82,21 +89,21 @@
                         <table class="table data-table table-striped table-bordered" style="width:100%;">
                             <thead>
                                 <tr>
-                                    <th>Póliza</i></th>
-                                    <th>Siniestro</i></th>
-                                    <th>Asegurado</i></th>
-                                    <th>Transacción</i></th>
-                                    <th>Fecha Siniestro</i></th>
-                                    <th>Fecha Reclamo</i></th>
-                                    <th>Estado</i></th>
-                                    <th>Bien Dañado</i></th>                                       
-                                    <th>Causa Siniestro</i></th>
-                                    <th>Ajustador</i></th>
-                                    <th>Fecha Pago</i></th>                                
-                                    <th>Teléfono Ajustador</i></th>
-                                    <th>Moneda</i></th>
-                                    <th>Monto Total</i></th>                                    
-                                    <th>Estatus</i></th>
+                                    <th>Póliza</th>
+                                    <th>Siniestro</th>
+                                    <th>Asegurado</th>
+                                    <th>Transacción</th>
+                                    <th>Fecha Siniestro</th>
+                                    <th>Fecha Reclamo</th>
+                                    <th>Estado</th>
+                                    <th>Bien Dañado</th>                                       
+                                    <th>Causa Siniestro</th>
+                                    <th>Ajustador</th>
+                                    <th>Fecha Pago</th>                                
+                                    <th>Teléfono Ajustador</th>
+                                    <th>Moneda</th>
+                                    <th>Monto Total</th>                                    
+                                    <th>Estatus</th>
                                     <th class="all" data-orderable="false"></th>
                                 </tr>
                             </thead>
@@ -285,20 +292,20 @@
                         <table class="table data-table table-striped table-bordered" style="width:100%;">
                             <thead>
                                 <tr>
-                                    <th>Póliza</i></th>
-                                    <th>Siniestro</i></th>
-                                    <th>Asegurado</i></th>
-                                    <th>Fecha Siniestro</i></th>
-                                    <th>Fecha Reclamo</i></th>
-                                    <th>Estado</i></th>
-                                    <th>Bien Dañado</i></th>                                       
-                                    <th>Causa Siniestro</i></th>
-                                    <th>Ajustador</i></th>
-                                    <th>Fecha Pago</i></th>                                
-                                    <th>Teléfono Ajustador</i></th>
-                                    <th>Moneda</i></th>
-                                    <th>Monto Total</i></th>                                    
-                                    <th>Estatus</i></th>
+                                    <th>Póliza</th>
+                                    <th>Siniestro</th>
+                                    <th>Asegurado</th>
+                                    <th>Fecha Siniestro</th>
+                                    <th>Fecha Reclamo</th>
+                                    <th>Estado</th>
+                                    <th>Bien Dañado</th>                                       
+                                    <th>Causa Siniestro</th>
+                                    <th>Ajustador</th>
+                                    <th>Fecha Pago</th>                                
+                                    <th>Teléfono Ajustador</th>
+                                    <th>Moneda</th>
+                                    <th>Monto Total</th>                                    
+                                    <th>Estatus</th>
                                 </tr>
                             </thead>
                             <tbody>

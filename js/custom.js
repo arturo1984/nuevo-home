@@ -2,21 +2,22 @@ $(document).ready(function(){
 	$("footer").load("footer.html");
     /*Initialize all select components*/
     $('.mdb-select').material_select();
-    /*Initialize all datepicker components*/
-    /*
-    $('.datepicker').pickadate({
-        monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-        monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-        weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
-        weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
-    });*/
+    /*Initialize all datepicker components*/   
 
     var myDate = new Date();
     var res = myDate.getFullYear() + "," + myDate.getMonth() + "," + myDate.getDate();
     $('.datepicker').pickadate({
-      format : 'yyyy/mm/dd',
-      formatSubmit : 'yyyy/mm/dd',
-      min : res
+        format : 'yyyy/mm/dd',
+        formatSubmit : 'yyyy/mm/dd',
+        monthsFull: [ 'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre' ],
+        monthsShort: [ 'ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic' ],
+        weekdaysFull: [ 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado' ],
+        weekdaysShort: [ 'dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb' ],
+        today: 'hoy',
+        clear: 'borrar',
+        close: 'cerrar',
+        firstDay: 1,    
+        min : res
     });
 
 
@@ -116,6 +117,27 @@ $(document).ready(function(){
 		$("#form-login-pass").hide();
 	});
     
+    /* convertir en slider */
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        dots:false,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 3,
+            },
+            1000: {
+                items: 3,
+                margin: 20,
+            }
+        }
+    });
+    
     
   /* para igualar las alturas de las cajas de texto de las cards */
   var altura_arr = [];
@@ -137,7 +159,19 @@ if (ventana_ancho >= 1100) {
     /*$('#slide-out').hide();*/
 }
     
+/* seleccion de tipo de moneda */
+$('#selector_moneda').change(function() {
+        $('.campos_moneda').hide();
+        $('.' + $(this).val()).show();    
+    });
     
-    
+
+/* counter sección colaboradores */
+$('.counter').counterUp({
+    delay: 10,
+    time: 1000
+});
+
+
   
 });

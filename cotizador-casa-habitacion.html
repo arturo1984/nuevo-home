@@ -12,24 +12,26 @@
         <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
         <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
 		<link href="css/owl/owl.carousel.min.css" rel="stylesheet">
-        <link href="css/main.css" rel="stylesheet">		
+        
+        <link href="css/main.css" rel="stylesheet">
+        <link href="css/cotizadores.css" rel="stylesheet">
+        <link href="css/generico.css" rel="stylesheet">
     </head>
 <body>
-<style>
-.site-wrapper .tipo_persona{ padding-top:40px; float:right;}
-.site-wrapper .active_2{text-decoration: underline};
-.site-wrapper .stepper li.completed a .circle {background-color:green!important;}
-.site-wrapper .stepper-horizontal li:hover {background-color:#fff!important;}
-</style>
+    
+    
 <section class="site-wrapper">
 	<header></header>			
-	<section class="landing-agentes">
-		<div class="section-heading">
-			<div class="container-fluid">
-				<h4 class="title text-left">Cotizador Paquete Familiar</h4>
-			</div>				
-		</div>
-							
+	<section>
+        
+        <div class="container">
+        
+            <div class="row">
+                <div class="col-12 mt-4">
+                    <p class="font-weight-bold h1-responsive">Cotizador Paquete Familiar</p>
+                </div>
+            </div>
+           
 		<div class="container-fluid">					
 			<div class="row">
 				<div class="col-md-12">
@@ -96,8 +98,8 @@
 					</div>
 					<div class="col-md-3">
 						<div class="md-form form-group">
-							<input type="text" name="ce_codigocliente" id="ce_codigocliente" value="111" class="form-control">
-							<label for="ce_codigocliente">Nombre Completo:</label>
+							<input type="text" name="ce_codigocliente" id="ce_codigocliente" value="" class="form-control">
+							<label for="ce_codigocliente">Código</label>
 						</div>
 					</div>							   
 				</div>
@@ -124,54 +126,292 @@
 								</div>
 							</div>
 						</div>
-						<div class="row tip_moral" id="moralRow">
-							<div class="col-md-3">
-								<div class="md-form">
-									<input type="text" id="cn_rfc" name="cn_rfc" class="form-control" maxlength="13" pattern="^[a-zA-Z0-9]{4,10}$">
-									<label for="cn_rfc" >RFC del Contratante:</label>
-								</div>
+						<div class="tip_moral" id="moralRow">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="md-form">
+										<input type="text" id="cn_rfc" name="cn_rfc" class="form-control" maxlength="13" pattern="^[a-zA-Z0-9]{4,10}$">
+										<label for="cn_rfc" >RFC del Contratante:</label>
+									</div>
+								</div>	
+								<div class="col-md-6">
+									<div class="md-form">
+										<input type="text" id="cn_nombrecontratante" name="cn_nombrecontratante" class="form-control llenaNomMor">
+										<label for="cn_nombrecontratante" >Nombre del Contratante:</label>
+									</div>
+								</div>	
+								<div class="col-md-3">
+									<div class="md-form form-group">
+											<select name="cn_denominacion" id="cn_denominacion" class="mdb-select form-control-sel llenaNomMorSel">
+												<option value="S.A. de C.V.">S.A. de C.V.</option>
+												<option value="Otra">Otra</option>
+											</select>
+											<label for="cn_denominacion" >Denominacion:</label>
+									</div>
+								</div> 
+							</div>
+							<div class="row">
+								<div class="col-sm-3">
+									<div class="md-form form-group">
+										<div class="row">
+											<div class="col">
+												<input placeholder="Fecha de Constitucion" type="date" id="dc_dateConstitut" class="form-control datepicker">
+											</div>											
+										</div>
+									</div>
+								</div>								
 							</div>	
-							<div class="col-md-6">
-								<div class="md-form">
-									<input type="text" id="cn_nombrecontratante" name="cn_nombrecontratante" class="form-control llenaNomMor">
-									<label for="cn_nombrecontratante" >Nombre del Contratante:</label>
+							<div class="row">
+								<div class="col-md-2">
+									<div class="md-form form-group">
+										<input type="text" name="dr_cp_const" id="dr_cp_const" oninput="numberOnly(this.id);" maxlength="5" class="form-control">
+										<label for="dr_cp_const" >Código Postal</label>
+									</div>
 								</div>
-							</div>	
-							<div class="col-md-3">
-								<div class="md-form form-group">
-										<select name="cn_denominacion" id="cn_denominacion" class="mdb-select form-control-sel llenaNomMorSel">
-											<option value="S.A. de C.V.">S.A. de C.V.</option>
-											<option value="Otra">Otra</option>
-										</select>
-										<label for="cn_denominacion" >Denominacion:</label>
+								<div class="col-md-6">
+									<div class="md-form form-group">
+										<input type="text" name="dr_calle_const" id="dr_calle_const" class="form-control">
+										<label for="dr_calle_const" >Calle</label>
+									</div>
 								</div>
-							</div> 
+								<div class="col-md-2">
+									<div class="md-form form-group">
+										<input type="text" name="dr_numero_ext_const" id="dr_numero_ext_const" class="form-control">
+										<label for="dr_numero_ext_const" >Número Ext:</label>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="md-form form-group">
+										<input type="text" name="dr_numero_int_const" id="dr_numero_int_const" class="form-control">
+										<label for="dr_numero_int_const" >Número Int:</label>
+									</div>
+								</div>							
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="md-form form-group">
+											<select name="dr_colonia_const" id="dr_colonia_const" class="mdb-select form-control-sel">
+												<option value="1">Colonia 1</option>
+												<option value="2">Colonia 2</option>
+												<option value="3">Colonia 3</option>
+											</select>
+											<label for="dr_colonia_const" >Colonia</label>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="md-form form-group">
+										<input type="text" name="dr_municipio_const" id="dr_municipio_const" class="form-control">
+										<label for="dr_municipio_const" >Delagación/municipio:</label>
+									</div>
+								</div>	
+								<div class="col-md-3">
+									<div class="md-form form-group">
+										<input type="text" name="dr_estado_const" id="dr_estado_const" class="form-control">
+										<label for="dr_estado_const" >Estado:</label>
+									</div>
+								</div>	
+								<div class="col-md-3">
+									<div class="md-form form-group">
+										<input type="text" name="dr_pais_const" id="dr_pais_const" class="form-control">
+										<label for="dr_pais_const" >País:</label>
+									</div>
+								</div>	
+							</div>
+							<div class="row">
+								<div class="col-md-8">
+									<div class="md-form form-group">
+										<input type="text" name="dr_nombre_apoderado" id="dr_nombre_apoderado" class="form-control">
+										<label for="dr_nombre_apoderado" >Nombre del apoderado:</label>
+									</div>
+								</div>	
+								<div class="col-md-4">
+									<div class="md-form form-group">
+										<input type="text" name="dr_identi_fiscal" id="dr_identi_fiscal" class="form-control">
+										<label for="dr_identi_fiscal" >No de Identificación Fiscal (extranjeros):</label>
+									</div>
+								</div>								
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="md-form form-group">
+										<input type="text" name="dr_pais_nacim" id="dr_pais_nacim" class="form-control">
+										<label for="dr_pais_nacim" >País de Nacimiento:</label>
+									</div>
+								</div>	
+								<div class="col-md-6">
+									<div class="md-form form-group">
+										<input type="text" name="dr_nacionalidad" id="dr_nacionalidad" class="form-control">
+										<label for="dr_nacionalidad" >Nacionalidad:</label>
+									</div>
+								</div>								
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="md-form form-group">
+										<input type="text" name="dr_telf_cel" id="dr_telf_cel" class="form-control">
+										<label for="dr_telf_cel" >Teléfono / celular:</label>
+									</div>
+								</div>	
+								<div class="col-md-6">
+									<div class="form-inline form-right" style="margin-top:30px">
+										<span><strong>Reside en México:</strong></span>
+										<div class="form-check">
+											<input class="form-check-input form-control" name="group_2" type="radio" id="dc_reside_si" value="0" checked="checked">
+											<label class="form-check-label" for="dc_reside_si">Sí</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input form-control" name="group_2" type="radio" id="dc_reside_no" value="1">
+											<label class="form-check-label" for="dc_reside_no">No</label>
+										</div>
+									</div>
+								</div>								
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="md-form form-group">
+										<input type="text" name="dr_serie_cert" id="dr_serie_cert" class="form-control">
+										<label for="dr_serie_cert" >No Serie Certificado Digital FEA*:</label>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="md-form form-group">
+										<input type="text" name="dr_folio_mercant" id="dr_folio_mercant" class="form-control">
+										<label for="dr_folio_mercant" >No Folio Mercantil*:</label>
+									</div>
+								</div>	
+								<div class="col-md-4">
+									<div class="md-form form-group">
+										<input type="text" name="dr_email_opc" id="dr_email_opc" class="form-control">
+										<label for="dr_email_opc" >Email*:</label>
+									</div>
+								</div>	
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<span class="text-md-left">* Datos opcionales</span>
+								</div>
+							</div>							
 						</div>	
-						<div class="row tip_fisica" id="fisicaRow" style="display:none">
-							<div class="col-md-3">
-								<div class="md-form">
-									<input type="text" id="cn_rfc_2" name="cn_rfc_2" class="form-control">
-									<label for="cn_rfc_2" >RFC del Contratante:</label>
+						
+						<div class="tip_fisica" id="fisicaRow" style="display:none">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="md-form">
+										<input type="text" id="cn_rfc_2" name="cn_rfc_2" class="form-control">
+										<label for="cn_rfc_2" >RFC del Contratante:</label>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="md-form">
+										<input type="text"  id="cn_fispaterno" name="cn_fispaterno" class="form-control llenaNomFis">
+										<label for="cn_fispaterno" >Apellido Paterno:</label>
+									</div>
+								</div>									
+								<div class="col-md-3">
+									<div class="md-form">
+										<input type="text"  id="cn_fismaterno" name="cn_fismaterno" class="form-control llenaNomFis">
+										<label for="cn_fismaterno" >Apellido Materno:</label>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="md-form">
+										<input type="text"  id="cn_fisnombre" name="cn_fisnombre" class="form-control llenaNomFis">
+										<label for="cn_fisnombre" >Nombre(s):</label>
+									</div>
 								</div>
 							</div>
-							<div class="col-md-3">
-								<div class="md-form">
-									<input type="text"  id="cn_fispaterno" name="cn_fispaterno" class="form-control llenaNomFis">
-									<label for="cn_fispaterno" >Apellido Paterno:</label>
-								</div>
-							</div>									
-							<div class="col-md-3">
-								<div class="md-form">
-									<input type="text"  id="cn_fismaterno" name="cn_fismaterno" class="form-control llenaNomFis">
-									<label for="cn_fismaterno" >Apellido Materno:</label>
-								</div>
+							<div class="row">
+								<div class="col-sm-3">
+									<div class="md-form form-group">
+										<div class="row">
+											<div class="col">
+												<input placeholder="Fecha de Nacimiento" type="date" id="dc_date_nacimiento" class="form-control datepicker">
+											</div>											
+										</div>
+									</div>
+								</div>								
 							</div>
-							<div class="col-md-3">
-								<div class="md-form">
-									<input type="text"  id="cn_fisnombre" name="cn_fisnombre" class="form-control llenaNomFis">
-									<label for="cn_fisnombre" >Nombre(s):</label>
+							<div class="row">
+								<div class="col-md-2">
+									<div class="md-form form-group">
+										<input type="text" name="dr_cp_pf" id="dr_cp_pf" oninput="numberOnly(this.id);" maxlength="5" class="form-control">
+										<label for="dr_cp_pf" >Código Postal</label>
+									</div>
 								</div>
+								<div class="col-md-6">
+									<div class="md-form form-group">
+										<input type="text" name="dr_calle_pf" id="dr_calle_pf" class="form-control">
+										<label for="dr_calle_pf" >Calle</label>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="md-form form-group">
+										<input type="text" name="dr_numero_ext_pf" id="dr_numero_ext_pf" class="form-control">
+										<label for="dr_numero_ext_pf" >Número Ext:</label>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="md-form form-group">
+										<input type="text" name="dr_numero_int_pf" id="dr_numero_int_pf" class="form-control">
+										<label for="dr_numero_int_pf" >Número Int:</label>
+									</div>
+								</div>							
 							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<div class="md-form form-group">
+											<select name="dr_colonia_pf" id="dr_colonia_pf" class="mdb-select form-control-sel">
+												<option value="1">Colonia 1</option>
+												<option value="2">Colonia 2</option>
+												<option value="3">Colonia 3</option>
+											</select>
+											<label for="dr_colonia_pf" >Colonia</label>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="md-form form-group">
+										<input type="text" name="dr_municipio_pf" id="dr_municipio_pf" class="form-control">
+										<label for="dr_municipio_pf" >Delagación/municipio:</label>
+									</div>
+								</div>	
+								<div class="col-md-3">
+									<div class="md-form form-group">
+										<input type="text" name="dr_estado_pf" id="dr_estado_pf" class="form-control">
+										<label for="dr_estado_pf" >Estado:</label>
+									</div>
+								</div>	
+								<div class="col-md-3">
+									<div class="md-form form-group">
+										<input type="text" name="dr_pais_pf" id="dr_pais_pf" class="form-control">
+										<label for="dr_pais_pf" >País:</label>
+									</div>
+								</div>	
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="md-form form-group">
+										<input type="text" name="dr_tipo_ident" id="dr_tipo_ident" class="form-control">
+										<label for="dr_tipo_ident" >Tipo de identificación:</label>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="md-form form-group">
+										<input type="text" name="dr_curp" id="dr_curp" class="form-control">
+										<label for="dr_curp" >CURP*:</label>
+									</div>
+								</div>	
+								<div class="col-md-4">
+									<div class="md-form form-group">
+										<input type="text" name="dr_email_pf" id="dr_email_pf" class="form-control">
+										<label for="dr_email_pf" >Email*:</label>
+									</div>
+								</div>	
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<span class="text-md-left">* Datos opcionales</span>
+								</div>
+							</div>							
 						</div>
 					</div>   
 				</div>
@@ -209,7 +449,7 @@
 							<div class="md-form form-group">
 								<select name="dc_moneda" id="dc_moneda" class="mdb-select form-control-sel">
 									<option value="1">USD</option>
-									<option value="2">MXN</option>
+									<option value="2">MN</option>
 									<option value="3">EUR</option>
 								</select>
 								<label for="dc_moneda" >Moneda</label>
@@ -577,23 +817,50 @@
 				</div>
 			</div>
 
-
-
-
-
 			
 			<div class="row" style="padding:0 70px">
 				<div class="col-sm-12">
 				    <button type="button" class="btn btn-pink waves-effect waves-light float-right">Pendientes Tokio Marine</button>
 					<button type="button" class="btn btn-pink waves-effect waves-light float-right">Pendientes del Agente</button>
-					<button type="button" class="btn btn-pink waves-effect waves-light float-right">Solicitar Emisión</button>
+					<button type="button" class="btn btn-pink waves-effect waves-light float-right" data-toggle="modal" data-target="#exampleModal">Solicitar Emisión</button>
 					<button type="button" class="btn btn-pink waves-effect waves-light float-right">Generar Slip</button>
 					<button type="button" class="btn btn-blue waves-effect waves-light float-right">Regresar</button>											
 				</div>
 			</div>
 			
-		</div>	
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				 <div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+					   <div class="modal-header">
+						  <h5 class="modal-title" id="exampleModalLabel">Condiciones:</h5>
+						  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						  <span aria-hidden="true">&times;</span>
+						  </button>
+					   </div>
+					   <div class="modal-body">
+							<div class="row">
+								<div class="form-check col-sm-12"><span>Declaro que se verificó la información asentada en este sitio web y corresponde a los datos y/o documentos entregados por el Cliente.  Asimismo, declaro que los datos y/o documentos fueron cotejados con su original, mismos que tuve a la vista. Todo cambio en los datos del Cliente los informaré a la Compañía Aseguradora cuando tenga conocimiento, para la actualización de su expediente.<br/><br/><span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-check col-sm-12">
+									<input type="checkbox" class="form-check-input" id="checkbox80">
+									<label for="checkbox80" class="form-check-label">He leído las condiciones</label>
+														
+								</div>
+						    </div>
+					   </div>
+					   <div class="modal-footer">
+						  <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Emitir</button>
+					   </div>
+					</div>
+				 </div>
+		    </div>
 			
+			
+		</div>
+            
+        </div>			
 	</section>
 	
 	<section id="box-form-login"></section>		
@@ -609,6 +876,7 @@
 <script type="text/javascript" src="js/responsive.bootstrap4.min.js"></script>
 <script type="text/javascript" src="js/popper.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/owl.carousel.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
 <script type="text/javascript" src="js/mdb.min.js"></script>	
 <script type="text/javascript">

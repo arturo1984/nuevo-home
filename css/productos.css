@@ -1,0 +1,31 @@
+/* productos */
+
+.site-wrapper .borde-izquierdo{border-left: solid 6px #01579b;}
+.site-wrapper .borde-izquierdo p{line-height: normal;}
+.site-wrapper .borde-izquierdo a {cursor: pointer; text-decoration: none; color: #666; transition: all 0.2s ease-in-out;}
+.site-wrapper .borde-izquierdo a:hover {text-decoration: underline;}
+.site-wrapper .carousel-caption {left: inherit; right: 5%;}
+.site-wrapper .cuadros-title{color: #01579b ; font-weight: 400 ;}
+.site-wrapper .active_2{text-decoration: underline}
+.site-wrapper .far.sidebar-icon, .fas.fa-comments{font-size: 1.5rem; cursor:pointer;}
+.site-wrapper .bt_naranja{background-color: rgb(255, 153, 0);}
+.site-wrapper .bt_verde{background-color: rgb(153, 204, 0);}
+.site-wrapper .bt_azul{background-color: #008ad3;}
+.site-wrapper .breadcrumb {background-color: inherit;}
+.site-wrapper .card-title.big{font-size: 1.2rem;}
+
+@media only screen and (max-width: 760px) {
+    .site-wrapper .carousel-caption{
+        position: absolute;
+        top: 20%;
+        right: 0;
+        padding: 30px 5px 5px;
+        min-width: 230px;
+        opacity: .8;
+    }
+    
+    .site-wrapper .carousel-caption h3{font-size: .8rem;}
+    
+    
+    
+}

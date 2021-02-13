@@ -12,25 +12,26 @@
         <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
         <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
 		<link href="css/owl/owl.carousel.min.css" rel="stylesheet">
-        <link href="css/main.css" rel="stylesheet">		
+        
+        <link href="css/main.css" rel="stylesheet">
+        <link href="css/cotizadores.css" rel="stylesheet">
+        <link href="css/generico.css" rel="stylesheet">
     </head>
 <body>
-<style>
-.site-wrapper .tipo_persona{ padding-top:40px; float:right;}
-.site-wrapper .active_2{text-decoration: underline};
-.site-wrapper .stepper li.completed a .circle {background-color:green!important;}
-.site-wrapper .stepper-horizontal li:hover {background-color:#fff!important;}
-
-</style>
+    
+    
 <section class="site-wrapper">
         <header></header>			
-        <section id="landing-agentes">
-			<div class="section-heading">
-				<div class="container-fluid">
-					<h4 class="title text-left">Cotizador Paquete Empresarial</h4>
-				</div>				
-            </div>
-								
+        <section>
+            
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-12 mt-4">
+                        <p class="font-weight-bold h1-responsive">Cotizador Paquete Empresarial</p>
+                    </div>
+                </div>
+            
 			<div class="container-fluid">					
 				<div class="row">
 					<div class="col-md-12">
@@ -208,7 +209,7 @@
 									<div class="md-form form-group">
 											<select name="dc_moneda" id="dc_moneda" class="mdb-select form-control-sel">
 												<option value="1">USD</option>
-												<option value="2">MXN</option>
+												<option value="2">MN</option>
 												<option value="3">EUR</option>
 											</select>
 											<label for="dc_moneda" >Moneda</label>
@@ -896,37 +897,110 @@
 							<!-- <table class="table simple-data-table table-striped table-bordered" style="width:100%;"> -->
 							<thead>
 								<tr>
-									<th>Edificio</th>
-									<th>Suma Asegurada</th>
-									<th>Prima</th>
-									<th>Deducible</th>
+									<th class="font-weight-bold">Property:</th>
+									<th class="font-weight-bold">Suma Asegurada</th>
+									<th class="font-weight-bold">Prima</th>
+									<th class="font-weight-bold">Deducible</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>Edificio</td>
-									<td class="number">$1,384,434</td>
-									<td class="number">$495,000</td>
+									<td>Edificio:</td>
+									<td class="number">$1,000,000.00</td>
+									<td class="number">$1,200.00</td>
 									<td>Sin Deducible</td>
 								</tr>
 								<tr>
-									<td>Contenidos</td>
-									<td class="number">$384,434</td>
-									<td class="number">$45,000</td>
+									<td>Contenidos:</td>
+									<td class="number">$20,000.00</td>
+									<td class="number">$24.00</td>
 									<td>Sin Deducible</td>
 								</tr>
 								<tr>
-									<td>Bienes Bajos</td>
-									<td class="number">$1,234,434</td>
-									<td class="number">$395,000</td>
-									<td>5%</td>
+									<td>Bienes Bajo Conveio Expreso:</td>
+									<td class="number">$3,000.00</td>
+									<td class="number">$0.00</td>
+									<td>5% sobre la suma asegurada de éstos bienes.</td>
 								</tr>
 								<tr>
-									<td>Perdidas</td>
-									<td class="number">$344,434</td>
-									<td class="number">$1,618</td>
-									<td>1%</td>
+									<td class="font-weight-bold">Perdidas Consecuenciales</td>
+									<td class="number"> </td>
+									<td class="number"> </td>
+									<td> </td>
+								</tr>                                
+                                <tr>
+									<td>Gastos Extraordinarios (3 Meses):</td>
+									<td class="number">$1,000.00 </td>
+									<td class="number">$0.00 </td>
+									<td>Sin Deducible</td>
 								</tr>
+                                <tr>
+									<td>Pérdida en Rentas (3 Meses):</td>
+									<td class="number">$120.00 </td>
+									<td class="number">$0.04 </td>
+									<td>Sin Deducible</td>
+								</tr>
+                                <tr>
+									<td class="font-weight-bold">Rotura de Cristales:</td>
+									<td class="number">$1,000.00 </td>
+									<td class="number">$12.00 </td>
+									<td>5% sobre la pérdida con mínimo de 3 DSMGVDF.</td>
+								</tr>
+                                <tr>
+									<td class="font-weight-bold">Robo ( Sección I ):</td>
+									<td class="number">$100.00 </td>
+									<td class="number">$0.17 </td>
+									<td>10% De la reclamación con mínimo de 20.</td>
+								</tr>
+                                <tr>
+									<td>Robo ( Sección II ):</td>
+									<td class="number">$100.00 </td>
+									<td class="number">$0.17 </td>
+									<td>10% De la reclamación con mínimo de 50.</td>
+								</tr>
+                                <tr>
+									<td>Robo ( Sección III ):</td>
+									<td class="number">$100.00 </td>
+									<td class="number">$0.17 </td>
+									<td>10% De la suma asegurada.</td>
+								</tr>
+                                <tr>
+									<td class="font-weight-bold">Dinero y Valores:</td>
+									<td class="number">$100.00 </td>
+									<td class="number">$0.40 </td>
+									<td>10% De la reclamación con mínimo de 20 DSMGVDF.</td>
+								</tr>
+                                <tr>
+									<td class="font-weight-bold">Responsabilidad Civil:</td>
+									<td class="number">$100.00 </td>
+									<td class="number">$30.04 </td>
+									<td>Sin Deducible</td>
+								</tr>
+                                <tr>
+									<td>Responsabilidad Civil Arrendatario:</td>
+									<td class="number">Excluido </td>
+									<td class="number">Excluido </td>
+									<td>Excluido</td>
+								</tr>
+                                <tr>
+									<td class="font-weight-bold">Equipo Electrónico:</td>
+									<td class="number">$100.00 </td>
+									<td class="number">$0.05 </td>
+									<td>2% sobre el valor del equipo dañado.</td>
+								</tr>
+                                <tr>
+									<td>Equipo Electrónico Móvil:</td>
+									<td class="number">$1,000.00 </td>
+									<td class="number">$0.15 </td>
+									<td>2% sobre el valor del equipo dañado.</td>
+								</tr>
+                                <tr>
+									<td class="font-weight-bold">Servicio de Asistencia IKE:</td>
+									<td class="number">Amparada</td>
+									<td class="number">$500.00 </td>
+									<td>Sin Deducible</td>
+								</tr>
+                                
 							</tbody>
 						</table>
 					</div>						
@@ -938,7 +1012,7 @@
 							<tbody>
 								<tr>
 									<td>Prima Neta:</td>
-									<td class="number">$1,384.44</td>
+									<td class="number">$1,267.18</td>
 								</tr>
 								<tr>
 									<td>Recargo por Pago Fraccionado:</td>
@@ -946,17 +1020,17 @@
 								</tr>
 								<tr>
 									<td>Gastos de Expedición</td>
-									<td class="number">$1,200.00</td>
+									<td class="number">$700.00</td>
 								</tr>
 								<tr>
 									<td>IVA:</td>
-									<td class="number">$344.43</td>
+									<td class="number">$314.75</td>
 								</tr>
 							</tbody>
 							<tfoot>
 								<tr>
 									<td><b>Prima total:</b></td>
-									<td class="number"><b>$2,903.00</b></td>
+									<td class="number"><b>$2,281.93</b></td>
 								</tr>
 							</tfoot>
 						</table>
@@ -967,13 +1041,43 @@
 				<div class="col-sm-12">
 				    <button type="button" class="btn btn-pink waves-effect waves-light float-right">Pendientes Tokio Marine</button>
 					<button type="button" class="btn btn-pink waves-effect waves-light float-right">Pendientes del Agente</button>
-					<button type="button" class="btn btn-pink waves-effect waves-light float-right">Solicitar Emisión</button>
+					<button type="button" class="btn btn-pink waves-effect waves-light float-right" data-toggle="modal" data-target="#descargaremision">Solicitar Emisión</button>
 					<button type="button" class="btn btn-pink waves-effect waves-light float-right">Generar Slip</button>
 					<button type="button" class="btn btn-blue waves-effect waves-light float-right">Regresar</button>											
 				</div>
 			</div>
 				
-			</div>		                
+			</div>
+            </div>
+            
+            
+            
+            <div class="modal fade" id="descargaremision" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Solicitar Emisnión</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Declaro que se verificó la información asentada en este sitio web y corresponde a los datos y/o documentos entregados por el Cliente.  Asimismo, declaro que los datos y/o documentos fueron cotejados con su original, mismos que tuve a la vista. Todo cambio en los datos del Cliente los informaré a la Compañía Aseguradora cuando tenga conocimiento, para la actualización de su expediente.</p>
+                            
+                            <div class="form-check">
+                                <input type="checkbox" class="filled-in form-check-input" id="checkbox101" checked="checked">
+                                <label class="form-check-label" for="checkbox101">He leído las condiciones</label>
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-blue btn-sm btn-secondary" data-dismiss="modal" onclick="window.open('pdf/cotizador-empresarial.pdf');">Descargar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
 		</section>		
 		<section id="box-form-login"></section>		
 	    <section id="box-form-passw"></section>               

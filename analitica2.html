@@ -11,7 +11,10 @@
         <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
         <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
 		<link href="css/owl/owl.carousel.min.css" rel="stylesheet">
-        <link href="css/main.css" rel="stylesheet">        
+        
+        <link href="css/main.css" rel="stylesheet">
+        <link href="css/analitica.css" rel="stylesheet">
+        <link href="css/generico.css" rel="stylesheet">
         
         <script src="js/amcharts/amcharts.js"></script>
         <script src="js/amcharts/serial.js"></script>
@@ -25,12 +28,12 @@
 <section class="site-wrapper">
     <header></header>
 		
+<section>
     
-    <div class="container mt-5">        
-        
-        <div class="row masonry-container mt-5">
+    <div class="container">        
+        <div class="row masonry-container">
             
-            <div class="col-12 mt-4">
+            <div class="col-12">
                 <div class="view overlay">
                     <img class="card-img-top" src="images/productos/banner3.jpg" alt="Sample image">
                     <div class="gradiente_negro"></div>
@@ -38,7 +41,7 @@
             </div>
                 
             <div class="col-12 masonry-item wow fadeInUp animation-delay-2 text-center mb-4">
-                <h1 class="font-weight-bold center-block mt-4 mb-4 animated zoomInDown animation-delay-5 footer-title">Analitica</h1>
+                <p class="font-weight-bold h1-responsive center-block mt-4 mb-4 animated zoomInDown animation-delay-5">Analitica</p>
                 <p class="text-center center-block mt-2 animated fadeInUp animation-delay-7">Conociendo la importancia de las distintas industrias y comercios, nuestro enfoque empresarial nos permite ofrecer productos que ayuden a proteger a las empresas de pérdidas potenciales que, en ocasiones, no pueden costear por sí mismas, permitiéndoles operar con confianza con el soporte de Tokio Marine México.</p>
             </div>
                 
@@ -57,25 +60,8 @@
                     <div class="row linea">
                         <div class="col-sm-4">
                             <div class="md-form form-group">
-                                <select name="estatus" class="mdb-select">
-                                    <option value="" disabled selected>Folio</option>
-                                    <option value="1">1984</option>
-                                    <option value="2">1985</option>
-                                    <option value="3">1986</option>
-                                    <option value="4">1987</option>
-                                    <option value="5">1988</option>
-                                    <option value="6">1989</option>
-                                    <option value="7">1990</option>
-                                    <option value="8">1991</option>
-                                    <option value="9">1992</option>
-                                    <option value="10">1993</option>
-                                    <option value="11">1994</option>
-                                    <option value="12">1995</option>
-                                    <option value="13">1996</option>
-                                    <option value="14">1997</option>
-                                    <option value="15">1998</option>
-                                </select>
-                                <label for="estatus" >Año</label>
+                                <input type="number" name="poliza" id="poliza" class="form-control">
+                                <label for="poliza">Año</label>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -129,7 +115,49 @@
         
     </div>    
     
-        
+     <section class="agentes">
+            <div class="container">
+                
+				<div class="container-fluid">				
+						<div class="row w-100 mx-auto wow fadeIn" data-ride="carousel" data-wow-delay="0.2s">
+							  <div class="owl-carousel owl-theme">
+									<div class="item borde-negro">
+										<a href="analitica.html">
+										   <img src="images/agentes/indicadores/coti-por-prod.jpg" class="z-depth-1" alt="Sample avatar" />
+										   <div class="btn-grey btn-agentes">Cotizaciones Solicitadas</div>
+										</a>
+									</div>
+									<div class="item borde-negro">
+										<a href="analitica2.html">
+										   <img src="images/agentes/indicadores/cot-solicitadas.jpg" class="z-depth-1" alt="Sample avatar" />
+										   <div class="btn-grey btn-agentes">Cotizaciones por Producto</div>
+										</a>
+									</div>
+									<div class="item borde-negro">
+										<a href="analitica3.html">
+										   <img src="images/agentes/indicadores/prima-emitida.jpg" class="z-depth-1" alt="Sample avatar" />
+										   <div class="btn-grey btn-agentes">Prima Emitida</div>
+										</a>
+									</div>
+									<div class="item borde-negro">
+										<a href="analitica4.html">
+										   <img src="images/agentes/indicadores/prima-pagada.jpg" class="z-depth-1" alt="Sample avatar" />
+										   <div class="btn-grey btn-agentes">Prima Pagada</div>
+										</a>
+									</div>
+									<div class="item borde-negro">
+										<a href="analitica5.html">
+										   <img src="images/agentes/indicadores/bono-karate.jpg" class="z-depth-1" alt="Sample avatar" />
+										   <div class="btn-grey btn-agentes">Bono Karate</div>
+										</a>
+									</div>								
+								</div>					 	  
+						</div>					
+				</div>
+            </div>
+		</section>
+    
+    </section>    
 		
 		<section id="box-form-login"></section>		
 	    <section id="box-form-passw"></section>               
@@ -152,16 +180,7 @@
 		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
 		$("#box-form-passw").load("form-rec-pass.html");	
 		new WOW().init();
-        
-        
-        $('.datepicker').pickadate({
-            selectMonths: false,
-            formatSubmit: 'yyyy//',
-            disabled: 'picker__day--disabled',
-            selectYears: 4,
-            firstDay: 1,
-        });    
-        
+                
         $('.btn_search').click(function() {	
             $(this).parents('.linea').find('.bar').show();            
             $(this).parents('.linea').find('.graficas').hide();
@@ -298,8 +317,27 @@
         "position": "left"
     },
     "export": {
-    	"enabled": true
-     }
+    "enabled": true,
+    
+    "menu": [ {
+        "class": "export-main",
+        "menu": [ {
+            "label": "Descargar como",
+            "menu": [ "PNG", "JPG", "SVG" ]
+            }, {
+            "label": "Guardar como",
+            "menu": [ "CSV", "XLSX" ]
+            }, {
+            "format": "PRINT",
+            "label": "Imprimir"
+            }
+            ]
+        } ]
+}
+        
+        
+        
+        
 });
 </script>
     

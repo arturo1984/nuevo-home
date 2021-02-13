@@ -12,7 +12,9 @@
         <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
         <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
         <link href="css/owl/owl.carousel.min.css" rel="stylesheet">
+        
         <link href="css/main.css" rel="stylesheet">
+        <link href="css/generico.css" rel="stylesheet">
     </head>
 
        
@@ -37,7 +39,7 @@
         <div class="col-12 mb-5">
             <div class="row">
                 <div class="col-sm-12 col-md-9 mt-5">
-                    <h3 class="footer-title">Prevención de Lavado de Dinero.</h3>
+                    <p class="font-weight-bold h2-responsive">Prevención de Lavado de Dinero.</p>
 
                     <p>El pasado 19 de julio de 2012 fueron expedidas las disposiciones de carácter general a que se refiere el artículo 140 de la Ley General de Instituciones y Sociedades Mitualistas
         de Seguros, actualmente artículo 492 de la Ley de Instituciones de Seguros y de Fianzas (seguirían aplicándose las disposiciones de carácter general a que se refiere el artículo 140 de la Ley General de Instituciones y Sociedades Mitualistas de Seguros, hasta en tanto la autoridad emita las nuevas disposiciones relativas al artículo 492 de la nueva Ley.), con el propósito de establecer medidas y procedimientos para prevenir y detectar actos, omisiones u operaciones que pudieran favorecer, prestar ayuda, auxilio o cooperación de cualquier especie a los delitos u operaciones que pudiesen ubicarse en alguno de los supuestos previstos en los artículos 139, 148 Bis del Código Penal Federal (Lavado de Dinero y Financiamiento al Terrorismo).</p>
@@ -76,10 +78,7 @@
                         <div class="col-10"><a href="files/art_492_lavado.pdf">Formato de Solicitud <br> (PDF - 1.4 MB)</a></div>            
                     </div>
 
-                    <!--<div class="row mt-3">
-                        <div class="col-2 mt-2"><i class="sidebar-icon far fa-file-pdf" aria-hidden="true" data-toggle="modal" data-target="#centralModalInfo"></i></div>
-                        <div class="col-10">Descargar archivo <br> (PDF - 1.4 MB)</div>            
-                    </div>-->
+                   
 
                 </div>
             
@@ -87,39 +86,7 @@
         </div>
         
         
-		<!--<div class="modal fade" id="centralModalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-notify modal-info" role="document">
-              
-              <div class="modal-content">
-                  
-                  <div class="modal-header">
-                      <p class="heading lead">Document Info</p>
-
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true" class="white-text">&times;</span>
-                      </button>
-                  </div>
-
-                  
-                  <div class="modal-body">
-                      <div class="text-center">
-                         <object data="files/art_492_lavado.pdf" type="application/pdf" width="500px" height="300px" internalinstanceid="43">
-                            If you are unable to view file, you can download from
-                            <a href="files/cfd.pdf">here</a> or download <a target="_blank" href="http://get.adobe.com/reader/">Adobe PDF Reader</a> to view the file.
-                         </object>
-                      </div>
-                  </div>
-
-                  
-                  <div class="modal-footer justify-content-center">
-                      <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cerrar</a>
-                  </div>
-              </div>
-              
-            </div>
-		</div>-->
 		
-        
         
     </div>          
 </div>
@@ -148,19 +115,7 @@
 		$.ajax({url: "header-publico.html", context: document.body,success: function(response) {$("header").html(response);}});
 		$.ajax({url: "footer.html", context: document.body,success: function(response) {$("footer").html(response);}});	
         new WOW().init();
-            
-        $('.carousel').carousel({
-            interval: 1000000,
-            pause:"true",
-        });
-                        
-        $('.owl-carousel').owlCarousel({
-            loop:false,
-            center: true,
-            margin:10,
-            nav:true,
-            autoWidth:true,            
-        })
+                    
   
 		</script>
     </body>

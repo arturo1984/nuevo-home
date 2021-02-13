@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
     <head>
         <meta charset="utf-8">
@@ -12,29 +12,36 @@
         <link href="css/material-design/mdb.css" rel="stylesheet">
         <link href="css/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
         <link href="css/datatables/responsive.bootstrap4.min.css" rel="stylesheet">
+        
         <link href="css/main.css" rel="stylesheet">
+        <link href="css/cotizadores.css" rel="stylesheet">
+        <link href="css/generico.css" rel="stylesheet">
     </head>
-
+    
     <body>
         <section class="site-wrapper">
             <header></header>
             <section>
                 <div class="container">
-                    <div class="section-heading">
-                        <h1 class="title text-left">Consulta Pólizas</h1>
-                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12 mt-4">
+                            <p class="font-weight-bold h1-responsive">Consulta de Pólizas</p>
+                        </div>
+                    </div>                    
+                    
                     <div class="form-wrapper">
                         <form id="search-form" class="mb-4">
                             <div class="row">
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="md-form form-group">
-                                        <input type="text" name="poliza" class="form-control">
+                                        <input type="number" name="poliza" id="poliza" class="form-control" maxlength="14">
                                         <label for="poliza" >Póliza</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="md-form form-group">
-                                        <input type="text" name="endoso" class="form-control">
+                                        <input type="number" name="endoso" id="endoso" class="form-control">
                                         <label for="endoso" >Endoso</label>
                                     </div>
                                 </div>
@@ -57,7 +64,8 @@
                                             <option value="2">Contado</option>
                                             <option value="3">Mensual</option>
                                             <option value="4">Trimestral</option>
-                                            <option value="5">Anual</option>
+                                            <option value="5">Semestral</option>
+                                            <option value="6">Anual</option>
                                         </select>
                                         <label for="tipopago" >Tipo Pago</label>
                                     </div>
@@ -67,12 +75,12 @@
                                 <div class="col-sm-12 col-lg-6">
                                     <div class="md-form form-group">
                                         <div class="row">
-                                            <label for="inicio" class="active">Periodo - Fecha inicio y Fin de vigencia de la Póliza</label>
+                                            <label for="inicio" class="active">Período - Fecha inicio y fin de vigencia de la póliza</label>
                                             <div class="col">
                                                 <input name="inicio" placeholder="Desde" type="text" id="creationDate" class="form-control datepicker">
                                             </div>
                                             <div class="col">
-                                                <input name="fin" placeholder="Hasta" type="text" id="creationDate" class="form-control datepicker">
+                                                <input name="fin" placeholder="Hasta" type="text" id="finDate" class="form-control datepicker">
                                             </div>
                                         </div>
                                     </div>
@@ -89,7 +97,7 @@
                                 </div>
                                 <div class="col-sm-6 col-lg-3">
                                     <div class="md-form form-group">
-                                        <input type="text" name="asegurado" class="form-control">
+                                        <input type="text" name="asegurado" id="asegurado" class="form-control">
                                         <label for="asegurado" >Asegurado</label>
                                     </div>
                                 </div>
@@ -111,7 +119,7 @@
                                         <select name="moneda" class="mdb-select">
                                             <option value="1">Todas</option>
                                             <option value="2">USD</option>
-                                            <option value="3">MXN</option>
+                                            <option value="3">MN</option>
                                         </select>
                                         <label for="moneda" >Moneda</label>
                                     </div>
@@ -141,7 +149,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <a class="btn btn-pink float-left" onclick="document.getElementById('search-form').submit();">BUSCAR</a>
+                                    <a class="btn btn-pink float-right" onclick="document.getElementById('search-form').submit();">BUSCAR</a>
                                 </div>
                             </div>
                         </form>
@@ -181,7 +189,7 @@
                                     <td>Paquete empresarial</td>
                                     <td>Juan Canales</td>
                                     <td>Manuel Ortiz</td>
-                                    <td>MXN</td>
+                                    <td>MN</td>
                                     <td>Daños</td>
                                     <td>Nueva</td>
                                     <td></td>
@@ -215,7 +223,7 @@
                                     <td>Paquete familiar</td>
                                     <td>Juan Canales</td>
                                     <td>Manuel Ortiz</td>
-                                    <td>MXN</td>
+                                    <td>MN</td>
                                     <td>Daños</td>
                                     <td>Nueva</td>
                                     <td>DP54654</td>
@@ -249,7 +257,7 @@
                                     <td>Paquete empresarial</td>
                                     <td>Juan Canales</td>
                                     <td>Manuel Ortiz</td>
-                                    <td>MXN</td>
+                                    <td>MN</td>
                                     <td>Daños</td>
                                     <td>Nueva</td>
                                     <td>DP54654</td>
@@ -283,7 +291,7 @@
                                     <td>Paquete empresarial</td>
                                     <td>Juan Canales</td>
                                     <td>Manuel Ortiz</td>
-                                    <td>MXN</td>
+                                    <td>MN</td>
                                     <td>Daños</td>
                                     <td>Nueva</td>
                                     <td></td>
@@ -343,32 +351,31 @@
                                         <td>aluna</td>
                                         <td>09-abr-18</td>
                                         <td>PDF</td>
-                                        <td class="text-center"><i class="fas fa-download"></i></td>
+                                        <td class="text-center"><a href="pdf/emision.pdf"><i class="fas fa-download"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>Lista de datos.xlsx</td>
                                         <td>yhernandez</td>
                                         <td>14-abr-18</td>
                                         <td>Lista de datos</td>
-                                        <td class="text-center"><i class="fas fa-download"></i></td>
+                                        <td class="text-center"><a href="pdf/emision.pdf"><i class="fas fa-download"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>Acta Constitutiva.pdf</td>
                                         <td>yhernandez</td>
                                         <td>16-abr-18</td>
                                         <td>CURP</td>
-                                        <td class="text-center"><i class="fas fa-download"></i></td>
+                                        <td class="text-center"><a href="pdf/emision.pdf"><i class="fas fa-download"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>INE.jpg</td>
                                         <td>yhernandez</td>
                                         <td>16-abr-18</td>
                                         <td>INE</td>
-                                        <td class="text-center"><i class="fas fa-download"></i></td>
+                                        <td class="text-center"><a href="pdf/emision.pdf"><i class="fas fa-download"></i></a></td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <button type="button" class="btn btn-pink btn-rounded btn-sm waves-effect waves-light float-right">Agregar Archivo</button>
                         </div>
                     </div>
                 </div>
